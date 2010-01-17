@@ -1,0 +1,43 @@
+<p>
+  <b>Login:</b>
+  <%=h @user.login %>
+</p>
+
+<p>
+  <b>Email:</b>
+  <%=h @user.email %>
+</p>
+
+<p>
+  <b>Cyrpted password:</b>
+  <%=h @user.cyrpted_password %>
+</p>
+
+<p>
+  <b>Salt:</b>
+  <%=h @user.salt %>
+</p>
+
+<p>
+  <b>Remember token:</b>
+  <%=h @user.remember_token %>
+</p>
+
+<p>
+  <b>Remember token expiration:</b>
+  <%=h @user.remember_token_expiration %>
+</p>
+
+<p>
+  <b>Activation code:</b>
+  <%=h @user.activation_code %>
+</p>
+
+<p>
+  <b>Deleted at:</b>
+  <%=h @user.deleted_at %>
+</p>
+
+
+<%= link_to 'Edit', edit_user_path(@user) %> |
+<%= link_to 'Back', users_path %>

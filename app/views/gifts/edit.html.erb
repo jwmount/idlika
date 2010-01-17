@@ -1,0 +1,56 @@
+<h1>Editing gift</h1>
+
+<% form_for(@gift) do |f| %>
+  <%= f.error_messages %>
+
+  <p>
+    <%= f.label :giver_id %><br />
+    <%= f.text_field :giver_id %>
+  </p>
+  <p>
+    <%= f.label :name %><br />
+    <%= f.text_field :name %>
+  </p>
+  <p>
+    <%= f.label :supplier %><br />
+    <%= f.text_field :supplier %>
+  </p>
+  <p>
+    <%= f.label :description %><br />
+    <%= f.text_field :description %>
+  </p>
+  <p>
+    <%= f.label :image %><br />
+    <%= f.text_area :image %>
+  </p>
+  <p>
+    <%= f.label :tags %><br />
+    <%= f.text_area :tags %>
+  </p>
+  <p>
+    <%= f.label :audience %><br />
+    <%= f.text_area :audience %>
+  </p>
+  <p>
+    <%= f.label :by_when %><br />
+    <%= f.datetime_select :by_when %>
+  </p>
+  <p>
+    <%= f.label :after_when %><br />
+    <%= f.datetime_select :after_when %>
+  </p>
+  <p>
+    <%= f.label :for_my %><br />
+    <%= f.text_field :for_my %>
+  </p>
+  <p>
+    <%= f.label :deleted %><br />
+    <%= f.datetime_select :deleted %>
+  </p>
+  <p>
+    <%= f.submit 'Update' %>
+  </p>
+<% end %>
+
+<%= link_to 'Show', @gift %> |
+<%= link_to 'Back', gifts_path %>

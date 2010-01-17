@@ -1,0 +1,27 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  giver_id: 1
+  name: MyString
+  supplier: MyString
+  description: MyString
+  image: MyText
+  tags: MyText
+  audience: MyText
+  by_when: 2010-01-16 14:55:56
+  after_when: 2010-01-16 14:55:56
+  for_my: MyString
+  deleted: 2010-01-16 14:55:56
+
+two:
+  giver_id: 1
+  name: MyString
+  supplier: MyString
+  description: MyString
+  image: MyText
+  tags: MyText
+  audience: MyText
+  by_when: 2010-01-16 14:55:56
+  after_when: 2010-01-16 14:55:56
+  for_my: MyString
+  deleted: 2010-01-16 14:55:56

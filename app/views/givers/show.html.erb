@@ -1,0 +1,18 @@
+<p>
+  <b>Gift:</b>
+  <%=h @giver.gift_id %>
+</p>
+
+<p>
+  <b>Name:</b>
+  <%=h @giver.name %>
+</p>
+
+<p>
+  <b>Status:</b>
+  <%=h @giver.status %>
+</p>
+
+
+<%= link_to 'Edit', edit_giver_path(@giver) %> |
+<%= link_to 'Back', givers_path %>

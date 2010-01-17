@@ -1,0 +1,24 @@
+<h1>Listing givers</h1>
+
+<table>
+  <tr>
+    <th>Gift</th>
+    <th>Name</th>
+    <th>Status</th>
+  </tr>
+
+<% @givers.each do |giver| %>
+  <tr>
+    <td><%=h giver.gift_id %></td>
+    <td><%=h giver.name %></td>
+    <td><%=h giver.status %></td>
+    <td><%= link_to 'Show', giver %></td>
+    <td><%= link_to 'Edit', edit_giver_path(giver) %></td>
+    <td><%= link_to 'Destroy', giver, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New giver', new_giver_path %>

@@ -1,0 +1,58 @@
+<p>
+  <b>Giver:</b>
+  <%=h @gift.giver_id %>
+</p>
+
+<p>
+  <b>Name:</b>
+  <%=h @gift.name %>
+</p>
+
+<p>
+  <b>Supplier:</b>
+  <%=h @gift.supplier %>
+</p>
+
+<p>
+  <b>Description:</b>
+  <%=h @gift.description %>
+</p>
+
+<p>
+  <b>Image:</b>
+  <%=h @gift.image %>
+</p>
+
+<p>
+  <b>Tags:</b>
+  <%=h @gift.tags %>
+</p>
+
+<p>
+  <b>Audience:</b>
+  <%=h @gift.audience %>
+</p>
+
+<p>
+  <b>By when:</b>
+  <%=h @gift.by_when %>
+</p>
+
+<p>
+  <b>After when:</b>
+  <%=h @gift.after_when %>
+</p>
+
+<p>
+  <b>For my:</b>
+  <%=h @gift.for_my %>
+</p>
+
+<p>
+  <b>Deleted:</b>
+  <%=h @gift.deleted %>
+</p>
+
+
+<%= link_to 'Edit', edit_gift_path(@gift) %> |
+<%= link_to 'Back', gifts_path %>

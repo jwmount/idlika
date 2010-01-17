@@ -1,0 +1,299 @@
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (61.6ms)[0m   [0mCREATE TABLE `schema_migrations` (`version` varchar(255) NOT NULL) ENGINE=InnoDB[0m
+  [4;36;1mSQL (123.4ms)[0m   [0;1mCREATE UNIQUE INDEX `unique_schema_migrations` ON `schema_migrations` (`version`)[0m
+  [4;35;1mSQL (0.4ms)[0m   [0mSHOW TABLES[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSELECT version FROM schema_migrations[0m
+Migrating to CreateUsers (20100116225539)
+  [4;35;1mSQL (92.9ms)[0m   [0mCREATE TABLE `users` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `login` varchar(255), `email` varchar(255), `cyrpted_password` varchar(255), `salt` varchar(255), `remember_token` varchar(255), `remember_token_expiration` varchar(255), `activation_code` varchar(255), `deleted_at` datetime, `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [4;36;1mSQL (0.7ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20100116225539')[0m
+Migrating to CreateGifts (20100116225556)
+  [4;35;1mSQL (95.8ms)[0m   [0mCREATE TABLE `gifts` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `giver_id` int(11), `name` varchar(255), `supplier` varchar(255), `description` varchar(255), `image` text, `tags` text, `audience` text, `by_when` datetime, `after_when` datetime, `for_my` varchar(255), `deleted` datetime, `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [4;36;1mSQL (0.8ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20100116225556')[0m
+Migrating to CreateGivers (20100116225608)
+  [4;35;1mSQL (96.2ms)[0m   [0mCREATE TABLE `givers` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `gift_id` int(11), `name` varchar(255), `status` text, `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [4;36;1mSQL (0.8ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20100116225608')[0m
+  [4;35;1mSQL (0.5ms)[0m   [0mSHOW TABLES[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT version FROM schema_migrations[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mSHOW TABLES[0m
+  [4;36;1mSQL (1.8ms)[0m   [0;1mSHOW FIELDS FROM `gifts`[0m
+  [4;35;1mSQL (2.6ms)[0m   [0mdescribe `gifts`[0m
+  [4;36;1mSQL (0.8ms)[0m   [0;1mSHOW KEYS FROM `gifts`[0m
+  [4;35;1mSQL (1.3ms)[0m   [0mSHOW FIELDS FROM `givers`[0m
+  [4;36;1mSQL (2.1ms)[0m   [0;1mdescribe `givers`[0m
+  [4;35;1mSQL (0.7ms)[0m   [0mSHOW KEYS FROM `givers`[0m
+  [4;36;1mSQL (1.5ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mSQL (1.9ms)[0m   [0mdescribe `users`[0m
+  [4;36;1mSQL (1.3ms)[0m   [0;1mSHOW KEYS FROM `users`[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-01-16 15:02:57) [GET]
+
+ActionController::RoutingError (No route matches "/event/12/division/PHRF/new" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-01-16 15:24:50) [GET]
+
+ActionController::RoutingError (No route matches "/images/idlika_logo.png" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing GiftsController#index (for 127.0.0.1 at 2010-01-16 15:43:47) [GET]
+  [4;36;1mGift Load (0.4ms)[0m   [0;1mSELECT * FROM `gifts` [0m
+Rendering template within layouts/gifts
+Rendering gifts/index
+Completed in 112ms (View: 108, DB: 1) | 200 OK [http://localhost/gifts]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing GiftsController#new (for 127.0.0.1 at 2010-01-16 15:44:02) [GET]
+  [4;35;1mGift Columns (1.7ms)[0m   [0mSHOW FIELDS FROM `gifts`[0m
+Rendering template within layouts/gifts
+Rendering gifts/new
+Completed in 182ms (View: 176, DB: 2) | 200 OK [http://localhost/gifts/new]
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-01-16 15:55:00) [GET]
+
+ActionController::RoutingError (No route matches "/index" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-01-16 16:00:52) [GET]
+
+ActionController::RoutingError (No route matches "/" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-01-16 16:00:59) [GET]
+
+ActionController::RoutingError (No route matches "/welcome" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-01-16 16:02:41) [GET]
+
+ActionController::RoutingError (No route matches "/" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-01-16 16:02:54) [GET]
+
+NameError (uninitialized constant UserController):
+  
+
+Rendered rescues/_trace (22.5ms)
+Rendered rescues/_request_and_response (1.2ms)
+Rendering rescues/layout (internal_server_error)
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-01-16 16:04:19) [GET]
+
+NameError (uninitialized constant UserController):
+  
+
+Rendered rescues/_trace (22.5ms)
+Rendered rescues/_request_and_response (1.3ms)
+Rendering rescues/layout (internal_server_error)
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (67.2ms)[0m   [0mCREATE TABLE `schema_migrations` (`version` varchar(255) NOT NULL) ENGINE=InnoDB[0m
+  [4;36;1mSQL (166.0ms)[0m   [0;1mCREATE UNIQUE INDEX `unique_schema_migrations` ON `schema_migrations` (`version`)[0m
+  [4;35;1mSQL (0.4ms)[0m   [0mSHOW TABLES[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSELECT version FROM schema_migrations[0m
+Migrating to CreateUsers (20100117000829)
+  [4;35;1mSQL (92.7ms)[0m   [0mCREATE TABLE `users` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `login` varchar(255), `email` varchar(255), `cyrpted_password` varchar(255), `salt` varchar(255), `remember_token` varchar(255), `remember_token_expiration` varchar(255), `activation_code` varchar(255), `deleted_at` datetime, `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [4;36;1mSQL (0.7ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20100117000829')[0m
+  [4;35;1mSQL (0.4ms)[0m   [0mSHOW TABLES[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT version FROM schema_migrations[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mSHOW TABLES[0m
+  [4;36;1mSQL (1.5ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mSQL (1.9ms)[0m   [0mdescribe `users`[0m
+  [4;36;1mSQL (0.9ms)[0m   [0;1mSHOW KEYS FROM `users`[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreateUsers (20100117000829)
+Migrating to CreateGifts (20100117000901)
+  [4;36;1mSQL (64.7ms)[0m   [0;1mCREATE TABLE `gifts` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `giver_id` int(11), `name` varchar(255), `supplier` varchar(255), `description` varchar(255), `image` text, `tags` text, `audience` text, `by_when` datetime, `after_when` datetime, `for_my` varchar(255), `deleted` datetime, `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [4;35;1mSQL (0.6ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20100117000901')[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (1.7ms)[0m   [0mSHOW FIELDS FROM `gifts`[0m
+  [4;36;1mSQL (2.2ms)[0m   [0;1mdescribe `gifts`[0m
+  [4;35;1mSQL (0.7ms)[0m   [0mSHOW KEYS FROM `gifts`[0m
+  [4;36;1mSQL (1.3ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mSQL (2.0ms)[0m   [0mdescribe `users`[0m
+  [4;36;1mSQL (0.7ms)[0m   [0;1mSHOW KEYS FROM `users`[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreateUsers (20100117000829)
+Migrating to CreateGifts (20100117000901)
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (1.4ms)[0m   [0mSHOW FIELDS FROM `gifts`[0m
+  [4;36;1mSQL (3.4ms)[0m   [0;1mdescribe `gifts`[0m
+  [4;35;1mSQL (0.7ms)[0m   [0mSHOW KEYS FROM `gifts`[0m
+  [4;36;1mSQL (1.3ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mSQL (2.8ms)[0m   [0mdescribe `users`[0m
+  [4;36;1mSQL (1.1ms)[0m   [0;1mSHOW KEYS FROM `users`[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreateUsers (20100117000829)
+Migrating to CreateGifts (20100117000901)
+Migrating to CreateGivers (20100117001036)
+  [4;36;1mSQL (54.0ms)[0m   [0;1mCREATE TABLE `givers` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `gift_id` int(11), `name` varchar(255), `status` text, `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [4;35;1mSQL (0.9ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20100117001036')[0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (2.4ms)[0m   [0mSHOW FIELDS FROM `gifts`[0m
+  [4;36;1mSQL (2.0ms)[0m   [0;1mdescribe `gifts`[0m
+  [4;35;1mSQL (0.9ms)[0m   [0mSHOW KEYS FROM `gifts`[0m
+  [4;36;1mSQL (1.2ms)[0m   [0;1mSHOW FIELDS FROM `givers`[0m
+  [4;35;1mSQL (1.7ms)[0m   [0mdescribe `givers`[0m
+  [4;36;1mSQL (0.9ms)[0m   [0;1mSHOW KEYS FROM `givers`[0m
+  [4;35;1mSQL (1.4ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mSQL (1.9ms)[0m   [0;1mdescribe `users`[0m
+  [4;35;1mSQL (0.7ms)[0m   [0mSHOW KEYS FROM `users`[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-01-16 16:11:33) [GET]
+
+NameError (uninitialized constant UserController):
+  
+
+Rendered rescues/_trace (23.5ms)
+Rendered rescues/_request_and_response (1.2ms)
+Rendering rescues/layout (internal_server_error)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-01-16 16:11:34) [GET]
+
+NameError (uninitialized constant UserController):
+  
+
+Rendered rescues/_trace (69.6ms)
+Rendered rescues/_request_and_response (0.2ms)
+Rendering rescues/layout (internal_server_error)
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing UsersController#welcome (for 127.0.0.1 at 2010-01-16 16:12:33) [GET]
+
+ActionController::UnknownAction (No action responded to welcome. Actions: create, destroy, edit, index, new, show, and update):
+  
+
+Rendering rescues/layout (not_found)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing UsersController#welcome (for 127.0.0.1 at 2010-01-16 16:13:12) [GET]
+
+ActionView::MissingTemplate (Missing template users/welcome.erb in view path app/views):
+  app/controllers/users_controller.rb:3:in `welcome'
+
+Rendering rescues/layout (internal_server_error)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing UsersController#welcome (for 127.0.0.1 at 2010-01-16 16:13:54) [GET]
+Rendering template within layouts/users
+Rendering users/welcome
+
+ActionView::TemplateError (undefined local variable or method `gifts_path_url' for #<ActionView::Base:0x23de864>) on line #220 of app/views/users/welcome.html.erb:
+217:           <li>
+218:             <h3>Join the IdLikA community</h3>
+219:             <ul class="links">
+220:               <li><%= gifts_path_url %>Gifts you'd like</li>
+221:               <li><a href="http://weblog.rubyonrails.org/">IdLikA weblog</a></li>
+222:               <li><a href="http://wiki.rubyonrails.org/">Wiki</a></li>
+223:             </ul>
+
+    app/views/users/welcome.html.erb:220
+    app/controllers/users_controller.rb:3:in `welcome'
+
+Rendered rescues/_trace (81.1ms)
+Rendered rescues/_request_and_response (1.3ms)
+Rendering rescues/layout (internal_server_error)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing UsersController#welcome (for 127.0.0.1 at 2010-01-16 16:14:42) [GET]
+Rendering template within layouts/users
+Rendering users/welcome
+Completed in 12ms (View: 10, DB: 0) | 200 OK [http://localhost/]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing UsersController#welcome (for 127.0.0.1 at 2010-01-16 16:15:20) [GET]
+Rendering template within layouts/users
+Rendering users/welcome
+Completed in 11ms (View: 10, DB: 0) | 200 OK [http://localhost/]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing GiftsController#index (for 127.0.0.1 at 2010-01-16 16:15:23) [GET]
+  [4;36;1mGift Load (0.4ms)[0m   [0;1mSELECT * FROM `gifts` [0m
+Rendering template within layouts/gifts
+Rendering gifts/index
+Completed in 12ms (View: 8, DB: 1) | 200 OK [http://localhost/gifts]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing UsersController#welcome (for 127.0.0.1 at 2010-01-16 16:15:26) [GET]
+Rendering template within layouts/users
+Rendering users/welcome
+Completed in 3ms (View: 1, DB: 0) | 200 OK [http://localhost/]

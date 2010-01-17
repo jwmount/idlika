@@ -1,0 +1,24 @@
+(in /Users/john/Devo/idlika)
+    givers GET    /givers(.:format)                  {:action=>"index", :controller=>"givers"}
+           POST   /givers(.:format)                  {:action=>"create", :controller=>"givers"}
+ new_giver GET    /givers/new(.:format)              {:action=>"new", :controller=>"givers"}
+edit_giver GET    /givers/:id/edit(.:format)         {:action=>"edit", :controller=>"givers"}
+     giver GET    /givers/:id(.:format)              {:action=>"show", :controller=>"givers"}
+           PUT    /givers/:id(.:format)              {:action=>"update", :controller=>"givers"}
+           DELETE /givers/:id(.:format)              {:action=>"destroy", :controller=>"givers"}
+     gifts GET    /gifts(.:format)                   {:action=>"index", :controller=>"gifts"}
+           POST   /gifts(.:format)                   {:action=>"create", :controller=>"gifts"}
+  new_gift GET    /gifts/new(.:format)               {:action=>"new", :controller=>"gifts"}
+ edit_gift GET    /gifts/:id/edit(.:format)          {:action=>"edit", :controller=>"gifts"}
+      gift GET    /gifts/:id(.:format)               {:action=>"show", :controller=>"gifts"}
+           PUT    /gifts/:id(.:format)               {:action=>"update", :controller=>"gifts"}
+           DELETE /gifts/:id(.:format)               {:action=>"destroy", :controller=>"gifts"}
+     users GET    /users(.:format)                   {:action=>"index", :controller=>"users"}
+           POST   /users(.:format)                   {:action=>"create", :controller=>"users"}
+  new_user GET    /users/new(.:format)               {:action=>"new", :controller=>"users"}
+ edit_user GET    /users/:id/edit(.:format)          {:action=>"edit", :controller=>"users"}
+      user GET    /users/:id(.:format)               {:action=>"show", :controller=>"users"}
+           PUT    /users/:id(.:format)               {:action=>"update", :controller=>"users"}
+           DELETE /users/:id(.:format)               {:action=>"destroy", :controller=>"users"}
+                  /:controller/:action/:id           
+                  /:controller/:action/:id(.:format) 

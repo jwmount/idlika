@@ -1,0 +1,34 @@
+<h1>Listing users</h1>
+
+<table>
+  <tr>
+    <th>Login</th>
+    <th>Email</th>
+    <th>Cyrpted password</th>
+    <th>Salt</th>
+    <th>Remember token</th>
+    <th>Remember token expiration</th>
+    <th>Activation code</th>
+    <th>Deleted at</th>
+  </tr>
+
+<% @users.each do |user| %>
+  <tr>
+    <td><%=h user.login %></td>
+    <td><%=h user.email %></td>
+    <td><%=h user.cyrpted_password %></td>
+    <td><%=h user.salt %></td>
+    <td><%=h user.remember_token %></td>
+    <td><%=h user.remember_token_expiration %></td>
+    <td><%=h user.activation_code %></td>
+    <td><%=h user.deleted_at %></td>
+    <td><%= link_to 'Show', user %></td>
+    <td><%= link_to 'Edit', edit_user_path(user) %></td>
+    <td><%= link_to 'Destroy', user, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New user', new_user_path %>
