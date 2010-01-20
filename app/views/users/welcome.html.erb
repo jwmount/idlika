@@ -197,7 +197,7 @@
       window.onload = function() {
         $('search-text').value = '';
         $('search').onsubmit = function() {
-          $('search-text').value = 'site:idlika.com ' + $F('search-text');
+          $('search-text').value = 'site:idlika.heroku.com ' + $F('search-text');
         }
       }
     </script>
@@ -209,8 +209,8 @@
           <li>
             <form id="search" action="http://www.google.com/search" method="get">
               <input type="hidden" name="hl" value="en" />
-              <input type="text" id="search-text" name="q" value="site:idlika.com " />
-              <input type="submit" value="Search" /> the IdLikA	 site
+              <input type="text" id="search-text" name="q" value="site:idlika.heroku.com " />
+              <input type="submit" value="Search" /> Peta's IdLikA site
             </form>
           </li>
         
