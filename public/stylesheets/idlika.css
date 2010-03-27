@@ -1,0 +1,329 @@
+body {
+	margin:0px; background:#fff;
+	font-family:Arial,Helvetica,sans-serif; color:#333; font-size:11px;
+}
+
+img { border:0px; }
+
+div.clearer { clear:both; overflow:hidden; }
+
+table, td {
+	border:0px; margin:0px; padding:0px;
+}
+
+#container {
+	width:1000px; margin:0px auto; position:relative;
+}
+
+/********** splash page styles **********/
+#sp_container {
+	width:963px; margin:0px auto; position:relative;
+}
+
+#splashmast { 
+	height:149px; text-align:center; overflow:hidden;
+}
+
+#splashmast h1 {
+	width:161px; height:80px; margin:0px auto; padding:0px;
+	background:url(../images/idlikalogo_splash.gif);
+}
+#splashmast h1 b { display:none; }
+
+#splashmast h2 {
+	width:467px; height:52px; margin:0px auto; padding:0px;
+	background:url(../images/tagline_splash.gif);
+}
+#splashmast h2 b { display:none; }
+
+#step123 {
+	margin:0px; width:963px; height:326px;
+	background:url(../images/splash_bg.gif);
+}
+
+#step123 p {
+	text-align:left; font-weight:bold;
+	margin:15px 20px; padding:0px;
+}
+
+#step123 h1 b { display:none; }
+#step123 h2 b { display:none; }
+
+#step123 a {
+	color:#333; text-decoration:none;
+}
+
+#step1 {
+	width:320px; float:left; overflow:hidden;
+	text-align:center;
+}
+
+#step1 h1 {
+	width:40px; height:40px; margin:18px auto 13px auto; padding:0px;
+	background:url(../images/1.gif);
+}
+
+#step1 h2 {
+	width:168px; height:34px;
+	margin:0px auto 20px auto; padding:0px;
+	background:url(../images/sign_up.gif);
+}
+
+#step2 {
+	width:320px; float:left; overflow:hidden;
+	text-align:center;
+}
+
+#step2 h1 {
+	width:40px; height:40px; margin:18px auto 13px auto; padding:0px;
+	background:url(../images/2.gif);
+}
+
+#step2 h2 {
+	width:269px; height:71px;
+	margin:0px auto 10px auto; padding:0px;
+	background:url(../images/create_your_registry.gif);
+}
+
+#step3 {
+	width:320px; float:left; overflow:hidden;
+	text-align:center;
+}
+
+#step3 h1 {
+	width:40px; height:40px; margin:18px auto 13px auto; padding:0px;
+	background:url(../images/3.gif);
+}
+
+#step3 h2 {
+	width:170px; height:71px;
+	margin:0px auto 10px auto; padding:0px;
+	background:url(../images/shop_or_share.gif);
+}
+
+#take_action { position:relative; }
+
+#take_action ul {
+	display:inline; list-style-type:none;
+	margin:0px; padding:0px;
+}
+
+#take_action li {
+	display:inline; float:left; margin:0px; padding:0px;
+}
+
+#take_action li a b { display:none; }
+
+a.ta_login { 
+	width:289px; height:57px; display:block; margin:12px 0px 0px 16px; background:url(../images/btn_login.gif);
+}
+
+a.ta_how {
+	width:289px; height:57px; display:block; margin:12px 0px 0px 32px; background:url(../images/btn_howitworks.gif);
+}
+
+a.ta_start {
+	width:289px; height:57px; display:block; margin:12px 0px 0px 30px; background:url(../images/btn_getstarted.gif);
+}
+/********** end splash page styles **********/
+
+
+/********** masthead **********/
+#masthead {
+	height:124px; overflow:hidden;
+}
+
+#masthead h1 {
+	width:162px; height:80px; margin:0px auto; padding:0px;
+	background:url(../images/idlikalogo.gif);
+	float:left;
+}
+#masthead h1 b { display:none; }
+
+#masthead h2 {
+	width:368px; height:80px; margin:0px auto; padding:0px;
+	background:url(../images/remembertagline.gif);
+	float:left;
+}
+#masthead h2 b { display:none; }
+
+#loginarea {
+	width:350px; float:right;
+	margin:50px 15px 0px 0px;
+	font-size:12px; text-transform:uppercase; color:#666; text-align:right;
+}
+
+#loginarea a.name { color:#333; text-decoration:none; }
+#loginarea a.name:hover, #loginarea a.name:active { color:#333; text-decoration:underline; }
+
+#loginarea a { color:#666; text-decoration:none; }
+
+#nav {
+	height:44px; overflow:hidden;
+	background:url(../images/nav_bg.gif);
+}
+
+#nav ul {
+	display:inline; list-style-type:none;
+	margin:0px; padding:0px;
+}
+
+#nav li {
+	display:inline; float:left; margin:0px; padding:0px;
+}
+
+#nav li a b { display:none; }
+
+a.home { 
+	width:51px; height:15px; display:block; margin:16px 0px 0px 35px; background:url(../images/home.gif);
+}
+
+a.gifts {
+	width:116px; height:15px; display:block; margin:16px 0px 0px 40px; background:url(../images/giftsidlike.gif);
+}
+
+a.myaccnt {
+	width:116px; height:15px; display:block; margin:16px 40px 0px 40px; background:url(../images/myaccount.gif);
+}
+
+input.navsearch {
+	width:205px;
+	margin:12px 8px 0px 0px;
+	font-family:Arial,Helvetica,sans-serif; font-size:14px; color:#333; text-transform:uppercase;
+	border:2px #fff solid;
+}
+
+select.navcategory {
+	width:154px;
+	margin:12px 6px 0px 0px;
+	font-family:Arial,Helvetica,sans-serif; font-size:14px; color:#333; text-transform:uppercase;
+	border:2px #fff solid;
+}
+
+/********** logged in page stuff **********/
+
+#li_body {
+	position:relative;
+}
+
+#li_sidebar {
+	width:182px; height:555px;
+	float:left; margin:0px; padding:0px;
+	border-right:1px #bfbfbf solid;
+}
+
+#li_sidebar ul {
+	margin:60px 20px 0px 11px; padding:0px;
+	list-style-type:none; font-weight:bold;
+}
+
+#li_sidebar li {
+	margin:4px 0px; padding:0px;
+	text-align:right;
+}
+
+#li_sidebar a { color:#006666; text-decoration:underline; }
+#li_sidebar a:hover, #li_sidebar a:active { color:#009999; text-decoration:underline; }
+
+#li_sidebar a b { display:none; }
+
+a.myreg { width:152px; height:19px; display:block; background:url(../images/sidenav_myregistries.gif); }
+a.myreg:hover, a.myreg:active { width:152px; height:19px; display:block; background:url(../images/sidenav_myregistries_on.gif); }
+a.myreg_set { width:152px; height:19px; display:block; background:url(../images/sidenav_myregistries_on.gif); }
+
+a.newreg { width:152px; height:19px; display:block; background:url(../images/sidenav_newregistry.gif); margin-top:20px; }
+a.newreg:hover, a.newreg:active { width:152px; height:19px; display:block; background:url(../images/sidenav_newregistry_on.gif); margin-top:20px; }
+a.newreg_set { width:152px; height:19px; display:block; background:url(../images/sidenav_newregistry_on.gif); margin-top:20px; }
+
+a.addgift { width:152px; height:19px; display:block; background:url(../images/sidenav_addagift.gif); }
+a.addgift:hover, a.addgift:active { width:152px; height:19px; display:block; background:url(../images/sidenav_addagift_on.gif); }
+a.addgift_set { width:152px; height:19px; display:block; background:url(../images/sidenav_addagift_on.gif); }
+
+#li_content {
+	width:800px; float:right;
+}
+
+#li_content a { color:#006666; text-decoration:underline; }
+
+#li_content h1 b { display:none; }
+
+h1.recently_added {
+	width:243px; height:23px; margin:20px 0px; padding:0px;
+	background:url(../images/hdr_recentlyadded.gif);
+}
+
+h1.add_a_gift {
+	width:153px; height:23px; margin:20px 0px; padding:0px;
+	background:url(../images/hdr_addagift.gif);
+}
+
+#recent {
+	position:relative;
+}
+
+div.item {
+	width:239px; height:219px; float:left; margin:0px 0px 20px 0px;
+	background:url(../images/item_bg.gif) no-repeat; overflow:hidden;
+}
+
+div.item2 {
+	width:239px; height:219px; float:left; margin:0px 33px 20px 0px;
+	background:url(../images/item_bg.gif) no-repeat; overflow:hidden;
+}
+
+div.item_inner {
+	width:239px; height:219px; margin:0px; padding:0px; overflow:hidden;
+}
+
+div.actions {
+	width:100px; height:32px; margin:187px 0px 0px 141px; overflow:hidden;
+}
+
+div.actions img { margin-right:5px; }
+
+#addgift_form {
+	position:relative;
+}
+
+div.aglabel { 
+	width:125px; float:left; margin-right:10px; margin-bottom:5px; padding-top:2px; text-align:right; font-weight:bold;
+}
+
+div.agfield {
+	width:475px; float:left; margin-bottom:5px;
+}
+
+#addgift_form input.agtext {
+	width:260px; border:1px #999 solid;
+	font-family:Arial, Helvetica, sans-serif; color:#333; font-size:14px; text-transform:uppercase;
+}
+
+#addgift_form input.agfile {
+	width:260px; border:1px #999 solid;
+	font-family:Arial, Helvetica, sans-serif; color:#333; font-size:14px; text-transform:uppercase;
+}
+
+#addgift_form select.agselect {
+	width:260px; border:1px #999 solid;
+	font-family:Arial, Helvetica, sans-serif; color:#333; font-size:14px; text-transform:uppercase;
+}
+
+
+
+
+/********** footer styles **********/
+
+#footer {
+	width:812px; margin:60px auto 10px auto;
+	overflow:hidden;
+	border-top:1px #999 solid;
+	font-size:11px; color:#999; text-align:center;
+}
+
+#footer p {
+	margin:7px 0px 0px 0px; padding:0px;
+}
+
+#footer a { color:#999; text-decoration:none; }
+
+
