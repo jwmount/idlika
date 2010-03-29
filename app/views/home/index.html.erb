@@ -3,112 +3,55 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <title>idlika - community shopping, shop, gifts, wish list, wishlists, preferences; share with friends and family</title>
+
   <%= stylesheet_link_tag 'idlika' %>
   <%= javascript_include_tag :defaults %> 
 </head>
 
 <body>
 
-<div id="container">
+<body>
 
-<div id="masthead">
-<a href="index.html"><h1><b>idlika</b></h1></a>
-<a href="index.html"><h2><b>community shopping wishlist gift registry friends family preferences presents services</b></h2></a>
+<div id="sp_container">
 
-<div id="loginarea">
-Welcome back, <a href="my-account.html" class="name">PETA!</a> | <a href="index.html">Log Out</a>
-</div><!-- loginarea -->
+<div id="splashmast">
+<h1><b>idlika</b></h1>
+<h2><b>Remember things you want ... Show your friends!</b></h2>
+</div><!-- splashmast -->
+
+<div id="step123">
+	
+    <div id="step1">
+	<a href="my-idlika.html"><h1><b>Step 1</b></h1>
+    <h2><b>Sign Up</b></h2>
+    <p>Whether you're on Facebook, have an iPhone, or just want to sign up online, idlika fits your lifestyle and is easy to take with you, anywhere!</p>
+    <img src="images/step1_stuff.png" alt="Step 1" /></a>
+    </div><!-- step1 -->
+    
+    <div id="step2">
+	<a href="my-idlika.html"><h1><b>Step 2</b></h1>
+    <h2><b>Create Your Gift Registry</b></h2>
+    <img src="images/step2_stuff.png" alt="Step 2" style="float:right; margin:10px 10px 0px 0px;" />
+    <p>See a great pair of shoes you like in a department store? Spot something fantastic online? Notice someone wearing an outfit you’d love to have? idlika lets you assemble your gift registry from online links and photos you take yourself!</p></a>
+    </div><!-- step2 -->
+    
+    <div id="step3">
+    <a href="my-idlika.html"><h1><b>Step 3</b></h1>
+    <h2><b>Shop Or Share</b></h2>
+    <p>Use your registry to streamline your shopping and help remember great items you want — or share it with friends for your birthday, aniversary and more!</p>
+    <img src="images/step3_stuff.png" alt="Step 3" style="margin-top:-15px;" /></a>
+    </div><!-- step3 -->
 
 <div class="clearer"></div>
-
-<div id="nav">
-<ul><li><a href="index.html" class="home"><b>Home</b></a></li>
-	<li><a href="my-idlika.html" class="gifts"><b>Gifts I'd Like</b></a></li>
-    <li><a href="my-account.html" class="myaccnt"><b>My Account</b></a></li>
-	<li><table cellspacing=0>
-        <form>
-        <tr valign="top">
-        	<td><img src="images/search.gif" alt="Search:" style="margin:16px 8px 0px 0px;" /></td>
-        	<td><input type="text" class="navsearch" name="searchterm" /></td>
-        	<td><select class="navcategory" name="searchwhat">
-	        	<option value="">My Registries</option>
-	            <option value="">Entire Site</option>
-	        </select>
-            </td>
-            <td><input type="image" src="images/btn_go.gif" alt="GO" style="margin-top:10px;" /></td></tr>
-        </form>
-        </table>
-    </li>
+</div><!-- step123 -->
+<div style="font-size:11px; color:#006666; text-align:center;">THIS SITE IS UNDER CONSTRUCTION</div>
+<div id="take_action">
+<ul><li><a href="login.html" class="ta_login"><b>Log In</b></a></li>
+	<li><a href="how-it-works.html" class="ta_how"><b>How It Works</b></a></li>
+    <li><a href="get-started.html" class="ta_start"><b>Get Started</b></a></li>
 </ul>
-</div><!-- nav -->
-</div><!-- masthead -->
-
-<br/>
-
-<div id="li_body">
-
-<div id="li_sidebar">
-<ul><li><a href="my-registries.html" class="myreg_set"><b>My Registries</b></a></li>
-	<li><a href="show_registry.html">Birthday List</a></li>
-    <li><a href="show_registry.html">Clothes</a></li>
-    <li><a href="show_registry.html">Home Decor</a></li>
-    <li><a href="new-registry.html" class="newreg"><b>New Registry</b></a></li>
-    <li><a href="add-gift.html" class="addgift"><b>Add A Gift</b></a></li>
-</ul>
-</div><!-- li_sidebar -->
-
-<div id="li_content">
-<h1 class="add_a_gift"><b>Add A Gift... but wait, this site is under construction</b></h1>
-
-<div id="addgift_form">
-<div class="aglabel">Giver:</div>
-<div class="agfield"><input type="text" class="agtext" /></div>
 <div class="clearer"></div>
-<div class="aglabel">Name Of Item:</div>
-<div class="agfield"><input type="text" class="agtext" /></div>
-<div class="clearer"></div>
-<div class="aglabel">As Seen In:</div>
-<div class="agfield"><input type="text" class="agtext" /></div>
-<div class="clearer"></div>
-<div class="aglabel">Description:</div>
-<div class="agfield"><input type="text" class="agtext" /></div>
-<div class="clearer"></div>
-<div class="aglabel">Image:</div>
-<div class="agfield"><input type="file" class="agfile" /></div>
-<div class="clearer"></div>
-<div class="aglabel">Tags:</div>
-<div class="agfield"><input type="text" class="agtext" /></div>
-<div class="clearer"></div>
-<div class="aglabel">Audience:</div>
-<div class="agfield"><input type="text" class="agtext" /></div>
-<div class="clearer"></div>
-<div class="aglabel">By when:</div>
-<div class="agfield"><input type="text" class="agtext" /></div>
-<div class="clearer"></div>
-<div class="aglabel">After when:</div>
-<div class="agfield"><input type="text" class="agtext" /></div>
-<div class="clearer"></div>
-<div class="aglabel">For:</div>
-<div class="agfield"><select class="agselect" name="registry" />
-	<option value="">Birthday List</option>
-    <option value="">Clothes</option>
-    <option value="">Home Decor</option>
-    </select></div>
-<div class="clearer"></div>
-<div class="aglabel"></div>
-<div class="agfield"><b>OR <a href="new-registry.html">Create A New Registry &#187;</a></b></div>
-<div class="clearer"></div>
-<div class="aglabel"></div>
-<div class="agfield"><input type="image" src="images/btn_addthisgift.gif" alt="Add This Gift" style="margin:20px;" /></div>
-<div class="clearer"></div>
-
-</div><!-- addgift_form -->
-
-</div><!-- li_content -->
-
-<div class="clearer"></div>
-</div><!-- li_body -->
-
+</div><!-- take_action -->
 
 <div id="footer">
 <p>&copy;2010 idlika.com&nbsp; | &nbsp;
@@ -122,7 +65,7 @@ Welcome back, <a href="my-account.html" class="name">PETA!</a> | <a href="index.
 <a href="#">Contact Us</a></p>
 </div><!-- footer -->
 
-</div><!-- container -->
+</div><!-- sp_container -->
 
 </body>
 </html>
