@@ -7,25 +7,37 @@
 <h1><b>idlika</b></h1>
 <h2><b>Remember things you want ... Show your friends!</b></h2>
 </div><!-- splashmast -->
-
+<% block_links = true %>
 <div id="step123">
 	
     <div id="step1">
-	<a href="my-idlika.html"><h1><b>Step 1</b></h1>
+	<% if block_links %>
+	  <h1><b>Step 1</b></h1>
+	<% else %>
+	  <a href="my-idlika.html"><h1><b>Step 1</b></h1>
+	<% end %>
     <h2><b>Sign Up</b></h2>
     <p>Whether you're on Facebook, have an iPhone, or just want to sign up online, idlika fits your lifestyle and is easy to take with you, anywhere!</p>
     <img src="images/step1_stuff.png" alt="Step 1" /></a>
     </div><!-- step1 -->
     
     <div id="step2">
-	<a href="my-idlika.html"><h1><b>Step 2</b></h1>
+	<% if block_links %>
+	  <h1><b>Step 2</b></h1>
+    <% else %>
+      <a href="my-idlika.html"><h1><b>Step 2</b></h1>
+	<% end %>
     <h2><b>Create Your Gift Registry</b></h2>
     <img src="images/step2_stuff.png" alt="Step 2" style="float:right; margin:10px 10px 0px 0px;" />
     <p>See a great pair of shoes you like in a department store? Spot something fantastic online? Notice someone wearing an outfit you’d love to have? idlika lets you assemble your gift registry from online links and photos you take yourself!</p></a>
     </div><!-- step2 -->
     
     <div id="step3">
-    <a href="my-idlika.html"><h1><b>Step 3</b></h1>
+	<% if block_links %>
+      <h1><b>Step 3</b></h1>
+	<% else %>
+      <a href="my-idlika.html"><h1><b>Step 3</b></h1>
+	<% end %>
     <h2><b>Shop Or Share</b></h2>
     <p>Use your registry to streamline your shopping and help remember great items you want — or share it with friends for your birthday, aniversary and more!</p>
     <img src="images/step3_stuff.png" alt="Step 3" style="margin-top:-15px;" /></a>

@@ -959,3 +959,73 @@ Rendered shared/_version (0.0ms)
 Rendered shared/_footer (0.0ms)
 Rendered shared/_analytics (0.1ms)
 Completed in 3ms (View: 2, DB: 0) | 200 OK [http://localhost/]
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing HomeController#index (for 127.0.0.1 at 2010-03-29 11:08:08) [GET]
+Rendering template within layouts/application
+Rendering home/index
+Rendered shared/_header (1.1ms)
+Rendered shared/_version (0.3ms)
+Rendered shared/_footer (0.6ms)
+Rendered shared/_analytics (0.9ms)
+Completed in 22ms (View: 21, DB: 0) | 200 OK [http://localhost/]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-03-29 11:08:13) [GET]
+
+ActionController::RoutingError (No route matches "/my-idlika.html" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing HomeController#index (for 127.0.0.1 at 2010-03-29 11:08:14) [GET]
+Rendering template within layouts/application
+Rendering home/index
+Rendered shared/_header (0.6ms)
+Rendered shared/_version (0.1ms)
+Rendered shared/_footer (0.1ms)
+Rendered shared/_analytics (0.1ms)
+Completed in 4ms (View: 3, DB: 0) | 200 OK [http://localhost/]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing HomeController#index (for 127.0.0.1 at 2010-03-29 11:09:16) [GET]
+Rendering template within layouts/application
+Rendering home/index
+Rendered shared/_header (0.6ms)
+Rendered shared/_version (0.0ms)
+Rendered shared/_footer (0.0ms)
+Rendered shared/_analytics (0.1ms)
+Completed in 9ms (View: 7, DB: 0) | 200 OK [http://localhost/]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing HomeController#index (for 127.0.0.1 at 2010-03-29 11:10:48) [GET]
+Rendering template within layouts/application
+Rendering home/index
+Rendered shared/_header (0.5ms)
+Rendered shared/_version (0.0ms)
+Rendered shared/_footer (0.0ms)
+Rendered shared/_analytics (0.1ms)
+Completed in 7ms (View: 6, DB: 0) | 200 OK [http://localhost/]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing HomeController#index (for 127.0.0.1 at 2010-03-29 11:11:54) [GET]
+Rendering template within layouts/application
+Rendering home/index
+Rendered shared/_header (0.5ms)
+Rendered shared/_version (0.0ms)
+Rendered shared/_footer (0.1ms)
+Rendered shared/_analytics (0.1ms)
+Completed in 8ms (View: 7, DB: 0) | 200 OK [http://localhost/]
