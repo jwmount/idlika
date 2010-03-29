@@ -695,3 +695,267 @@ Rendered shared/_version (0.3ms)
 Rendered shared/_footer (0.5ms)
 Rendered shared/_analytics (0.9ms)
 Completed in 22ms (View: 21, DB: 0) | 200 OK [http://localhost/]
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing HomeController#index (for 127.0.0.1 at 2010-03-29 10:31:03) [GET]
+Rendering template within layouts/application
+Rendering home/index
+Rendered shared/_header (1.1ms)
+Rendered shared/_version (0.3ms)
+Rendered shared/_footer (0.6ms)
+Rendered shared/_analytics (0.9ms)
+Completed in 22ms (View: 21, DB: 0) | 200 OK [http://localhost/]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing HomeController#index (for 127.0.0.1 at 2010-03-29 10:31:27) [GET]
+Rendering template within layouts/application
+Rendering home/index
+Rendered shared/_header (0.5ms)
+
+ActionView::TemplateError (uninitialized class variable @@IDLIKA_VERSION in ActionView::Base::CompiledTemplates) on line #1 of app/views/shared/_version.html.erb:
+1: <div style="font-size:11px; color:#006666; text-align:center;">THIS SITE IS UNDER CONSTRUCTION <%= @@IDLIKA_VERSION %></div>
+
+    app/views/shared/_version.html.erb:1
+    app/views/layouts/application.html.erb:13
+
+Rendered rescues/_trace (89.2ms)
+Rendered rescues/_request_and_response (1.3ms)
+Rendering rescues/layout (internal_server_error)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing HomeController#index (for 127.0.0.1 at 2010-03-29 10:31:41) [GET]
+Rendering template within layouts/application
+Rendering home/index
+Rendered shared/_header (0.5ms)
+Rendered shared/_version (0.3ms)
+Rendered shared/_footer (0.0ms)
+Rendered shared/_analytics (0.0ms)
+Completed in 5ms (View: 4, DB: 0) | 200 OK [http://localhost/]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing HomeController#index (for 127.0.0.1 at 2010-03-29 10:32:19) [GET]
+Rendering template within layouts/application
+Rendering home/index
+Rendered shared/_header (0.6ms)
+Rendered shared/_version (0.4ms)
+Rendered shared/_footer (0.1ms)
+Rendered shared/_analytics (0.1ms)
+Completed in 6ms (View: 5, DB: 0) | 200 OK [http://localhost/]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing HomeController#index (for 127.0.0.1 at 2010-03-29 10:33:56) [GET]
+Rendering template within layouts/application
+Rendering home/index
+Rendered shared/_header (0.5ms)
+Rendered shared/_version (0.3ms)
+Rendered shared/_footer (0.0ms)
+Rendered shared/_analytics (0.0ms)
+Completed in 5ms (View: 4, DB: 0) | 200 OK [http://localhost/]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-03-29 10:34:53) [GET]
+
+ActionController::RoutingError (No route matches "/get-started.html" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing HomeController#index (for 127.0.0.1 at 2010-03-29 10:34:55) [GET]
+Rendering template within layouts/application
+Rendering home/index
+Rendered shared/_header (0.5ms)
+Rendered shared/_version (0.0ms)
+Rendered shared/_footer (0.0ms)
+Rendered shared/_analytics (0.1ms)
+Completed in 3ms (View: 2, DB: 0) | 200 OK [http://localhost/]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-03-29 10:34:57) [GET]
+
+ActionController::RoutingError (No route matches "/how-it-works.html" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing HomeController#index (for 127.0.0.1 at 2010-03-29 10:35:01) [GET]
+Rendering template within layouts/application
+Rendering home/index
+Rendered shared/_header (0.6ms)
+Rendered shared/_version (0.1ms)
+Rendered shared/_footer (0.1ms)
+Rendered shared/_analytics (0.1ms)
+Completed in 4ms (View: 3, DB: 0) | 200 OK [http://localhost/]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-03-29 10:35:02) [GET]
+
+ActionController::RoutingError (No route matches "/login.html" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing HomeController#index (for 127.0.0.1 at 2010-03-29 10:35:04) [GET]
+Rendering template within layouts/application
+Rendering home/index
+Rendered shared/_header (0.6ms)
+Rendered shared/_version (0.1ms)
+Rendered shared/_footer (0.1ms)
+Rendered shared/_analytics (0.1ms)
+Completed in 4ms (View: 3, DB: 0) | 200 OK [http://localhost/]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing HomeController#index (for 127.0.0.1 at 2010-03-29 10:35:26) [GET]
+Rendering template within layouts/application
+Rendering home/index
+Rendered shared/_header (0.5ms)
+Rendered shared/_version (0.3ms)
+Rendered shared/_footer (0.0ms)
+Rendered shared/_analytics (0.1ms)
+Completed in 5ms (View: 4, DB: 0) | 200 OK [http://localhost/]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing HomeController#index (for 127.0.0.1 at 2010-03-29 10:36:32) [GET]
+Rendering template within layouts/application
+Rendering home/index
+Rendered shared/_header (0.6ms)
+Rendered shared/_version (0.4ms)
+Rendered shared/_footer (0.1ms)
+Rendered shared/_analytics (0.1ms)
+Completed in 6ms (View: 5, DB: 0) | 200 OK [http://localhost/]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing HomeController#index (for 127.0.0.1 at 2010-03-29 10:37:31) [GET]
+Rendering template within layouts/application
+Rendering home/index
+Rendered shared/_header (0.6ms)
+Rendered shared/_version (0.5ms)
+Rendered shared/_footer (0.1ms)
+Rendered shared/_analytics (0.1ms)
+Completed in 6ms (View: 5, DB: 0) | 200 OK [http://localhost/]
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing HomeController#index (for 127.0.0.1 at 2010-03-29 10:39:55) [GET]
+Rendering template within layouts/application
+Rendering home/index
+Rendered shared/_header (1.2ms)
+Rendered shared/_version (0.3ms)
+Rendered shared/_footer (0.6ms)
+Rendered shared/_analytics (0.8ms)
+Completed in 22ms (View: 20, DB: 0) | 200 OK [http://localhost/]
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing HomeController#index (for 127.0.0.1 at 2010-03-29 10:47:15) [GET]
+Rendering template within layouts/application
+Rendering home/index
+Rendered shared/_header (1.1ms)
+Rendered shared/_version (0.4ms)
+Rendered shared/_footer (0.5ms)
+Rendered shared/_analytics (0.9ms)
+Completed in 22ms (View: 21, DB: 0) | 200 OK [http://localhost/]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing HomeController#index (for 127.0.0.1 at 2010-03-29 10:47:41) [GET]
+Rendering template within layouts/application
+Rendering home/index
+Rendered shared/_header (0.5ms)
+Rendered shared/_version (0.0ms)
+Rendered shared/_footer (0.0ms)
+Rendered shared/_analytics (0.0ms)
+Completed in 7ms (View: 6, DB: 0) | 200 OK [http://localhost/]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing HomeController#index (for 127.0.0.1 at 2010-03-29 10:49:34) [GET]
+Rendering template within layouts/application
+Rendering home/index
+Rendered shared/_header (0.5ms)
+Rendered shared/_version (0.0ms)
+Rendered shared/_footer (0.0ms)
+Rendered shared/_analytics (0.0ms)
+Completed in 7ms (View: 5, DB: 0) | 200 OK [http://localhost/]
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing HomeController#index (for 127.0.0.1 at 2010-03-29 10:51:36) [GET]
+Rendering template within layouts/application
+Rendering home/index
+Rendered shared/_header (1.1ms)
+Rendered shared/_version (0.3ms)
+Rendered shared/_footer (0.6ms)
+Rendered shared/_analytics (0.9ms)
+Completed in 22ms (View: 20, DB: 0) | 200 OK [http://localhost/]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing HomeController#index (for 127.0.0.1 at 2010-03-29 10:52:18) [GET]
+Rendering template within layouts/application
+Rendering home/index
+Rendered shared/_header (0.6ms)
+Rendered shared/_version (0.0ms)
+Rendered shared/_footer (0.1ms)
+Rendered shared/_analytics (0.1ms)
+Completed in 4ms (View: 3, DB: 0) | 200 OK [http://localhost/]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing HomeController#index (for 127.0.0.1 at 2010-03-29 10:52:30) [GET]
+Rendering template within layouts/application
+Rendering home/index
+Rendered shared/_header (0.5ms)
+Rendered shared/_version (0.0ms)
+Rendered shared/_footer (0.0ms)
+Rendered shared/_analytics (0.1ms)
+Completed in 3ms (View: 2, DB: 0) | 200 OK [http://localhost/]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing HomeController#index (for 127.0.0.1 at 2010-03-29 10:52:34) [GET]
+Rendering template within layouts/application
+Rendering home/index
+Rendered shared/_header (0.5ms)
+Rendered shared/_version (0.0ms)
+Rendered shared/_footer (0.0ms)
+Rendered shared/_analytics (0.1ms)
+Completed in 3ms (View: 2, DB: 0) | 200 OK [http://localhost/]
