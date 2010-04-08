@@ -4,11 +4,8 @@ class CreateUsers < ActiveRecord::Migration
       t.string :login
       t.string :email
       t.string :cyrpted_password
-      t.string :salt
-      t.string :remember_token
-      t.string :remember_token_expiration
-      t.string :activation_code
-      t.datetime :deleted_at
+      t.string :password_salt
+      t.string :persistence_token
 
       t.timestamps
     end

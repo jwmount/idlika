@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20100117001036) do
+ActiveRecord::Schema.define(:version => 20100408205750) do
 
   create_table "gifts", :force => true do |t|
     t.integer  "giver_id"
@@ -36,16 +36,15 @@ ActiveRecord::Schema.define(:version => 20100117001036) do
   end
 
   create_table "users", :force => true do |t|
-    t.string   "login"
+    t.string   "username"
     t.string   "email"
-    t.string   "cyrpted_password"
-    t.string   "salt"
-    t.string   "remember_token"
-    t.string   "remember_token_expiration"
-    t.string   "activation_code"
+    t.string   "crypted_password"
+    t.string   "password_salt"
+    t.string   "persistence_token"
     t.datetime "deleted_at"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "test"
   end
 
 end

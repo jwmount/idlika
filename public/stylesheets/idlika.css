@@ -326,4 +326,7 @@ div.agfield {
 
 #footer a { color:#999; text-decoration:none; }
 
-
+#user_nav {
+	float:right;
+	font-size: 12px;
+}

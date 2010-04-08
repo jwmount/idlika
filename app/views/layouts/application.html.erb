@@ -1,12 +1,17 @@
-
+<html>
 <body>
+<div id="sp_container">
 
-<%= render( :partial => '/shared/header')%>
-<%= render( :partial => '/shared/version')%>
-<%= yield %>
+  <%= render( :partial => '/shared/version')%>
+  <%= render( :partial => '/shared/header')%>
 
-<%= render( :partial => '/shared/footer')%>
-<%= render( :partial => '/shared/analytics')%>
+	<%= yield %>
+
+  <%= render( :partial => '/shared/footer')%>
+  <%= render( :partial => '/shared/analytics')%>
+
+</div><!-- sp_container -->
+
 </body>
 </html>
 
