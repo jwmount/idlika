@@ -1,57 +1,124 @@
-
-MOVED TO HOME
-
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
-<head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<title>idlika - the shopping and wish list resource - remember things you want, share them with your friends</title>
-
-<link rel="stylesheet" type="text/css" href="style/idlika.css" />
-</head>
-
 <body>
 
-<div id="sp_container">
+<div id="container">
 
-<div id="splashmast">
-<h1><b>idlika</b></h1>
-<h2><b>Remember things you want ... Show your friends!</b></h2>
-</div><!-- splashmast -->
+<div id="masthead">
+<a href="index.html"><h1><b>idlika</b></h1></a>
+<a href="index.html"><h2><b>Remember things you want ... Show your friends!</b></h2></a>
 
-<div id="step123">
-	
-    <div id="step1">
-	<a href="my-idlika.html"><h1><b>Step 1</b></h1>
-    <h2><b>Sign Up</b></h2>
-    <p>Whether you're on Facebook, have an iPhone, or just want to sign up online, idlika fits your lifestyle and is easy to take with you, anywhere!</p>
-    <img src="images/step1_stuff.png" alt="Step 1" /></a>
-    </div><!-- step1 -->
-    
-    <div id="step2">
-	<a href="my-idlika.html"><h1><b>Step 2</b></h1>
-    <h2><b>Create Your Gift Registry</b></h2>
-    <img src="images/step2_stuff.png" alt="Step 2" style="float:right; margin:10px 10px 0px 0px;" />
-    <p>See a great pair of shoes you like in a department store? Spot something fantastic online? Notice someone wearing an outfit you’d love to have? idlika lets you assemble your gift registry from online links and photos you take yourself!</p></a>
-    </div><!-- step2 -->
-    
-    <div id="step3">
-    <a href="my-idlika.html"><h1><b>Step 3</b></h1>
-    <h2><b>Shop Or Share</b></h2>
-    <p>Use your registry to streamline your shopping and help remember great items you want — or share it with friends for your birthday, aniversary and more!</p>
-    <img src="images/step3_stuff.png" alt="Step 3" style="margin-top:-15px;" /></a>
-    </div><!-- step3 -->
+<div id="loginarea">
+Welcome back, <a href="my-account.html" class="name">PETA!</a> | <a href="index.html">Log Out</a>
+</div><!-- loginarea -->
 
 <div class="clearer"></div>
-</div><!-- step123 -->
 
-<div id="take_action">
-<ul><li><a href="login.html" class="ta_login"><b>Log In</b></a></li>
-	<li><a href="how-it-works.html" class="ta_how"><b>How It Works</b></a></li>
-    <li><a href="get-started.html" class="ta_start"><b>Get Started</b></a></li>
+<div id="nav">
+<ul><li><a href="index.html" class="home"><b>Home</b></a></li>
+	<li><a href="my-idlika.html" class="gifts"><b>Gifts I'd Like</b></a></li>
+    <li><a href="my-account.html" class="myaccnt"><b>My Account</b></a></li>
+	<li><table cellspacing=0>
+        <form>
+        <tr valign="top">
+        	<td><img src="images/search.gif" alt="Search:" style="margin:16px 8px 0px 0px;" /></td>
+        	<td><input type="text" class="navsearch" name="searchterm" /></td>
+        	<td><select class="navcategory" name="searchwhat">
+	        	<option value="">My Registries</option>
+	            <option value="">Entire Site</option>
+	        </select>
+            </td>
+            <td><input type="image" src="images/btn_go.gif" alt="GO" style="margin-top:10px;" /></td></tr>
+        </form>
+        </table>
+    </li>
 </ul>
+</div><!-- nav -->
+</div><!-- masthead -->
+
+<br/>
+
+<div id="li_body">
+
+<div id="li_sidebar">
+<ul><li><a href="my-registries.html" class="myreg_set"><b>My Registries</b></a></li>
+	<li><a href="show_registry.html">Birthday List</a></li>
+    <li><a href="show_registry.html">Clothes</a></li>
+    <li><a href="show_registry.html">Home Decor</a></li>
+    <li><a href="new-registry.html" class="newreg"><b>New Registry</b></a></li>
+    <li><!-- a href="add-gift.rhtml" class="addgift"><b>Add A Gift</b></a></li -->
+    <li><%= link_to '', new_gift_path, :class => "addgift" %></li>
+</ul>
+</div><!-- li_sidebar -->
+
+<div id="li_content">
+<h1 class="recently_added"><b>Recently Added</b></h1>
+
+<div id="recent">
+
+<!-- item 1 -->
+<div class="item">
+<div class="item_inner" style="background:url(images/items/item1.jpg); background-position:50%, 50%; background-repeat:no-repeat;">
+<div class="actions">
+	<a href="item.html"><img src="images/btn_details.png" alt="Show Details / Edit Item" /></a><a href="delete.html"><img src="images/btn_delete.png" alt="Remove Item" /></a><a href="share.html"><img src="images/btn_share.png" alt="Share Item" /></a>
+</div><!-- actions -->
+</div><!-- item_inner -->
+</div><!-- item -->
+
+<!-- item 2 -->
+<div class="item2">
+<div class="item_inner" style="background:url(images/items/item2.jpg); background-position:50%, 50%; background-repeat:no-repeat;">
+<div class="actions">
+	<a href="item.html"><img src="images/btn_details.png" alt="Show Details / Edit Item" /></a><a href="delete.html"><img src="images/btn_delete.png" alt="Remove Item" /></a><a href="share.html"><img src="images/btn_share.png" alt="Share Item" /></a>
+</div><!-- actions -->
+</div><!-- item_inner -->
+</div><!-- item -->
+
+<!-- item 3 -->
+<div class="item">
+<div class="item_inner" style="background:url(images/items/item3.jpg); background-position:50%, 50%; background-repeat:no-repeat;">
+<div class="actions">
+	<a href="item.html"><img src="images/btn_details.png" alt="Show Details / Edit Item" /></a><a href="delete.html"><img src="images/btn_delete.png" alt="Remove Item" /></a><a href="share.html"><img src="images/btn_share.png" alt="Share Item" /></a>
+</div><!-- actions -->
+</div><!-- item_inner -->
+</div><!-- item -->
+
 <div class="clearer"></div>
-</div><!-- take_action -->
+
+<!-- item 4 -->
+<div class="item">
+<div class="item_inner" style="background:url(images/items/item4.jpg); background-position:50%, 50%; background-repeat:no-repeat;">
+<div class="actions">
+	<a href="item.html"><img src="images/btn_details.png" alt="Show Details / Edit Item" /></a><a href="delete.html"><img src="images/btn_delete.png" alt="Remove Item" /></a><a href="share.html"><img src="images/btn_share.png" alt="Share Item" /></a>
+</div><!-- actions -->
+</div><!-- item_inner -->
+</div><!-- item -->
+
+<!-- item 5 -->
+<div class="item2">
+<div class="item_inner" style="background:url(images/items/item5.jpg); background-position:50%, 50%; background-repeat:no-repeat;">
+<div class="actions">
+	<a href="item.html"><img src="images/btn_details.png" alt="Show Details / Edit Item" /></a><a href="delete.html"><img src="images/btn_delete.png" alt="Remove Item" /></a><a href="share.html"><img src="images/btn_share.png" alt="Share Item" /></a>
+</div><!-- actions -->
+</div><!-- item_inner -->
+</div><!-- item -->
+
+<!-- item 6 -->
+<div class="item">
+<div class="item_inner" style="background:url(images/items/item6.jpg); background-position:50%, 50%; background-repeat:no-repeat;">
+<div class="actions">
+	<a href="item.html"><img src="images/btn_details.png" alt="Show Details / Edit Item" /></a><a href="delete.html"><img src="images/btn_delete.png" alt="Remove Item" /></a><a href="share.html"><img src="images/btn_share.png" alt="Share Item" /></a>
+</div><!-- actions -->
+</div><!-- item_inner -->
+</div><!-- item -->
+
+<div class="clearer"></div>
+
+</div><!-- recent -->
+
+</div><!-- li_content -->
+
+<div class="clearer"></div>
+</div><!-- li_body -->
+
 
 <div id="footer">
 <p>&copy;2010 idlika.com&nbsp; | &nbsp;
@@ -65,7 +132,7 @@ MOVED TO HOME
 <a href="#">Contact Us</a></p>
 </div><!-- footer -->
 
-</div><!-- sp_container -->
+</div><!-- container -->
 
 </body>
 </html>

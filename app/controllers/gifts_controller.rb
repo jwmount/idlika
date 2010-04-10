@@ -28,7 +28,6 @@ class GiftsController < ApplicationController
   # GET /gifts/new.xml
   def new
     @gift = Gift.new
-
     respond_to do |format|
       format.html # new.html.erb
       format.xml  { render :xml => @gift }

@@ -1,6 +1,14 @@
 (in /Users/john/Devo/idlika)
             login        /login                             {:controller=>"user_sessions", :action=>"new"}
            logout        /logout                            {:controller=>"user_sessions", :action=>"destroy"}
+           signup        /signup                            {:controller=>"user_sessions", :action=>"new"}
+            gifts GET    /gifts(.:format)                   {:controller=>"gifts", :action=>"index"}
+                  POST   /gifts(.:format)                   {:controller=>"gifts", :action=>"create"}
+         new_gift GET    /gifts/new(.:format)               {:controller=>"gifts", :action=>"new"}
+        edit_gift GET    /gifts/:id/edit(.:format)          {:controller=>"gifts", :action=>"edit"}
+             gift GET    /gifts/:id(.:format)               {:controller=>"gifts", :action=>"show"}
+                  PUT    /gifts/:id(.:format)               {:controller=>"gifts", :action=>"update"}
+                  DELETE /gifts/:id(.:format)               {:controller=>"gifts", :action=>"destroy"}
             users GET    /users(.:format)                   {:controller=>"users", :action=>"index"}
                   POST   /users(.:format)                   {:controller=>"users", :action=>"create"}
          new_user GET    /users/new(.:format)               {:controller=>"users", :action=>"new"}

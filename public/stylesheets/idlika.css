@@ -239,6 +239,10 @@ a.addgift { width:152px; height:19px; display:block; background:url(../images/si
 a.addgift:hover, a.addgift:active { width:152px; height:19px; display:block; background:url(../images/sidenav_addagift_on.gif); }
 a.addgift_set { width:152px; height:19px; display:block; background:url(../images/sidenav_addagift_on.gif); }
 
+a.addgift { width:152px; height:19px; display:block; background:url(../images/sidenav_addagift.gif); }
+a.addgift:hover, a.addgift:active { width:152px; height:19px; display:block; background:url(../images/sidenav_addagift_on.gif); }
+a.addgift_set { width:152px; height:19px; display:block; background:url(../images/sidenav_addagift_on.gif); }
+
 #li_content {
 	width:800px; float:right;
 }
