@@ -1,4 +1,7 @@
 class UserSessionsController < ApplicationController
+
+  layout 'gifts'
+  
   def new
     @user_session = UserSession.new
   end

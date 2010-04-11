@@ -115,7 +115,7 @@ table, td {
 #take_action li a b { display:none; }
 
 a.ta_login { 
-	width:289px; height:57px; display:block; margin:12px 0px 0px 16px; background:url(../images/btn_login.gif);
+	width:289px; height:57px; display:block; margin:12px 0px 0px 16px; background:url(/images/btn_login.gif);
 }
 
 a.ta_how {
@@ -244,7 +244,7 @@ a.addgift:hover, a.addgift:active { width:152px; height:19px; display:block; bac
 a.addgift_set { width:152px; height:19px; display:block; background:url(../images/sidenav_addagift_on.gif); }
 
 #li_content {
-	width:800px; float:right;
+	width:770px;  float:right;
 }
 
 #li_content a { color:#006666; text-decoration:underline; }
@@ -294,6 +294,10 @@ div.aglabel {
 }
 
 div.agfield {
+	width:475px; float:left; margin-bottom:5px;
+}
+
+#agfield {
 	width:475px; float:left; margin-bottom:5px;
 }
 

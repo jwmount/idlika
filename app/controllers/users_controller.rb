@@ -1,6 +1,6 @@
 class UsersController < ApplicationController
 
-  layout = 'application'
+  layout  'gifts'
   
   def index
     @users = User.all

@@ -1,9 +1,9 @@
 class GiftsController < ApplicationController
+  layout = 'gifts'
   
   def welcome
   end
-  # GET /gifts
-  # GET /gifts.xml
+
   def index
     @gifts = Gift.all
 
@@ -13,8 +13,7 @@ class GiftsController < ApplicationController
     end
   end
 
-  # GET /gifts/1
-  # GET /gifts/1.xml
+
   def show
     @gift = Gift.find(params[:id])
 
@@ -24,8 +23,7 @@ class GiftsController < ApplicationController
     end
   end
 
-  # GET /gifts/new
-  # GET /gifts/new.xml
+
   def new
     @gift = Gift.new
     respond_to do |format|
@@ -34,7 +32,7 @@ class GiftsController < ApplicationController
     end
   end
 
-  # GET /gifts/1/edit
+
   def edit
     @gift = Gift.find(params[:id])
   end

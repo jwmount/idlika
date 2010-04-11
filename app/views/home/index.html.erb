@@ -42,9 +42,12 @@
 
 <div id="take_action">
 <% if 0 %>
-<ul><li><a  class="ta_login"><b>Log In</b></a></li>
-	<li><a  class="ta_how"><b>How It Works</b></a></li>
-    <li><a  class="ta_start"><b>Get Started</b></a></li>
+<ul><li style="float:left; margin:20px 20px 20px 20px;"><%= link_to(image_tag("/images/btn_login.gif",      
+        {:alt => 'login to idlika',  :class=>"ta_login"}), login_path) %></li>
+	<li style="margin:20px 20px 20px 20px;"><%= link_to(image_tag("/images/btn_howitworks.gif", 
+	    {:alt => 'How to use idlika', :class=>"ta_how"}), how_path)%></li>
+	<li style="float:right; margin:20px 0px 10px 10px"><%= link_to(image_tag("/images/btn_getstarted.gif", 
+	    {:alt => 'Start using idlika', :class=>"ta_start"}), new_user_path) %></li>
 </ul>
 <% else %>
 <ul><li><a href="login.html" class="ta_login"><b>Log In</b></a></li>
