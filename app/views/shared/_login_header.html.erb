@@ -8,20 +8,16 @@
 <%= javascript_include_tag :defaults %>
 </head>
 
-	
 <div id="masthead">
 <a href="index.html"><h1><b>idlika</b></h1></a>
 <a href="index.html"><h2><b>Remember things you want ... Show your friends!</b></h2></a>
-
-
-<%= render( :partial => '/shared/welcome_header')%>
 
 <div class="clearer"></div>
 
 <div id="nav">
 <ul><li><%= link_to '', root_url, {:class => 'home'} %></li>
 	<li><a href="my-idlika.html" class="gifts"><b>Gifts I'd Like</b></a></li>
-    <li><%= link_to '', edit_user_path(:current), :class=>"myaccnt" %>
+    <li><a href="my-account.html" class="myaccnt"><b>My Account</b></a></li>
 	<li><table cellspacing=0>
         <form>
         <tr valign="top">

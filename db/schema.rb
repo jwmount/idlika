@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20100408205750) do
+ActiveRecord::Schema.define(:version => 20100411203444) do
 
   create_table "gifts", :force => true do |t|
     t.integer  "giver_id"
@@ -44,7 +44,7 @@ ActiveRecord::Schema.define(:version => 20100408205750) do
     t.datetime "deleted_at"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.string   "test"
+    t.integer  "terms_accepted_cb"
   end
 
 end

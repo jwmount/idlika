@@ -13,7 +13,7 @@
 
   <% if ENV['RAILS_ENV'] == 'development' %>
 	<div id="user_nav">
-		<% if current_user%>
+		<% if current_user %>
 		  <%= link_to "Edit Profile", edit_user_path(:current)%>
 		  <%= link_to "Logout", logout_path %>
 		<% else %>

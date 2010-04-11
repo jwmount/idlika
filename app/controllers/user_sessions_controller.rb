@@ -1,7 +1,7 @@
 class UserSessionsController < ApplicationController
 
-  layout 'gifts'
-  
+  layout 'users'
+  # creates user's logon session    
   def new
     @user_session = UserSession.new
   end

@@ -17,6 +17,8 @@
   <p>
     <%= f.label :password_confirmation %><br />
     <%= f.password_field :password_confirmation %>
+  <p>
+	<%= f.check_box( :terms_accepted_cb) %>I have read and accepted idlika's Terms and Conditions.
   </p>
   <p><%= f.submit "Submit" %></p>
 <% end %>

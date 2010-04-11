@@ -322,7 +322,7 @@ div.agfield {
 /********** footer styles **********/
 
 #footer {
-	width:818px; margin:60px auto 10px auto;
+	width:838px; margin:60px auto 10px auto;
 	overflow:hidden;
 	border-top:1px #999 solid;
 	font-size:11px; color:#999; text-align:center;
@@ -334,7 +334,19 @@ div.agfield {
 
 #footer a { color:#999; text-decoration:none; }
 
+
+
+/******************* John made these additions ************************/
 #user_nav {
 	float:right;
 	font-size: 12px;
+}
+.explain_doc {
+	width:818px; margin:60px auto 10px auto;
+	overflow:hidden;
+	font-family:Arial, Helvetica, sans-serif; color:#333; font-size:12px;
+}
+.btn_explain_getstarted {
+	width:189px; height:37px; display:block; margin:10px 0px 0px 12px; background:url(../images/btn_getstarted.gif);
+	
 }
