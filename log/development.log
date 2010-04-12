@@ -35658,3 +35658,798 @@ Rendered shared/_gifts_header (19.0ms)
 Rendered shared/_footer (6.9ms)
 Rendered shared/_analytics (1.0ms)
 Completed in 108ms (View: 104, DB: 3) | 200 OK [http://localhost/]
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing HomeController#index (for 127.0.0.1 at 2010-04-12 11:57:28) [GET]
+Rendering template within layouts/gifts
+Rendering home/index
+Rendered shared/_version (0.4ms)
+  [4;36;1mUser Columns (1.8ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+Rendered shared/_welcome_header (10.8ms)
+Rendered shared/_gifts_header (16.0ms)
+Rendered shared/_footer (1.7ms)
+Rendered shared/_analytics (1.0ms)
+Completed in 74ms (View: 71, DB: 2) | 200 OK [http://localhost/]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-04-12 11:57:33) [GET]
+
+ActionController::RoutingError (No route matches "/my-idlika.html" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing HomeController#index (for 127.0.0.1 at 2010-04-12 11:57:35) [GET]
+Rendering template within layouts/gifts
+Rendering home/index
+Rendered shared/_version (0.1ms)
+  [4;35;1mUser Columns (1.6ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+Rendered shared/_welcome_header (10.2ms)
+Rendered shared/_gifts_header (11.5ms)
+Rendered shared/_footer (0.3ms)
+Rendered shared/_analytics (0.1ms)
+Completed in 15ms (View: 12, DB: 2) | 200 OK [http://localhost/]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing HomeController#index (for 127.0.0.1 at 2010-04-12 11:57:47) [GET]
+Rendering template within layouts/gifts
+Rendering home/index
+Rendered shared/_version (0.1ms)
+  [4;36;1mUser Columns (1.5ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+Rendered shared/_welcome_header (11.3ms)
+Rendered shared/_gifts_header (12.7ms)
+Rendered shared/_footer (0.4ms)
+Rendered shared/_analytics (0.1ms)
+Completed in 21ms (View: 18, DB: 2) | 200 OK [http://localhost/]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing HomeController#index (for 127.0.0.1 at 2010-04-12 11:58:38) [GET]
+Rendering template within layouts/gifts
+Rendering home/index
+Rendered shared/_version (0.1ms)
+  [4;35;1mUser Columns (1.4ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+Rendered shared/_welcome_header (9.9ms)
+Rendered shared/_gifts_header (11.1ms)
+Rendered shared/_footer (0.3ms)
+Rendered shared/_analytics (0.1ms)
+Completed in 19ms (View: 16, DB: 2) | 200 OK [http://localhost/]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing HomeController#terms (for 127.0.0.1 at 2010-04-12 11:58:43) [GET]
+Rendering template within layouts/gifts
+Rendering home/terms
+Rendered shared/_version (0.1ms)
+  [4;36;1mUser Columns (1.7ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+Rendered shared/_welcome_header (10.5ms)
+Rendered shared/_gifts_header (11.7ms)
+Rendered shared/_footer (0.3ms)
+Rendered shared/_analytics (0.1ms)
+Completed in 20ms (View: 17, DB: 2) | 200 OK [http://localhost/terms]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing HomeController#index (for 127.0.0.1 at 2010-04-12 11:58:46) [GET]
+Rendering template within layouts/gifts
+Rendering home/index
+Rendered shared/_version (0.1ms)
+  [4;35;1mUser Columns (1.4ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+Rendered shared/_welcome_header (10.4ms)
+Rendered shared/_gifts_header (11.7ms)
+Rendered shared/_footer (0.3ms)
+Rendered shared/_analytics (0.1ms)
+Completed in 15ms (View: 12, DB: 2) | 200 OK [http://localhost/]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing HomeController#index (for 127.0.0.1 at 2010-04-12 11:58:49) [GET]
+Rendering template within layouts/gifts
+Rendering home/index
+Rendered shared/_version (0.1ms)
+  [4;36;1mUser Columns (1.4ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+Rendered shared/_welcome_header (9.8ms)
+Rendered shared/_gifts_header (11.0ms)
+Rendered shared/_footer (0.3ms)
+Rendered shared/_analytics (0.1ms)
+Completed in 15ms (View: 12, DB: 2) | 200 OK [http://localhost/]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing GiftsController#index (for 127.0.0.1 at 2010-04-12 11:58:50) [GET]
+  [4;35;1mGift Load (0.3ms)[0m   [0mSELECT * FROM `gifts` [0m
+Rendering template within layouts/gifts
+Rendering gifts/index
+Rendered shared/_version (0.1ms)
+  [4;36;1mUser Columns (1.3ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+Rendered shared/_welcome_header (8.0ms)
+Rendered shared/_gifts_header (9.3ms)
+Rendered shared/_footer (0.3ms)
+Rendered shared/_analytics (0.1ms)
+Completed in 24ms (View: 18, DB: 2) | 200 OK [http://localhost/gifts]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing HomeController#index (for 127.0.0.1 at 2010-04-12 11:58:52) [GET]
+Rendering template within layouts/gifts
+Rendering home/index
+Rendered shared/_version (0.1ms)
+  [4;35;1mUser Columns (1.5ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+Rendered shared/_welcome_header (11.2ms)
+Rendered shared/_gifts_header (12.6ms)
+Rendered shared/_footer (0.5ms)
+Rendered shared/_analytics (0.1ms)
+Completed in 17ms (View: 14, DB: 2) | 200 OK [http://localhost/]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing HomeController#how (for 127.0.0.1 at 2010-04-12 11:59:32) [GET]
+Rendering template within layouts/gifts
+Rendering home/how
+Rendered shared/_version (0.1ms)
+  [4;36;1mUser Columns (1.5ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+Rendered shared/_welcome_header (65.9ms)
+Rendered shared/_gifts_header (67.3ms)
+Rendered shared/_footer (0.3ms)
+Rendered shared/_analytics (0.1ms)
+Completed in 74ms (View: 70, DB: 2) | 200 OK [http://localhost/how]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing HomeController#index (for 127.0.0.1 at 2010-04-12 11:59:36) [GET]
+Rendering template within layouts/gifts
+Rendering home/index
+Rendered shared/_version (0.1ms)
+  [4;35;1mUser Columns (1.7ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+Rendered shared/_welcome_header (11.7ms)
+Rendered shared/_gifts_header (13.2ms)
+Rendered shared/_footer (0.4ms)
+Rendered shared/_analytics (0.1ms)
+Completed in 18ms (View: 14, DB: 2) | 200 OK [http://localhost/]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing HomeController#index (for 127.0.0.1 at 2010-04-12 12:00:12) [GET]
+Rendering template within layouts/gifts
+Rendering home/index
+Rendered shared/_version (0.1ms)
+  [4;36;1mUser Columns (1.5ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+Rendered shared/_welcome_header (9.6ms)
+Rendered shared/_gifts_header (10.8ms)
+Rendered shared/_footer (0.3ms)
+Rendered shared/_analytics (0.1ms)
+Completed in 19ms (View: 16, DB: 2) | 200 OK [http://localhost/]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing HomeController#index (for 127.0.0.1 at 2010-04-12 12:00:50) [GET]
+Rendering template within layouts/gifts
+Rendering home/index
+Rendered shared/_version (0.1ms)
+  [4;35;1mUser Columns (1.4ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+Rendered shared/_welcome_header (9.9ms)
+Rendered shared/_gifts_header (11.1ms)
+Rendered shared/_footer (0.3ms)
+Rendered shared/_analytics (0.1ms)
+Completed in 19ms (View: 16, DB: 2) | 200 OK [http://localhost/]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing UserSessionsController#new (for 127.0.0.1 at 2010-04-12 12:00:54) [GET]
+  [4;36;1mUser Columns (1.5ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+Rendering template within layouts/users
+Rendering user_sessions/new
+Rendered shared/_version (0.1ms)
+Rendered shared/_login_header (2.8ms)
+Rendered shared/_footer (0.3ms)
+Rendered shared/_analytics (0.1ms)
+Completed in 85ms (View: 76, DB: 2) | 200 OK [http://localhost/login]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing HomeController#index (for 127.0.0.1 at 2010-04-12 12:00:57) [GET]
+Rendering template within layouts/gifts
+Rendering home/index
+Rendered shared/_version (0.1ms)
+  [4;35;1mUser Columns (1.4ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+Rendered shared/_welcome_header (9.7ms)
+Rendered shared/_gifts_header (10.8ms)
+Rendered shared/_footer (0.3ms)
+Rendered shared/_analytics (0.1ms)
+Completed in 15ms (View: 12, DB: 2) | 200 OK [http://localhost/]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing HomeController#index (for 127.0.0.1 at 2010-04-12 12:02:49) [GET]
+Rendering template within layouts/gifts
+Rendering home/index
+Rendered shared/_version (0.0ms)
+  [4;36;1mUser Columns (1.4ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+Rendered shared/_welcome_header (11.4ms)
+Rendered shared/_gifts_header (12.5ms)
+Rendered shared/_footer (0.3ms)
+Rendered shared/_analytics (0.1ms)
+Completed in 16ms (View: 13, DB: 2) | 200 OK [http://localhost/]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing HomeController#index (for 127.0.0.1 at 2010-04-12 12:04:17) [GET]
+Rendering template within layouts/gifts
+Rendering home/index
+Rendered shared/_version (0.1ms)
+  [4;35;1mUser Columns (1.4ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+Rendered shared/_welcome_header (10.0ms)
+Rendered shared/_gifts_header (11.2ms)
+Rendered shared/_footer (0.3ms)
+Rendered shared/_analytics (0.1ms)
+Completed in 19ms (View: 16, DB: 2) | 200 OK [http://localhost/]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing HomeController#index (for 127.0.0.1 at 2010-04-12 12:05:27) [GET]
+Rendering template within layouts/gifts
+Rendering home/index
+ERROR: compiling _run_erb_app47views47home47index46html46erb RAISED compile error
+/Users/john/Devo/idlika/app/views/home/index.html.erb:65: syntax error, unexpected kENSURE, expecting kEND
+/Users/john/Devo/idlika/app/views/home/index.html.erb:67: syntax error, unexpected $end, expecting kEND
+Function body:           def _run_erb_app47views47home47index46html46erb(local_assigns)
+            old_output_buffer = output_buffer;;@output_buffer = '';  __in_erb_template=true ; @output_buffer.concat "<!-- shared/header.html.erb -->\n"
+@output_buffer.concat "\n"
+@output_buffer.concat "\n"
+@output_buffer.concat "<div id=\"step123\">\n"
+@output_buffer.concat "\t\n"
+@output_buffer.concat "    <div id=\"step1\">\n"
+@output_buffer.concat "\t";  if block_links? ; @output_buffer.concat "\n"
+@output_buffer.concat "\t  <h1><b>Step 1</b></h1>\n"
+@output_buffer.concat "\t";  else ; @output_buffer.concat "\n"
+@output_buffer.concat "\t  <a href=\"my-idlika.html\"><h1><b>Step 1</b></h1>\n"
+@output_buffer.concat "\t";  end ; @output_buffer.concat "\n"
+@output_buffer.concat "    <h2><b>Sign Up</b></h2>\n"
+@output_buffer.concat "    <p>Whether you're on Facebook, have an iPhone, or just want to sign up online, idlika fits your lifestyle and is easy to take with you, anywhere!</p>\n"
+@output_buffer.concat "    <img src=\"images/step1_stuff.png\" alt=\"Step 1\" /></a>\n"
+@output_buffer.concat "    </div><!-- step1 -->\n"
+@output_buffer.concat "    \n"
+@output_buffer.concat "    <div id=\"step2\">\n"
+@output_buffer.concat "\t";  if block_links? ; @output_buffer.concat "\n"
+@output_buffer.concat "\t  <h1><b>Step 2</b></h1>\n"
+@output_buffer.concat "    ";  else ; @output_buffer.concat "\n"
+@output_buffer.concat "      <a href=\"my-idlika.html\"><h1><b>Step 2</b></h1>\n"
+@output_buffer.concat "\t";  end ; @output_buffer.concat "\n"
+@output_buffer.concat "    <h2><b>Create Your Gift Registry</b></h2>\n"
+@output_buffer.concat "    <img src=\"images/step2_stuff.png\" alt=\"Step 2\" style=\"float:right; margin:10px 10px 0px 0px;\" />\n"
+@output_buffer.concat "    <p>See a great pair of shoes you like in a department store? Spot something fantastic online? Notice someone wearing an outfit you\342\200\231d love to have? idlika lets you assemble your gift registry from online links and photos you take yourself!</p></a>\n"
+@output_buffer.concat "    </div><!-- step2 -->\n"
+@output_buffer.concat "    \n"
+@output_buffer.concat "    <div id=\"step3\">\n"
+@output_buffer.concat "\t";  if block_links? ; @output_buffer.concat "\n"
+@output_buffer.concat "      <h1><b>Step 3</b></h1>\n"
+@output_buffer.concat "\t";  else ; @output_buffer.concat "\n"
+@output_buffer.concat "      <a href=\"my-idlika.html\"><h1><b>Step 3</b></h1>\n"
+@output_buffer.concat "\t";  end ; @output_buffer.concat "\n"
+@output_buffer.concat "    <h2><b>Shop Or Share</b></h2>\n"
+@output_buffer.concat "    <p>Use your registry to streamline your shopping and help remember great items you want \342\200\224 or share it with friends for your birthday, aniversary and more!</p>\n"
+@output_buffer.concat "    <img src=\"images/step3_stuff.png\" alt=\"Step 3\" style=\"margin-top:-15px;\" /></a>\n"
+@output_buffer.concat "    </div><!-- step3 -->\n"
+@output_buffer.concat "\n"
+@output_buffer.concat "<div class=\"clearer\"></div>\n"
+@output_buffer.concat "</div><!-- step123 -->\n"
+@output_buffer.concat "\n"
+ if block_links? ; @output_buffer.concat "\n"
+@output_buffer.concat "<!-- div id=\"take_action\" -->\n"
+ if block_links? ; @output_buffer.concat "\n"
+@output_buffer.concat "  <ul>\n"
+@output_buffer.concat "\t<li style=\"float:left; margin:20px 0px 10px 10px\">"; @output_buffer.concat(( link_to(image_tag("/images/btn_getstarted.gif", 
+        {:alt => 'Start using idlika', :class=>"ta_start"}), new_user_path) ).to_s); @output_buffer.concat "</li>\n"
+@output_buffer.concat "\t<li style=\"margin:20px 20px 20px 20px;\">"; @output_buffer.concat(( link_to(image_tag("/images/btn_howitworks.gif", 
+	    {:alt => 'How to use idlika', :class=>"ta_how"}), how_path)).to_s); @output_buffer.concat "</li>\n"
+@output_buffer.concat "\t<li style=\"float:right; margin:20px 20px 20px 20px;\">"; @output_buffer.concat(( link_to(image_tag("/images/btn_login.gif",      
+        {:alt => 'login to idlika',  :class=>"ta_login"}), login_path) ).to_s); @output_buffer.concat "</li>\n"
+@output_buffer.concat "  </ul>\n"
+@output_buffer.concat "<!-- % else %>\n"
+@output_buffer.concat "  <ul><li><a href=\"login.html\" class=\"ta_login\"><b>Log In</b></a></li>\n"
+@output_buffer.concat "\t<li><a href=\"how-it-works.html\" class=\"ta_how\"><b>How It Works</b></a></li>\n"
+@output_buffer.concat "    <li><a href=\"get-started.html\" class=\"ta_start\"><b>Get Started</b></a></li>\n"
+@output_buffer.concat "  </ul -->\n"
+ end ; @output_buffer.concat "\n"
+@output_buffer.concat "<div class=\"clearer\"></div>\n"
+@output_buffer.concat "</div><!-- take_action -->\n"
+@output_buffer.concat "<!-- shared/footer.html.erb -->\n"
+@output_buffer.concat "\n"
+@output_buffer.concat "\n"
+@output_buffer
+          ensure
+            self.output_buffer = old_output_buffer
+          end
+Backtrace: /Users/john/Devo/idlika/app/views/home/index.html.erb:67:in `compile!'
+/Users/john/.gem/ruby/1.8/gems/actionpack-2.3.3/lib/action_view/renderable.rb:61:in `compile'
+/Users/john/.gem/ruby/1.8/gems/actionpack-2.3.3/lib/action_view/renderable.rb:28:in `render'
+/Users/john/.gem/ruby/1.8/gems/actionpack-2.3.3/lib/action_view/template.rb:199:in `render_template'
+/Users/john/.gem/ruby/1.8/gems/actionpack-2.3.3/lib/action_view/base.rb:260:in `render'
+/Users/john/.gem/ruby/1.8/gems/actionpack-2.3.3/lib/action_view/base.rb:343:in `_render_with_layout'
+/Users/john/.gem/ruby/1.8/gems/actionpack-2.3.3/lib/action_view/base.rb:257:in `render'
+/Users/john/.gem/ruby/1.8/gems/actionpack-2.3.3/lib/action_controller/base.rb:1246:in `render_for_file'
+/Users/john/.gem/ruby/1.8/gems/actionpack-2.3.3/lib/action_controller/base.rb:941:in `render_without_benchmark'
+/Users/john/.gem/ruby/1.8/gems/actionpack-2.3.3/lib/action_controller/benchmarking.rb:51:in `render'
+/Users/john/.gem/ruby/1.8/gems/activesupport-2.3.3/lib/active_support/core_ext/benchmark.rb:17:in `ms'
+/Users/john/.gem/ruby/1.8/gems/activesupport-2.3.3/lib/active_support/core_ext/benchmark.rb:10:in `realtime'
+/Users/john/.gem/ruby/1.8/gems/activesupport-2.3.3/lib/active_support/core_ext/benchmark.rb:17:in `ms'
+/Users/john/.gem/ruby/1.8/gems/actionpack-2.3.3/lib/action_controller/benchmarking.rb:51:in `render'
+/Users/john/.gem/ruby/1.8/gems/actionpack-2.3.3/lib/action_controller/base.rb:1322:in `default_render'
+/Users/john/.gem/ruby/1.8/gems/actionpack-2.3.3/lib/action_controller/base.rb:1328:in `perform_action_without_filters'
+/Users/john/.gem/ruby/1.8/gems/actionpack-2.3.3/lib/action_controller/filters.rb:617:in `call_filters'
+/Users/john/.gem/ruby/1.8/gems/actionpack-2.3.3/lib/action_controller/filters.rb:610:in `perform_action_without_benchmark'
+/Users/john/.gem/ruby/1.8/gems/actionpack-2.3.3/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+/Users/john/.gem/ruby/1.8/gems/activesupport-2.3.3/lib/active_support/core_ext/benchmark.rb:17:in `ms'
+/Users/john/.gem/ruby/1.8/gems/activesupport-2.3.3/lib/active_support/core_ext/benchmark.rb:10:in `realtime'
+/Users/john/.gem/ruby/1.8/gems/activesupport-2.3.3/lib/active_support/core_ext/benchmark.rb:17:in `ms'
+/Users/john/.gem/ruby/1.8/gems/actionpack-2.3.3/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+/Users/john/.gem/ruby/1.8/gems/actionpack-2.3.3/lib/action_controller/rescue.rb:160:in `perform_action_without_flash'
+/Users/john/.gem/ruby/1.8/gems/actionpack-2.3.3/lib/action_controller/flash.rb:146:in `perform_action'
+/Users/john/.gem/ruby/1.8/gems/actionpack-2.3.3/lib/action_controller/base.rb:527:in `send'
+/Users/john/.gem/ruby/1.8/gems/actionpack-2.3.3/lib/action_controller/base.rb:527:in `process_without_filters'
+/Users/john/.gem/ruby/1.8/gems/actionpack-2.3.3/lib/action_controller/filters.rb:606:in `process'
+/Users/john/.gem/ruby/1.8/gems/actionpack-2.3.3/lib/action_controller/base.rb:391:in `process'
+/Users/john/.gem/ruby/1.8/gems/actionpack-2.3.3/lib/action_controller/base.rb:386:in `call'
+/Users/john/.gem/ruby/1.8/gems/actionpack-2.3.3/lib/action_controller/routing/route_set.rb:434:in `call'
+/Users/john/.gem/ruby/1.8/gems/actionpack-2.3.3/lib/action_controller/dispatcher.rb:88:in `dispatch'
+/Users/john/.gem/ruby/1.8/gems/actionpack-2.3.3/lib/action_controller/dispatcher.rb:111:in `_call'
+/Users/john/.gem/ruby/1.8/gems/actionpack-2.3.3/lib/action_controller/dispatcher.rb:82:in `initialize'
+/Users/john/.gem/ruby/1.8/gems/activerecord-2.3.3/lib/active_record/query_cache.rb:29:in `call'
+/Users/john/.gem/ruby/1.8/gems/activerecord-2.3.3/lib/active_record/query_cache.rb:29:in `call'
+/Users/john/.gem/ruby/1.8/gems/activerecord-2.3.3/lib/active_record/connection_adapters/abstract/query_cache.rb:34:in `cache'
+/Users/john/.gem/ruby/1.8/gems/activerecord-2.3.3/lib/active_record/query_cache.rb:9:in `cache'
+/Users/john/.gem/ruby/1.8/gems/activerecord-2.3.3/lib/active_record/query_cache.rb:28:in `call'
+/Users/john/.gem/ruby/1.8/gems/activerecord-2.3.3/lib/active_record/connection_adapters/abstract/connection_pool.rb:361:in `call'
+/Users/john/.gem/ruby/1.8/gems/rack-1.0.1/lib/rack/head.rb:9:in `call'
+/Users/john/.gem/ruby/1.8/gems/rack-1.0.1/lib/rack/methodoverride.rb:24:in `call'
+/Users/john/.gem/ruby/1.8/gems/actionpack-2.3.3/lib/action_controller/params_parser.rb:15:in `call'
+/Users/john/.gem/ruby/1.8/gems/actionpack-2.3.3/lib/action_controller/session/cookie_store.rb:93:in `call'
+/Users/john/.gem/ruby/1.8/gems/actionpack-2.3.3/lib/action_controller/reloader.rb:29:in `call'
+/Users/john/.gem/ruby/1.8/gems/actionpack-2.3.3/lib/action_controller/failsafe.rb:26:in `call'
+/Users/john/.gem/ruby/1.8/gems/rack-1.0.1/lib/rack/lock.rb:11:in `call'
+/Users/john/.gem/ruby/1.8/gems/rack-1.0.1/lib/rack/lock.rb:11:in `synchronize'
+/Users/john/.gem/ruby/1.8/gems/rack-1.0.1/lib/rack/lock.rb:11:in `call'
+/Users/john/.gem/ruby/1.8/gems/actionpack-2.3.3/lib/action_controller/dispatcher.rb:106:in `call'
+/Library/Ruby/Gems/1.8/gems/rails-2.3.3/lib/rails/rack/static.rb:31:in `call'
+/Users/john/.gem/ruby/1.8/gems/rack-1.0.1/lib/rack/urlmap.rb:46:in `call'
+/Users/john/.gem/ruby/1.8/gems/rack-1.0.1/lib/rack/urlmap.rb:40:in `each'
+/Users/john/.gem/ruby/1.8/gems/rack-1.0.1/lib/rack/urlmap.rb:40:in `call'
+/Library/Ruby/Gems/1.8/gems/rails-2.3.3/lib/rails/rack/log_tailer.rb:17:in `call'
+/Users/john/.gem/ruby/1.8/gems/rack-1.0.1/lib/rack/content_length.rb:13:in `call'
+/Users/john/.gem/ruby/1.8/gems/rack-1.0.1/lib/rack/chunked.rb:15:in `call'
+/Users/john/.gem/ruby/1.8/gems/rack-1.0.1/lib/rack/handler/mongrel.rb:64:in `process'
+/Library/Ruby/Gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:159:in `process_client'
+/Library/Ruby/Gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:158:in `each'
+/Library/Ruby/Gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:158:in `process_client'
+/Library/Ruby/Gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:285:in `run'
+/Library/Ruby/Gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:285:in `initialize'
+/Library/Ruby/Gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:285:in `new'
+/Library/Ruby/Gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:285:in `run'
+/Library/Ruby/Gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:268:in `initialize'
+/Library/Ruby/Gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:268:in `new'
+/Library/Ruby/Gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:268:in `run'
+/Users/john/.gem/ruby/1.8/gems/rack-1.0.1/lib/rack/handler/mongrel.rb:34:in `run'
+/Library/Ruby/Gems/1.8/gems/rails-2.3.3/lib/commands/server.rb:111
+/Library/Ruby/Site/1.8/rubygems/custom_require.rb:31:in `gem_original_require'
+/Library/Ruby/Site/1.8/rubygems/custom_require.rb:31:in `require'
+script/server:3
+
+ActionView::TemplateError (compile error
+/Users/john/Devo/idlika/app/views/home/index.html.erb:65: syntax error, unexpected kENSURE, expecting kEND
+/Users/john/Devo/idlika/app/views/home/index.html.erb:67: syntax error, unexpected $end, expecting kEND) on line #65 of app/views/home/index.html.erb:
+0
+    app/views/home/index.html.erb:67:in `compile!'
+
+Rendered rescues/_trace (32.5ms)
+Rendered rescues/_request_and_response (1.3ms)
+Rendering rescues/layout (internal_server_error)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing HomeController#index (for 127.0.0.1 at 2010-04-12 12:05:38) [GET]
+Rendering template within layouts/gifts
+Rendering home/index
+Rendered shared/_version (0.1ms)
+  [4;36;1mUser Columns (1.4ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+Rendered shared/_welcome_header (9.9ms)
+Rendered shared/_gifts_header (11.1ms)
+Rendered shared/_footer (0.3ms)
+Rendered shared/_analytics (0.1ms)
+Completed in 19ms (View: 16, DB: 2) | 200 OK [http://localhost/]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing HomeController#index (for 127.0.0.1 at 2010-04-12 12:06:51) [GET]
+Rendering template within layouts/gifts
+Rendering home/index
+Rendered shared/_version (0.1ms)
+  [4;35;1mUser Columns (1.5ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+Rendered shared/_welcome_header (10.3ms)
+Rendered shared/_gifts_header (11.5ms)
+Rendered shared/_footer (0.3ms)
+Rendered shared/_analytics (0.1ms)
+Completed in 68ms (View: 65, DB: 2) | 200 OK [http://localhost/]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing GiftsController#index (for 127.0.0.1 at 2010-04-12 12:06:55) [GET]
+  [4;36;1mGift Load (0.3ms)[0m   [0;1mSELECT * FROM `gifts` [0m
+Rendering template within layouts/gifts
+Rendering gifts/index
+Rendered shared/_version (0.0ms)
+  [4;35;1mUser Columns (1.3ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+Rendered shared/_welcome_header (9.8ms)
+Rendered shared/_gifts_header (11.0ms)
+Rendered shared/_footer (0.3ms)
+Rendered shared/_analytics (0.1ms)
+Completed in 17ms (View: 12, DB: 2) | 200 OK [http://localhost/gifts]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing HomeController#index (for 127.0.0.1 at 2010-04-12 12:06:58) [GET]
+Rendering template within layouts/gifts
+Rendering home/index
+Rendered shared/_version (0.1ms)
+  [4;36;1mUser Columns (1.5ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+Rendered shared/_welcome_header (11.4ms)
+Rendered shared/_gifts_header (12.8ms)
+Rendered shared/_footer (0.4ms)
+Rendered shared/_analytics (0.1ms)
+Completed in 17ms (View: 14, DB: 2) | 200 OK [http://localhost/]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing HomeController#index (for 127.0.0.1 at 2010-04-12 12:08:08) [GET]
+Rendering template within layouts/gifts
+Rendering home/index
+Rendered shared/_version (0.1ms)
+  [4;35;1mUser Columns (1.5ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+Rendered shared/_welcome_header (9.9ms)
+Rendered shared/_gifts_header (12.6ms)
+Rendered shared/_footer (0.3ms)
+Rendered shared/_analytics (0.1ms)
+Completed in 18ms (View: 15, DB: 2) | 200 OK [http://localhost/]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing HomeController#index (for 127.0.0.1 at 2010-04-12 12:08:40) [GET]
+Rendering template within layouts/gifts
+Rendering home/index
+Rendered shared/_version (0.1ms)
+  [4;36;1mUser Columns (1.5ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+Rendered shared/_welcome_header (10.2ms)
+Rendered shared/_gifts_header (12.8ms)
+Rendered shared/_footer (0.3ms)
+Rendered shared/_analytics (0.1ms)
+Completed in 19ms (View: 15, DB: 2) | 200 OK [http://localhost/]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing HomeController#index (for 127.0.0.1 at 2010-04-12 12:09:47) [GET]
+Rendering template within layouts/gifts
+Rendering home/index
+Rendered shared/_version (0.1ms)
+  [4;35;1mUser Columns (1.3ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+Rendered shared/_welcome_header (10.6ms)
+Rendered shared/_gifts_header (13.2ms)
+Rendered shared/_footer (0.4ms)
+Rendered shared/_analytics (0.1ms)
+Completed in 19ms (View: 16, DB: 2) | 200 OK [http://localhost/]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing HomeController#index (for 127.0.0.1 at 2010-04-12 12:10:03) [GET]
+Rendering template within layouts/gifts
+Rendering home/index
+Rendered shared/_version (0.1ms)
+  [4;36;1mUser Columns (2.0ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+Rendered shared/_welcome_header (10.5ms)
+Rendered shared/_gifts_header (12.8ms)
+Rendered shared/_footer (0.3ms)
+Rendered shared/_analytics (0.1ms)
+Completed in 18ms (View: 14, DB: 2) | 200 OK [http://localhost/]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing HomeController#index (for 127.0.0.1 at 2010-04-12 12:11:17) [GET]
+Rendering template within layouts/gifts
+Rendering home/index
+
+ActionView::TemplateError (undefined method `show_links?' for #<ActionView::Base:0x26399ec>) on line #7 of app/views/home/index.html.erb:
+4: <div id="step123">
+5: 	
+6:     <div id="step1">
+7: 	<% if show_links? %>
+8: 	  <h1><b>Step 1</b></h1>
+9: 	<% else %>
+10: 	  <a href="my-idlika.html"><h1><b>Step 1</b></h1>
+
+    app/views/home/index.html.erb:7
+
+Rendered rescues/_trace (32.3ms)
+Rendered rescues/_request_and_response (0.2ms)
+Rendering rescues/layout (internal_server_error)
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing HomeController#index (for 127.0.0.1 at 2010-04-12 12:11:35) [GET]
+Rendering template within layouts/gifts
+Rendering home/index
+Rendered shared/_version (0.1ms)
+  [4;35;1mUser Columns (1.4ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+Rendered shared/_welcome_header (9.8ms)
+
+ActionView::TemplateError (undefined method `block_links?' for #<ActionView::Base:0x245bcc4>) on line #22 of app/views/shared/_gifts_header.html.erb:
+19: <div class="clearer"></div>
+20: 
+21: <div id="nav">
+22: 	<% if !block_links? %>
+23: <ul><li><%= link_to '', root_url, {:class => 'home'} unless block_links? %></li>
+24: 	<li><%= link_to '', gifts_path(@gift), :class=>'gifts' unless block_links?%></li>
+25:     <li><%= link_to '', edit_user_path(:current), :class=>"myaccnt" unless block_links? %>
+
+    app/views/shared/_gifts_header.html.erb:22
+    app/views/layouts/gifts.html.erb:6
+
+Rendered rescues/_trace (94.8ms)
+Rendered rescues/_request_and_response (0.2ms)
+Rendering rescues/layout (internal_server_error)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing HomeController#index (for 127.0.0.1 at 2010-04-12 12:12:11) [GET]
+Rendering template within layouts/gifts
+Rendering home/index
+Rendered shared/_version (0.1ms)
+  [4;36;1mUser Columns (1.4ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+Rendered shared/_welcome_header (9.7ms)
+Rendered shared/_gifts_header (11.9ms)
+Rendered shared/_footer (0.4ms)
+Rendered shared/_analytics (0.1ms)
+Completed in 17ms (View: 14, DB: 2) | 200 OK [http://localhost/]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-04-12 12:12:14) [GET]
+
+ActionController::RoutingError (No route matches "/my-idlika.html" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing HomeController#index (for 127.0.0.1 at 2010-04-12 12:12:16) [GET]
+Rendering template within layouts/gifts
+Rendering home/index
+Rendered shared/_version (0.1ms)
+  [4;35;1mUser Columns (1.4ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+Rendered shared/_welcome_header (9.6ms)
+Rendered shared/_gifts_header (10.3ms)
+Rendered shared/_footer (0.3ms)
+Rendered shared/_analytics (0.1ms)
+Completed in 14ms (View: 11, DB: 2) | 200 OK [http://localhost/]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing HomeController#index (for 127.0.0.1 at 2010-04-12 12:12:37) [GET]
+Rendering template within layouts/gifts
+Rendering home/index
+Rendered shared/_version (0.1ms)
+  [4;36;1mUser Columns (2.4ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+Rendered shared/_welcome_header (10.4ms)
+Rendered shared/_gifts_header (11.1ms)
+Rendered shared/_footer (0.3ms)
+Rendered shared/_analytics (0.1ms)
+Completed in 18ms (View: 14, DB: 3) | 200 OK [http://localhost/]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing HomeController#index (for 127.0.0.1 at 2010-04-12 12:12:48) [GET]
+Rendering template within layouts/gifts
+Rendering home/index
+Rendered shared/_version (0.1ms)
+  [4;35;1mUser Columns (1.4ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+Rendered shared/_welcome_header (10.0ms)
+Rendered shared/_gifts_header (10.7ms)
+Rendered shared/_footer (0.3ms)
+Rendered shared/_analytics (0.1ms)
+Completed in 18ms (View: 15, DB: 2) | 200 OK [http://localhost/]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing HomeController#index (for 127.0.0.1 at 2010-04-12 12:13:34) [GET]
+Rendering template within layouts/gifts
+Rendering home/index
+Rendered shared/_version (0.1ms)
+  [4;36;1mUser Columns (1.5ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+Rendered shared/_welcome_header (10.0ms)
+Rendered shared/_gifts_header (10.7ms)
+Rendered shared/_footer (0.3ms)
+Rendered shared/_analytics (0.1ms)
+Completed in 15ms (View: 11, DB: 2) | 200 OK [http://localhost/]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing HomeController#index (for 127.0.0.1 at 2010-04-12 12:13:39) [GET]
+Rendering template within layouts/gifts
+Rendering home/index
+Rendered shared/_version (0.1ms)
+  [4;35;1mUser Columns (1.5ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+Rendered shared/_welcome_header (10.2ms)
+Rendered shared/_gifts_header (10.9ms)
+Rendered shared/_footer (0.4ms)
+Rendered shared/_analytics (0.1ms)
+Completed in 14ms (View: 11, DB: 2) | 200 OK [http://localhost/]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing HomeController#index (for 127.0.0.1 at 2010-04-12 12:14:01) [GET]
+Rendering template within layouts/gifts
+Rendering home/index
+Rendered shared/_version (0.1ms)
+  [4;36;1mUser Columns (2.5ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+Rendered shared/_welcome_header (12.5ms)
+Rendered shared/_gifts_header (15.3ms)
+Rendered shared/_footer (0.4ms)
+Rendered shared/_analytics (0.1ms)
+Completed in 19ms (View: 15, DB: 3) | 200 OK [http://localhost/]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing HomeController#index (for 127.0.0.1 at 2010-04-12 12:15:40) [GET]
+Rendering template within layouts/gifts
+Rendering home/index
+Rendered shared/_version (0.1ms)
+Rendered shared/_welcome_header (1.0ms)
+Rendered shared/_gifts_header (3.8ms)
+Rendered shared/_footer (0.4ms)
+Rendered shared/_analytics (0.1ms)
+Completed in 8ms (View: 6, DB: 0) | 200 OK [http://localhost/]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing HomeController#what (for 127.0.0.1 at 2010-04-12 12:17:31) [GET]
+Rendering template within layouts/gifts
+Rendering home/what
+Rendered shared/_version (0.0ms)
+Rendered shared/_welcome_header (0.1ms)
+Rendered shared/_gifts_header (0.7ms)
+Rendered shared/_footer (0.3ms)
+Rendered shared/_analytics (0.1ms)
+Completed in 7ms (View: 5, DB: 0) | 200 OK [http://localhost/what]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing HomeController#index (for 127.0.0.1 at 2010-04-12 12:17:33) [GET]
+Rendering template within layouts/gifts
+Rendering home/index
+Rendered shared/_version (0.1ms)
+Rendered shared/_welcome_header (0.1ms)
+Rendered shared/_gifts_header (0.8ms)
+Rendered shared/_footer (0.3ms)
+Rendered shared/_analytics (0.1ms)
+Completed in 5ms (View: 3, DB: 0) | 200 OK [http://localhost/]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing HomeController#tell (for 127.0.0.1 at 2010-04-12 12:17:36) [GET]
+Rendering template within layouts/gifts
+Rendering home/tell
+Rendered shared/_version (0.1ms)
+Rendered shared/_welcome_header (0.1ms)
+Rendered shared/_gifts_header (0.7ms)
+Rendered shared/_footer (0.3ms)
+Rendered shared/_analytics (0.1ms)
+Completed in 6ms (View: 4, DB: 0) | 200 OK [http://localhost/tell]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing HomeController#index (for 127.0.0.1 at 2010-04-12 12:17:38) [GET]
+Rendering template within layouts/gifts
+Rendering home/index
+Rendered shared/_version (0.1ms)
+Rendered shared/_welcome_header (0.1ms)
+Rendered shared/_gifts_header (0.7ms)
+Rendered shared/_footer (0.3ms)
+Rendered shared/_analytics (0.1ms)
+Completed in 4ms (View: 3, DB: 0) | 200 OK [http://localhost/]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing HomeController#faq (for 127.0.0.1 at 2010-04-12 12:17:41) [GET]
+Rendering template within layouts/gifts
+Rendering home/faq
+Rendered shared/_version (0.1ms)
+Rendered shared/_welcome_header (0.1ms)
+Rendered shared/_gifts_header (0.7ms)
+Rendered shared/_footer (0.4ms)
+Rendered shared/_analytics (0.1ms)
+Completed in 9ms (View: 7, DB: 0) | 200 OK [http://localhost/faq]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing HomeController#index (for 127.0.0.1 at 2010-04-12 12:17:44) [GET]
+Rendering template within layouts/gifts
+Rendering home/index
+Rendered shared/_version (0.1ms)
+Rendered shared/_welcome_header (0.1ms)
+Rendered shared/_gifts_header (0.7ms)
+Rendered shared/_footer (0.3ms)
+Rendered shared/_analytics (0.1ms)
+Completed in 4ms (View: 3, DB: 0) | 200 OK [http://localhost/]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing HomeController#contact (for 127.0.0.1 at 2010-04-12 12:17:46) [GET]
+Rendering template within layouts/gifts
+Rendering home/contact
+Rendered shared/_version (0.1ms)
+Rendered shared/_welcome_header (0.1ms)
+Rendered shared/_gifts_header (0.7ms)
+Rendered shared/_footer (0.3ms)
+Rendered shared/_analytics (0.1ms)
+Completed in 6ms (View: 5, DB: 0) | 200 OK [http://localhost/contact]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing HomeController#index (for 127.0.0.1 at 2010-04-12 12:17:48) [GET]
+Rendering template within layouts/gifts
+Rendering home/index
+Rendered shared/_version (0.1ms)
+Rendered shared/_welcome_header (0.1ms)
+Rendered shared/_gifts_header (0.7ms)
+Rendered shared/_footer (0.3ms)
+Rendered shared/_analytics (0.1ms)
+Completed in 4ms (View: 3, DB: 0) | 200 OK [http://localhost/]

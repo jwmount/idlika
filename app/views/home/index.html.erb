@@ -1,11 +1,10 @@
 <!-- shared/header.html.erb -->
 
-<% block_links = false %>
 
 <div id="step123">
 	
     <div id="step1">
-	<% if block_links %>
+	<% if !show_links? %>
 	  <h1><b>Step 1</b></h1>
 	<% else %>
 	  <a href="my-idlika.html"><h1><b>Step 1</b></h1>
@@ -16,7 +15,7 @@
     </div><!-- step1 -->
     
     <div id="step2">
-	<% if block_links %>
+	<% if !show_links? %>
 	  <h1><b>Step 2</b></h1>
     <% else %>
       <a href="my-idlika.html"><h1><b>Step 2</b></h1>
@@ -27,7 +26,7 @@
     </div><!-- step2 -->
     
     <div id="step3">
-	<% if block_links %>
+	<% if !show_links? %>
       <h1><b>Step 3</b></h1>
 	<% else %>
       <a href="my-idlika.html"><h1><b>Step 3</b></h1>
@@ -40,25 +39,24 @@
 <div class="clearer"></div>
 </div><!-- step123 -->
 
-<!-- div id="take_action">
-<% if 0 %>
-<ul>
+<!-- div id="take_action" -->
+<% if show_links? %>
+  <ul>
 	<li style="float:left; margin:20px 0px 10px 10px"><%= link_to(image_tag("/images/btn_getstarted.gif", 
         {:alt => 'Start using idlika', :class=>"ta_start"}), new_user_path) %></li>
 	<li style="margin:20px 20px 20px 20px;"><%= link_to(image_tag("/images/btn_howitworks.gif", 
 	    {:alt => 'How to use idlika', :class=>"ta_how"}), how_path)%></li>
 	<li style="float:right; margin:20px 20px 20px 20px;"><%= link_to(image_tag("/images/btn_login.gif",      
         {:alt => 'login to idlika',  :class=>"ta_login"}), login_path) %></li>
-</ul>
-<% else %>
-<ul><li><a href="login.html" class="ta_login"><b>Log In</b></a></li>
+  </ul>
+<!-- % else %>
+  <ul><li><a href="login.html" class="ta_login"><b>Log In</b></a></li>
 	<li><a href="how-it-works.html" class="ta_how"><b>How It Works</b></a></li>
     <li><a href="get-started.html" class="ta_start"><b>Get Started</b></a></li>
-</ul>
+  </ul -->
 <% end %>
 <div class="clearer"></div>
-</div>< take_action -->
-
+</div><!-- take_action -->
 <!-- shared/footer.html.erb -->
 
 

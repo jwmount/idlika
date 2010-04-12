@@ -7,9 +7,14 @@ class ApplicationController < ActionController::Base
   layout = 'application'
   
   helper_method :current_user
-
+  helper_method :show_links?
+  
    private
 
+   def show_links?
+     false
+   end
+   
    def current_user_session
      return @current_user_session if defined?(@current_user_session)
      @current_user_session = UserSession.find
