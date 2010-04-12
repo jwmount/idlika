@@ -1,4 +1,20 @@
+
+
 <div id="loginarea">
-	<% debugger %>
-Welcome back, <a href="my-account.html" class="name"><%= :username %>!</a> | <%= link_to 'LOG OUT', logout_path %>
+<!-- TEMPORARY UNDER CONSTRUCTION TEST -->
+<% ENV['RAILS_ENV'] = 'development'%>
+
+  <% if ENV['RAILS_ENV'] == 'development' %>
+	<div id="user_nav">
+		<% if current_user %>
+		  Welcome back, <b>:current</b>.  |  
+		  <!-- %= link_to "Edit Profile", edit_user_path(:current)% -->
+		  <%= link_to "Logout", logout_path %>
+		<% else %>
+		  <%= link_to "Register", new_user_path %> |
+		  <%= link_to "Login", login_path %>
+		<% end %>
+	</div>
+
+  <% end %><!-- ENV['RAILS_ENV'] -->
 </div><!-- loginarea -->

@@ -339,7 +339,10 @@ div.agfield {
 /******************* John made these additions ************************/
 #user_nav {
 	float:right;
+	color:#009999;
 	font-size: 12px;
+	color:#009999; text-align:center;
+	
 }
 .explain_doc {
 	width:818px; margin:60px auto 10px auto;
