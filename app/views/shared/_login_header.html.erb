@@ -16,7 +16,10 @@
 
 <div id="nav">
 <ul><li><%= link_to '', root_url, {:class => 'home'} %></li>
+	<li><%= link_to '', gifts_path(@gift), :class=>'gifts' %></li>
+	
 	<li><a href="my-idlika.html" class="gifts"><b>Gifts I'd Like</b></a></li>
+	
     <li><a href="my-account.html" class="myaccnt"><b>My Account</b></a></li>
 	<li><table cellspacing=0>
         <form>
