@@ -36453,3 +36453,247 @@ Rendered shared/_gifts_header (0.7ms)
 Rendered shared/_footer (0.3ms)
 Rendered shared/_analytics (0.1ms)
 Completed in 4ms (View: 3, DB: 0) | 200 OK [http://localhost/]
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing HomeController#index (for 127.0.0.1 at 2010-04-15 07:09:04) [GET]
+Rendering template within layouts/gifts
+Rendering home/index
+Rendered shared/_version (6.4ms)
+Rendered shared/_welcome_header (10.8ms)
+Rendered shared/_gifts_header (23.2ms)
+Rendered shared/_footer (5.8ms)
+Rendered shared/_analytics (16.2ms)
+Completed in 142ms (View: 141, DB: 0) | 200 OK [http://localhost/]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing HomeController#what (for 127.0.0.1 at 2010-04-15 07:09:12) [GET]
+Rendering template within layouts/gifts
+Rendering home/what
+Rendered shared/_version (0.1ms)
+Rendered shared/_welcome_header (0.1ms)
+Rendered shared/_gifts_header (0.8ms)
+Rendered shared/_footer (0.4ms)
+Rendered shared/_analytics (0.1ms)
+Completed in 18ms (View: 17, DB: 0) | 200 OK [http://localhost/what]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing HomeController#what (for 127.0.0.1 at 2010-04-15 07:11:27) [GET]
+Rendering template within layouts/gifts
+Rendering home/what
+Rendered shared/_version (0.1ms)
+Rendered shared/_welcome_header (0.1ms)
+Rendered shared/_gifts_header (0.7ms)
+Rendered shared/_footer (0.3ms)
+Rendered shared/_analytics (0.1ms)
+Completed in 7ms (View: 5, DB: 0) | 200 OK [http://localhost/what]
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing HomeController#what (for 127.0.0.1 at 2010-04-15 07:11:49) [GET]
+Rendering template within layouts/gifts
+Rendering home/what
+Rendered shared/_version (0.3ms)
+Rendered shared/_welcome_header (0.9ms)
+Rendered shared/_gifts_header (5.5ms)
+Rendered shared/_footer (1.2ms)
+Rendered shared/_analytics (0.9ms)
+Completed in 29ms (View: 27, DB: 0) | 200 OK [http://localhost/what]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-04-15 07:12:06) [GET]
+
+ActionController::RoutingError (No route matches "/index.html" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing HomeController#index (for 127.0.0.1 at 2010-04-15 07:12:33) [GET]
+Rendering template within layouts/gifts
+Rendering home/index
+Rendered shared/_version (0.1ms)
+Rendered shared/_welcome_header (0.1ms)
+Rendered shared/_gifts_header (0.7ms)
+Rendered shared/_footer (0.4ms)
+Rendered shared/_analytics (0.1ms)
+Completed in 8ms (View: 6, DB: 0) | 200 OK [http://localhost/]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing HomeController#what (for 127.0.0.1 at 2010-04-15 07:12:38) [GET]
+Rendering template within layouts/gifts
+Rendering home/what
+Rendered shared/_version (0.1ms)
+Rendered shared/_welcome_header (0.1ms)
+Rendered shared/_gifts_header (0.7ms)
+Rendered shared/_footer (0.3ms)
+Rendered shared/_analytics (0.1ms)
+Completed in 4ms (View: 3, DB: 0) | 200 OK [http://localhost/what]
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing HomeController#what (for 127.0.0.1 at 2010-04-15 07:14:09) [GET]
+Rendering template within layouts/gifts
+Rendering home/what
+Rendered shared/_version (0.3ms)
+Rendered shared/_welcome_header (0.9ms)
+Rendered shared/_gifts_header (5.7ms)
+Rendered shared/_footer (1.2ms)
+Rendered shared/_analytics (0.9ms)
+Completed in 28ms (View: 27, DB: 0) | 200 OK [http://localhost/what]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing HomeController#contact (for 127.0.0.1 at 2010-04-15 07:23:46) [GET]
+Rendering template within layouts/gifts
+Rendering home/contact
+Rendered shared/_version (0.1ms)
+Rendered shared/_welcome_header (0.1ms)
+Rendered shared/_gifts_header (1.0ms)
+Rendered shared/_footer (0.4ms)
+Rendered shared/_analytics (0.1ms)
+Completed in 16ms (View: 15, DB: 0) | 200 OK [http://localhost/contact]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing HomeController#faq (for 127.0.0.1 at 2010-04-15 07:23:52) [GET]
+Rendering template within layouts/gifts
+Rendering home/faq
+Rendered shared/_version (0.1ms)
+Rendered shared/_welcome_header (0.1ms)
+Rendered shared/_gifts_header (1.1ms)
+Rendered shared/_footer (0.4ms)
+Rendered shared/_analytics (0.1ms)
+Completed in 23ms (View: 21, DB: 0) | 200 OK [http://localhost/faq]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing HomeController#advertise (for 127.0.0.1 at 2010-04-15 07:24:35) [GET]
+Rendering template within layouts/gifts
+Rendering home/advertise
+Rendered shared/_version (0.1ms)
+Rendered shared/_welcome_header (0.1ms)
+Rendered shared/_gifts_header (0.9ms)
+Rendered shared/_footer (0.4ms)
+Rendered shared/_analytics (0.1ms)
+Completed in 19ms (View: 17, DB: 0) | 200 OK [http://localhost/advertise]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing HomeController#faq (for 127.0.0.1 at 2010-04-15 07:24:38) [GET]
+Rendering template within layouts/gifts
+Rendering home/faq
+Rendered shared/_version (0.1ms)
+Rendered shared/_welcome_header (0.1ms)
+Rendered shared/_gifts_header (0.8ms)
+Rendered shared/_footer (0.4ms)
+Rendered shared/_analytics (0.1ms)
+Completed in 5ms (View: 3, DB: 0) | 200 OK [http://localhost/faq]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing HomeController#faq (for 127.0.0.1 at 2010-04-15 07:25:31) [GET]
+Rendering template within layouts/gifts
+Rendering home/faq
+Rendered shared/_version (0.0ms)
+Rendered shared/_welcome_header (0.1ms)
+Rendered shared/_gifts_header (0.7ms)
+Rendered shared/_footer (0.3ms)
+Rendered shared/_analytics (0.1ms)
+Completed in 8ms (View: 7, DB: 0) | 200 OK [http://localhost/faq]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing HomeController#privacy (for 127.0.0.1 at 2010-04-15 07:26:56) [GET]
+Rendering template within layouts/gifts
+Rendering home/privacy
+Rendered shared/_version (0.1ms)
+Rendered shared/_welcome_header (0.1ms)
+Rendered shared/_gifts_header (0.9ms)
+Rendered shared/_footer (0.4ms)
+Rendered shared/_analytics (0.1ms)
+Completed in 21ms (View: 19, DB: 0) | 200 OK [http://localhost/privacy]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing HomeController#terms (for 127.0.0.1 at 2010-04-15 07:27:02) [GET]
+Rendering template within layouts/gifts
+Rendering home/terms
+Rendered shared/_version (0.1ms)
+Rendered shared/_welcome_header (0.1ms)
+Rendered shared/_gifts_header (0.7ms)
+Rendered shared/_footer (0.3ms)
+Rendered shared/_analytics (0.1ms)
+Completed in 23ms (View: 21, DB: 0) | 200 OK [http://localhost/terms]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing HomeController#privacy (for 127.0.0.1 at 2010-04-15 07:27:08) [GET]
+Rendering template within layouts/gifts
+Rendering home/privacy
+Rendered shared/_version (0.1ms)
+Rendered shared/_welcome_header (0.1ms)
+Rendered shared/_gifts_header (0.8ms)
+Rendered shared/_footer (0.4ms)
+Rendered shared/_analytics (0.1ms)
+Completed in 5ms (View: 3, DB: 0) | 200 OK [http://localhost/privacy]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing HomeController#what (for 127.0.0.1 at 2010-04-15 07:27:11) [GET]
+Rendering template within layouts/gifts
+Rendering home/what
+Rendered shared/_version (0.1ms)
+Rendered shared/_welcome_header (0.1ms)
+Rendered shared/_gifts_header (0.7ms)
+Rendered shared/_footer (0.3ms)
+Rendered shared/_analytics (0.1ms)
+Completed in 4ms (View: 3, DB: 0) | 200 OK [http://localhost/what]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing HomeController#how (for 127.0.0.1 at 2010-04-15 07:27:13) [GET]
+Rendering template within layouts/gifts
+Rendering home/how
+Rendered shared/_version (0.1ms)
+Rendered shared/_welcome_header (0.1ms)
+Rendered shared/_gifts_header (0.9ms)
+Rendered shared/_footer (0.4ms)
+Rendered shared/_analytics (0.1ms)
+Completed in 20ms (View: 18, DB: 0) | 200 OK [http://localhost/how]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing HomeController#tell (for 127.0.0.1 at 2010-04-15 07:27:21) [GET]
+Rendering template within layouts/gifts
+Rendering home/tell
+Rendered shared/_version (0.1ms)
+Rendered shared/_welcome_header (0.1ms)
+Rendered shared/_gifts_header (1.1ms)
+Rendered shared/_footer (0.4ms)
+Rendered shared/_analytics (0.1ms)
+Completed in 69ms (View: 68, DB: 0) | 200 OK [http://localhost/tell]
