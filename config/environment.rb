@@ -2,7 +2,7 @@
 
 # Specifies gem version of Rails to use when vendor/rails is not present
 RAILS_GEM_VERSION = '2.3.3' unless defined? RAILS_GEM_VERSION
-ENV['IDLIKA_VERSION'] = '0.010'
+ENV['IDLIKA_VERSION'] = '0.011'
 
 # Bootstrap the Rails environment, frameworks, and default configuration
 require File.join(File.dirname(__FILE__), 'boot')
