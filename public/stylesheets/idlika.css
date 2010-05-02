@@ -115,15 +115,15 @@ table, td {
 #take_action li a b { display:none; }
 
 a.ta_login { 
-	width:289px; height:57px; display:block; margin:12px 0px 0px 16px; background:url(/images/btn_login.gif);
+	width:289px; height:57px; display:block; margin:0px 0px 0px 0px; background:url(/images/btn_login.gif);
 }
 
 a.ta_how {
-	width:289px; height:57px; display:block; margin:12px 0px 0px 32px; background:url(../images/btn_howitworks.gif);
+	width:289px; height:57px; display:block; margin:12px 0px 0px 0px; background:url(../images/btn_howitworks.gif);
 }
 
 a.ta_start {
-	width:289px; height:57px; display:block; margin:12px 0px 0px 30px; background:url(../images/btn_getstarted.gif);
+	width:289px; height:57px; display:block; margin:0px 0px 0px 0px; background:url(../images/btn_getstarted.gif);
 }
 /********** end splash page styles **********/
 

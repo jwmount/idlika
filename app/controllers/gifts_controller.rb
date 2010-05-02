@@ -1,4 +1,5 @@
 class GiftsController < ApplicationController
+  filter_resource_access
   layout = 'gifts'
   
   def welcome
@@ -15,8 +16,6 @@ class GiftsController < ApplicationController
 
 
   def show
-    @gift = Gift.find(params[:id])
-
     respond_to do |format|
       format.html # show.html.erb
       format.xml  { render :xml => @gift }
@@ -25,20 +24,12 @@ class GiftsController < ApplicationController
 
 
   def new
-    @gift = Gift.new
-    respond_to do |format|
-      format.html # new.html.erb
-      format.xml  { render :xml => @gift }
-    end
   end
 
 
   def edit
-    @gift = Gift.find(params[:id])
   end
 
-  # POST /gifts
-  # POST /gifts.xml
   def create
     @gift = Gift.new(params[:gift])
 
@@ -54,11 +45,7 @@ class GiftsController < ApplicationController
     end
   end
 
-  # PUT /gifts/1
-  # PUT /gifts/1.xml
   def update
-    @gift = Gift.find(params[:id])
-
     respond_to do |format|
       if @gift.update_attributes(params[:gift])
         flash[:notice] = 'Gift was successfully updated.'
@@ -71,10 +58,7 @@ class GiftsController < ApplicationController
     end
   end
 
-  # DELETE /gifts/1
-  # DELETE /gifts/1.xml
   def destroy
-    @gift = Gift.find(params[:id])
     @gift.destroy
 
     respond_to do |format|

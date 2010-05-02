@@ -19,5 +19,13 @@
   <p>
 	<%= f.check_box( :terms_accepted_cb) %>I have read and accepted idlika's Terms and Conditions.
   </p>
+  <p>
+    <%= f.label :roles %><br />
+    <% for role in Role.all %>
+      <%= check_box_tag "user[role_ids][]", role.id, @user.roles.include?(role) %>
+      <%=h role.name %> -- <%=h role.description %><br />
+    <% end %>
+  </p>
+
   <p><%= f.submit "Submit" %></p>
 <% end %>

@@ -1,11 +1,15 @@
 class HomeController < ApplicationController
+#  filter_resource_access
   
   layout 'gifts'
-  
-  def contact
-  end
+
   
   def index
+  end
+
+
+  
+  def contact
   end
 
   def how

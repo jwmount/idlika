@@ -1,2 +1,5 @@
 class Gift < ActiveRecord::Base
-end
+ 
+ belongs_to :registry
+  
+ end

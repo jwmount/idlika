@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20100411203444) do
+ActiveRecord::Schema.define(:version => 20100429214417) do
 
   create_table "gifts", :force => true do |t|
     t.integer  "giver_id"
@@ -35,7 +35,23 @@ ActiveRecord::Schema.define(:version => 20100411203444) do
     t.datetime "updated_at"
   end
 
+  create_table "groups", :force => true do |t|
+    t.integer  "user_id"
+    t.string   "name"
+    t.integer  "givers_count"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "roles", :force => true do |t|
+    t.string   "role"
+    t.string   "description"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
   create_table "users", :force => true do |t|
+    t.string   "user_id"
     t.string   "username"
     t.string   "email"
     t.string   "crypted_password"
@@ -44,7 +60,7 @@ ActiveRecord::Schema.define(:version => 20100411203444) do
     t.datetime "deleted_at"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.integer  "terms_accepted_cb"
+    t.boolean  "terms_accepted_cb", :default => false, :null => false
   end
 
 end

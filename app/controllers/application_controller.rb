@@ -2,17 +2,31 @@
 # Likewise, all the methods added will be available for all controllers.
 
 class ApplicationController < ActionController::Base
-  helper :all # include all helpers, all the time
-  protect_from_forgery # See ActionController::RequestForgeryProtection for details
-  layout = 'application'
-  
+#  include Authentication
+  include AuthenticatedSystem 
+
+  helper :all
+  protect_from_forgery
+  before_filter { |c| Authorization.current_user = c.current_user }
+
   helper_method :current_user
   helper_method :show_links?
+  filter_parameter_logging :password
   
-   private
+  # = = = = = =  = = = = = = = = = == =  
+#  protected
+  
+  def permission_denied
+    flash[:error] = "Sorry, you are NOT allowed to access that page."
+    redirect_to root_url
+  end
+
+  # = = = = = =  = = = = = = = = = == =  
+  
+#   private
 
    def show_links?
-     false
+     true
    end
    
    def current_user_session
@@ -25,6 +39,4 @@ class ApplicationController < ActionController::Base
      @current_user = current_user_session && current_user_session.record
    end
 
-  # Scrub sensitive parameters from your log
-  # filter_parameter_logging :password
 end

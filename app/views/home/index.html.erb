@@ -1,6 +1,5 @@
 <!-- shared/header.html.erb -->
 
-
 <div id="step123">
 	
     <div id="step1">
@@ -42,12 +41,12 @@
 <!-- div id="take_action" -->
 <% if show_links? %>
   <ul>
-	<li style="float:left; margin:20px 0px 10px 10px"><%= link_to(image_tag("/images/btn_getstarted.gif", 
-        {:alt => 'Start using idlika', :class=>"ta_start"}), new_user_path) %></li>
-	<li style="margin:20px 20px 20px 20px;"><%= link_to(image_tag("/images/btn_howitworks.gif", 
-	    {:alt => 'How to use idlika', :class=>"ta_how"}), how_path)%></li>
-	<li style="float:right; margin:20px 20px 20px 20px;"><%= link_to(image_tag("/images/btn_login.gif",      
-        {:alt => 'login to idlika',  :class=>"ta_login"}), login_path) %></li>
+	<ui style="float:left;">
+	    <%= link_to(image_tag("/images/btn_getstarted.gif", {:alt => 'Start using idlika', :class=>"ta_start"}), new_user_path) %></li>
+	<ui style="float:center;">
+		    <%= link_to(image_tag("/images/btn_howitworks.gif", {:alt => 'How to use idlika', :class=>"ta_how"}), how_path)%></li>
+	<ui>
+	    <%= link_to(image_tag("/images/btn_login.gif",  {:alt => 'login to idlika',  :class=>"ta_login"}), login_path) %></li>
   </ul>
 <!-- % else %>
   <ul><li><a href="login.html" class="ta_login"><b>Log In</b></a></li>
