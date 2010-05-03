@@ -7,6 +7,10 @@ img { border:0px; }
 
 div.clearer { clear:both; overflow:hidden; }
 
+.idlikablue A:link{color:#006666}
+.idlikablue A:visited{color:#006666}
+.idlikablue A:active{color:#006666}
+
 table, td {
 	border:0px; margin:0px; padding:0px;
 }

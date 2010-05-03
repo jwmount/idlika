@@ -1,5 +1,5 @@
 class Gift < ActiveRecord::Base
  
- belongs_to :registry
+ belongs_to :user
   
  end

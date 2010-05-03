@@ -5,11 +5,13 @@
 
 <div id="li_sidebar">
 <ul><li><a href="my-registries.html" class="myreg_set"><b>My Registries</b></a></li>
+	<li><a href="show_registry.html">Recently Added</a></li>
 	<li><a href="show_registry.html">Birthday List</a></li>
     <li><a href="show_registry.html">Clothes</a></li>
     <li><%= link_to '', root_url %></li>
     <li><a href="new-registry.html" class="newreg"><b>New Registry</b></a></li>
-    <li><!-- a href="add-gift.rhtml" class="addgift"><b>Add A Gift</b></a></li -->
+    <li><%= link_to '', new_registry_path, :class => "newreg" %>
+    <li><%= link_to '', new_gift_path, :class => "addgift" %></li>
     <li><%= link_to '', new_gift_path, :class => "addgift" %></li>
 </ul>
 </div><!-- li_sidebar -->

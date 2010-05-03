@@ -4,8 +4,8 @@ class User < ActiveRecord::Base
   
   has_many :gifts, :dependent => :destroy
   has_many :registries, :dependent => :destroy
-  has_many :roles, :through => :registries, :source => :user  #.  Is it one of :gifts or :user?
-  
+#  has_many :roles, :through => :registries, :source => :user
+
   def role_symbols
     roles.map do |role|
       role.username.underscore.to_sym
