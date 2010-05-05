@@ -1,86 +1,25 @@
-
 <br/>
-
 <div id="li_body">
 
 <div id="li_sidebar">
 <ul><li><a href="my-registries.html" class="myreg_set"><b>My Registries</b></a></li>
-	<li><a href="show_registry.html">Recently Added</a></li>
-	<li><a href="show_registry.html">Birthday List</a></li>
-    <li><a href="show_registry.html">Clothes</a></li>
-    <li><%= link_to '', root_url %></li>
-    <li><a href="new-registry.html" class="newreg"><b>New Registry</b></a></li>
-    <li><%= link_to '', new_registry_path, :class => "newreg" %>
-    <li><%= link_to '', new_gift_path, :class => "addgift" %></li>
-    <li><%= link_to '', new_gift_path, :class => "addgift" %></li>
+  <%= render :partial => "registries" %>
+  <li><%= link_to '', new_user_registry_path(@user), :class => "newreg" %>
+  <li><% if @new_registry %>
+        <%= render :partial => 'new_gift_registry' %>
+	  <% end %>
+  </li>
+  <li><%= link_to '', new_gift_path, :class => "addgift" %></li>
 </ul>
 </div><!-- li_sidebar -->
 
 <div id="li_content">
-<h1 class="recently_added"><b>Recently Added gifts</b></h1>
-
-<div id="recent">
-
-<!-- item 1 -->
-<div class="item">
-<div class="item_inner" style="background:url(images/items/item1.jpg); background-position:50%, 50%; background-repeat:no-repeat;">
-<div class="actions">
-	<a href="item.html"><img src="images/btn_details.png" alt="Show Details / Edit Item" /></a><a href="delete.html"><img src="images/btn_delete.png" alt="Remove Item" /></a><a href="share.html"><img src="images/btn_share.png" alt="Share Item" /></a>
-</div><!-- actions -->
-</div><!-- item_inner -->
-</div><!-- item -->
-
-<!-- item 2 -->
-<div class="item2">
-<div class="item_inner" style="background:url(images/items/item2.jpg); background-position:50%, 50%; background-repeat:no-repeat;">
-<div class="actions">
-	<a href="item.html"><img src="images/btn_details.png" alt="Show Details / Edit Item" /></a><a href="delete.html"><img src="images/btn_delete.png" alt="Remove Item" /></a><a href="share.html"><img src="images/btn_share.png" alt="Share Item" /></a>
-</div><!-- actions -->
-</div><!-- item_inner -->
-</div><!-- item2 -->
-
-<!-- item 3 -->
-<div class="item">
-<div class="item_inner" style="background:url(images/items/item3.jpg); background-position:50%, 50%; background-repeat:no-repeat;">
-<div class="actions">
-	<a href="item.html"><img src="images/btn_details.png" alt="Show Details / Edit Item" /></a><a href="delete.html"><img src="images/btn_delete.png" alt="Remove Item" /></a><a href="share.html"><img src="images/btn_share.png" alt="Share Item" /></a>
-</div><!-- actions -->
-</div><!-- item_inner -->
-</div><!-- item -->
-
-<div class="clearer"></div>
-
-<!-- item 4 -->
-<div class="item">
-<div class="item_inner" style="background:url(images/items/item4.jpg); background-position:50%, 50%; background-repeat:no-repeat;">
-<div class="actions">
-	<a href="item.html"><img src="images/btn_details.png" alt="Show Details / Edit Item" /></a><a href="delete.html"><img src="images/btn_delete.png" alt="Remove Item" /></a><a href="share.html"><img src="images/btn_share.png" alt="Share Item" /></a>
-</div><!-- actions -->
-</div><!-- item_inner -->
-</div><!-- item -->
-
-<!-- item 5 -->
-<div class="item2">
-<div class="item_inner" style="background:url(images/items/item5.jpg); background-position:50%, 50%; background-repeat:no-repeat;">
-<div class="actions">
-	<a href="item.html"><img src="images/btn_details.png" alt="Show Details / Edit Item" /></a><a href="delete.html"><img src="images/btn_delete.png" alt="Remove Item" /></a><a href="share.html"><img src="images/btn_share.png" alt="Share Item" /></a>
-</div><!-- actions -->
-</div><!-- item_inner -->
-</div><!-- item -->
-
-<!-- item 6 -->
-<div class="item">
-<div class="item_inner" style="background:url(images/items/item6.jpg); background-position:50%, 50%; background-repeat:no-repeat;">
-<div class="actions">
-	<a href="item.html"><img src="images/btn_details.png" alt="Show Details / Edit Item" /></a><a href="delete.html"><img src="images/btn_delete.png" alt="Remove Item" /></a><a href="share.html"><img src="images/btn_share.png" alt="Share Item" /></a>
-</div><!-- actions -->
-</div><!-- item_inner -->
-</div><!-- item -->
-
-<div class="clearer"></div>
-
-</div><!-- recent -->
-
+  <h1><%=h @registry.name %></h1>
+  <% if !@items.nil? %>
+    <%= render :partial => 'registry_container', :collection => @items %>
+  <% else %>
+	<h3>It looks like there's nothing you want in the registry!  Why not add something so your friends can see it?.</h3>
+  <% end %>
 </div><!-- li_content -->
 
 <div class="clearer"></div>

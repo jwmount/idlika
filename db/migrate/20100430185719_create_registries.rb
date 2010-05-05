@@ -4,7 +4,7 @@ class CreateRegistries < ActiveRecord::Migration
 
       t.integer :user_id      #member who 'owns' this registry
       t.string  :name
-      t.integer :gifts_count
+      t.integer :items_count
 
       t.timestamps
     end

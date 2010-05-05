@@ -1,0 +1,17 @@
+<!-- registry container -->
+
+  <table>
+    <tr>
+	  <% while item = @items.delete_at(0) %>
+	    <td><%= render :partial => 'registry_item' %></td>
+            <% i = (i ||= 0) + 1 %>
+            <% if i == 3 then i = 0 end%>
+            <% if i == 0 %></tr><% end %>
+	  <% end %>
+    </tr>
+  </table>
+
+
+
+<div class="clearer"></div>
+

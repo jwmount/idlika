@@ -4,9 +4,24 @@ suggest_change_authorization_rules GET    /authorization_rules/suggest_change(.:
          graph_authorization_rules GET    /authorization_rules/graph(.:format)              {:controller=>"authorization_rules", :action=>"graph"}
                authorization_rules GET    /authorization_rules(.:format)                    {:controller=>"authorization_rules", :action=>"index"}
               authorization_usages GET    /authorization_usages(.:format)                   {:controller=>"authorization_usages", :action=>"index"}
+                             items GET    /items(.:format)                                  {:controller=>"items", :action=>"index"}
+                                   POST   /items(.:format)                                  {:controller=>"items", :action=>"create"}
+                          new_item GET    /items/new(.:format)                              {:controller=>"items", :action=>"new"}
+                         edit_item GET    /items/:id/edit(.:format)                         {:controller=>"items", :action=>"edit"}
+                              item GET    /items/:id(.:format)                              {:controller=>"items", :action=>"show"}
+                                   PUT    /items/:id(.:format)                              {:controller=>"items", :action=>"update"}
+                                   DELETE /items/:id(.:format)                              {:controller=>"items", :action=>"destroy"}
+                      descriptions GET    /descriptions(.:format)                           {:controller=>"descriptions", :action=>"index"}
+                                   POST   /descriptions(.:format)                           {:controller=>"descriptions", :action=>"create"}
+                   new_description GET    /descriptions/new(.:format)                       {:controller=>"descriptions", :action=>"new"}
+                  edit_description GET    /descriptions/:id/edit(.:format)                  {:controller=>"descriptions", :action=>"edit"}
+                       description GET    /descriptions/:id(.:format)                       {:controller=>"descriptions", :action=>"show"}
+                                   PUT    /descriptions/:id(.:format)                       {:controller=>"descriptions", :action=>"update"}
+                                   DELETE /descriptions/:id(.:format)                       {:controller=>"descriptions", :action=>"destroy"}
                              login        /login                                            {:controller=>"user_sessions", :action=>"new"}
                             logout        /logout                                           {:controller=>"user_sessions", :action=>"destroy"}
                             signup        /signup                                           {:controller=>"user_sessions", :action=>"new"}
+                  current_registry        /current_registry                                 {:controller=>"gifts", :action=>"index"}
                                how        /how                                              {:controller=>"home", :action=>"how"}
                               what        /what                                             {:controller=>"home", :action=>"what"}
                                faq        /faq                                              {:controller=>"home", :action=>"faq"}
@@ -22,6 +37,13 @@ suggest_change_authorization_rules GET    /authorization_rules/suggest_change(.:
                               user GET    /users/:id(.:format)                              {:controller=>"users", :action=>"show"}
                                    PUT    /users/:id(.:format)                              {:controller=>"users", :action=>"update"}
                                    DELETE /users/:id(.:format)                              {:controller=>"users", :action=>"destroy"}
+                   user_registries GET    /users/:user_id/registries(.:format)              {:controller=>"registries", :action=>"index"}
+                                   POST   /users/:user_id/registries(.:format)              {:controller=>"registries", :action=>"create"}
+                 new_user_registry GET    /users/:user_id/registries/new(.:format)          {:controller=>"registries", :action=>"new"}
+                edit_user_registry GET    /users/:user_id/registries/:id/edit(.:format)     {:controller=>"registries", :action=>"edit"}
+                     user_registry GET    /users/:user_id/registries/:id(.:format)          {:controller=>"registries", :action=>"show"}
+                                   PUT    /users/:user_id/registries/:id(.:format)          {:controller=>"registries", :action=>"update"}
+                                   DELETE /users/:user_id/registries/:id(.:format)          {:controller=>"registries", :action=>"destroy"}
                         user_roles GET    /users/:user_id/roles(.:format)                   {:controller=>"roles", :action=>"index"}
                                    POST   /users/:user_id/roles(.:format)                   {:controller=>"roles", :action=>"create"}
                      new_user_role GET    /users/:user_id/roles/new(.:format)               {:controller=>"roles", :action=>"new"}
@@ -50,13 +72,13 @@ suggest_change_authorization_rules GET    /authorization_rules/suggest_change(.:
                           registry GET    /registries/:id(.:format)                         {:controller=>"registries", :action=>"show"}
                                    PUT    /registries/:id(.:format)                         {:controller=>"registries", :action=>"update"}
                                    DELETE /registries/:id(.:format)                         {:controller=>"registries", :action=>"destroy"}
-                    registry_gifts GET    /registries/:registry_id/gifts(.:format)          {:controller=>"gifts", :action=>"index"}
-                                   POST   /registries/:registry_id/gifts(.:format)          {:controller=>"gifts", :action=>"create"}
-                 new_registry_gift GET    /registries/:registry_id/gifts/new(.:format)      {:controller=>"gifts", :action=>"new"}
-                edit_registry_gift GET    /registries/:registry_id/gifts/:id/edit(.:format) {:controller=>"gifts", :action=>"edit"}
-                     registry_gift GET    /registries/:registry_id/gifts/:id(.:format)      {:controller=>"gifts", :action=>"show"}
-                                   PUT    /registries/:registry_id/gifts/:id(.:format)      {:controller=>"gifts", :action=>"update"}
-                                   DELETE /registries/:registry_id/gifts/:id(.:format)      {:controller=>"gifts", :action=>"destroy"}
+                    registry_items GET    /registries/:registry_id/items(.:format)          {:controller=>"items", :action=>"index"}
+                                   POST   /registries/:registry_id/items(.:format)          {:controller=>"items", :action=>"create"}
+                 new_registry_item GET    /registries/:registry_id/items/new(.:format)      {:controller=>"items", :action=>"new"}
+                edit_registry_item GET    /registries/:registry_id/items/:id/edit(.:format) {:controller=>"items", :action=>"edit"}
+                     registry_item GET    /registries/:registry_id/items/:id(.:format)      {:controller=>"items", :action=>"show"}
+                                   PUT    /registries/:registry_id/items/:id(.:format)      {:controller=>"items", :action=>"update"}
+                                   DELETE /registries/:registry_id/items/:id(.:format)      {:controller=>"items", :action=>"destroy"}
                              gifts GET    /gifts(.:format)                                  {:controller=>"gifts", :action=>"index"}
                                    POST   /gifts(.:format)                                  {:controller=>"gifts", :action=>"create"}
                           new_gift GET    /gifts/new(.:format)                              {:controller=>"gifts", :action=>"new"}
@@ -64,6 +86,33 @@ suggest_change_authorization_rules GET    /authorization_rules/suggest_change(.:
                               gift GET    /gifts/:id(.:format)                              {:controller=>"gifts", :action=>"show"}
                                    PUT    /gifts/:id(.:format)                              {:controller=>"gifts", :action=>"update"}
                                    DELETE /gifts/:id(.:format)                              {:controller=>"gifts", :action=>"destroy"}
+                        gift_items GET    /gifts/:gift_id/items(.:format)                   {:controller=>"items", :action=>"index"}
+                                   POST   /gifts/:gift_id/items(.:format)                   {:controller=>"items", :action=>"create"}
+                     new_gift_item GET    /gifts/:gift_id/items/new(.:format)               {:controller=>"items", :action=>"new"}
+                    edit_gift_item GET    /gifts/:gift_id/items/:id/edit(.:format)          {:controller=>"items", :action=>"edit"}
+                         gift_item GET    /gifts/:gift_id/items/:id(.:format)               {:controller=>"items", :action=>"show"}
+                                   PUT    /gifts/:gift_id/items/:id(.:format)               {:controller=>"items", :action=>"update"}
+                                   DELETE /gifts/:gift_id/items/:id(.:format)               {:controller=>"items", :action=>"destroy"}
+              new_gift_description GET    /gifts/:gift_id/description/new(.:format)         {:controller=>"descriptions", :action=>"new"}
+             edit_gift_description GET    /gifts/:gift_id/description/edit(.:format)        {:controller=>"descriptions", :action=>"edit"}
+                  gift_description GET    /gifts/:gift_id/description(.:format)             {:controller=>"descriptions", :action=>"show"}
+                                   PUT    /gifts/:gift_id/description(.:format)             {:controller=>"descriptions", :action=>"update"}
+                                   DELETE /gifts/:gift_id/description(.:format)             {:controller=>"descriptions", :action=>"destroy"}
+                                   POST   /gifts/:gift_id/description(.:format)             {:controller=>"descriptions", :action=>"create"}
+                                   GET    /descriptions(.:format)                           {:controller=>"descriptions", :action=>"index"}
+                                   POST   /descriptions(.:format)                           {:controller=>"descriptions", :action=>"create"}
+                                   GET    /descriptions/new(.:format)                       {:controller=>"descriptions", :action=>"new"}
+                                   GET    /descriptions/:id/edit(.:format)                  {:controller=>"descriptions", :action=>"edit"}
+                                   GET    /descriptions/:id(.:format)                       {:controller=>"descriptions", :action=>"show"}
+                                   PUT    /descriptions/:id(.:format)                       {:controller=>"descriptions", :action=>"update"}
+                                   DELETE /descriptions/:id(.:format)                       {:controller=>"descriptions", :action=>"destroy"}
+                                   GET    /items(.:format)                                  {:controller=>"items", :action=>"index"}
+                                   POST   /items(.:format)                                  {:controller=>"items", :action=>"create"}
+                                   GET    /items/new(.:format)                              {:controller=>"items", :action=>"new"}
+                                   GET    /items/:id/edit(.:format)                         {:controller=>"items", :action=>"edit"}
+                                   GET    /items/:id(.:format)                              {:controller=>"items", :action=>"show"}
+                                   PUT    /items/:id(.:format)                              {:controller=>"items", :action=>"update"}
+                                   DELETE /items/:id(.:format)                              {:controller=>"items", :action=>"destroy"}
                      user_sessions GET    /user_sessions(.:format)                          {:controller=>"user_sessions", :action=>"index"}
                                    POST   /user_sessions(.:format)                          {:controller=>"user_sessions", :action=>"create"}
                   new_user_session GET    /user_sessions/new(.:format)                      {:controller=>"user_sessions", :action=>"new"}

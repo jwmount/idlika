@@ -2,7 +2,7 @@
 # Likewise, all the methods added will be available for all controllers.
 
 class ApplicationController < ActionController::Base
-#  include Authentication
+  include Authentication
   include AuthenticatedSystem 
 
   helper :all

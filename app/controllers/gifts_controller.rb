@@ -1,19 +1,20 @@
 class GiftsController < ApplicationController
-  filter_resource_access
+  before_filter :find_user
   layout = 'gifts'
   
-  def welcome
-  end
-
   def index
-    @gifts = Gift.all
-
+    # This mechanism relies on 'Recently Added' is default id of 1
+    if !params[:registry_id].nil?
+      @registry = Registry.find params[:registry_id]
+    else
+      @registry = Registry.find 1  # HACK HACK HACK
+    end
+    @items = @registry.items.all if @registry.items.count > 0
     respond_to do |format|
       format.html # index.html.erb
       format.xml  { render :xml => @gifts }
     end
   end
-
 
   def show
     respond_to do |format|
@@ -66,4 +67,10 @@ class GiftsController < ApplicationController
       format.xml  { head :ok }
     end
   end
+#= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =
+
+  def find_user
+    @user = current_user
+  end
+  
 end
