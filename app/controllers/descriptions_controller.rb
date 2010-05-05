@@ -49,7 +49,7 @@ class DescriptionsController < ApplicationController
       if @description.save
         flash[:notice] = 'Description was successfully created.'
         format.html { redirect_to([@gift,description]) }
-        format.xml  { render :xml => @description, :status => :created, :location => [@gift,description]) }
+        format.xml  { render :xml => @description, :status => :created, :location => [@gift,@description] }
       else
         format.html { render :action => "new" }
         format.xml  { render :xml => @description.errors, :status => :unprocessable_entity }
@@ -81,7 +81,7 @@ class DescriptionsController < ApplicationController
     @description.destroy
 
     respond_to do |format|
-      format.html { redirect_to(@gift_descriptions_url(@gift)) }
+      format.html { redirect_to(@gift_descriptions_url) }
       format.xml  { head :ok }
     end
   end
