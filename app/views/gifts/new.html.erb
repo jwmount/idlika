@@ -1,76 +1,61 @@
 
-<% form_for(@gift) do |f| %>
-  <%= f.error_messages %>
-
-
 <div id="li_body">
 
-<div id="li_sidebar">
-<ul><li><a href="my-registries.html" class="myreg_set"><b>My Registries</b></a></li>
-	<li><a href="show_registry.html">Birthday List</a></li>
-    <li><a href="show_registry.html">Clothes</a></li>
-    <li><a href="show_registry.html">Home Decor</a></li>
-    <li><a href="new-registry.html" class="newreg"><b>New Registry</b></a></li>
-</ul>
-</div><!-- li_sidebar -->
+	<div id="li_sidebar">
+	<ul><li><a href="my-registries.html" class="myreg_set"><b>My Registries</b></a></li>
+	  <%= render :partial => "registries" %>
+	  <li><%= link_to '', new_user_registry_path(@user), :class => "newreg" %>
+	  <li><% if @new_registry %>
+	        <%= render :partial => 'new_gift_registry' %>
+		  <% end %>
+	  </li>
+	  
+	</ul>
+	</div><!-- li_sidebar -->
 
 <div id="li_content">
-<h1 class="add_a_gift"><b>Add A Gift</b></h1>
+  <h1 class="add_a_gift"><b>Add A Gift</b></h1>
+  <% form_for (@gift, user_gifts_path(@user)) do |f| %>
+    <%= f.error_messages %>
+    <div id="addgift_form">
+    <div class="clearer"></div>
+    <div class="aglabel">Gift Name:</div>
+    <div class="agfield"><%= text_field :gift, :name, :class=>"agtext" %></div>
+    <div class="clearer"></div>
+    <div class="aglabel">Where I found it:</div>
+    <div class="agfield"><%= text_field :gift, :name, :class=>"agtext" %></div>
+    <div class="clearer"></div>
+    <div class="aglabel">Description:</div>
+    <div class="agfield"><%= text_area :gift, :description, :class=>"agtext", :size => '34x3' %></div>
+    <div class="clearer"></div>
+    <div class="aglabel">Image:</div>
+    <div class="agfield"><%= button_to 'CHOOSE FILE', :class=>"agfile" %></div>
+    <div class="clearer"></div>
+    <div class="clearer"></div>
+    <div class="aglabel">Audience:</div>
+    <div class="agfield"><%= text_field :gift, :audience, :class=>"agtext" %></div>
+    <div class="clearer"></div>
+    <div class="aglabel">By when:</div>
+    <div class="agfield"><%= text_field :gift, :by_when, :class=>"agtext" %></div>
+    <div class="clearer"></div>
+    <div class="aglabel">After when:</div>
+    <div class="agfield"><%= text_field :gift, :after_when, :class=>"agtext" %></div>
+    <div class="clearer"></div>
+    <div class="aglabel">Registry:</div>
+    <div class="agfield"><%= collection_select(:gift, :user_id, @user.registries.all, :user_id, :name ) %></div>
 
-<div id="addgift_form">
-<div class="aglabel">Giver:</div>
-<div class="agfield"><input type="text" class="agtext" /></div>
-<div class="clearer"></div>
-<div class="aglabel">Name Of Item:</div>
-<div class="agfield"><input type="text" class="agtext" /></div>
-<div class="clearer"></div>
-<div class="aglabel">As Seen In:</div>
-<div class="agfield"><input type="text" class="agtext" /></div>
-<div class="clearer"></div>
-<div class="aglabel">Description:</div>
-<div class="agfield"><input type="text" class="agtext" /></div>
-<div class="clearer"></div>
-<div class="aglabel">Image:</div>
-<div class="agfield"><input type="file" class="agfile" /></div>
-<div class="clearer"></div>
-<div class="aglabel">Tags:</div>
-<div class="agfield"><input type="text" class="agtext" /></div>
-<div class="clearer"></div>
-<div class="aglabel">Audience:</div>
-<div class="agfield"><input type="text" class="agtext" /></div>
-<div class="clearer"></div>
-<div class="aglabel">By when:</div>
-<div class="agfield"><input type="text" class="agtext" /></div>
-<div class="clearer"></div>
-<div class="aglabel">After when:</div>
-<div class="agfield"><input type="text" class="agtext" /></div>
-<div class="clearer"></div>
-<div class="aglabel">For:</div>
-<div class="agfield"><select class="agselect" name="registry" />
-	<option value="">Birthday List</option>
-    <option value="">Clothes</option>
-    <option value="">Home Decor</option>
-    </select></div>
-<div class="clearer"></div>
-<div class="aglabel"></div>
-<div class="agfield"><b>OR <a href="new-registry.html">Create A New Registry &#187;</a></b></div>
-<div class="clearer"></div>
-<div class="aglabel"></div>
-<div class="agfield" stylesheet="margin:20px"><%= link_to(image_tag("/images/btn_addthisgift_on.gif", 
-                     {:alt => 'Add a gift to a registry in idlika'}), gifts_path(@gift) ) %></li></div>
+    <div class="clearer"></div>
+    <div class="clearer"></div>
+    <div class="agfield" stylesheet="margin:20px">
+	  <%= image_submit_tag("/images/btn_addthisgift_on.gif") %></li></div>
+	</p>
+	
+    <div class="clearer"></div>
 
-<div class="clearer"></div>
-
-</div><!-- addgift_form -->
+  </div><!-- addgift_form -->
 <% end %><!-- form -->
 
 </div><!-- li_content -->
 
 <div class="clearer"></div>
 </div><!-- li_body -->
-
-
-
-
-  
-

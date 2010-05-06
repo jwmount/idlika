@@ -25,6 +25,7 @@ class GiftsController < ApplicationController
 
 
   def new
+    @gift = @user.gifts.new
   end
 
 
@@ -32,12 +33,13 @@ class GiftsController < ApplicationController
   end
 
   def create
-    @gift = Gift.new(params[:gift])
-
+    @gift = @user.gifts.new(params[:gift])
+    
     respond_to do |format|
+      debugger
       if @gift.save
-        flash[:notice] = 'Gift was successfully created.'
-        format.html { redirect_to(@gift) }
+        flash[:notice] = 'Gift was been added to your collection.'
+        format.html { redirect_to( gifts_path ) }
         format.xml  { render :xml => @gift, :status => :created, :location => @gift }
       else
         format.html { render :action => "new" }

@@ -21,7 +21,6 @@ suggest_change_authorization_rules GET    /authorization_rules/suggest_change(.:
                              login        /login                                            {:controller=>"user_sessions", :action=>"new"}
                             logout        /logout                                           {:controller=>"user_sessions", :action=>"destroy"}
                             signup        /signup                                           {:controller=>"user_sessions", :action=>"new"}
-                  current_registry        /current_registry                                 {:controller=>"gifts", :action=>"index"}
                                how        /how                                              {:controller=>"home", :action=>"how"}
                               what        /what                                             {:controller=>"home", :action=>"what"}
                                faq        /faq                                              {:controller=>"home", :action=>"faq"}
@@ -51,6 +50,13 @@ suggest_change_authorization_rules GET    /authorization_rules/suggest_change(.:
                          user_role GET    /users/:user_id/roles/:id(.:format)               {:controller=>"roles", :action=>"show"}
                                    PUT    /users/:user_id/roles/:id(.:format)               {:controller=>"roles", :action=>"update"}
                                    DELETE /users/:user_id/roles/:id(.:format)               {:controller=>"roles", :action=>"destroy"}
+                        user_gifts GET    /users/:user_id/gifts(.:format)                   {:controller=>"gifts", :action=>"index"}
+                                   POST   /users/:user_id/gifts(.:format)                   {:controller=>"gifts", :action=>"create"}
+                     new_user_gift GET    /users/:user_id/gifts/new(.:format)               {:controller=>"gifts", :action=>"new"}
+                    edit_user_gift GET    /users/:user_id/gifts/:id/edit(.:format)          {:controller=>"gifts", :action=>"edit"}
+                         user_gift GET    /users/:user_id/gifts/:id(.:format)               {:controller=>"gifts", :action=>"show"}
+                                   PUT    /users/:user_id/gifts/:id(.:format)               {:controller=>"gifts", :action=>"update"}
+                                   DELETE /users/:user_id/gifts/:id(.:format)               {:controller=>"gifts", :action=>"destroy"}
                              roles GET    /roles(.:format)                                  {:controller=>"roles", :action=>"index"}
                                    POST   /roles(.:format)                                  {:controller=>"roles", :action=>"create"}
                           new_role GET    /roles/new(.:format)                              {:controller=>"roles", :action=>"new"}

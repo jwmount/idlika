@@ -18,7 +18,7 @@ ActionController::Routing::Routes.draw do |map|
   map.advertise      "advertise", :controller => "home", :action => "advertise"
   map.contact        "contact", :controller => "home", :action => "contact"
 
-  map.resources :users, :has_many => [:registries, :roles]
+  map.resources :users, :has_many => [:registries, :roles, :gifts]
   map.resources :roles, :has_many => :users
   map.resources :registries, :has_many => :items
   map.resources :gifts, :has_one => :description, :has_many => :items
