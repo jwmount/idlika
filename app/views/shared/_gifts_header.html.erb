@@ -19,12 +19,13 @@
 <div class="clearer"></div>
 
 <div id="nav">
-	<% if show_links? %>
-<ul><li><%= link_to '', root_url, {:class => 'home'} %></li>
-	<li><%= link_to '', gifts_path(@gift), :class=>'gifts'%></li>
-    <li><%= link_to '', edit_user_path(:current), :class=>"myaccnt"  %>
+  <% if show_links? %>
+  <ul>
+	<li><%= link_to_unless_current '', root_url, {:class => 'home'} %></li>
+  	<li><%= link_to_unless_current '', login_path, :class=>'gifts'%></li>
+    <li><%= link_to_unless_current '', new_user_path, :class=>"myaccnt"  %>
 	<li><table cellspacing=0>
-        <form>
+      <form>
         <tr valign="top">
         	<td><img src="../images/search.gif" alt="Search:" style="margin:16px 8px 0px 0px;" /></td>
         	<td><input type="text" class="navsearch" name="searchterm" /></td>
