@@ -2,8 +2,7 @@ class DescriptionsController < ApplicationController
   filter_resource_access
   before_filter :find_gift
 
-  # GET /descriptions
-  # GET /descriptions.xml
+
   def index
     @descriptions = @gift.descriptions.find( :all )
 
