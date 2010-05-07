@@ -47,7 +47,7 @@ class DescriptionsController < ApplicationController
     respond_to do |format|
       if @description.save
         flash[:notice] = 'Description was successfully created.'
-        format.html { redirect_to([ @gift,@description ]) }
+        format.html { redirect_to([ @gift, @description ]) }
         format.xml  { render :xml => @description, :status => :created, :location => [@gift, @description] }
       else
         format.html { render :action => "new" }

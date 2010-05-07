@@ -1,4 +1,6 @@
 class GiftsController < ApplicationController
+#  filter_resource_access
+
   before_filter :find_user
   layout = 'gifts'
   
