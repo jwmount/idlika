@@ -2,21 +2,22 @@
 <div id="li_body">
 
 <div id="li_sidebar">
-<ul><li><a href="my-registries.html" class="myreg_set"><b>My Registries</b></a></li>
-  <%= render :partial => "registries" %>
-  <li><%= link_to '', new_user_registry_path(@user), :class => "newreg" %>
-  <li><% if @new_registry %>
-        <%= render :partial => 'new_gift_registry' %>
+<ul>
+	<li><a href="my-registries.html" class="myreg_set"><b>My Registries</b></a></li>
+      <%= render :partial => "registries" %>
+    <li><%= link_to '', new_user_registry_path(@user), :class => "newreg" %>
+    <li><% if @new_registry %>
+      <%= render :partial => 'new_gift_registry' %>
 	  <% end %>
-  </li>
-  <li><%= link_to '', new_user_gift_path(@user), :class => "addgift" %></li>
+    </li>
+    <li><%= link_to '', new_user_gift_path(@user), :class => "addgift" %></li>
 </ul>
 </div><!-- li_sidebar -->
 
 <div id="li_content">
   <h1><%=h @registry.name %></h1>
-  <% if !@items.nil? %>
-    <%= render :partial => 'registry_container', :collection => @items %>
+  <% if !@gifts.nil? %>
+    <%= render :partial => 'registry_container', :collection => @gifts %>
   <% else %>
 	<h3>There's nothing in here!  Why not add something so your friends can see it?.</h3>
   <% end %>

@@ -1,6 +1,4 @@
 ActionController::Routing::Routes.draw do |map|
-  map.resources :items
-
   map.resources :descriptions
 
   
@@ -20,11 +18,9 @@ ActionController::Routing::Routes.draw do |map|
 
   map.resources :users, :has_many => [:registries, :roles, :gifts]
   map.resources :roles, :has_many => :users
-  map.resources :registries, :has_many => :items
-  map.resources :gifts, :has_one => :description, :has_many => :items
-  map.resources :descriptions
-  map.resources :items
-  
+  map.resources :registries, :has_many => :gifts
+  map.resources :gifts, :has_many => :descriptions
+  map.resources :descriptions  
   map.resources :user_sessions
 
   map.root :controller => "home"

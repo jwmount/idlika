@@ -22,8 +22,8 @@
     <div class="aglabel">Gift Name:</div>
     <div class="agfield"><%= text_field :gift, :name, :class=>"agtext" %></div>
     <div class="clearer"></div>
-    <div class="aglabel">Where I found it:</div>
-    <div class="agfield"><%= text_field :gift, :name, :class=>"agtext" %></div>
+    <div class="aglabel">Where you can find it:</div>
+    <div class="agfield"><%= text_field :gift, :source, :class=>"agtext" %></div>
     <div class="clearer"></div>
     <div class="aglabel">Description:</div>
     <div class="agfield"><%= text_area :gift, :description, :class=>"agtext", :size => '34x3' %></div>
@@ -45,7 +45,7 @@
     <div class="agfield"><%= collection_select(:gift, :user_id, @user.registries.all, :user_id, :name ) %></div>
 
     <div class="clearer"></div>
-    <div class="clearer"></div>
+    <div class="aglabel"></div>
     <div class="agfield" stylesheet="margin:20px">
 	  <%= image_submit_tag("/images/btn_addthisgift_on.gif") %></li></div>
 	</p>

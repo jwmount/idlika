@@ -12,4 +12,9 @@ class User < ActiveRecord::Base
     end
   end
   
+  def default_registry
+    gifts = user.gifts.find( :all, :order_by => :created_at, :limit => 10 )
+    @registry = registry if registry.created_at
+  end
+    
 end
