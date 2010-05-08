@@ -2,3 +2,4 @@ authlogic
 aws-s3
 declarative_authorization
 paperclip
+right_aws

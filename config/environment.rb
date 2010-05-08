@@ -2,7 +2,7 @@
 
 # Specifies gem version of Rails to use when vendor/rails is not present
 RAILS_GEM_VERSION = '2.3.3' unless defined? RAILS_GEM_VERSION
-ENV['IDLIKA_VERSION'] = '0.015'
+ENV['IDLIKA_VERSION'] = '0.016'  #Added aws-s3 and paperclip gems 
 
 # Bootstrap the Rails environment, frameworks, and default configuration
 require File.join(File.dirname(__FILE__), 'boot')
@@ -25,6 +25,7 @@ Rails::Initializer.run do |config|
   config.gem "authlogic"
   config.gem "declarative_authorization", :source => "http://gemcutter.org"
   config.gem "paperclip"
+  config.gem "right_aws"
 
   # Only load the plugins named here, in the order given (default is alphabetical).
   # :all can be used as a placeholder for all plugins not explicitly named
