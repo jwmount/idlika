@@ -1,2 +1,4 @@
 authlogic
+aws-s3
 declarative_authorization
+paperclip

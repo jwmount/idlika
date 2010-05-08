@@ -9,14 +9,22 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20100429214417) do
+ActiveRecord::Schema.define(:version => 20100508203729) do
+
+  create_table "descriptions", :force => true do |t|
+    t.integer  "gift_id"
+    t.text     "description"
+    t.string   "image_url"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "gifts", :force => true do |t|
-    t.integer  "giver_id"
+    t.integer  "user_id",            :default => 0, :null => false
+    t.integer  "registry_id",        :default => 1, :null => false
     t.string   "name"
-    t.string   "supplier"
+    t.string   "source"
     t.string   "description"
-    t.text     "image"
     t.text     "tags"
     t.text     "audience"
     t.datetime "by_when"
@@ -25,33 +33,35 @@ ActiveRecord::Schema.define(:version => 20100429214417) do
     t.datetime "deleted"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "photo_file_name"
+    t.string   "photo_content_type"
+    t.integer  "photo_file_size"
+    t.datetime "photo_updated_at"
   end
 
-  create_table "givers", :force => true do |t|
+  create_table "items", :force => true do |t|
     t.integer  "gift_id"
-    t.string   "name"
-    t.text     "status"
+    t.integer  "registry_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
-  create_table "groups", :force => true do |t|
+  create_table "registries", :force => true do |t|
     t.integer  "user_id"
     t.string   "name"
-    t.integer  "givers_count"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
   create_table "roles", :force => true do |t|
-    t.string   "role"
+    t.string   "name"
     t.string   "description"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
   create_table "users", :force => true do |t|
-    t.string   "user_id"
+    t.string   "role_id"
     t.string   "username"
     t.string   "email"
     t.string   "crypted_password"
