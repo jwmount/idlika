@@ -24,6 +24,6 @@ class Gift < ActiveRecord::Base
   
  validates_attachment_presence :photo
  validates_attachment_size :photo, :less_than => 5.megabytes
- validates_attachment_content_type :photo, :content_type => ['image/jpeg', 'image/jpg', 'image/png']
+ validates_attachment_content_type :photo, :content_type => ['image/jpeg', 'image/jpg', 'image/png', 'image/gif']
  
  end
