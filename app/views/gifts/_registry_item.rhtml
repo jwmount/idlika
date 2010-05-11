@@ -2,6 +2,7 @@
 <div class="item">
 
 <% if !gift.name.nil? %>
+  <%= image_tag gift.photo.url(:preview) %>
 
   <div class="item_inner" style="background-position:50%, 50%; background-repeat:no-repeat;">
   
@@ -11,7 +12,6 @@
       <a href="share.html"><img src="images/btn_share.png" alt="Share Item" /></a>
       <%= link_to (image_tag("btn_delete.png"), gift_path(gift.id), 
              :confirm => "Are you sure you want to remove this item?", :method => :delete ) %>
-
   </div><!-- item_inner>
 
 <% else %>

@@ -35,11 +35,15 @@ class GiftsController < ApplicationController
   def edit
   end
 
+  def images
+    debugger
+  end
+  
   def create
     @gift = @user.gifts.new(params[:gift])
     respond_to do |format|
       if @gift.save
-        Description.create( :gift_id => @gift.id, :description=>@gift.description, :image_url=>nil)
+#        Description.create( :gift_id => @gift.id, :description=>@gift.description, :image_url=>nil)
         flash[:notice] = 'Gift was been added to your collection.'
         format.html { redirect_to( gifts_path ) }
         format.xml  { render :xml => @gift, :status => :created, :location => @gift }
