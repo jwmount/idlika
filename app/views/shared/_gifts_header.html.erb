@@ -10,10 +10,13 @@
 
 	
 <div id="masthead">
-<a href="index.html"><h1><b>idlika</b></h1></a>
-<a href="index.html"><h2><b>Remember things you want ... Show your friends!</b></h2></a>
-
-
+<% if show_links? %>
+  <a href="index.html"><h1><b>idlika</b></h1></a>
+  <a href="index.html"><h2><b>Remember things you want ... Show your friends!</b></h2></a>
+<% else %>
+  <h1><b>idlika</b></h1></a>
+  <h2><b>Remember things you want ... Show your friends!</b></h2></a>
+<% end %>
 <%= render( :partial => '/shared/welcome_header')%>
 
 <div class="clearer"></div>
