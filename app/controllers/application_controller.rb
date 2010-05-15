@@ -21,12 +21,12 @@ class ApplicationController < ActionController::Base
     redirect_to root_url
   end
 
-  # = = = = = =  = = = = = = = = = == =  
+  # = = = = = = = = = = = = = = = == =  
   
 #   private
 
    def show_links?
-     true
+     falsee
    end
    
    def current_user_session
