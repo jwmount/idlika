@@ -17,7 +17,7 @@ class ApplicationController < ActionController::Base
 #  protected
   
   def permission_denied
-    flash[:error] = "Sorry, you are NOT allowed to access that page."
+    flash[:error] = "Sorry, you are not allowed to access that page."
     redirect_to root_url
   end
 
@@ -26,7 +26,7 @@ class ApplicationController < ActionController::Base
 #   private
 
    def show_links?
-     false
+     true
    end
    
    def current_user_session

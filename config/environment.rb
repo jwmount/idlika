@@ -28,7 +28,7 @@ Rails::Initializer.run do |config|
   config.gem "authlogic"
   config.gem "declarative_authorization", :source => "http://gemcutter.org"
   config.gem "paperclip"
-  config.gem "rmagick"
+#  config.gem "rmagick"
 
   # http://github.com/scottburton11/paperclip-rightaws-fails/blob/master/config/environment.rb
   config.after_initialize do
