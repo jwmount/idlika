@@ -1,0 +1,6 @@
+<%= check_box_tag( column_name, 'yes', :checked, 
+  :onclick => "callscript(this.name, column_name, getValue());" )%> <%= column_name %>
+<%= observe_field column_name, :on => 'change', 
+	:url => { :action => 'grid_toggle_selection', :audit_id => @audit, :masthead_id => [@masthead], :field => "#{column_name}" },
+	:with => @audit.id %>
+

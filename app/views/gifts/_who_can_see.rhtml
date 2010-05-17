@@ -1,0 +1,8 @@
+<!-- render :partial => 'who_can_see' -->
+<div class="aglabel">Who can see this?:</div>
+
+<% User.find(:all).each do |user| %>
+  <div class="aglabel"><%= check_box_tag user.username, user.username %><%= user.username %></div>
+<% end %>
+
+<div class="clearer"></div>

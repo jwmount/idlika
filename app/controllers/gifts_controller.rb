@@ -6,13 +6,22 @@ class GiftsController < ApplicationController
   
   def index
     # Default to logical registry 'Recently Added' if :registry not in response
+    
     if !params[:registry_id].nil? 
       @registry = Registry.find params[:registry_id]
-      @gifts = @registry.gifts.find( :all ) 
+     
+      if @registry.name == "Recently Added"
+        @gifts = @user.gifts.find( :all, :order => "created_at DESC", :limit => 9 )
+      else
+        @gifts = @registry.gifts.find :all
+      end
+      
     else
-      @registry = Registry.new(:user_id => @user.id, :name => "Recently added") 
-      @gifts = @user.gifts.find( :all, :order => :created_at, :limit => 9 )
+      @registry = Registry.new(:user_id => @user_id, :name => "Recently added")
+      @gifts = @user.gifts.find( :all, :order => "created_at DESC", :limit => 9 )
     end
+
+
     respond_to do |format|
       format.html # index.html.erb
       format.xml  { render :xml => @gifts }
@@ -36,14 +45,13 @@ class GiftsController < ApplicationController
   end
 
   def images
-    debugger
   end
   
   def create
+    debugger
     @gift = @user.gifts.new(params[:gift])
     respond_to do |format|
       if @gift.save
-#        Description.create( :gift_id => @gift.id, :description=>@gift.description, :image_url=>nil)
         flash[:notice] = 'Gift was been added to your collection.'
         format.html { redirect_to( gifts_path ) }
         format.xml  { render :xml => @gift, :status => :created, :location => @gift }

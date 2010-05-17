@@ -23,7 +23,7 @@
     <div class="aglabel">Gift Name:</div>
     <div class="agfield"><%= text_field :gift, :name, :class=>"agtext" %></div>
     <div class="clearer"></div>
-    <div class="aglabel">Where you can find it:</div>
+    <div class="aglabel">Best place to look for gift:</div>
     <div class="agfield"><%= text_field :gift, :source, :class=>"agtext" %></div>
     <div class="clearer"></div>
     <div class="aglabel">Description:</div>
@@ -34,18 +34,27 @@
     <%= f.file_field :photo %>
 
     <div class="clearer"></div>
-    <div class="clearer"></div>
+    <!-- <div class="clearer"></div>
     <div class="aglabel">Audience:</div>
     <div class="agfield"><%= text_field :gift, :audience, :class=>"agtext" %></div>
+    -->
     <div class="clearer"></div>
     <div class="aglabel">By when:</div>
     <div class="agfield"><%= text_field :gift, :by_when, :class=>"agtext" %></div>
     <div class="clearer"></div>
     <div class="aglabel">After when:</div>
     <div class="agfield"><%= text_field :gift, :after_when, :class=>"agtext" %></div>
+
+    <!--
     <div class="clearer"></div>
     <div class="aglabel">Registry:</div>
     <div class="agfield"><%= collection_select(:gift, :user_id, @user.registries.all, :user_id, :name ) %></div>
+    -->
+    <div class="clearer"></div>
+    <%= render :partial => 'who_can_see' %>
+
+	<div class="clearer"></div>
+    <%= render :partial => 'which_registries_show_in' %>
 
     <div class="clearer"></div>
     <div class="aglabel"></div>

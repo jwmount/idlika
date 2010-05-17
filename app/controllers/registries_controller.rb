@@ -17,6 +17,7 @@ class RegistriesController < ApplicationController
   # GET /registries/1.xml
   def show
     @registry = @user.registries.find(params[:id])
+    @gifts = @user.gifts.find( :all, :order => :created_at, :limit => 9 )
     respond_to do |format|
       # work out named path at some point
       format.html { redirect_to :controller => 'gifts', :action => 'index', :registry_id => @registry.id }

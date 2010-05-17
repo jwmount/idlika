@@ -294,11 +294,14 @@ div.actions img { margin-right:5px; }
 }
 
 div.aglabel { 
-	width:125px; float:left; margin-right:10px; margin-bottom:5px; padding-top:2px; text-align:right; font-weight:bold;
+	width:255px; float:left; margin-right:10px; margin-bottom:5px; padding-top:2px; text-align:left; font-weight:bold;
 }
 
 div.agfield {
-	width:475px; float:left; margin-bottom:5px;
+	width:125px; float:left; margin-bottom:5px;
+}
+div.agcb { 
+	width:15px; float:left; margin-right:5px; margin-bottom:5px; padding-top:2px; text-align:right; font-weight:bold;
 }
 
 #agfield {

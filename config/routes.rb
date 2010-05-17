@@ -1,6 +1,4 @@
 ActionController::Routing::Routes.draw do |map|
-  map.resources :descriptions
-
   
   map.login          "login", :controller => "user_sessions", :action => "new"
   map.logout         "logout", :controller => "user_sessions", :action => "destroy"
@@ -18,9 +16,8 @@ ActionController::Routing::Routes.draw do |map|
 
   map.resources :users, :has_many => [:registries, :roles, :gifts]
   map.resources :roles, :has_many => :users
-  map.resources :registries, :has_many => :gifts
-  map.resources :gifts, :has_many => :descriptions
-  map.resources :descriptions  
+  map.resources :registries
+  map.resources :gifts, :has_many => :registries
   map.resources :user_sessions
 
   map.root :controller => "home"
