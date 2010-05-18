@@ -41,8 +41,8 @@ production:
   adapter: mysql
   encoding: utf8
   reconnect: false
-  database: idlika_production
+  database: idlika_development
   pool: 5
-  username: root
-  password: 
+  username: john
+  password: 180lbs
   socket: /tmp/mysql.sock
