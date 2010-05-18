@@ -28,7 +28,7 @@ Rails::Initializer.run do |config|
   config.gem "authlogic"
   config.gem "declarative_authorization", :source => "http://gemcutter.org"
   config.gem "paperclip"
-  config.gem "rmagick"   does not work to list this one on Heroku!
+  config.gem "rmagick"   #does not work to list this one on Heroku!
   config.gem "right_aws"
 
   # http://github.com/scottburton11/paperclip-rightaws-fails/blob/master/config/environment.rb
