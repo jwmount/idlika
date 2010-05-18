@@ -4,9 +4,7 @@ class UserSessionsController < ApplicationController
 
   # creates user's logon session    
   def new
-    logger.error("*-*-* UserSessionsController.new")
     @user_session = UserSession.new
-    logger.error("*-*-* UserSessions Controller.new")
   end
   
   def create
