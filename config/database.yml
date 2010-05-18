@@ -43,6 +43,6 @@ production:
   reconnect: false
   database: idlika_production
   pool: 5
-  username: john
-  password: 180lbs
+  username: root
+  password: 
   socket: /tmp/mysql.sock
