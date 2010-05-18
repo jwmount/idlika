@@ -1,22 +1,15 @@
-
+<p>
+  <%= image_tag @gift.photo.url(:large) %>
+</p>
 <p>
   <b>Name:</b>
   <%=h @gift.name %>
 </p>
 
-<p>
-  <b>Supplier:</b>
-  <%=h @gift.supplier %>
-</p>
 
 <p>
   <b>Description:</b>
   <%=h @gift.description %>
-</p>
-
-<p>
-  <b>Image:</b>
-  <%=h @gift.image %>
 </p>
 
 <p>

@@ -29,6 +29,7 @@ class GiftsController < ApplicationController
   end
 
   def show
+    @gift = Gift.find params[:id]
     respond_to do |format|
       format.html # show.html.erb
       format.xml  { render :xml => @gift }
@@ -42,13 +43,13 @@ class GiftsController < ApplicationController
 
 
   def edit
+    @gift = Gift.find params[:id]
   end
 
   def images
   end
   
   def create
-    debugger
     @gift = @user.gifts.new(params[:gift])
     respond_to do |format|
       if @gift.save
@@ -63,6 +64,8 @@ class GiftsController < ApplicationController
   end
 
   def update
+    @gift = Gift.find params[:id]
+  
     respond_to do |format|
       if @gift.update_attributes(params[:gift])
         flash[:notice] = 'Gift was successfully updated.'

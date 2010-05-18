@@ -2,14 +2,14 @@
 <div class="item">
 
 <% if !gift.name.nil? %>
-  <%= image_tag gift.photo.url(:preview) %>
+<%= image_tag gift.photo.url(:tiny) %>
 
   <div class="item_inner" style="background-position:50%, 50%; background-repeat:no-repeat;">
-  
+
       <h3><%=h gift.name %> </h3>
-      <h4><%=h gift.description %> (no photo)....?</h4>
-      <a href="item.html"><img src="images/btn_details.png" alt="Show Details / Edit Item" /></a>
+      <h4><%=h gift.description %> description....?</h4>
       <a href="share.html"><img src="images/btn_share.png" alt="Share Item" /></a>
+      <%= link_to (image_tag("btn_details.png")), user_gift_path(@user,gift) %>
       <%= link_to (image_tag("btn_delete.png"), gift_path(gift.id), 
              :confirm => "Are you sure you want to remove this item?", :method => :delete ) %>
   </div><!-- item_inner>

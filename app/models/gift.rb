@@ -6,8 +6,8 @@ class Gift < ActiveRecord::Base
 
  has_attached_file :photo,
   :styles => {
-     :tiny => "35x35#",
-     :preview => "175x175>",
+     :tiny => "50x50#",
+     :preview => "150x150>",
      :large => "300x300"
    },
    :default_style => :preview,

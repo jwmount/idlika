@@ -2,7 +2,7 @@
 
 # Specifies gem version of Rails to use when vendor/rails is not present
 RAILS_GEM_VERSION = '2.3.3' unless defined? RAILS_GEM_VERSION
-ENV['IDLIKA_VERSION'] = '0.019'  #Added aws-s3 and paperclip gems 
+ENV['IDLIKA_VERSION'] = '0.1.020'  #Added aws-s3 and paperclip gems 
 
 ENV['S3_BUCKET'] = "idlika.com"
 ENV['S3_KEY'] = 'AKIAJG2MA6FIXEPKVC6Q'
@@ -28,7 +28,7 @@ Rails::Initializer.run do |config|
   config.gem "authlogic"
   config.gem "declarative_authorization", :source => "http://gemcutter.org"
   config.gem "paperclip"
-  config.gem "rmagick"  # does not work to list this one on Heroku!
+#  config.gem "rmagick"   does not work to list this one on Heroku!
 
   # http://github.com/scottburton11/paperclip-rightaws-fails/blob/master/config/environment.rb
   config.after_initialize do
