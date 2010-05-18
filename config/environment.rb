@@ -8,6 +8,8 @@ ENV['S3_BUCKET'] = "idlika.com"
 ENV['S3_KEY'] = 'AKIAJG2MA6FIXEPKVC6Q'
 ENV['S3_SECRET'] = '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'
 
+ENV['RAILS_ENV'] = 'production'
+
 # Bootstrap the Rails environment, frameworks, and default configuration
 require File.join(File.dirname(__FILE__), 'boot')
 
