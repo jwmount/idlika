@@ -37,11 +37,10 @@
   <%=h @gift.for_my %>
 </p>
 
-<p>
-  <b>Deleted:</b>
-  <%=h @gift.deleted %>
-</p>
 
 
-<%= link_to 'Edit', edit_gift_path(@gift) %> |
+<%= link_to 'Edit', edit_user_gift_path(@user,@gift) %> |
+<%= link_to 'Remove', user_gift_path(@user,@gift), 
+           :confirm => "Are you sure you want to delete #{@gift.name}?", 
+           :method => :delete %> |
 <%= link_to 'Back', gifts_path %>

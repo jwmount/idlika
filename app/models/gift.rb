@@ -7,7 +7,7 @@ class Gift < ActiveRecord::Base
  has_attached_file :photo,
   :styles => {
      :tiny => "50x50#",
-     :preview => "150x150>",
+     :preview => "225x225>",
      :large => "300x300"
    },
    :default_style => :preview,
@@ -24,6 +24,6 @@ class Gift < ActiveRecord::Base
   
  validates_attachment_presence :photo
  validates_attachment_size :photo, :less_than => 5.megabytes
- validates_attachment_content_type :photo, :content_type => ['image/jpeg', 'image/jpg', 'image/png', 'image/gif']
+ validates_attachment_content_type :photo, :content_type => ['image/jpeg', 'image/jpg', 'image/png', 'image/gif', 'image/tiff']
  
  end

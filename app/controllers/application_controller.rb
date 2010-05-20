@@ -26,7 +26,7 @@ class ApplicationController < ActionController::Base
 #   private
 
    def show_links?
-     false
+     true
    end
    
    def current_user_session
