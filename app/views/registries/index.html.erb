@@ -5,13 +5,18 @@
   </tr>
 <% @registries.each do |registry| %>
   <tr>
-    <td><%= link_to 'Show', registry %></td>
-    <td><%= link_to 'Edit', edit_registry_path(registry) %></td>
-    <td><%= link_to 'Delete', registry, :confirm => 'Are you sure you want to delete this registry?', :method => :delete %></td>
+	<td><%=h registry.name %></td>
+    <td><%= link_to 'Details', user_registry_path(@user,registry) %> | </td>
+    <td><%= link_to 'Edit', edit_user_registry_path(@user,registry) %> | </td>
+    <td><%= link_to 'Delete', user_registry_path(@user,registry), 
+            :confirm => "Are you sure you want to delete your #{registry.name} registry?  Any gifts still in it will be lost.", 
+            :method => 'DELETE' %></td>
   </tr>
 <% end %>
 </table>
 
 <br />
 
-<%= link_to 'New registry', new_registry_path %>
+<%= link_to 'New registry', new_user_registry_path(@user) %>
+<p></p>
+<%= link_to 'Back', user_gifts_path( @user )%>

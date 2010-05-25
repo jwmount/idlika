@@ -1,12 +1,14 @@
-<h1>Editing registry</h1>
+<h1>Edit your registry</h1>
 
-<% form_for(@registry) do |f| %>
+<% form_for :registry, @registry, :url=>user_registry_url, :html=>{:method=>'put'} do |f| %>
   <%= f.error_messages %>
+  
+  <%= render :partial => 'form', :locals => { :f => f } %>
 
   <p>
     <%= f.submit 'Update' %>
   </p>
 <% end %>
 
-<%= link_to 'Show', @registry %> |
-<%= link_to 'Back', registries_path %>
+<%= link_to 'Show', user_registry_path(@user, @registry) %> |
+<%= link_to 'Back', user_registries_path(@user) %>

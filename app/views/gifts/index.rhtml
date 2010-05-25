@@ -3,7 +3,8 @@
 
 <div id="li_sidebar">
 <ul>
-	<li><a href="my-registries.html" class="myreg_set"><b>My Registries</b></a></li>
+	<li><%= link_to(image_tag("/images/sidenav_myregistries_on.gif", 
+	               {:alt => 'Go to my gift registries in idlika'} ),user_registries_path(@user)) %></li>	
       <%= render :partial => "registries" %>
     <li><%= link_to '', new_user_registry_path(@user), :class => "newreg" %>
     <li><% if @new_registry %>

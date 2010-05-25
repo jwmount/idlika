@@ -3,14 +3,7 @@
 <% form_for([@user, @registry]) do |f| %>
   <%= f.error_messages %>
 
-  <p>
-    <%= f.label :name %><br />
-    <%= f.text_field :name %>
-  </p>
-  <p>
-    <%= f.label :description %><br />
-    <%= f.text_area :description, :size=>'30X3'%>
-  </p>
+  <%= render :partial=>'form', :locals => { :f => f } %>
   <p>
     <%= f.submit 'Create' %>
   </p>

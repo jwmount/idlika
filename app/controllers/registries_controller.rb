@@ -1,7 +1,8 @@
 class RegistriesController < ApplicationController
   
   before_filter :find_user
-  
+  layout = 'registries'
+    
   # GET /registries
   # GET /registries.xml
   def index

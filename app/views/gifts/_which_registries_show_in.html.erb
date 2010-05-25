@@ -4,7 +4,15 @@
     <div class="aglabel">Which registry(ies) will show it?:</div>
 
 		<% @user.registries.each do |registry| %>
-          <div class="aglabel"><%= check_box_tag 'registry', registry.name %><%= registry.name %></div>
-		<% end %>
+		<div class="clearer"></div>
+		
+        <div class="agfield"><%= check_box_tag 'registry', registry.name %><%= registry.name %></div>
+          <% i = (i ||= 0) + 1 %>
+          <% if i == 3 %>
+		    <% i = 0 %>
+            <div class="aglabel">'label'</div>>
+          <% end %>
+		<div class="clearer"></div>
 
+		<% end %>
 	<div class="clearer"></div>
