@@ -27,8 +27,6 @@ ActiveRecord::Schema.define(:version => 20100508203729) do
     t.string   "description"
     t.text     "tags"
     t.text     "audience"
-    t.datetime "by_when"
-    t.datetime "after_when"
     t.string   "for_my"
     t.datetime "deleted"
     t.datetime "created_at"

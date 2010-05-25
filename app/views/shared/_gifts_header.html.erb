@@ -10,13 +10,15 @@
 
 	
 <div id="masthead">
-<% if show_links? %>
-  <a href="index.html"><h1><b>idlika</b></h1></a>
-  <a href="index.html"><h2><b>Remember things you want ... Show your friends!</b></h2></a>
-<% else %>
-  <h1><b>idlika</b></h1></a>
-  <h2><b>Remember things you want ... Show your friends!</b></h2></a>
-<% end %>
+	<% if show_links? %>
+	   <h1><%= link_to(image_tag("/images/idlikalogo.gif", 
+	                     {:alt => 'Go to my gift registries in idlika'}), root_url ) %></h1>
+	  <h2><b>Remember things you want ... Show your friends!</b></h2>
+	<% else %>
+	  <h1><b>idlika</b></h1></a>
+	  <h2><b>Remember things you want ... Show your friends!</b></h2></a>
+	<% end %>
+
 <%= render( :partial => '/shared/welcome_header')%>
 
 <div class="clearer"></div>
