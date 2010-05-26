@@ -1,20 +1,6 @@
 <br/>
 <div id="li_body">
-
-<div id="li_sidebar">
-<ul>
-	<li><%= link_to(image_tag("/images/sidenav_myregistries_on.gif", 
-	               {:alt => 'Go to my gift registries in idlika'} ),user_registries_path(@user)) %></li>	
-      <%= render :partial => "registries" %>
-    <li><%= link_to '', new_user_registry_path(@user), :class => "newreg" %>
-    <li><% if @new_registry %>
-      <%= render :partial => 'new_gift_registry' %>
-	  <% end %>
-    </li>
-    <li><%= link_to '', new_user_gift_path(@user), :class => "addgift" %></li>
-</ul>
-
-</div><!-- li_sidebar -->
+  <%= render :partial => 'shared/sidebar' %>
 
 <div id="li_content">
   <h1><%=h @registry.name %></h1>
