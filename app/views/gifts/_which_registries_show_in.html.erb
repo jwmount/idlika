@@ -2,16 +2,18 @@
 <br/>
 	<!-- registry included container -->
     <div class="aglabel">Which registry(ies) will show it?:</div>
+    <div class="agfield"><%= check_box_tag 'registry', 'registry.name', true, :disabled=>true %>Recently visited</div>
 
-		<% @user.registries.each do |registry| %>
+	<% @user.registries.each do |registry| %>
 		<div class="clearer"></div>
-		
+        <% unless registry.name == 'Recently Added' %>		
         <div class="agfield"><%= check_box_tag 'registry', registry.name %><%= registry.name %></div>
           <% i = (i ||= 0) + 1 %>
           <% if i == 3 %>
 		    <% i = 0 %>
             <div class="aglabel">'label'</div>>
           <% end %>
+        <% end %>
 		<div class="clearer"></div>
 
 		<% end %>
