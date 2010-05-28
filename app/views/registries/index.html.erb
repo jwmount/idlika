@@ -1,22 +1,31 @@
-<h1>Listing registries</h1>
+<div id="li_body">
+<%= render :partial => 'shared/sidebar' %>
+
+<div id="li_content">
+  <h1 class="add_a_gift"><b>Add A Gift</b></h1>
+
+<h1>(Listing registries)</h1>
 
 <table>
-  <tr>
-  </tr>
-<% @registries.each do |registry| %>
+  <tr></tr>
+  <% @registries.each do |registry| %>
   <tr>
 	<td><%=h registry.name %></td>
     <td><%= link_to 'Details', user_registry_path(@user,registry) %> | </td>
     <td><%= link_to 'Edit', edit_user_registry_path(@user,registry) %> | </td>
-    <td><%= link_to 'Delete', user_registry_path(@user,registry), 
+    <td><%= link_to (image_tag("btn_delete.png"), user_registry_path(@user,registry), 
             :confirm => "Are you sure you want to delete your #{registry.name} registry?  Any gifts still in it will be lost.", 
-            :method => 'DELETE' %></td>
+            :method => :delete )%> </td>
   </tr>
-<% end %>
+  <% end %>
 </table>
 
 <br />
-
 <%= link_to 'New registry', new_user_registry_path(@user) %>
 <p></p>
 <%= link_to 'Back', user_gifts_path( @user )%>
+
+</div><!-- li_content -->
+
+<div class="clearer"></div>
+</div><!-- li_body -->

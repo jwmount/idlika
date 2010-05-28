@@ -2,7 +2,7 @@
 
 # Specifies gem version of Rails to use when vendor/rails is not present
 RAILS_GEM_VERSION = '2.3.3' unless defined? RAILS_GEM_VERSION
-ENV['IDLIKA_VERSION'] = '0.1.025'
+ENV['IDLIKA_VERSION'] = '0.1.026'
 
 ENV['S3_BUCKET'] = "idlika.com"
 ENV['S3_KEY'] = 'AKIAJG2MA6FIXEPKVC6Q'

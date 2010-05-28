@@ -1,3 +1,9 @@
+<div id="li_body">
+<%= render :partial => 'shared/sidebar' %>
+
+<div id="li_content">
+  <h1 class="add_a_gift"><b>Add A Gift</b></h1>
+
 <p>
   <%= link_to (image_tag @gift.photo.url(:large)), @gift.URL, :target=>'blank' %>
 </p>
@@ -20,3 +26,9 @@
            :confirm => "Are you sure you want to delete #{@gift.name} from #{@gift.registry.name}?", 
            :method => :delete )%> |
 <%= link_to 'Back', gifts_path %>
+
+
+</div><!-- li_content -->
+
+<div class="clearer"></div>
+</div><!-- li_body -->
