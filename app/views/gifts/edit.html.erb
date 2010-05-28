@@ -1,44 +1,45 @@
-<h1>Editing gift</h1>
+<div id="li_body">
+<%= render :partial => 'shared/sidebar' %>
+
+<div id="li_content">
+  <h1 class="add_a_gift"><h1>(Edit gift)</h1>
 <p>
   <%= image_tag @gift.photo.url(:preview) %>
 </p>
 
 <% form_for(@gift) do |f| %>
   <%= f.error_messages %>
+  <div id="addgift_form">
 
+  <div class="clearer"></div>
+  <div class="aglabel">Name:</div>
+  <div class="agfield"> <%= f.text_field :name %></div>
 
-  <p>
-    <%= f.label :name %><br />
-    <%= f.text_field :name %>
-  </p>
+  <div class="clearer"?></div>
+  <div class="aglabel"><%= f.label :description %></div>
+  <div class="agfield"> <%= f.text_area :description, :size=>'28x3' %></div>
 
-  <p>
-    <%= f.label :description %><br />
-    <%= f.text_field :description %>
-  </p>
+  <div class="clearer"></div>
+  <%= render :partial => 'who_can_see' %>
 
-  <p>
-    <%= f.label :tags %><br />
-    <%= f.text_area :tags, :size=>"32x3" %>
-  </p>
-  <p>
-    <%= f.label :audience %><br />
-    <%= f.text_area :audience, :size=>"32x3" %>
-  </p>
+  <div class="clearer"></div>
+  <%= render :partial => 'which_registries_show_in' %>
 
-  <p>
-    <%= f.label :for_my %><br />
-    <%= f.text_field :for_my %>
-  </p>
-  <p>
-    <%= f.label :deleted %><br />
-    <%= f.datetime_select :deleted %>
-  </p>
-  <p>
-    <%= f.submit 'Update' %>
-  </p>
-<% end %>
+  <div class="clearer"></div>
+  <div class="aglabel"></div>
+  <div class="agfield" stylesheet="margin:20px">
+  <%= image_submit_tag("/images/btn_addthisgift_on.gif") %>(EDIT THIS GIFT)</div>
 
-<%= link_to 'Show', @gift %> |
-<%= link_to 'Delete', @user_gift_path, :method=>:delete %> |
-<%= link_to 'Back', gifts_path %>
+  <div class="clearer"></div>
+  <div class="aglabel"></div>
+  
+  <%= link_to 'Show', @gift %> |
+  <%= link_to 'Back', gifts_path %>
+
+  </div><!-- addgift_form -->
+<% end %><!-- form -->
+
+</div><!-- li_content -->
+
+<div class="clearer"></div>
+</div><!-- li_body -->

@@ -22,16 +22,28 @@
     <%= f.file_field :photo %>
 
     <div class="clearer"></div>
-    <div class="aglabel">URL:</div>
-	<div class="agfield"><%= text_field :gift, :URL, :class=>"agtext" %></div>
+    <!-- <div class="clearer"></div>
+    <div class="aglabel">Audience:</div>
+    <div class="agfield"><%= text_field :gift, :audience, :class=>"agtext" %></div>
+    -->
+
+    <!--
     <div class="clearer"></div>
-    <br/><br/>
-    <div class="aglabel"></div> 
-    <div class="agfield" stylesheet="margin:20px">
-	  <%= image_submit_tag("/images/btn_addthisgift_on.gif") %></li></div>
-	
+    <div class="aglabel">Registry:</div>
+    <div class="agfield"><%= collection_select(:gift, :user_id, @user.registries.all, :user_id, :name ) %></div>
+    -->
+    <div class="clearer"></div>
+    <%= render :partial => 'who_can_see' %>
+
+	<div class="clearer"></div>
+    <%= render :partial => 'which_registries_show_in' %>
+
     <div class="clearer"></div>
     <div class="aglabel"></div>
+    <div class="agfield" stylesheet="margin:20px">
+	  <%= image_submit_tag("/images/btn_addthisgift_on.gif") %></li></div>
+	</p>
+    <div class="clearer"></div>
 	<%= link_to 'Back', gifts_path %>
 
   </div><!-- addgift_form -->

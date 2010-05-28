@@ -1,9 +1,10 @@
 <!-- render :partial => 'who_can_see' -->
 <br/>
-<div class="aglabel">Who can see this?:</div>
+<div class="aglabel">Who can see this gift?:</div>
 
 <% User.find(:all).each do |user| %>
   <div class="agfield"><%= check_box_tag user.username, user.username %><%= user.username %></div>
+  <div class="aglabel"></div>
 <% end %>
 
 <div class="clearer"></div>

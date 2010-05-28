@@ -88,6 +88,7 @@ class RegistriesController < ApplicationController
     end
   end
 
+  
 # + + + + + + + + + + + + + + + + + + + + + + + + + + + + +
 private
 

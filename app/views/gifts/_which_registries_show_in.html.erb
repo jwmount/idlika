@@ -1,20 +1,20 @@
 
 <br/>
 	<!-- registry included container -->
-    <div class="aglabel">Which registry(ies) will show it?:</div>
+    <div class="aglabel">Registries I'll list it in:</div>
     <div class="agfield"><%= check_box_tag 'registry', 'registry.name', true, :disabled=>true %>Recently visited</div>
 
 	<% @user.registries.each do |registry| %>
-		<div class="clearer"></div>
-        <% unless registry.name == 'Recently Added' %>		
-        <div class="agfield"><%= check_box_tag 'registry', registry.name %><%= registry.name %></div>
-          <% i = (i ||= 0) + 1 %>
-          <% if i == 3 %>
-		    <% i = 0 %>
-            <div class="aglabel">'label'</div>>
-          <% end %>
-        <% end %>
-		<div class="clearer"></div>
-
-		<% end %>
+      <% unless registry.name == 'Recently Added' %>		
+        <div class="agfield"><%= check_box_tag registry.name.tr(' ','_'), registry  %><%= registry.name %></div>
+		<%= observe_field registry.name.tr(' ','_'),
+		  { :on => 'change',  :url => { :controller=>'gifts', 
+			                            :action => 'registry_toggle', 
+			                            :user_id => @user, 
+			                            :gift_id => @gift.id, 
+			                            :field => "#{registry.name.tr(' ','_')}" },
+			:with => registry.name.tr(' ','_') } %>
+	    <div class="aglabel"></div>
+      <% end %>
+	  <% end %>
 	<div class="clearer"></div>

@@ -1,8 +1,12 @@
-<p>
-  <%= f.label :name %><br />
-  <%= f.text_field :name %>
-</p>
-<p>
-  <%= f.label :description %><br />
-  <%= f.text_area :description, :size=>'28X3'%>
-</p>
+<div id="addgift_form">
+<div class="clearer"></div>
+
+<div class="aglabel"><%= f.label :name %></div>
+<div class="agfield"><%= f.text_field :name, :class=>"agtext" %></div>
+<div class="clearer"></div>
+
+<div class="aglabel"><%= f.label :description %></div>
+<div class="agfield"><%= f.text_area :description, :class=>"agtext", :size=>'34x3' %></div>
+<div class="clearer"></div>
+
+

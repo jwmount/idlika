@@ -54,7 +54,7 @@ class GiftsController < ApplicationController
     respond_to do |format|
       if @gift.save
         flash[:notice] = 'Gift was been added to your collection.'
-        format.html { redirect_to( gifts_path ) }
+        format.html { redirect_to( edit_gift_path(@gift) ) }
         format.xml  { render :xml => @gift, :status => :created, :location => @gift }
       else
         format.html { render :action => "new" }
@@ -64,6 +64,7 @@ class GiftsController < ApplicationController
   end
 
   def update
+    
     @gift = Gift.find params[:id]
   
     respond_to do |format|
@@ -85,6 +86,20 @@ class GiftsController < ApplicationController
       format.xml  { head :ok }
     end
   end
+  
+  def registry_toggle
+    @gift = Gift.find params[:gift_id]
+    @registry = Registry.find_by_name params[:field].tr('_', ' ')
+    @gift.registry_id = @registry.id
+    if @gift.save
+      logger.info "\n*-*-*-*-* Put #{@gift.name} into #{@registry.name}.\n"
+    else
+      format.xml  { render :xml => @gift.errors, :status => :unprocessable_entity }
+    end
+    redirect_to edit_user_gift_path(@user, @gift)
+  end
+  
+ 
 #= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =
 
   def find_user

@@ -1,14 +1,22 @@
+<div id="li_body">
+<%= render :partial => 'shared/sidebar' %>
+<div id="li_content">
 <h1>Edit your registry</h1>
 
 <% form_for :registry, @registry, :url=>user_registry_url, :html=>{:method=>'put'} do |f| %>
   <%= f.error_messages %>
-  
   <%= render :partial => 'form', :locals => { :f => f } %>
+  <div class="aglabel"></div>
+  <div class="agfield" stylesheet="margin:20px">
+	  <%= image_submit_tag("/images/btn_addthisgift_on.gif") %>UPDATE THIS REGISTRY</div>
+	</div> <!-- addgift_form -->
+	
+<% end %> <!-- form -->
 
-  <p>
-    <%= f.submit 'Update' %>
-  </p>
-<% end %>
+</div><!-- li_content -->
 
+<div class="aglabel"></div>
 <%= link_to 'Show', user_registry_path(@user, @registry) %> |
-<%= link_to 'Back', user_registries_path(@user) %>
+<%= link_to 'Back', user_registries_path(@user) %></div>
+<div class="clearer"></div>
+</div><!-- li_body -->

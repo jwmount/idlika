@@ -1,5 +1,5 @@
 <p>
-  <%= image_tag @gift.photo.url(:large) %>
+  <%= link_to (image_tag @gift.photo.url(:large)), @gift.URL, :target=>'blank' %>
 </p>
 <p>
   <b>Name:</b>
@@ -14,27 +14,9 @@
   <%=h @gift.description %>
 </p>
 
-<p>
-  <b>Tags:</b>
-  <%=h @gift.tags %>
-</p>
-
-<p>
-  <b>Audience:</b>
-  <%=h @gift.audience %>
-</p>
-
-
-
-<p>
-  <b>For my:</b>
-  <%=h @gift.for_my %>
-</p>
-
-
 
 <%= link_to 'Edit', edit_user_gift_path(@user,@gift) %> |
-<%= link_to 'Remove', user_gift_path(@user,@gift), 
+<%= link_to (image_tag("btn_delete.png"), gift_path(@gift), 
            :confirm => "Are you sure you want to delete #{@gift.name} from #{@gift.registry.name}?", 
-           :method => :delete %> |
+           :method => :delete )%> |
 <%= link_to 'Back', gifts_path %>
