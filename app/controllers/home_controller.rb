@@ -1,8 +1,6 @@
 class HomeController < ApplicationController
 #  filter_resource_access
-  
-  layout 'gifts'
-
+  layout = 'welcome'
   
   def index
   end

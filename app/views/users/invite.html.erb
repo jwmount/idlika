@@ -1,0 +1,22 @@
+<div id="li_body">
+<%= render :partial => 'shared/sidebar' %>
+
+<div id="li_content">
+  <!-- h1 class="add_a_gift"><b>Invite a friend</b>Invite A Friend</h1 -->
+  <h1 ><b>Invite a friend</b>Invite A Friend</h1>
+  <%= render :partial => 'invitation' %>
+  <br/><br/>
+  <%= link_to 'Back', gifts_path %>
+
+
+</div><!-- li_content -->
+
+<div class="clearer"></div>
+</div><!-- li_body -->
+
+
+
+<!-- mail_to :email,  image_tag("btn_share.png"),  
+   :subject => "Gift registries", 
+   :body => "#{auto_link (@body)} http://idlika.com" > </td 
+-->

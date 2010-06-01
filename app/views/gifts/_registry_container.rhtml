@@ -2,7 +2,6 @@
 
   <table>
     <tr>
-	  
 	  <% while gift = @gifts.delete_at(0) %>
 	
 	    <td><%= render :partial => 'registry_item', :locals => { :gift => gift } %></td>

@@ -21,7 +21,6 @@
     <td><%=h user.remember_token %></td>
     <td><%=h user.remember_token_expiration %></td>
     <td><%=h user.activation_code %></td>
-    <td><%=h user.deleted_at %></td>
     <td><%= link_to 'Show', user %></td>
     <td><%= link_to 'Edit', edit_user_path(user) %></td>
     <td><%= link_to 'Destroy', user, :confirm => 'Are you sure?', :method => :delete %></td>

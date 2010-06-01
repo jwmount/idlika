@@ -1,3 +1,7 @@
+<div id="li_body">
+
+<div id="li_content">
+
 <!-- h1> logon title image here </h1 -->
 <br/>
 <% form_for @user_session do |f| %>
@@ -13,4 +17,8 @@
   <p><%= f.submit "Submit" %></p>
 <% end %>
 
+<%= link_to 'Back', gifts_path %>
+</div><!-- li_content -->
+<div class="clearer"></div>
+</div><!-- li_body -->
 

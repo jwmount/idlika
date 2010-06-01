@@ -33,11 +33,6 @@
   <%=h @user.activation_code %>
 </p>
 
-<p>
-  <b>Deleted at:</b>
-  <%=h @user.deleted_at %>
-</p>
-
 
 <%= link_to 'Edit', edit_user_path(@user) %> |
 <%= link_to 'Back', users_path %>

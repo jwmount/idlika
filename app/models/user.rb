@@ -12,9 +12,15 @@ class User < ActiveRecord::Base
     end
   end
   
-  def default_registry
+  def Xdefault_registry
     gifts = user.gifts.find( :all, :order_by => :created_at, :limit => 10 )
     @registry = registry if registry.created_at
   end
     
+  validates_presence_of :username
+  validates_presence_of :email
+  validates_length_of :password, :minimum => 4
+  validates_length_of :password_confirmation, :minimum => 4
+  
 end
+

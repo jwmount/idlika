@@ -65,7 +65,6 @@ ActiveRecord::Schema.define(:version => 20100508203729) do
     t.string   "crypted_password"
     t.string   "password_salt"
     t.string   "persistence_token"
-    t.datetime "deleted_at"
     t.datetime "created_at"
     t.datetime "updated_at"
     t.boolean  "terms_accepted_cb", :default => false, :null => false

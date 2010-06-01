@@ -4,6 +4,8 @@ ActionController::Routing::Routes.draw do |map|
   map.logout         "logout", :controller => "user_sessions", :action => "destroy"
   map.signup         "signup", :controller => "user_sessions", :action => "new"
   
+  map.invite         "invite", :controller => "users", :action => "invite"
+  map.invitation     "invitation", :controller => "users", :action => "invitation"
   
   map.how            "how", :controller => "home", :action => "how"
   map.what           "what", :controller => "home", :action => "what"  
@@ -13,7 +15,8 @@ ActionController::Routing::Routes.draw do |map|
   map.tell           "tell", :controller => "home", :action => "tell"
   map.advertise      "advertise", :controller => "home", :action => "advertise"
   map.contact        "contact", :controller => "home", :action => "contact"
-
+  
+  
   map.resources :users, :has_many => [:registries, :roles, :gifts]
   map.resources :roles, :has_many => :users
   map.resources :registries

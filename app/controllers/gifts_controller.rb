@@ -2,26 +2,20 @@ class GiftsController < ApplicationController
 #  filter_resource_access
 
   before_filter :find_user
-  layout = 'gifts'
   
   def index
     # Default to logical registry 'Recently Added' if :registry not in response
+    # Always get recently_added_gifts
+    @recently_added_gifts = @user.gifts.find( :all, :order => "created_at DESC", :limit => 9 )
     
     if !params[:registry_id].nil? 
       @registry = Registry.find params[:registry_id]
-     
-      if @registry.name == "Recently Added"
-        @gifts = @user.gifts.find( :all, :order => "created_at DESC", :limit => 9 )
-      else
-        @gifts = @registry.gifts.find :all
-      end
-      
-    else
-      @registry = Registry.new(:user_id => @user_id, :name => "Recently added")
-      @gifts = @user.gifts.find( :all, :order => "created_at DESC", :limit => 9 )
+      @gifts = @registry.gifts.find :all
+
+    else # user wants to see recently added gifts
+      @gifts = @recently_added_gifts
     end
-
-
+    
     respond_to do |format|
       format.html # index.html.erb
       format.xml  { render :xml => @gifts }
@@ -99,6 +93,7 @@ class GiftsController < ApplicationController
     redirect_to edit_user_gift_path(@user, @gift)
   end
   
+
  
 #= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =
 

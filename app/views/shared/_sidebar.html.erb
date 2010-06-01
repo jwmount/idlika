@@ -1,7 +1,7 @@
 
 	<div id="li_sidebar">
 	  <ul>
-        <li><%= link_to (image_tag "sidenav_myregistries.gif"), user_registries_path(@user) %></li>
+        <li><%= link_to_unless_current (image_tag "sidenav_myregistries.gif"), user_registries_path(@user) %></li>
 		    <%= render :partial => "shared/registries" %>
 	    <li><%= link_to_unless_current '', new_user_registry_path(@user), :class => "newreg" %>
 	    <li><% if @new_registry %>
@@ -9,5 +9,6 @@
 		    <% end %>
 		</li>
 	    <li><%= link_to_unless_current '', new_gift_path, :class => "addgift" %></li>
+	    <li><%= link_to_unless_current '', invite_path, :class => "addgift" %>(invite a friend)</li>
 	  </ul>
 	</div><!-- li_sidebar -->
