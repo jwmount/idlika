@@ -2,7 +2,7 @@
 require 'ActionMailer'
 # Specifies gem version of Rails to use when vendor/rails is not present
 RAILS_GEM_VERSION = '2.3.3' unless defined? RAILS_GEM_VERSION
-ENV['IDLIKA_VERSION'] = '0.1.027'
+ENV['IDLIKA_VERSION'] = '0.1.028'
 
 ENV['S3_BUCKET'] = "idlika.com"
 ENV['S3_KEY'] = 'AKIAJG2MA6FIXEPKVC6Q'
@@ -11,6 +11,10 @@ ENV['S3_SECRET'] = '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'
 ENV['IDLIKA_EMAIL_NAME'] = 'info@idlikallc.com'
 ENV['IDLIKA_EMAIL_PSWD'] = 'idl1kallc'
 ENV['IDLIKA_DOMAIN'] = 'idlika.com'
+
+ENV['SENDGRID_PASSWORD'] = '6c849eca761a22707a'
+ENV['SENDGRID_USERNAME'] = 'app156298@heroku.com'
+
 
 # Bootstrap the Rails environment, frameworks, and default configuration
 require File.join(File.dirname(__FILE__), 'boot')
@@ -65,8 +69,10 @@ Rails::Initializer.run do |config|
     :address        => "smtp.sendgrid.net",
     :port           => "25",
     :authentication => :login,
-    :user_name      => ENV['IDLIKA_EMAIL_NAME'],
-    :password       => ENV['IDLIKA_EMAIL_PASSWORD'],
+#    :user_name      => ENV['IDLIKA_EMAIL_NAME'],
+    :user_name      => ENV['SENDGRID_USERNAME'],
+#    :password       => ENV['IDLIKA_EMAIL_PASSWORD'],
+    :password       => ENV['SENDGRID_PASSWORD'],
     :domain         => ENV['IDLIKA_DOMAIN'],
   }
 end

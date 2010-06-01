@@ -1,5 +1,6 @@
 class UsersController < ApplicationController
 #  filter_resource_access
+  before_filter :mailer_set_url_options
   layout = 'welcome'
      
   def index
@@ -57,7 +58,7 @@ class UsersController < ApplicationController
 #    if @user.save
         MemberMailer.deliver_invitation(params[:user])
         logger.info "*-*-*-* Invitation emailed to #{@user.username} with email #{@user.email}."
-        flash[:notice] = "Your invitation to #{@user.username} has been sent."
+        flash[:notice] = "Your invitation to #{@user.username} has been sent to #{@user.email}."
 #    else
 #       logger.info "*-*-*-* Invitation to #{@user.username} using #{@user.email} could not be saved."
 #       flash[:warning] = "Your invitation to #{@user.username} with email #{@user.email} could not be created.  " +
@@ -65,5 +66,10 @@ class UsersController < ApplicationController
 #    end
     redirect_to :action => 'invite' 
   end
-  
+# = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =
+private
+
+  def mailer_set_url_options
+    ActionMailer::Base.default_url_options[:host] = request.host_with_port
+  end
 end
