@@ -9,4 +9,5 @@ class MemberMailer < ActionMailer::Base
     headers     {}
     body        :user => user
   end
+  
 end
