@@ -1,17 +1,19 @@
 class GiftsController < ApplicationController
 #  filter_resource_access
 
-  before_filter :find_user
+#  before_filter :find_user
   
   def index
+    logger.info("*-*-*-* .index: :id => #{params[:id]}")
+    @user = User.find params[:id] ||= current_user 
+    
     # Default to logical registry 'Recently Added' if :registry not in response
     # Always get recently_added_gifts
     @recently_added_gifts = @user.gifts.find( :all, :order => "created_at DESC", :limit => 9 )
-    
+  
     if !params[:registry_id].nil? 
       @registry = Registry.find params[:registry_id]
       @gifts = @registry.gifts.find :all
-
     else # user wants to see recently added gifts
       @gifts = @recently_added_gifts
     end
@@ -22,6 +24,16 @@ class GiftsController < ApplicationController
     end
   end
 
+  def index_of_friend
+    @user = User.find_by_username params[:friend]
+    logger.info("*-*-*-* .index_of_friend: switch to #{params[:friend]}")
+    @gifts = User.find_by_username(params[:friend]).gifts.find(:all)
+    
+    respond_to do |format|
+      format.js # for_friend.rjs
+     end
+  end
+  
   def show
     @gift = Gift.find params[:id]
     respond_to do |format|
@@ -98,7 +110,8 @@ class GiftsController < ApplicationController
 #= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =
 
   def find_user
-    @user = current_user
+    logger.info "\n*-*-*-*-* find_user: for :id => #{params[:id]}.\n"
+    @user = User.find params[:id] ||= current_user
   end
-  
+
 end

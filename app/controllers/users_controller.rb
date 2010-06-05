@@ -1,7 +1,6 @@
 class UsersController < ApplicationController
 #  filter_resource_access
   before_filter :mailer_set_url_options
-  layout = 'welcome'
      
   def index
     @users = User.all
@@ -52,18 +51,22 @@ class UsersController < ApplicationController
   end
 
   def invitation
-    @user = User.new(params[:user])
     flash[:notice] = ''
     flash[:waring] = ''
-#    if @user.save
-        MemberMailer.deliver_invitation(params[:user])
-        logger.info "*-*-*-* Invitation emailed to #{@user.username} with email #{@user.email}."
-        flash[:notice] = "Your invitation to #{@user.username} has been sent to #{@user.email}."
-#    else
-#       logger.info "*-*-*-* Invitation to #{@user.username} using #{@user.email} could not be saved."
-#       flash[:warning] = "Your invitation to #{@user.username} with email #{@user.email} could not be created.  " +
-#                         "  This can happen if #{@user.username} already is a member."
-#    end
+    @friend = User.new(params[:user])
+    @user = User.find current_user[:id]
+    @invited_friend = { @friend.email, @friend.username }
+    @user.friends = @user.friends.empty? ? @invited_friend : @user.friends.update(@invited_friend)
+  
+    if @user.save
+        MemberMailer.deliver_invitation(params[:user], @user.email)
+        logger.info "*-*-*-* Invitation emailed to #{@friend.username} with email #{@friend.email}."
+        flash[:notice] = "Your invitation to #{@friend.username} has been sent to #{@friend.email}."
+    else
+       logger.info "*-*-*-* Invitation to #{@friend.username} using #{@friend.email} could not be saved."
+       flash[:warning] = "Your invitation to #{@friend.username} with email #{@friend.email} could not be created.  " +
+                         "  This can happen if #{@friend.username} already is a member."
+    end
     redirect_to :action => 'invite' 
   end
 # = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =

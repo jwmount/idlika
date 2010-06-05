@@ -9,20 +9,11 @@
   <br />
   
   <div class="clearer"></div>
-  <div class="aglabel">Email:</div>
+  <div class="aglabel">Friend's email:</div>
   <div class="agfield"> <%= f.text_field :email %></div>
   <br />
-
-  <!-- Access Code is invitation password; user can change it once registered. -->
   <div class="clearer"></div>
-  <div class="aglabel">Access Code:</div>
-  <div class="agfield"><%= f.password_field :password %></div
-
-  <div class="clearer"></div>
-  <div class="aglabel">Repeat Access Code:</div>
-  <div class="agfield"><%= f.password_field :password_confirmation %></br>
-		
-  <div class="clearer">
-  </div>
   <p><%= f.submit "Invite" %></p>
+</div>
+
 <% end %>

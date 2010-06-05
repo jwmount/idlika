@@ -7,10 +7,10 @@ class Gift < ActiveRecord::Base
  has_attached_file :photo,
   :styles => {
      :tiny => "50x50#",
-     :preview => "225x225>",
+     :preview => "175x175>",
      :large => "300x300"
    },
-   :default_style => :preview,
+   :default_style => :tiny,
    :default_url => "/images/idlika_logo.png",
    :storage => :s3,
    :s3_credentials => "#{RAILS_ROOT}/config/s3.yml",    # Good, clear msg if not visible

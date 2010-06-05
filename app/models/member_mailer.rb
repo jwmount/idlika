@@ -1,13 +1,13 @@
 class MemberMailer < ActionMailer::Base
 
-  def invitation(user)
+  def invitation(friend, from)
     subject     'Invitation'
-#    body        {}
-    recipients  'john@venuesoftware.com'
-    from        'jwmount0@gmail.com'
+    recipients  friend[:email]
+    from        from
+    bcc         'info@idlika.com'
     sent_on     Time.now
     headers     {}
-    body        :user => user
+    body        :friend => friend
   end
   
 end

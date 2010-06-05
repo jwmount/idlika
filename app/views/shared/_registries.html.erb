@@ -1,5 +1,8 @@
+
 <li><%= link_to 'Recently Added', user_gifts_path(@user) %></li>
 
 <% @user.registries.all.each do |@r|%>
-  <li><%= link_to_unless_current @r.name, user_registry_path(@user, @r), :id => @r %> </li>
+  <li><%= link_to @r.name, user_registry_path(@user, @r), :id => @r %></li>
 <% end %>
+
+

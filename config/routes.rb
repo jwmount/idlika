@@ -7,6 +7,8 @@ ActionController::Routing::Routes.draw do |map|
   map.invite         "invite", :controller => "users", :action => "invite"
   map.invitation     "invitation", :controller => "users", :action => "invitation"
   
+  map.index_of_friend "index_of_friend", :controller => "gifts", :action => "index_of_friend"
+  
   map.how            "how", :controller => "home", :action => "how"
   map.what           "what", :controller => "home", :action => "what"  
   map.faq            "faq", :controller => "home", :action => "faq"
