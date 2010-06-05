@@ -1,7 +1,7 @@
 class GiftsController < ApplicationController
 #  filter_resource_access
 
-#  before_filter :find_user
+  before_filter :find_user
   
   def index
     logger.info("*-*-*-* .index: :id => #{params[:id]}")
@@ -111,7 +111,7 @@ class GiftsController < ApplicationController
 
   def find_user
     logger.info "\n*-*-*-*-* find_user: for :id => #{params[:id]}.\n"
-    @user = User.find params[:id] ||= current_user
+    @user = current_user
   end
 
 end
