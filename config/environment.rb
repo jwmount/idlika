@@ -33,6 +33,7 @@ Rails::Initializer.run do |config|
   # config.gem "sqlite3-ruby", :lib => "sqlite3"
   # config.gem "aws-s3", :lib => "aws/s3"
   # for HEROKU put both gems in .gems file (>mate .gems to edit),  Case Sensitive!
+  config.gem "actionmailer"
   config.gem "authlogic"
   config.gem "declarative_authorization", :source => "http://gemcutter.org"
   config.gem "paperclip"
