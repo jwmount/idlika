@@ -2,6 +2,7 @@ class GiftsController < ApplicationController
 #  filter_resource_access
 
   before_filter :find_user
+  layout 'application'
   
   def index
     logger.info("*-*-*-* .index: :id => #{params[:id]}")
