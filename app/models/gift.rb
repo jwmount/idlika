@@ -4,6 +4,7 @@ class Gift < ActiveRecord::Base
  belongs_to :registry
 
 
+
  has_attached_file :photo,
   :styles => {
      :tiny => "50x50#",

@@ -3,36 +3,69 @@ class GiftsController < ApplicationController
 
   before_filter :find_user
   layout 'application'
-  
+ 
+  # gifts for @user, effectively ALL gifts 
   def index
-    logger.info("*-*-*-* .index: :id => #{params[:id]}")
-    @user = User.find params[:id] ||= current_user 
-    
-    # Default to logical registry 'Recently Added' if :registry not in response
-    # Always get recently_added_gifts
-    @recently_added_gifts = @user.gifts.find( :all, :order => "created_at DESC", :limit => 9 )
-  
-    if !params[:registry_id].nil? 
-      @registry = Registry.find params[:registry_id]
-      @gifts = @registry.gifts.find :all
-    else # user wants to see recently added gifts
-      @gifts = @recently_added_gifts
-    end
-    
+    logger.info "*-*-*-*-* gifts_controller.index :id => #{params[:id]}."
+    @gifts = @user.gifts.find( :all, :order => "created_at DESC" )
+
     respond_to do |format|
       format.html # index.html.erb
       format.xml  { render :xml => @gifts }
     end
   end
 
-  def index_of_friend
-    @user = User.find_by_username params[:friend]
-    logger.info("*-*-*-* .index_of_friend: switch to #{params[:friend]}")
-    @gifts = User.find_by_username(params[:friend]).gifts.find(:all)
+  # gifts for @registry passed in
+  def index_for_registry
+    logger.info "*-*-*-*-* gifts_controller.index_for_registry :id => #{params[:id]}."
+    @gifts = Registry.find(params[:registry_id]).gifts
     
     respond_to do |format|
-      format.js # for_friend.rjs
+      format.html { render :action=>'index'}# index.html.erb
+      format.xml  { render :xml => @gifts }
+    end
+  end
+    
+  def select_friend
+    debugger
+    logger.info("*-*-*-* gifts_controller.select_friend: switch to #{params[:friend]}")
+    @current_friend = User.find_by_username params[:friend] ||= nil    
+    @user.current_friend_id = @current_friend.id
+    if @user.update_attributes(:current_friend_id => @user.current_friend_id)
+      respond_to do |format|
+        format.js # for_friend.rjs
+       end
+     else
+       render :text => "Unable to update user with current_friend"
      end
+  end
+ 
+  # gifts for @registry passed in
+   def index_for_friend_registry
+     logger.info "*-*-*-*-* gifts_controller.index_for_friend_registry :id => #{params[:registry_id]}."
+     @registry = Registry.find(params[:registry_id])
+     @gifts = @registry.gifts
+     @current_friend = User.find(@user.current_friend_id)
+     
+     respond_to do |format|
+       format.html { }
+       format.xml  { render :xml => @gifts }
+     end
+   end
+  
+  # friend registries
+  def index_of_friend
+    logger.info "*-*-*-*-* gifts_controller.friend :id => #{params[:user]}."
+    if params[:registry_id].nil?
+      @gifts = @user.gifts.find( :all, :order => "created_at DESC" )
+    else
+      @registry = Registry.find(params[:registry_id])
+      @gifts = @user.gifts.find( :all, :order => "created_at DESC" )
+    end
+    
+    respond_to do |format|
+      format.html 
+    end
   end
   
   def show
@@ -108,11 +141,12 @@ class GiftsController < ApplicationController
   
 
  
-#= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =
+# = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =
 
   def find_user
-    logger.info "\n*-*-*-*-* find_user: for :id => #{params[:id]}.\n"
     @user = current_user
+    logger.info "*-*-*-*-* gifts_controller.find_user. username = #{@user.username}, :registry_id = #{params[:registry_id]}."
   end
 
 end
+ 

@@ -1,0 +1,41 @@
+<h2>Friend Header</h2>
+<div id="masthead">
+	<% if show_links? %>
+	   <h1><%= link_to(image_tag("/images/idlikalogo.gif", 
+	                     {:alt => 'Go to my gift registries in idlika'}), root_url ) %></h1>
+	  <h2><b>Remember things you want ... Show your friends!</b></h2>
+	<% else %>
+	  <h1><b>idlika</b></h1></a>
+	  <h2><b>Remember things you want ... Show your friends!</b></h2></a>
+	<% end %>
+
+<%= render( :partial => '/shared/logon_header')%>
+
+<div class="clearer"></div>
+
+<div id="nav">
+  <% if show_links? %>
+  <ul>
+	<li><%= link_to_unless_current '', root_url, {:class => 'home'} %></li>
+  	<li><%= link_to_unless_current '', login_path, :class=>'gifts'%></li>
+    <li><%= link_to_unless_current '', new_user_path, :class=>"myaccnt"  %>
+	<li><table cellspacing=0>
+      <form>
+        <tr valign="top">
+
+            <td valign="bottom">
+                <% form_tag( user_registries_path(@user), :method => :post, :class => 'registries' ) do %>
+                  <label class='aglabel'>My Friend's Registries </label>
+                  <%= select_tag( :friend, friend_registry_links ) unless @user.nil? %>
+                  <%= observe_friend_select %>
+           </td>
+            <td><%= link_to(image_tag("/images/btn_go.gif", 
+			                     {:alt => 'Go to my gift registries in idlika', :style=>"margin-top:10px;"}), gifts_path(@gift) ) %></li>
+			<% end %>
+        </form>
+        </table>
+    </li>
+</ul>
+<% end %>
+</div><!-- nav -->
+</div><!-- masthead -->

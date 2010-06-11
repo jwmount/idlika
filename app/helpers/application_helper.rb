@@ -8,7 +8,7 @@ module ApplicationHelper
 
   def observe_friend_select
      observe_field( :friend,
-                    :url => {:controller=>'gifts', :action=>'index_of_friend'}, #index_of_friend_path,
+                    :url => {:controller=>'gifts', :action=>'select_friend'}, 
 #gets set in .rjs       :update => :li_sidebar,
                     :with => :friend, 
                     :on => :onchange

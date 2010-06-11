@@ -1,26 +1,26 @@
 class RegistriesController < ApplicationController
   
   before_filter :find_user
-    
-  # GET /registries
-  # GET /registries.xml
+
+  # returns a collection of registries for a user or friend    
   def index
-    @registries = @user.registries.find( :all )
+    if @user.current_friend_id.nil?
+      @registries = @user.registries.find( :all )
+    else
+      @registries = (User.find @user.current_friend_id ).registries.find(:all)
+    end
 
     respond_to do |format|
-      format.html # index.html.erb
-      format.xml  { render :xml => @registries }
+      format.html { redirect_to user_gifts_path(@user) }
     end
   end
 
-  # GET /registries/1
-  # GET /registries/1.xml
+  # details about a registry
   def show
-    @registry = @user.registries.find(params[:id])
-    @gifts = @user.gifts.find( :all, :order => :created_at, :limit => 9 )
+    @action = @user.current_friend_id.nil? ? 'index' : 'select_friend'
     respond_to do |format|
       # work out named path at some point
-      format.html { redirect_to :controller => 'gifts', :action => 'index', :registry_id => @registry.id }
+      format.html { redirect_to :controller => 'gifts', :action => "#{@action}",  :registry_id => params[:id] }
       format.xml  { render :xml => @registry }
     end
   end
@@ -92,7 +92,8 @@ class RegistriesController < ApplicationController
 private
 
   def find_user
-    @user = User.find( params[:user_id] )
+    @user = current_user
+    logger.info "*-*-*-*-* registries_controller.find_user: @user => #{@user.username}, params[:id]=>#{params[:id]}."
   end
   
 end

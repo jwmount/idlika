@@ -5,6 +5,7 @@ class User < ActiveRecord::Base
   has_many :gifts, :dependent => :destroy
   has_many :registries, :dependent => :destroy
   has_many :roles, :through => :registries, :source => :user
+#  has_many :gifts, :through => :viewers, :dependent => :destroy
 
   serialize :friends
   
@@ -14,7 +15,7 @@ class User < ActiveRecord::Base
     end
   end
   
-  def friend
+  def Xfriend
     @friend = User.find 21
   end
       

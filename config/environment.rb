@@ -2,7 +2,7 @@
 require 'ActionMailer'
 # Specifies gem version of Rails to use when vendor/rails is not present
 RAILS_GEM_VERSION = '2.3.3' unless defined? RAILS_GEM_VERSION
-ENV['IDLIKA_VERSION'] = '0.1.031'
+ENV['IDLIKA_VERSION'] = '0.1.032'
 
 ENV['S3_BUCKET'] = "idlika.com"
 ENV['S3_KEY'] = 'AKIAJG2MA6FIXEPKVC6Q'
@@ -33,7 +33,7 @@ Rails::Initializer.run do |config|
   # config.gem "sqlite3-ruby", :lib => "sqlite3"
   # config.gem "aws-s3", :lib => "aws/s3"
   # for HEROKU put both gems in .gems file (>mate .gems to edit),  Case Sensitive!
-  config.gem "actionmailer"
+  config.gem "action_mailer"
   config.gem "authlogic"
   config.gem "declarative_authorization", :source => "http://gemcutter.org"
   config.gem "paperclip"

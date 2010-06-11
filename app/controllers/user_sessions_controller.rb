@@ -11,7 +11,8 @@ class UserSessionsController < ApplicationController
     @user_session = UserSession.new(params[:user_session])
     if @user_session.save
       flash[:notice] = "Successfully logged in."
-      redirect_to gifts_path
+#      redirect_to gifts_path
+      redirect_to registries_path
     else
       render :action => 'new'
     end

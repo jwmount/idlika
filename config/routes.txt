@@ -9,7 +9,10 @@ suggest_change_authorization_rules GET    /authorization_rules/suggest_change(.:
                             signup        /signup                                       {:controller=>"user_sessions", :action=>"new"}
                             invite        /invite                                       {:controller=>"users", :action=>"invite"}
                         invitation        /invitation                                   {:controller=>"users", :action=>"invitation"}
+                            friend        /friend                                       {:controller=>"gifts", :action=>"friend"}
+                     select_friend        /select_friend                                {:controller=>"gifts", :action=>"select_friend"}
                    index_of_friend        /index_of_friend                              {:controller=>"gifts", :action=>"index_of_friend"}
+                index_for_registry        /index_for_registry                           {:controller=>"gifts", :action=>"index_for_registry"}
                                how        /how                                          {:controller=>"home", :action=>"how"}
                               what        /what                                         {:controller=>"home", :action=>"what"}
                                faq        /faq                                          {:controller=>"home", :action=>"faq"}
@@ -46,6 +49,13 @@ suggest_change_authorization_rules GET    /authorization_rules/suggest_change(.:
                          user_gift GET    /users/:user_id/gifts/:id(.:format)           {:controller=>"gifts", :action=>"show"}
                                    PUT    /users/:user_id/gifts/:id(.:format)           {:controller=>"gifts", :action=>"update"}
                                    DELETE /users/:user_id/gifts/:id(.:format)           {:controller=>"gifts", :action=>"destroy"}
+                      user_friends GET    /users/:user_id/friends(.:format)             {:controller=>"friends", :action=>"index"}
+                                   POST   /users/:user_id/friends(.:format)             {:controller=>"friends", :action=>"create"}
+                   new_user_friend GET    /users/:user_id/friends/new(.:format)         {:controller=>"friends", :action=>"new"}
+                  edit_user_friend GET    /users/:user_id/friends/:id/edit(.:format)    {:controller=>"friends", :action=>"edit"}
+                       user_friend GET    /users/:user_id/friends/:id(.:format)         {:controller=>"friends", :action=>"show"}
+                                   PUT    /users/:user_id/friends/:id(.:format)         {:controller=>"friends", :action=>"update"}
+                                   DELETE /users/:user_id/friends/:id(.:format)         {:controller=>"friends", :action=>"destroy"}
                              roles GET    /roles(.:format)                              {:controller=>"roles", :action=>"index"}
                                    POST   /roles(.:format)                              {:controller=>"roles", :action=>"create"}
                           new_role GET    /roles/new(.:format)                          {:controller=>"roles", :action=>"new"}

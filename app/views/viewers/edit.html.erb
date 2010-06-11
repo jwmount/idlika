@@ -1,0 +1,12 @@
+<h1>Editing viewer</h1>
+
+<% form_for(@viewer) do |f| %>
+  <%= f.error_messages %>
+
+  <p>
+    <%= f.submit 'Update' %>
+  </p>
+<% end %>
+
+<%= link_to 'Show', @viewer %> |
+<%= link_to 'Back', viewers_path %>

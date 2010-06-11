@@ -2,9 +2,20 @@
 <br/>
 <div class="aglabel">Who can see this gift?:</div>
 
-<% User.find(:all).each do |user| %>
-  <div class="agfield"><%= check_box_tag user.username, user.username %><%= user.username %></div>
+<!-- fixed choices -->
+<div class="agfield"><%= check_box_tag           :f, :none_can_see %>Nobody (just me)</div>
+<div class="agfield"><%= check_box_tag :checked, :f, :anyone_can_see %>Anybody</div>
+<div class="agfield"><%= check_box_tag           :f, :friends_can_see %>Friends only</div>
+<br/>
+<div class="clearer"></div>
+<!-- end fixed choices -->
+
+<!-- @user = @gift.user_id -->
+<!-- div id="friends_who_can_see">
+< User.find(:all).friends.each do |friend| %>
+  <div class="agfield"><= check_box_tag :gift, :who_can_see %><= friend %></div>
   <div class="aglabel"></div>
-<% end %>
+< end %>
+</div>< /friends_who_can_see -->
 
 <div class="clearer"></div>
