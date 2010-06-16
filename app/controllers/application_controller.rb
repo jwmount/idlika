@@ -34,10 +34,19 @@ class ApplicationController < ActionController::Base
      @current_user_session = UserSession.find
    end
 
+   # current_user can only be altered by login/logout
    def current_user
      return @current_user if defined?(@current_user)
      @current_user = current_user_session && current_user_session.record
    end
 
+   # @owner is @user.friend_id or NULL where @user is obtained via current_user.
+   # it can be selected based on a list of friends.
+   def current_owner
+     @user = current_user
+     @owner = nil
+     @owner = User.find @user.friend_id unless @user.friend_id.nil?
+   end
+   
 end
 

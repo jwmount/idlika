@@ -1,18 +1,17 @@
 class GiftsController < ApplicationController
 #  filter_resource_access
 
-  before_filter :find_user
+  before_filter :find_user, :find_owner
   layout 'application'
  
-  # gifts for @user, effectively ALL gifts 
+  # determine which user and related gifts and registries to display.
+  # All operations are on @user.  Determine if @user is self as necessary.
   def index
-    logger.info "*-*-*-*-* gifts_controller.index :id => #{params[:id]}."
-    @gifts = @user.gifts.find( :all, :order => "created_at DESC" )
-
-    respond_to do |format|
-      format.html # index.html.erb
-      format.xml  { render :xml => @gifts }
-    end
+    logger.info "*-*-*-*-* gifts_controller.index current_user #{@user.id}."
+    logger.info "*-*-*-*-* gifts_controller.index current_owner #{@owner.id}." unless @owner.nil?
+    @gifts = !@owner.nil? ? @owner.gifts.find( :all, :order => "created_at DESC" ) :
+                            @user.gifts.find( :all, :order => "created_at DESC" )
+    @user = !@owner.nil? ?  @owner : @user 
   end
 
   # gifts for @registry passed in
@@ -27,46 +26,20 @@ class GiftsController < ApplicationController
   end
     
   def select_friend
-    debugger
-    logger.info("*-*-*-* gifts_controller.select_friend: switch to #{params[:friend]}")
-    @current_friend = User.find_by_username params[:friend] ||= nil    
-    @user.current_friend_id = @current_friend.id
-    if @user.update_attributes(:current_friend_id => @user.current_friend_id)
+    logger.info("*-*-*-* gifts_controller.select_friend: switch to #{params[:friend]}, :id = #{params[:id]}")
+
+    current_friend = User.find_by_username params[:friend] ||= nil    
+    @user.friend_id = current_friend.id
+    if @user.update_attributes(:friend_id => @user.friend_id)
       respond_to do |format|
-        format.js # for_friend.rjs
+         format.html {redirect_to :action => 'index', :id => @user.id}
+#        format.js # for_friend.rjs
        end
      else
-       render :text => "Unable to update user with current_friend"
+      render :text => "Unable to update user with current_friend"
      end
   end
  
-  # gifts for @registry passed in
-   def index_for_friend_registry
-     logger.info "*-*-*-*-* gifts_controller.index_for_friend_registry :id => #{params[:registry_id]}."
-     @registry = Registry.find(params[:registry_id])
-     @gifts = @registry.gifts
-     @current_friend = User.find(@user.current_friend_id)
-     
-     respond_to do |format|
-       format.html { }
-       format.xml  { render :xml => @gifts }
-     end
-   end
-  
-  # friend registries
-  def index_of_friend
-    logger.info "*-*-*-*-* gifts_controller.friend :id => #{params[:user]}."
-    if params[:registry_id].nil?
-      @gifts = @user.gifts.find( :all, :order => "created_at DESC" )
-    else
-      @registry = Registry.find(params[:registry_id])
-      @gifts = @user.gifts.find( :all, :order => "created_at DESC" )
-    end
-    
-    respond_to do |format|
-      format.html 
-    end
-  end
   
   def show
     @gift = Gift.find params[:id]
@@ -138,14 +111,19 @@ class GiftsController < ApplicationController
     end
     redirect_to edit_user_gift_path(@user, @gift)
   end
-  
-
  
 # = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =
 
+  # who's logged on.  If friend is 'self' turn it off.
   def find_user
     @user = current_user
-    logger.info "*-*-*-*-* gifts_controller.find_user. username = #{@user.username}, :registry_id = #{params[:registry_id]}."
+    @user.friend_id = nil if @user.friend_id == @user.id
+    @user.save
+  end
+  
+  # who's stuff we're looking at
+  def find_owner
+    @owner = current_owner
   end
 
 end

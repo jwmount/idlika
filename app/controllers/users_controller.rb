@@ -32,7 +32,13 @@ class UsersController < ApplicationController
     end
   end
 
-
+  def remove_friend
+    @user = current_user
+    @user.friend_id = nil
+    @user.save
+    redirect_to logout_path
+  end
+  
   def update
     @user = current_user
     if @user.update_attributes(params[:user])
@@ -44,7 +50,7 @@ class UsersController < ApplicationController
   end
   
   def invite
-    @user = User.new
+    @user = current_user
     @body = "Hey, this is cool.\n\n" +
             "I've arranged to get you access to the Beta version.  \n\n" +
             "and Login with the User name and Access Code below (you can change these afterwards).  \n\n" +

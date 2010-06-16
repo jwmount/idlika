@@ -10,10 +10,10 @@
       <p><%=h gift.description %></p>
       <a href="share.html"><img src="images/btn_share.png" alt="Share Item" /></a>
       <%= link_to (image_tag("btn_details.png")), user_gift_path(@user,gift) %>
-      <%= link_to (image_tag("btn_delete.png"), gift_path(gift.id), 
+      <%= link_to( image_tag("btn_delete.png" ), gift_path(gift.id), 
              :confirm => "Are you sure you want to remove this item?", :method => :delete ) %>
 
-  </div><!-- item_inner>
+  </div><!-- item_inner -->
 
 <% else %>
 
@@ -22,7 +22,7 @@
 
 	      <a href="item.html"><img src="images/btn_details.png" alt="Show Details / Edit Item" /></a>
 		  <a href="share.html"><img src="images/btn_share.png" alt="Share Item" /></a>
-		  <%= link_to (image_tag("btn_delete.png"), gift_path(gift_id), :confirm => "Are you sure?", :method => :delete ) %>
+		  <%= link_to(image_tag("btn_delete.png"), gift_path(gift_id), :confirm => "Are you sure?", :method => :delete ) %>
 
 	  </div><!-- actions -->
   </div><!-- item_inner -->

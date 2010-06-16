@@ -4,10 +4,10 @@ class RegistriesController < ApplicationController
 
   # returns a collection of registries for a user or friend    
   def index
-    if @user.current_friend_id.nil?
+    if @user.friend_id.nil?
       @registries = @user.registries.find( :all )
     else
-      @registries = (User.find @user.current_friend_id ).registries.find(:all)
+      @registries = (User.find @user.friend_id ).registries.find(:all)
     end
 
     respond_to do |format|
@@ -17,7 +17,7 @@ class RegistriesController < ApplicationController
 
   # details about a registry
   def show
-    @action = @user.current_friend_id.nil? ? 'index' : 'select_friend'
+    @action = @user.friend_id.nil? ? 'index' : 'select_friend'
     respond_to do |format|
       # work out named path at some point
       format.html { redirect_to :controller => 'gifts', :action => "#{@action}",  :registry_id => params[:id] }

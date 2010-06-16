@@ -3,12 +3,12 @@
 
 <div id="li_content">
   <!-- h1 class="add_a_gift"><b>Invite a friend</b>Invite A Friend</h1 -->
-  <h1 ><b>Invite a friend</b>Invite A Friend</h1>
+  <h1>Invite A Friend</h1>
   <%= render :partial => 'invitation' %>
-  <br/><br/>
+  <br/>
   <%= render :partial => 'shared/notices'%>
+  <%= link_to 'Back', gifts_path %>
 </div><!-- li_content -->
-<%= link_to 'Back', gifts_path %>
 
 <div class="clearer"></div>
 </div><!-- li_body -->

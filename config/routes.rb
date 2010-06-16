@@ -6,6 +6,7 @@ ActionController::Routing::Routes.draw do |map|
   
   map.invite         "invite", :controller => "users", :action => "invite"
   map.invitation     "invitation", :controller => "users", :action => "invitation"
+  map.remove_friend   "remove_friend", :controller => "users", :action => "remove_friend"
   
   map.friend          "friend", :controller => "gifts", :action => "friend"
   map.select_friend   "select_friend", :controller => "gifts", :action => "select_friend"

@@ -1,16 +1,18 @@
 <br/>
 <div id="li_body">
   <%= render :partial => 'shared/sidebar' %>
-
-<div id="li_content">
-  <% @registry_name = (@registry.nil? ? 'Recently Added' : @registry.name) %>
-  <h1><%=h @registry_name = (@registry.nil? ? 'Recently Added' : @registry.name) %></h1>
-  <% if !@gifts.nil? %>
-    <%= render :partial => 'registry_container', :collection => @gifts %>
-  <% else %>
-	<h3>There's nothing in here!  Why not add something so your friends can see it?.</h3>
-  <% end %>
-</div><!-- li_content -->
+  
+  <div id="li_content">
+  
+    <% @registry_name = (@registry.nil? ? "Recently Added" : @registry.name) %>
+    <h1><%=h @registry_name = (@registry.nil? ? "#{@user.username} Recently Added" : @registry.name) %></h1>
+    <% if !@gifts.nil? %>
+      <%= render :partial => 'registry_container', :collection => @gifts %>
+    <% else %>
+	  <h3>There's nothing in here!  Why not add something so your friends can see it?.</h3>
+    <% end %>
+  
+  </div><!-- li_content -->
 
 <div class="clearer"></div>
 </div><!-- li_body -->

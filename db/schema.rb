@@ -61,7 +61,7 @@ ActiveRecord::Schema.define(:version => 20100608164540) do
   end
 
   create_table "users", :force => true do |t|
-    t.integer  "current_friend_id"
+    t.integer  "friend_id"
     t.string   "role_id"
     t.string   "username"
     t.string   "email"
