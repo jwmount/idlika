@@ -1,7 +1,7 @@
 # Be sure to restart your server when you modify this file
 
 # remove this for staging and production
-require 'ActionMailer'
+# require 'ActionMailer'
 
 # Specifies gem version of Rails to use when vendor/rails is not present
 RAILS_GEM_VERSION = '2.3.3' unless defined? RAILS_GEM_VERSION
@@ -41,7 +41,7 @@ Rails::Initializer.run do |config|
   config.gem "authlogic"
   config.gem "declarative_authorization", :source => "http://gemcutter.org"
   config.gem "paperclip"
-  config.gem "rmagick", :lib => "RMagick"
+#  config.gem "rmagick", :lib => "RMagick"
   # http://github.com/scottburton11/paperclip-rightaws-fails/blob/master/config/environment.rb
   config.after_initialize do
     config.gem "right_aws"
