@@ -1,11 +1,11 @@
 # Be sure to restart your server when you modify this file
 
-# remove this for staging and production
-# require 'ActionMailer'
+# MUST be on for dev, MUST remove this for staging and production
+ require 'ActionMailer'
 
 # Specifies gem version of Rails to use when vendor/rails is not present
-#RAILS_GEM_VERSION = '2.3.3' unless defined? RAILS_GEM_VERSION
-ENV['IDLIKA_VERSION'] = '0.1.033'
+# RAILS_GEM_VERSION = '2.3.3' unless defined? RAILS_GEM_VERSION
+ENV['IDLIKA_VERSION'] = '0.1.034'
 
 ENV['S3_BUCKET'] = "idlika.com"
 ENV['S3_KEY'] = 'AKIAJG2MA6FIXEPKVC6Q'
