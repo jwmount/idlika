@@ -57,22 +57,29 @@ class UsersController < ApplicationController
             "Click on http://www.idlika.com"
   end
 
+  # Design Notes
+  # It can happen that a user has no friends established (registered on own initiative, for example).
+  # For some reason the @invited_friend hash may be nil (actually {nil, nil}).  Skip the update in this case.
   def invitation
     flash[:notice] = ''
     flash[:waring] = ''
     @friend = User.new(params[:user])
+
     @user = User.find current_user[:id]
     @invited_friend = { @friend.email, @friend.username }
-    @user.friends = @user.friends.empty? ? @invited_friend : @user.friends.update(@invited_friend)
-  
-    if @user.save
+    
+    unless (@invited_friend == {nil,nil}) or (@invited_friend == " \n")
+      @user.friends = @user.friends.nil? ? @invited_friend : @user.friends.update(@invited_friend)
+    
+      if @user.save
         MemberMailer.deliver_invitation(params[:user], @user.email)
         logger.info "*-*-*-* Invitation emailed to #{@friend.username} with email #{@friend.email}."
         flash[:notice] = "Your invitation to #{@friend.username} has been sent to #{@friend.email}."
-    else
-       logger.info "*-*-*-* Invitation to #{@friend.username} using #{@friend.email} could not be saved."
-       flash[:warning] = "Your invitation to #{@friend.username} with email #{@friend.email} could not be created.  " +
-                         "  This can happen if #{@friend.username} already is a member."
+      else
+        logger.info "*-*-*-* Invitation to #{@friend.username} using #{@friend.email} could not be saved."
+        flash[:warning] = "Your invitation to #{@friend.username} with email #{@friend.email} could not be created.  " +
+                         "  This can happen if #{@friend.username} is already a member."
+      end
     end
     redirect_to :action => 'invite' 
   end

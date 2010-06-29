@@ -1,4 +1,4 @@
-<p>user.id: <%= @user.id %>, friend_id: <%= @user.friend_id %></p>
+<!-- ><p>user.id: <= @user.id %>, friend_id: <%= @user.friend_id %></p> -->
 	<div id="li_sidebar">
 	  <ul>
         <li><%= link_to_unless_current (image_tag "sidenav_myregistries.gif"), user_registries_path(@user) %></li>
@@ -11,7 +11,7 @@
 		      <% end %>
 		  </li>
 	      <li><%= link_to_unless_current '', new_gift_path, :class => "addgift" %></li>
-	      <li><%= link_to_unless_current '', invite_path, :class => "addgift" %>(invite a friend)</li>
+	      <li><%= link_to_unless_current '', invite_path, :class => "invitefriend" %></li>
 	    <% end %>
 	  </ul>
 	</div><!-- li_sidebar -->

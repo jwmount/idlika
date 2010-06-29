@@ -3,6 +3,9 @@ module ApplicationHelper
 
   # use friends hash as basis for looking at friends' registries.
   def friend_registry_links
+    if @user.friends.nil?
+      return {"info@idlika.com", "no friends yet"}
+    end
     select :key, :value, @user.friends.each {|k,v| [k,v] }, {:include_blank => true }   unless @user.nil?
   end
 

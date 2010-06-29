@@ -27,7 +27,6 @@
 	       	<td><img src="../images/search.gif" alt="Search:" style="margin:16px 8px 0px 0px;" /></td>
         	<td><input type="text" class="navsearch" name="searchterm" /></td>
         -->
-
             <td valign="bottom">
                 <% form_tag( user_registries_path(@user), :method => :post, :class => 'registries' ) do %>
                   <label class='aglabel'>Friends </label>
@@ -36,7 +35,7 @@
            </td>
             <td><%= link_to(image_tag("/images/btn_go.gif", 
 			                     {:alt => 'Go to my gift registries in idlika', :style=>"margin-top:10px;"}), gifts_path(@gift) ) %></li>
-			<% end %>
+	<% end %>
         </form>
         </table>
     </li>

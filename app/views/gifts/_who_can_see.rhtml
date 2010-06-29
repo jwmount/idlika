@@ -1,21 +1,27 @@
 <!-- render :partial => 'who_can_see' -->
-<br/>
-<div class="aglabel">Who can see this gift?:</div>
+<div class="aglabel"></div>
+<!--
+HANDLE CASE OF LONE REGISTRATION WITH NO FRIENDS
+DO NOT YIELD ANYTHING if @user.friends is {nil,nil}.
+DO NOT YIELD ANYTHING if @user.friends is " \n".
+FIGURE OUT WHAT SETS THESE VALUES!!!!
+-->
+<% unless (@user.friends == {nil,nil}) or (@user.friends == " \n") %>
+  <% @user.friends.each_value do |name| %>
+    <% if allowed_to_view? name %>
+      <div class="agfield"><%= check_box_tag name.tr(' ','_'), :checked, name  %><%= name %></div>
+    <% else %>
+      <div class="agfield"><%= check_box_tag name.tr(' ','_'),           name  %><%= name %></div>
+    <% end %>
 
-<!-- fixed choices -->
-<div class="agfield"><%= check_box_tag           :f, :none_can_see %>Nobody (just me)</div>
-<div class="agfield"><%= check_box_tag :checked, :f, :anyone_can_see %>Anybody</div>
-<div class="agfield"><%= check_box_tag           :f, :friends_can_see %>Friends only</div>
-<br/>
-<div class="clearer"></div>
-<!-- end fixed choices -->
-
-<!-- @user = @gift.user_id -->
-<!-- div id="friends_who_can_see">
-< User.find(:all).friends.each do |friend| %>
-  <div class="agfield"><= check_box_tag :gift, :who_can_see %><= friend %></div>
-  <div class="aglabel"></div>
-< end %>
-</div>< /friends_who_can_see -->
-
+	<%= observe_field name.tr(' ','_'),
+	  { :on => 'change',  :url => { :controller=>'gifts', 
+		                            :action => 'gift_toggle', 
+		                            :user_id => @user, 
+		                            :gift_id => @gift.id, 
+		                            :friend => "#{name.tr(' ','_')}" },
+	  :with => name.tr(' ','_') } %>
+    <div class="aglabel"></div>
+  <% end %>
+<% end %>
 <div class="clearer"></div>

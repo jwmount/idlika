@@ -3,7 +3,7 @@
 <%= render :partial => 'shared/sidebar' %>
 
 <div id="li_content">
-  <h1>About This Gift</h1>
+  <h1 class="about_this_gift"></h1>
 
 <p>
   <%= link_to (image_tag @gift.photo.url(:large)), @gift.URL, :target=>'blank' %>
@@ -12,10 +12,12 @@
   <b>Name:</b>
   <%=h @gift.name %>
 </p>
+<% unless @gift.registry.nil? %>
 <p>
 	<b>Registry:</b>
 	<%= @gift.registry.name %>
 </p>
+<% end %>
 <p>
   <b>Description:</b>
   <%=h @gift.description %>
@@ -25,12 +27,15 @@
   <%= link_to 'I want one too!', edit_user_gift_path( @user, @gift) %> | 
 <% end %>
 
-<% if @user.id == current_user[:id] %>
-  <%= link_to 'Edit', edit_user_gift_path(@user,@gift) %> |
-  <%= link_to (image_tag("btn_delete.png"), gift_path(@gift), 
+  <% if @user.id == current_user[:id] %>
+    <%= link_to 'Edit', edit_user_gift_path(@user,@gift) %> |
+	<% unless @gift.registry.nil? %>
+      <%= link_to (image_tag("btn_delete.png"), gift_path(@gift), 
            :confirm => "Are you sure you want to delete #{@gift.name} from #{@gift.registry.name}?", 
            :method => :delete )%> |
-<% end %>
+    <% end %>
+  <% end %>
+
 <%= link_to 'Back', gifts_path %>
 
 </div><!-- li_content -->

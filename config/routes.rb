@@ -1,4 +1,6 @@
 ActionController::Routing::Routes.draw do |map|
+
+
   
   map.login          "login", :controller => "user_sessions", :action => "new"
   map.logout         "logout", :controller => "user_sessions", :action => "destroy"
@@ -23,12 +25,14 @@ ActionController::Routing::Routes.draw do |map|
   map.tell           "tell", :controller => "home", :action => "tell"
   map.advertise      "advertise", :controller => "home", :action => "advertise"
   map.contact        "contact", :controller => "home", :action => "contact"
-  
-  map.resources :users, :has_many => [:registries, :roles, :gifts, :friends]
-  map.resources :roles, :has_many => :users
+
+  map.resources :donors
+  map.resources :gifts, :has_many => :registries, :has_many => :donors, :has_many => :sources
   map.resources :registries
-  map.resources :gifts, :has_many => :registries
+  map.resources :roles, :has_many => :users
+  map.resources :sources
   map.resources :user_sessions
+  map.resources :users, :has_many => [:registries, :roles, :gifts, :friends]
 
   map.root :controller => "home"
   map.connect ':controller/:action/:id'

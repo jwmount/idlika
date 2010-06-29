@@ -2,22 +2,32 @@
 
 <div id="li_content">
 
-<!-- h1> logon title image here </h1 -->
+<h1 class="login"></h1>
 <br/>
 <% form_for @user_session do |f| %>
   <%= f.error_messages %>
-  <p>
-    <%= f.label :username %><br />
-    <%= f.text_field :username %>
-  </p>
-  <p>
-    <%= f.label :password %><br />
-    <%= f.password_field :password %>
-  </p>
-  <p><%= f.submit "Submit" %></p>
-<% end %>
 
+  <div id="addgift_form">
+  <div class="clearer"></div>
+  <div class="aglabel"><%= f.label :username %></div>
+  <div class="agfield"><%= f.text_field :username, :class=>"agtext" %></div>
+  <div class="clearer"></div>
+
+  <div id="addgift_form">
+  <div class="clearer"></div>
+  <div class="aglabel"><%= f.label :password %></div>
+  <div class="agfield"><%= f.password_field :password, :class=>"agtext" %></div>
+  <div class="clearer"></div>
+
+  <p><%= f.submit "Submit" %></p>
+</div><!-- addgift_form -->
+
+<% end %>
+<br /></br />
 <%= link_to 'Back', gifts_path %>
+<br /></br />
+<br /></br />
+<br /></br />
 </div><!-- li_content -->
 <div class="clearer"></div>
 </div><!-- li_body -->

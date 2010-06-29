@@ -2,7 +2,7 @@
 <br/>
 	<!-- registry included container -->
     <div class="aglabel">Registries I'll list it in:</div>
-    <div class="agfield"><%= check_box_tag 'registry', 'registry.name', true, :disabled=>true %>Recently visited</div>
+    <div class="agfield"><%= check_box_tag 'registry', 'registry.name', true, :disabled=>true %>Recently Added</div>
 
 	<% @user.registries.each do |registry| %>
       <% unless registry.name == 'Recently Added' %>		

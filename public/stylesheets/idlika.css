@@ -243,9 +243,9 @@ a.addgift { width:152px; height:19px; display:block; background:url(../images/si
 a.addgift:hover, a.addgift:active { width:152px; height:19px; display:block; background:url(../images/sidenav_addagift_on.gif); }
 a.addgift_set { width:152px; height:19px; display:block; background:url(../images/sidenav_addagift_on.gif); }
 
-a.addgift { width:152px; height:19px; display:block; background:url(../images/sidenav_addagift.gif); }
-a.addgift:hover, a.addgift:active { width:152px; height:19px; display:block; background:url(../images/sidenav_addagift_on.gif); }
-a.addgift_set { width:152px; height:19px; display:block; background:url(../images/sidenav_addagift_on.gif); }
+a.invitefriend { width:152px; height:19px; display:block; background:url(../images/sidenav_invitefriend.gif); }
+a.invitefriend:hover, a.invitefriend:active { width:152px; height:19px; display:block; background:url(../images/sidenav_invitefriend_on.gif); }
+a.invitefriend_set { width:172px; height:19px; display:block; background:url(../images/sidenav_invitefriend_on.gif); }
 
 #li_content {
 	width:770px;  float:right;
@@ -263,6 +263,38 @@ h1.recently_added {
 h1.add_a_gift {
 	width:153px; height:23px; margin:20px 0px; padding:0px;
 	background:url(../images/hdr_addagift.gif);
+}
+h1.invite_a_friend {
+	width:200px; height:26px; margin:20px 0px; padding:0px;
+	background:url(../images/hdr_inviteafriend.gif);
+}
+h1.edit_gift {
+	width:120px; height:26px; margin:20px 0px; padding:0px;
+	background:url(../images/hdr_editgift.gif);
+}
+h1.about_this_gift {
+	width:222px; height:26px; margin:20px 0px; padding:0px;
+	background:url(../images/hdr_aboutthisgift.gif);
+}
+h1.recently_added {
+	width:237px; height:23px; margin:20px 0px; padding:0px;
+	background:url(../images/hdr_recentlyadded.gif);
+}
+h1.add_a_friend {
+	width:184px; height:23px; margin:20px 0px; padding:0px;
+	background:url(../images/hdr_addafriend.gif);
+}
+h1.new_registry {
+	width:200px; height:23px; margin:20px 0px; padding:0px;
+	background:url(../images/hdr_newregistry.gif);
+}
+h1.join_idlika {
+	width:144px; height:26px; margin:20px 0px; padding:0px;
+	background:url(../images/hdr_joinidlika.gif);
+}
+h1.login {
+	width:82px; height:26px; margin:20px 0px; padding:0px;
+	background:url(../images/hdr_login.gif);
 }
 
 #recent {

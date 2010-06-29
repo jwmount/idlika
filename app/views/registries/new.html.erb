@@ -1,7 +1,7 @@
 <div id="li_body">
 <%= render :partial => 'shared/sidebar' %>
 <div id="li_content">
-  <h1>NEW REGISTRY</h1>
+  <h1 class="new_registry"></h1>
 
 <% form_for([@user, @registry]) do |f| %>
   <%= f.error_messages %>
@@ -9,15 +9,15 @@
   <%= render :partial=>'form', :locals => { :f => f } %>
   <div class="aglabel"></div>
   <div class="agfield" stylesheet="margin:20px">
-	  <%= image_submit_tag("/images/btn_addthisgift_on.gif") %>CREATE THIS REGISTRY</div>
+	  <%= image_submit_tag("/images/btn_createregistry_on.gif") %></div>
 	</div> <!-- addgift_form -->
 
 <% end %> <!-- form -->
 
 </div><!-- li_content -->
-
+<br />
 <div class="aglabel"></div>
-<%= link_to 'Back', user_registries_path(@user) %></div>
+<div class="agfield"><%= link_to 'Back', user_registries_path(@user) %></div>
 <div class="clearer"></div>
 </div><!-- li_body --> 
 

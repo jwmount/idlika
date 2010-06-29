@@ -9,12 +9,9 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20100608164540) do
+ActiveRecord::Schema.define(:version => 20100625190304) do
 
-  create_table "friends", :force => true do |t|
-    t.integer  "user_id"
-    t.integer  "gift_id"
-    t.string   "message"
+  create_table "donors", :force => true do |t|
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -26,21 +23,13 @@ ActiveRecord::Schema.define(:version => 20100608164540) do
     t.string   "source"
     t.string   "description"
     t.string   "URL"
-    t.boolean  "none_can_see",       :default => true
-    t.boolean  "anyone_can_see",     :default => false
+    t.boolean  "i_can_see",          :default => true,  :null => false
+    t.boolean  "friends_can_see",    :default => false, :null => false
     t.text     "who_can_see",                           :null => false
-    t.datetime "deleted"
     t.string   "photo_file_name"
     t.string   "photo_content_type"
     t.integer  "photo_file_size"
     t.datetime "photo_updated_at"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
-  create_table "items", :force => true do |t|
-    t.integer  "gift_id"
-    t.integer  "registry_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -60,8 +49,17 @@ ActiveRecord::Schema.define(:version => 20100608164540) do
     t.datetime "updated_at"
   end
 
+  create_table "sources", :force => true do |t|
+    t.integer  "gift_id"
+    t.integer  "user_id"
+    t.integer  "claim_cb"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
   create_table "users", :force => true do |t|
     t.integer  "friend_id"
+    t.text     "friends"
     t.string   "role_id"
     t.string   "username"
     t.string   "email"
@@ -71,14 +69,6 @@ ActiveRecord::Schema.define(:version => 20100608164540) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.boolean  "terms_accepted_cb", :default => false, :null => false
-    t.text     "friends"
-  end
-
-  create_table "viewers", :force => true do |t|
-    t.integer  "user_id"
-    t.integer  "gift_id"
-    t.datetime "created_at"
-    t.datetime "updated_at"
   end
 
 end
