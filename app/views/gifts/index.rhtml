@@ -7,6 +7,7 @@
   
     <% @registry_name = (@registry.nil? ? "Recently Added" : @registry.name) %>
     <h1><%=h @registry_name = (@registry.nil? ? "#{@user.username} Recently Added" : @registry.name) %></h1>
+
     <% if !@gifts.nil? and allowed_to_view? current_user[:username] %>
       <%= render :partial => 'registry_container', :collection => @gifts %>
     <% else %>

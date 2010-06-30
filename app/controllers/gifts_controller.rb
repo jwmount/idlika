@@ -8,8 +8,12 @@ class GiftsController < ApplicationController
   # All operations are on @user.  Determine if @user is self as necessary.
   # Also, determine if @user has granted viewing rights and if not, do not display gift.
   def index
-    logger.info "*-*-*-*-* gifts_controller.index current_user #{current_user[:id]}, id: #{@user.id}, friend: #{@user.friend_id}."
-    @gifts = @user.gifts.find( :all, :order => "created_at DESC" )
+    if @user.id == (User.find current_user).id
+      @gifts = Gift.find_all_by_user_id( @user.id, :order => "created_at DESC" )
+    else
+      @gifts = @user.can_see? current_user
+    end
+    logger.info "*-*-*-*-* gifts_controller.index current_user #{current_user[:id]}, id: #{@user.id}."
   end
 
   # gifts for @registry passed in
@@ -40,7 +44,6 @@ class GiftsController < ApplicationController
      end
   end
  
-  
   # @gift identifies its user via friend_id; this user is a friend if different from @user.id
   def show
     logger.info("*-*-*-* gifts_controller.show: user: #{@user.id}, friend:  #{@user.friend_id}")
@@ -115,7 +118,7 @@ class GiftsController < ApplicationController
       # turn disallow viewing, so find it, if found, destroy it
       # they can't see gift nn owned by user uu
       @friend_allowed = User.find_by_username( params[:friend], :select => :id )
-      @donors = Donor.find_all_by_user_id_and_gift_id( @friend_allowed.id, @gift.id )
+      @donors = Donor.find_all_by_gift_id( @gift.id, :conditions => [ "allow_id = ?", @friend_allowed.id ] )
 
       # if Donor.destroy_all(["'user_id' = ? AND  'gift_id' = ?", @friend_allowed.id, @gift.id])
       @donors.each do |d|
@@ -124,9 +127,9 @@ class GiftsController < ApplicationController
       end
     else
       @donor = Donor.new
-      @donor.user_id = @user.id
+      @donor.allow_id = @user.id
       @friend_allowed = User.find_by_username( params[params[:friend]], :select => :id )
-      @donor.user_id = @friend_allowed.id
+      @donor.allow_id = @friend_allowed.id
       @donor.gift_id = params[:gift_id]
       if @donor.save
         logger.info( "\n*-*-*-*-* gifts_controller.gift_toggle --  GRANT permission to view gift_id #{@gift.id} to user_id #{@friend_allowed.id}, by user: #{@user.id}.\n")
