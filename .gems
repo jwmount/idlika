@@ -3,5 +3,4 @@ authlogic
 declarative_authorization
 paperclip
 right_aws
-action_mailer
 sendgrid
