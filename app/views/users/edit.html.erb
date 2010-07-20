@@ -1,24 +1,38 @@
+<div id="li_body">
+<%= render :partial => 'shared/sidebar' %>
 
+<div id="li_content">
 
-<h1 class="recently_added">Edit My Profile</h1>
+<h1 class="recently_added"></h1>
 
-<% form_for @user do |f| %>
-  <%= f.error_messages %>
-  <p>
-    <%= f.label :username %><br />
-    <%= f.text_field :username %>
-  </p>
-  <p>
-    <%= f.label :email %><br />
-    <%= f.text_field :email %>
-  </p>
-  <p>
-    <%= f.label :password %><br />
-    <%= f.password_field :password %>
-  </p>
-  <p>
-    <%= f.label :password_confirmation %><br />
-    <%= f.password_field :password_confirmation %>
+  <% form_for @user do |f| %>
+    <%= f.error_messages %>
+
+  <div id="addgift_form">
+
+    <div class="clearer"></div>
+    <div class="aglabel">Name:</div>
+    <div class="agfield"> <%= f.text_field :username, :size=>'60' %></div>
+    
+    <div class="clearer"></div>
+    <div class="aglabel">EMail:</div>
+    <div class="agfield"> <%= f.text_field :email, :size=>'60' %></div>
+
+    <div class="clearer"></div>
+    <div class="aglabel">Password:</div>
+    <div class="agfield"> <%= f.password_field :password, :size=>'60' %></div>
+ 
+    <div class="clearer"></div>
+    <div class="aglabel">Confirm Password:</div>
+    <div class="agfield"> <%= f.password_field :password_confirmation, :size=>'60' %></div>
+    <div class="clearer"></div>
 
   <p><%= f.submit "Submit" %></p>
 <% end %>
+
+<%= link_to 'Back', gifts_path %>
+
+</div><!-- li_content -->
+
+<div class="clearer"></div>
+</div><!-- li_body -->

@@ -14,6 +14,9 @@ suggest_change_authorization_rules GET    /authorization_rules/suggest_change(.:
                      select_friend        /select_friend                                {:controller=>"gifts", :action=>"select_friend"}
                    index_of_friend        /index_of_friend                              {:controller=>"gifts", :action=>"index_of_friend"}
                 index_for_registry        /index_for_registry                           {:controller=>"gifts", :action=>"index_for_registry"}
+                gift_restore_owner        /gift_restore_owner                           {:controller=>"gifts", :action=>"restore_owner"}
+                           idlik12        /idlik12                                      {:controller=>"gifts", :action=>"idlik12"}
+                         give_gift        /give_gift                                    {:controller=>"gifts", :action=>"give_gift"}
                                how        /how                                          {:controller=>"home", :action=>"how"}
                               what        /what                                         {:controller=>"home", :action=>"what"}
                                faq        /faq                                          {:controller=>"home", :action=>"faq"}

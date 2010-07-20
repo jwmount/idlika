@@ -15,6 +15,8 @@ ActionController::Routing::Routes.draw do |map|
   map.index_of_friend "index_of_friend", :controller => "gifts", :action => "index_of_friend"
   map.index_for_registry "index_for_registry", :controller => "gifts", :action => "index_for_registry"
   map.gift_restore_owner "gift_restore_owner", :controller => "gifts", :action => "restore_owner"
+  map.idlik12          "idlik12", :controller => "gifts", :action => "idlik12"
+  map.give_gift        "give_gift", :controller => "gifts", :action => "give_gift"
   
 #  map.friend_registries "friend_registries", :controller => "registries", :action => "index"
     

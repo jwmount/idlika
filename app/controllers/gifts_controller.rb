@@ -169,6 +169,28 @@ class GiftsController < ApplicationController
     redirect_to edit_user_gift_path(@user, @gift)
   end
  
+  def idlik12
+    @idlik12 = flash["idlik12"]
+    @gift = Gift.find @idlik12
+    @mine = Gift.create( @gift.attributes )
+    @mine.user_id = current_user[:id]
+    @mine.who_can_see = nil
+  
+    respond_to do |format|
+      if @mine.save
+        flash[:notice] = 'Gift was been added to my collection.'
+        format.html { redirect_to( gifts_path ) }
+        format.xml  { render :xml => @mine, :status => :created, :location => @mine }
+      else
+        format.html { render :action => "new" }
+        format.xml  { render :xml => @mine.errors, :status => :unprocessable_entity }
+      end
+    end
+  end
+   
+  def give_gift
+    debugger
+  end
 # = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =
 
   # who's logged on.  If friend is 'self' turn it off.

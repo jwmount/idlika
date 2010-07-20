@@ -24,7 +24,6 @@ class Gift < ActiveRecord::Base
    :bucket => ENV["S3_BUCKET"]
    
  # Paperclip Validations
-  
  validates_associated :user
  validates_attachment_presence :photo
  validates_attachment_size :photo, :less_than => 5.megabytes

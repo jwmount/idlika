@@ -19,6 +19,7 @@ class User < ActiveRecord::Base
   def can_see? current_user
     # list of gifts current_user is allowed to see
     @donors = Donor.find( :all, :conditions => [ "allow_id = ?", current_user[:id]] )
+    debugger
     @gifts_allowed = @donors.collect {|x| x.gift_id } 
     @gifts = gifts.find( @gifts_allowed, :order => "created_at DESC" )
   end

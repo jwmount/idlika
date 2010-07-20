@@ -36,6 +36,12 @@
     <% end %>
   <% end %>
 
+<% flash["idlik12"] = @gift.id %>
+<%= button_to "I'd like one too", idlik12_path %>
+<br />
+<%= button_to "I'll fulfill this wish", root_url %>
+
+<br />
 <%= link_to 'Back', gifts_path %>
 
 </div><!-- li_content -->
