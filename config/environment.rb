@@ -37,7 +37,7 @@ Rails::Initializer.run do |config|
   # config.gem "aws-s3", :lib => "aws/s3"
   # for HEROKU put both gems in .gems file (>mate .gems to edit),  Case Sensitive!
   
-#  config.gem "action_mailer"   appears to be necessary to remove this for deployment; also from .gems
+  config.gem "action_mailer"   appears to be necessary to remove this for deployment; also from .gems
   config.gem "authlogic"
   config.gem "declarative_authorization", :source => "http://gemcutter.org"
   config.gem "paperclip"
