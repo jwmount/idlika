@@ -1,7 +1,7 @@
 # Be sure to restart your server when you modify this file
 
 # MUST be on for dev, MUST remove this for staging and production
- require 'ActionMailer'
+ require 'action_mailer'
 
 # Specifies gem version of Rails to use when vendor/rails is not present
 # RAILS_GEM_VERSION = '2.3.3' unless defined? RAILS_GEM_VERSION
@@ -37,7 +37,7 @@ Rails::Initializer.run do |config|
   # config.gem "aws-s3", :lib => "aws/s3"
   # for HEROKU put both gems in .gems file (>mate .gems to edit),  Case Sensitive!
   
-#  config.gem "action_mailer"   appears to be necessary to remove this for deployment; also from .gems
+  config.gem "action_mailer"   #appears to be necessary to remove this for deployment; also from .gems
   config.gem "authlogic"
   config.gem "declarative_authorization", :source => "http://gemcutter.org"
   config.gem "paperclip"
@@ -67,17 +67,4 @@ Rails::Initializer.run do |config|
   # config.i18n.load_path += Dir[Rails.root.join('my', 'locales', '*.{rb,yml}')]
   # config.i18n.default_locale = :de
   
-  config.action_mailer.raise_delivery_errors = true
-  ActionMailer::Base.delivery_method = :smtp
-  ActionMailer::Base.default_content_type = "text/html"
-  ActionMailer::Base.smtp_settings = {
-    :address        => "smtp.sendgrid.net",
-    :port           => "25",
-    :authentication => :login,
-#    :user_name      => ENV['IDLIKA_EMAIL_NAME'],
-    :user_name      => ENV['SENDGRID_USERNAME'],
-#    :password       => ENV['IDLIKA_EMAIL_PASSWORD'],
-    :password       => ENV['SENDGRID_PASSWORD'],
-    :domain         => ENV['IDLIKA_DOMAIN'],
-  }
 end
