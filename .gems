@@ -1,8 +1,9 @@
 rails -v 2.3.8
+pg
 authlogic
 declarative_authorization
 paperclip
 right_aws
-action_mailer
 sendgrid
+
 
