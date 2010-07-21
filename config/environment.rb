@@ -1,8 +1,8 @@
 # Be sure to restart your server when you modify this file
 
 # MUST be on for dev, MUST remove this for staging and production
-# require 'action_mailer'
-
+#require 'action_mailer'
+require 'ActionMailer'
 # Specifies gem version of Rails to use when vendor/rails is not present
 RAILS_GEM_VERSION = '2.3.8' unless defined? RAILS_GEM_VERSION
 ENV['IDLIKA_VERSION'] = '0.1.036'
@@ -37,7 +37,7 @@ Rails::Initializer.run do |config|
   # config.gem "aws-s3", :lib => "aws/s3"
   # for HEROKU put both gems in .gems file (>mate .gems to edit),  Case Sensitive!
   
-  config.gem "action_mailer"   #appears to be necessary to remove this for deployment; also from .gems
+  config.gem "ActionMailer"   #do not remove for BAMBOO stack; appears to be necessary to remove this for deployment; also from .gems
   config.gem "authlogic"
   config.gem "declarative_authorization", :source => "http://gemcutter.org"
   config.gem "paperclip"
@@ -70,9 +70,9 @@ Rails::Initializer.run do |config|
     config.action_mailer.delivery_method = :smtp
     config.action_mailer.default_content_method = :smtp
     config.action_mailer.smtp_settings = {
-  #  ActionMailer::Base.delivery_method = :smtp
-  #  ActionMailer::Base.default_content_type = "text/html"
-  #  ActionMailer::Base.smtp_settings = {
+#    ActionMailer::Base.delivery_method = :smtp
+#    ActionMailer::Base.default_content_type = "text/html"
+#    ActionMailer::Base.smtp_settings = {
       :address        => "smtp.sendgrid.net",
       :port           => "25",
       :authentication => :login,
