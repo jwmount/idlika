@@ -67,17 +67,17 @@ Rails::Initializer.run do |config|
   # config.i18n.load_path += Dir[Rails.root.join('my', 'locales', '*.{rb,yml}')]
   # config.i18n.default_locale = :de
   
-#  config.action_mailer.raise_delivery_errors = true
-#  ActionMailer::Base.delivery_method = :smtp
-#  ActionMailer::Base.default_content_type = "text/html"
-#  ActionMailer::Base.smtp_settings = {
-#    :address        => "smtp.sendgrid.net",
-#    :port           => "25",
-#    :authentication => :login,
-##    :user_name      => ENV['IDLIKA_EMAIL_NAME'],
-#    :user_name      => ENV['SENDGRID_USERNAME'],
-##    :password       => ENV['IDLIKA_EMAIL_PASSWORD'],
-#    :password       => ENV['SENDGRID_PASSWORD'],
-#    :domain         => ENV['IDLIKA_DOMAIN'],
-#  }
+  config.action_mailer.raise_delivery_errors = true
+  ActionMailer::Base.delivery_method = :smtp
+  ActionMailer::Base.default_content_type = "text/html"
+  ActionMailer::Base.smtp_settings = {
+    :address        => "smtp.sendgrid.net",
+    :port           => "25",
+    :authentication => :login,
+#    :user_name      => ENV['IDLIKA_EMAIL_NAME'],
+    :user_name      => ENV['SENDGRID_USERNAME'],
+#    :password       => ENV['IDLIKA_EMAIL_PASSWORD'],
+    :password       => ENV['SENDGRID_PASSWORD'],
+    :domain         => ENV['IDLIKA_DOMAIN'],
+  }
 end
