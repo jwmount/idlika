@@ -1,9 +1,9 @@
 # Be sure to restart your server when you modify this file
 # require "action_mailer"
 # Specifies gem version of Rails to use when vendor/rails is not present
-#RAILS_GEM_VERSION = '2.3.3'
+
 RAILS_GEM_VERSION = '2.3.8' unless defined? RAILS_GEM_VERSION
-ENV['IDLIKA_VERSION'] = '0.1.037'
+ENV['IDLIKA_VERSION'] = '0.1.03'
 
 ENV['S3_BUCKET'] = "idlika.com"
 ENV['S3_KEY'] = 'AKIAJG2MA6FIXEPKVC6Q'
@@ -34,17 +34,17 @@ Rails::Initializer.run do |config|
   # config.gem "sqlite3-ruby", :lib => "sqlite3"
   # config.gem "aws-s3", :lib => "aws/s3"
   # for HEROKU put both gems in .gems file (>mate .gems to edit),  Case Sensitive!
-  
+
   config.gem "authlogic"
   config.gem "declarative_authorization", :source => "http://gemcutter.org"
-  config.gem "paperclip"
+#  config.gem "paperclip"
 #  config.gem "rmagick", :lib => "RMagick"
   # http://github.com/scottburton11/paperclip-rightaws-fails/blob/master/config/environment.rb
   config.after_initialize do
     config.gem "right_aws"
   end
   config.gem "sendgrid"
-  
+
   # Only load the plugins named here, in the order given (default is alphabetical).
   # :all can be used as a placeholder for all plugins not explicitly named
   # config.plugins = [ :exception_notification, :ssl_requirement, :all ]
@@ -63,7 +63,7 @@ Rails::Initializer.run do |config|
   # The default locale is :en and all translations from config/locales/*.rb,yml are auto loaded.
   # config.i18n.load_path += Dir[Rails.root.join('my', 'locales', '*.{rb,yml}')]
   # config.i18n.default_locale = :de
-  
+
   # Show full error reports and disable caching
     config.gem "actionmailer"       # 'actionmailer' is the name of the gem
     config.action_mailer.raise_delivery_errors = true
@@ -83,5 +83,5 @@ Rails::Initializer.run do |config|
     config.action_controller.consider_all_requests_local = true
     config.action_view.debug_rjs                         = true
     config.action_controller.perform_caching             = false
-  
+
 end
