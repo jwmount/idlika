@@ -1,9 +1,14 @@
 rails -v 2.3.8
-pg
+
 actionmailer
+activerecord
 authlogic
+aws-s3
+columnize
 declarative_authorization
+mysql
 paperclip
+rest-client
 right_aws
 rmagick
 sendgrid
