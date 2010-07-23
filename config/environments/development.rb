@@ -1,4 +1,6 @@
 # Settings specified here will take precedence over those in config/environment.rb
+# MUST be on for dev, MUST remove this for staging and production
+#require 'action_mailer'
 
 # In the development environment your application's code is reloaded on
 # every request.  This slows down response time but is perfect for development
@@ -13,5 +15,6 @@ config.action_controller.consider_all_requests_local = true
 config.action_view.debug_rjs                         = true
 config.action_controller.perform_caching             = false
 
-# Don't care if the mailer can't send
-config.action_mailer.raise_delivery_errors = false
+# Do care if the mailer can't send
+config.action_mailer.raise_delivery_errors = true
+
