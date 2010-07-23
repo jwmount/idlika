@@ -5,7 +5,7 @@ authlogic
 declarative_authorization
 paperclip
 right_aws
-rmagic
+rmagick
 sendgrid
 
 
