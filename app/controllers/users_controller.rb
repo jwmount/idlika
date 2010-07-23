@@ -87,6 +87,7 @@ class UsersController < ApplicationController
 private
 
   def mailer_set_url_options
-    MemberMailer::Base.default_url_options[:host] = request.host_with_port
+# TEMPORARY -- turned off Thurs pm 7-22 to enable app to run, email may not work
+#    MemberMailer::Base.default_url_options[:host] = request.host_with_port
   end
 end

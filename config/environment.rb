@@ -3,7 +3,7 @@
 # Specifies gem version of Rails to use when vendor/rails is not present
 #RAILS_GEM_VERSION = '2.3.3'
 RAILS_GEM_VERSION = '2.3.8' unless defined? RAILS_GEM_VERSION
-ENV['IDLIKA_VERSION'] = '0.1.036'
+ENV['IDLIKA_VERSION'] = '0.1.037'
 
 ENV['S3_BUCKET'] = "idlika.com"
 ENV['S3_KEY'] = 'AKIAJG2MA6FIXEPKVC6Q'
@@ -35,7 +35,6 @@ Rails::Initializer.run do |config|
   # config.gem "aws-s3", :lib => "aws/s3"
   # for HEROKU put both gems in .gems file (>mate .gems to edit),  Case Sensitive!
   
-  config.gem "action_mailer"
   config.gem "authlogic"
   config.gem "declarative_authorization", :source => "http://gemcutter.org"
   config.gem "paperclip"
@@ -65,19 +64,24 @@ Rails::Initializer.run do |config|
   # config.i18n.load_path += Dir[Rails.root.join('my', 'locales', '*.{rb,yml}')]
   # config.i18n.default_locale = :de
   
+  # Show full error reports and disable caching
+    config.gem "actionmailer"       # 'actionmailer' is the name of the gem
     config.action_mailer.raise_delivery_errors = true
     config.action_mailer.delivery_method = :smtp
-#    config.action_mailer.default_content_method = :smtp
-#    MemberMailer::Base.delivery_method = :smtp
-#    MemberMailer::Base.default_content_type = "text/html"
-#    MemberMailer::Base.smtp_settings = {
+  #    config.action_mailer.default_content_method = :smtp     works on development without this!
+  #    MemberMailer::Base.delivery_method = :smtp
+  #    MemberMailer::Base.default_content_type = "text/html"
+  #    MemberMailer::Base.smtp_settings = {
     config.action_mailer.smtp_settings = {
-      :address        => "smtp.sendgrid.net",
-      :port           => "25",
-      :authentication => :login,
-      :user_name      => ENV['SENDGRID_USERNAME'],
-      :password       => ENV['SENDGRID_PASSWORD'],
-      :domain         => ENV['IDLIKA_DOMAIN']
-    }
+        :address        => "smtp.sendgrid.net",
+        :port           => "25",
+        :authentication => :login,
+        :user_name      => ENV['SENDGRID_USERNAME'],
+        :password       => ENV['SENDGRID_PASSWORD'],
+        :domain         => ENV['IDLIKA_DOMAIN']
+      }
+    config.action_controller.consider_all_requests_local = true
+    config.action_view.debug_rjs                         = true
+    config.action_controller.perform_caching             = false
   
 end
