@@ -6,7 +6,6 @@ authlogic
 aws-s3
 columnize
 declarative_authorization
-mysql
 paperclip
 rest-client
 right_aws
