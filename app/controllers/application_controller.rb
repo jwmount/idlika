@@ -12,7 +12,14 @@ class ApplicationController < ActionController::Base
   helper_method :current_user
   helper_method :show_links?
   filter_parameter_logging :password
-  
+
+  def FB_init
+    update_page do |page|
+      page.insert_html :bottom, 'list', "<li>#{@item.name}</li>"
+      page.visual_effect :highlight, 'list'
+      page.hide 'status-indicator', 'cancel-link'
+    end
+  end
   # = = = = = =  = = = = = = = = = == =  
 #  protected
   

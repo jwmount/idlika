@@ -1,9 +1,10 @@
 # Be sure to restart your server when you modify this file
 # require "action_mailer"
+require 'net/http'
 # Specifies gem version of Rails to use when vendor/rails is not present
 
 RAILS_GEM_VERSION = '2.3.8' unless defined? RAILS_GEM_VERSION
-ENV['IDLIKA_VERSION'] = '0.1.03'
+ENV['IDLIKA_VERSION'] = '0.1.04'
 
 ENV['S3_BUCKET'] = "idlika.com"
 ENV['S3_KEY'] = 'AKIAJG2MA6FIXEPKVC6Q'
@@ -16,6 +17,12 @@ ENV['IDLIKA_DOMAIN'] = 'idlika.com'
 ENV['SENDGRID_PASSWORD'] = '6c849eca761a22707a'
 ENV['SENDGRID_USERNAME'] = 'app156298@heroku.com'
 
+# Facebook Registration 
+# App Name:	idlika
+# App URL:	www.idlika.com/home/
+# App ID:	143400042352343
+# App Secret:	1482ae818ff5f6adae68679612f17a79
+ENV['FACEBOOK_APP_ID'] = '143400042352343'
 
 # Bootstrap the Rails environment, frameworks, and default configuration
 require File.join(File.dirname(__FILE__), 'boot')

@@ -1,4 +1,5 @@
 class GiftsController < ApplicationController
+
 #  filter_resource_access
 
   before_filter :find_user 
@@ -69,6 +70,19 @@ class GiftsController < ApplicationController
 
   def images
   end
+  
+  def test_URL
+    debugger
+      @url = "https://graph.facebook.com/19292868552"
+      begin
+        result = Net::HTTP.get(URI.parse(@url))
+        logger.info "*-*-*-*_* tropo record_call uri:  uri = #{@url}"
+        call_to_record_success(@sender.id, filename, params[:keywords]) if result.match /(<session><success>true<success>)/
+      rescue
+        logger.info "*-*-*-*_* attempt to record_call uri:  uri = #{@url} FAILED."
+      end
+      render :show
+    end
   
   def create
     @gift = @user.gifts.new(params[:gift])
@@ -195,6 +209,7 @@ class GiftsController < ApplicationController
 
   # who's logged on.  If friend is 'self' turn it off.
   def find_user
+#    test_URL
     @user = current_user
     @user = User.find @user.friend_id unless @user.friend_id.nil?
     @user.friend_id = nil if (@user.friend_id == current_user[:id])

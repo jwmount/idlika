@@ -1,14 +1,13 @@
 
 <div id="loginarea">
-
   <% if show_links? %>    <!--ENV['RAILS_ENV'] == 'development' % -->
 	<div id="user_nav">
 		<% if !current_user.nil? %>
 		  Hello, <b><%=h current_user[:username] %></b>.  
 		  <%= link_to "Logout", remove_friend_path %>
-		<% else %>
+		<% else %>		
 		  <%= link_to_unless_current "Register", new_user_path %> |
-		  <%= link_to_unless_current "Login", login_path %>
+		  <%= link_to_unless_current "Login", login_path %> | 		
 		<% end %>
 	</div>
 
