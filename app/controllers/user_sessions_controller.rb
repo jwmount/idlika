@@ -10,8 +10,9 @@ class UserSessionsController < ApplicationController
   def create
     @user_session = UserSession.new(params[:user_session])
     if @user_session.save
-      flash[:notice] = "Successfully logged in."
-      redirect_to registries_path
+#      flash[:notice] = "Successfully logged in."
+#      redirect_to registries_path
+      redirect_to gifts_path   #this would appear to go directly, but it goes to logon again?  
     else
       render :action => 'new'
     end
@@ -20,7 +21,7 @@ class UserSessionsController < ApplicationController
   def destroy
     @user_session = UserSession.find
     @user_session.destroy
-    flash[:notice] = "Successfully logged out."
+ #   flash[:notice] = "Successfully logged out."
     redirect_to root_url
   end
 end

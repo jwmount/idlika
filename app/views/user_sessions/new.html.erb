@@ -7,16 +7,12 @@
 <% form_for @user_session do |f| %>
   <%= f.error_messages %>
 
-  <div id="addgift_form">
-  <div class="clearer"></div>
   <div class="aglabel" style="width:100px;"><%= f.label :username %></div>
-  <div class="agfield"><%= f.text_field :username, :class=>"agtext" %></div>
+  <div><%= f.text_field :username, :class=>"agtext" %></div>
   <div class="clearer"></div>
 
-  <div id="addgift_form">
-  <div class="clearer"></div>
   <div class="aglabel" style="width:100px;"><%= f.label :password %></div>
-  <div class="agfield"><%= f.password_field :password, :class=>"agtext" %></div>
+  <div><%= f.password_field :password, :class=>"agtext" %></div>
   <div class="clearer"></div>
 
   <p><%= f.submit "Submit" %></p>

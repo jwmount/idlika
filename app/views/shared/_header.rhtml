@@ -29,8 +29,8 @@
         -->
             <td valign="bottom">
                 <% form_tag( user_registries_path(@user), :method => :post, :class => 'registries' ) do %>
-                  <label class='aglabel'>Friends </label>
-                  <%= select_tag( :friend, friend_registry_links, :prompt=>'select a friend' ) unless @user.nil? %>
+                  <label class='aglabel'>Friends</label>
+                  <%= select_tag( :friend, friend_registry_links, :prompt => "Select a friend" ) unless @user.nil? %>
                   <%= observe_friend_select %>
            </td>
             <td><%= link_to(image_tag("/images/btn_go.gif", 
