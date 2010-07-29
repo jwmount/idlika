@@ -244,8 +244,8 @@ a.addgift:hover, a.addgift:active { width:152px; height:19px; display:block; bac
 a.addgift_set { width:152px; height:19px; display:block; background:url(../images/sidenav_addagift_on.gif); }
 
 a.invitefriend { width:152px; height:19px; display:block; background:url(../images/sidenav_invitefriend.gif); }
-a.invitefriend:hover, a.invitefriend:active { width:152px; height:19px; display:block; background:url(../images/sidenav_invitefriend_on.gif); }
-a.invitefriend_set { width:172px; height:19px; display:block; background:url(../images/sidenav_invitefriend_on.gif); }
+a.invitefriend:hover, a.invitefriend:active { width:152px; height:19px; display:block; background:url(../images/sidenav_inviteafriend_on.gif); }
+a.invitefriend_set { width:172px; height:19px; display:block; background:url(../images/sidenav_inviteafriend_off.gif); }
 
 #li_content {
 	width:770px;  float:right;
@@ -273,7 +273,7 @@ h1.edit_gift {
 	background:url(../images/hdr_editgift.gif);
 }
 h1.about_this_gift {
-	width:222px; height:26px; margin:20px 0px; padding:0px;
+	width:228px; height:23px; margin:20px 0px; padding:0px;
 	background:url(../images/hdr_aboutthisgift.gif);
 }
 h1.recently_added {
@@ -285,11 +285,11 @@ h1.add_a_friend {
 	background:url(../images/hdr_addafriend.gif);
 }
 h1.new_registry {
-	width:200px; height:23px; margin:20px 0px; padding:0px;
+	width:200px; height:25px; margin:20px 0px; padding:0px;
 	background:url(../images/hdr_newregistry.gif);
 }
 h1.join_idlika {
-	width:144px; height:26px; margin:20px 0px; padding:0px;
+	width:152px; height:23px; margin:20px 0px; padding:0px;
 	background:url(../images/hdr_joinidlika.gif);
 }
 h1.login {

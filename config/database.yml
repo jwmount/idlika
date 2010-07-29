@@ -20,8 +20,9 @@ development:
   reconnect: false
   database: idlika_development
   pool: 5
-  username: john
-  password: 180lbs
+  #username: john
+  #password: 180lbs
+  username: root
   socket: /tmp/mysql.sock
 
 # Warning: The database defined as "test" will be erased and
