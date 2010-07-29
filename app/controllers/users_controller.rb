@@ -4,7 +4,7 @@ class UsersController < ApplicationController
   before_filter :mailer_set_url_options
      
   def index
-    @users = User.all
+    @users = User.all :order => :username
   end
 
   def show
@@ -46,6 +46,15 @@ class UsersController < ApplicationController
       redirect_to root_url
     else
         render :action => 'edit'
+    end
+  end
+  
+  
+  def destroy
+    User.destroy params[:id]
+    respond_to do |format|
+      format.html { redirect_to(users_url) }
+      format.xml  { head :ok }
     end
   end
   

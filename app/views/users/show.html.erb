@@ -1,6 +1,6 @@
 <p>
-  <b>Login:</b>
-  <%=h @user.login %>
+  <b>User name:</b>
+  <%=h @user.username %>
 </p>
 
 <p>
@@ -9,28 +9,13 @@
 </p>
 
 <p>
-  <b>Cyrpted password:</b>
-  <%=h @user.cyrpted_password %>
+  <b>Crypted password:</b>
+  <%=h @user.crypted_password %>
 </p>
 
 <p>
   <b>Salt:</b>
-  <%=h @user.salt %>
-</p>
-
-<p>
-  <b>Remember token:</b>
-  <%=h @user.remember_token %>
-</p>
-
-<p>
-  <b>Remember token expiration:</b>
-  <%=h @user.remember_token_expiration %>
-</p>
-
-<p>
-  <b>Activation code:</b>
-  <%=h @user.activation_code %>
+  <%=h @user.password_salt %>
 </p>
 
 

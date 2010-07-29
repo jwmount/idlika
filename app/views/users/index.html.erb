@@ -4,17 +4,14 @@
   <tr>
     <th>Username</th>
     <th>Email</th>
-    <th>Activation code</th>
-    <th>Deleted at</th>
   </tr>
 
 <% @users.each do |user| %>
   <tr>
     <td><%=h user.username %></td>
     <td><%=h user.email %></td>
-    <td><%= link_to 'Show', user %></td>
     <td><%= link_to 'Edit', edit_user_path(user) %></td>
-    <td><%= link_to 'Destroy', user, :confirm => 'Are you sure?', :method => :delete %></td>
+    <td><%= link_to 'Destroy', user, :confirm => "Are you sure you want to delete #{user.username}?", :method => :delete %></td>
   </tr>
 <% end %>
 </table>
