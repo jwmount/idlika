@@ -203,7 +203,6 @@ class GiftsController < ApplicationController
   end
    
   def give_gift
-    debugger
   end
 # = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =
 
