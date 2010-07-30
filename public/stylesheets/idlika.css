@@ -243,7 +243,7 @@ a.addgift { width:152px; height:19px; display:block; background:url(../images/si
 a.addgift:hover, a.addgift:active { width:152px; height:19px; display:block; background:url(../images/sidenav_addagift_on.gif); }
 a.addgift_set { width:152px; height:19px; display:block; background:url(../images/sidenav_addagift_on.gif); }
 
-a.invitefriend { width:152px; height:19px; display:block; background:url(../images/sidenav_invitefriend.gif); }
+a.invitefriend { width:152px; height:19px; display:block; background:url(../images/sidenav_inviteafriend_off.gif); }
 a.invitefriend:hover, a.invitefriend:active { width:152px; height:19px; display:block; background:url(../images/sidenav_inviteafriend_on.gif); }
 a.invitefriend_set { width:172px; height:19px; display:block; background:url(../images/sidenav_inviteafriend_off.gif); }
 

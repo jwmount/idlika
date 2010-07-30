@@ -21,14 +21,14 @@
 	<%= f.check_box( :terms_accepted_cb) %>I have read and accepted idlika's <%= link_to 'Terms and Conditions.', terms_path, :target=> 'blank' %>
 	</DIV>
   </p>
-<!-- ROLES selection check boxes -- probably put these in the admin app
+<!-- ROLES selection check boxes - probably put these in the admin app
   <p>
     <%= f.label :roles %><br />
     <% for role in Role.all %>
       <%= check_box_tag "user[role_ids][]", role.id, @user.roles.include?(role) %>
-      <%=h role.name %> -- <%=h role.description %><br />
+      <%=h role.name %> - <%=h role.description %><br />
     <% end %>
   </p>
--->
+-->	
   <p><%= f.submit "Submit" %></p>
 <% end %>

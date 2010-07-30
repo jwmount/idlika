@@ -47,6 +47,12 @@
 		    <%= link_to(image_tag("/images/btn_howitworks.gif", {:alt => 'How to use idlika', :class=>"ta_how"}), how_path)%></li>
 	<ui>
 	    <%= link_to(image_tag("/images/btn_login.gif",  {:alt => 'login to idlika',  :class=>"ta_login"}), login_path) %></li>
+    <br/>
+    <ui><iframe src="http://www.facebook.com/widgets/like.php?href=http://www.idlika.com"
+        scrolling="no" frameborder="0"
+        style="border:none; width:450px; height:80px"></iframe>
+    </ui>
+    <!-- fb:friendpile></fb:friendpile -->
   </ul>
 
 <!-- % else %>
@@ -55,7 +61,6 @@
     <li><a href="get-started.html" class="ta_start"><b>Get Started</b></a></li>
   </ul -->
 <% end %>
-<div class="clearer"></div>
 </div><!-- take_action -->
 <!-- shared/footer.html.erb -->
 
