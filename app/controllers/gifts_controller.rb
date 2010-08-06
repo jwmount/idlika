@@ -14,7 +14,7 @@ class GiftsController < ApplicationController
     else
       @gifts = @user.can_see? current_user
     end
-    logger.info "*-*-*-*-* gifts_controller.index current_user #{current_user[:id]}, id: #{@user.id}. Registry #{@user.registry_id.to_s}."
+    logger.info "*-*-*-*-* gifts_controller.index current_user #{current_user[:id]}, id: #{@user.id}."
   end
 
   # gifts for @registry passed in
