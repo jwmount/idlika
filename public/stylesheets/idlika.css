@@ -284,6 +284,10 @@ h1.add_a_friend {
 	width:184px; height:23px; margin:20px 0px; padding:0px;
 	background:url(../images/hdr_addafriend.gif);
 }
+h1.my_account {
+	width:200px; height:25px; margin:20px 0px; padding:0px;
+	background:url(../images/hdr_myaccount.gif);
+}
 h1.new_registry {
 	width:200px; height:25px; margin:20px 0px; padding:0px;
 	background:url(../images/hdr_newregistry.gif);

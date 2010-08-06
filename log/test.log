@@ -1,0 +1,144 @@
+Unable to load description, underlying cause no such file to load -- description 
+
+ /Library/Ruby/Site/1.8/rubygems/custom_require.rb:31:in `gem_original_require'
+/Library/Ruby/Site/1.8/rubygems/custom_require.rb:31:in `require'
+/Users/john/.gem/ruby/1.8/gems/activesupport-2.3.8/lib/active_support/dependencies.rb:158:in `require'
+/Users/john/.gem/ruby/1.8/gems/activesupport-2.3.8/lib/active_support/dependencies.rb:265:in `require_or_load'
+/Users/john/.gem/ruby/1.8/gems/activesupport-2.3.8/lib/active_support/dependencies.rb:224:in `depend_on'
+/Users/john/.gem/ruby/1.8/gems/activesupport-2.3.8/lib/active_support/dependencies.rb:136:in `require_dependency'
+/Users/john/.gem/ruby/1.8/gems/activerecord-2.3.8/lib/active_record/fixtures.rb:853:in `try_to_load_dependency'
+/Users/john/.gem/ruby/1.8/gems/activerecord-2.3.8/lib/active_record/fixtures.rb:868:in `require_fixture_classes'
+/Users/john/.gem/ruby/1.8/gems/activerecord-2.3.8/lib/active_record/fixtures.rb:865:in `each'
+/Users/john/.gem/ruby/1.8/gems/activerecord-2.3.8/lib/active_record/fixtures.rb:865:in `require_fixture_classes'
+/Users/john/.gem/ruby/1.8/gems/activerecord-2.3.8/lib/active_record/fixtures.rb:848:in `fixtures'
+./test/test_helper.rb:35
+test/unit/gift_test.rb:1:in `require'
+test/unit/gift_test.rb:1
+Unable to load friend, underlying cause no such file to load -- friend 
+
+ /Library/Ruby/Site/1.8/rubygems/custom_require.rb:31:in `gem_original_require'
+/Library/Ruby/Site/1.8/rubygems/custom_require.rb:31:in `require'
+/Users/john/.gem/ruby/1.8/gems/activesupport-2.3.8/lib/active_support/dependencies.rb:158:in `require'
+/Users/john/.gem/ruby/1.8/gems/activesupport-2.3.8/lib/active_support/dependencies.rb:265:in `require_or_load'
+/Users/john/.gem/ruby/1.8/gems/activesupport-2.3.8/lib/active_support/dependencies.rb:224:in `depend_on'
+/Users/john/.gem/ruby/1.8/gems/activesupport-2.3.8/lib/active_support/dependencies.rb:136:in `require_dependency'
+/Users/john/.gem/ruby/1.8/gems/activerecord-2.3.8/lib/active_record/fixtures.rb:853:in `try_to_load_dependency'
+/Users/john/.gem/ruby/1.8/gems/activerecord-2.3.8/lib/active_record/fixtures.rb:868:in `require_fixture_classes'
+/Users/john/.gem/ruby/1.8/gems/activerecord-2.3.8/lib/active_record/fixtures.rb:865:in `each'
+/Users/john/.gem/ruby/1.8/gems/activerecord-2.3.8/lib/active_record/fixtures.rb:865:in `require_fixture_classes'
+/Users/john/.gem/ruby/1.8/gems/activerecord-2.3.8/lib/active_record/fixtures.rb:848:in `fixtures'
+./test/test_helper.rb:35
+test/unit/gift_test.rb:1:in `require'
+test/unit/gift_test.rb:1
+Unable to load viewer, underlying cause no such file to load -- viewer 
+
+ /Library/Ruby/Site/1.8/rubygems/custom_require.rb:31:in `gem_original_require'
+/Library/Ruby/Site/1.8/rubygems/custom_require.rb:31:in `require'
+/Users/john/.gem/ruby/1.8/gems/activesupport-2.3.8/lib/active_support/dependencies.rb:158:in `require'
+/Users/john/.gem/ruby/1.8/gems/activesupport-2.3.8/lib/active_support/dependencies.rb:265:in `require_or_load'
+/Users/john/.gem/ruby/1.8/gems/activesupport-2.3.8/lib/active_support/dependencies.rb:224:in `depend_on'
+/Users/john/.gem/ruby/1.8/gems/activesupport-2.3.8/lib/active_support/dependencies.rb:136:in `require_dependency'
+/Users/john/.gem/ruby/1.8/gems/activerecord-2.3.8/lib/active_record/fixtures.rb:853:in `try_to_load_dependency'
+/Users/john/.gem/ruby/1.8/gems/activerecord-2.3.8/lib/active_record/fixtures.rb:868:in `require_fixture_classes'
+/Users/john/.gem/ruby/1.8/gems/activerecord-2.3.8/lib/active_record/fixtures.rb:865:in `each'
+/Users/john/.gem/ruby/1.8/gems/activerecord-2.3.8/lib/active_record/fixtures.rb:865:in `require_fixture_classes'
+/Users/john/.gem/ruby/1.8/gems/activerecord-2.3.8/lib/active_record/fixtures.rb:848:in `fixtures'
+./test/test_helper.rb:35
+test/unit/gift_test.rb:1:in `require'
+test/unit/gift_test.rb:1
+Unable to load description, underlying cause no such file to load -- description 
+
+ /Library/Ruby/Site/1.8/rubygems/custom_require.rb:31:in `gem_original_require'
+/Library/Ruby/Site/1.8/rubygems/custom_require.rb:31:in `require'
+/Users/john/.gem/ruby/1.8/gems/activesupport-2.3.8/lib/active_support/dependencies.rb:158:in `require'
+/Users/john/.gem/ruby/1.8/gems/activesupport-2.3.8/lib/active_support/dependencies.rb:265:in `require_or_load'
+/Users/john/.gem/ruby/1.8/gems/activesupport-2.3.8/lib/active_support/dependencies.rb:224:in `depend_on'
+/Users/john/.gem/ruby/1.8/gems/activesupport-2.3.8/lib/active_support/dependencies.rb:136:in `require_dependency'
+/Users/john/.gem/ruby/1.8/gems/activerecord-2.3.8/lib/active_record/fixtures.rb:853:in `try_to_load_dependency'
+/Users/john/.gem/ruby/1.8/gems/activerecord-2.3.8/lib/active_record/fixtures.rb:868:in `require_fixture_classes'
+/Users/john/.gem/ruby/1.8/gems/activerecord-2.3.8/lib/active_record/fixtures.rb:865:in `each'
+/Users/john/.gem/ruby/1.8/gems/activerecord-2.3.8/lib/active_record/fixtures.rb:865:in `require_fixture_classes'
+/Users/john/.gem/ruby/1.8/gems/activerecord-2.3.8/lib/active_record/fixtures.rb:848:in `fixtures'
+./test/test_helper.rb:35
+test/unit/gift_test.rb:1:in `require'
+test/unit/gift_test.rb:1
+Unable to load friend, underlying cause no such file to load -- friend 
+
+ /Library/Ruby/Site/1.8/rubygems/custom_require.rb:31:in `gem_original_require'
+/Library/Ruby/Site/1.8/rubygems/custom_require.rb:31:in `require'
+/Users/john/.gem/ruby/1.8/gems/activesupport-2.3.8/lib/active_support/dependencies.rb:158:in `require'
+/Users/john/.gem/ruby/1.8/gems/activesupport-2.3.8/lib/active_support/dependencies.rb:265:in `require_or_load'
+/Users/john/.gem/ruby/1.8/gems/activesupport-2.3.8/lib/active_support/dependencies.rb:224:in `depend_on'
+/Users/john/.gem/ruby/1.8/gems/activesupport-2.3.8/lib/active_support/dependencies.rb:136:in `require_dependency'
+/Users/john/.gem/ruby/1.8/gems/activerecord-2.3.8/lib/active_record/fixtures.rb:853:in `try_to_load_dependency'
+/Users/john/.gem/ruby/1.8/gems/activerecord-2.3.8/lib/active_record/fixtures.rb:868:in `require_fixture_classes'
+/Users/john/.gem/ruby/1.8/gems/activerecord-2.3.8/lib/active_record/fixtures.rb:865:in `each'
+/Users/john/.gem/ruby/1.8/gems/activerecord-2.3.8/lib/active_record/fixtures.rb:865:in `require_fixture_classes'
+/Users/john/.gem/ruby/1.8/gems/activerecord-2.3.8/lib/active_record/fixtures.rb:848:in `fixtures'
+./test/test_helper.rb:35
+test/unit/gift_test.rb:1:in `require'
+test/unit/gift_test.rb:1
+Unable to load viewer, underlying cause no such file to load -- viewer 
+
+ /Library/Ruby/Site/1.8/rubygems/custom_require.rb:31:in `gem_original_require'
+/Library/Ruby/Site/1.8/rubygems/custom_require.rb:31:in `require'
+/Users/john/.gem/ruby/1.8/gems/activesupport-2.3.8/lib/active_support/dependencies.rb:158:in `require'
+/Users/john/.gem/ruby/1.8/gems/activesupport-2.3.8/lib/active_support/dependencies.rb:265:in `require_or_load'
+/Users/john/.gem/ruby/1.8/gems/activesupport-2.3.8/lib/active_support/dependencies.rb:224:in `depend_on'
+/Users/john/.gem/ruby/1.8/gems/activesupport-2.3.8/lib/active_support/dependencies.rb:136:in `require_dependency'
+/Users/john/.gem/ruby/1.8/gems/activerecord-2.3.8/lib/active_record/fixtures.rb:853:in `try_to_load_dependency'
+/Users/john/.gem/ruby/1.8/gems/activerecord-2.3.8/lib/active_record/fixtures.rb:868:in `require_fixture_classes'
+/Users/john/.gem/ruby/1.8/gems/activerecord-2.3.8/lib/active_record/fixtures.rb:865:in `each'
+/Users/john/.gem/ruby/1.8/gems/activerecord-2.3.8/lib/active_record/fixtures.rb:865:in `require_fixture_classes'
+/Users/john/.gem/ruby/1.8/gems/activerecord-2.3.8/lib/active_record/fixtures.rb:848:in `fixtures'
+./test/test_helper.rb:35
+test/unit/gift_test.rb:1:in `require'
+test/unit/gift_test.rb:1
+Unable to load description, underlying cause no such file to load -- description 
+
+ /Library/Ruby/Site/1.8/rubygems/custom_require.rb:31:in `gem_original_require'
+/Library/Ruby/Site/1.8/rubygems/custom_require.rb:31:in `require'
+/Users/john/.gem/ruby/1.8/gems/activesupport-2.3.8/lib/active_support/dependencies.rb:158:in `require'
+/Users/john/.gem/ruby/1.8/gems/activesupport-2.3.8/lib/active_support/dependencies.rb:265:in `require_or_load'
+/Users/john/.gem/ruby/1.8/gems/activesupport-2.3.8/lib/active_support/dependencies.rb:224:in `depend_on'
+/Users/john/.gem/ruby/1.8/gems/activesupport-2.3.8/lib/active_support/dependencies.rb:136:in `require_dependency'
+/Users/john/.gem/ruby/1.8/gems/activerecord-2.3.8/lib/active_record/fixtures.rb:853:in `try_to_load_dependency'
+/Users/john/.gem/ruby/1.8/gems/activerecord-2.3.8/lib/active_record/fixtures.rb:868:in `require_fixture_classes'
+/Users/john/.gem/ruby/1.8/gems/activerecord-2.3.8/lib/active_record/fixtures.rb:865:in `each'
+/Users/john/.gem/ruby/1.8/gems/activerecord-2.3.8/lib/active_record/fixtures.rb:865:in `require_fixture_classes'
+/Users/john/.gem/ruby/1.8/gems/activerecord-2.3.8/lib/active_record/fixtures.rb:848:in `fixtures'
+./test/test_helper.rb:35
+test/unit/gift_test.rb:1:in `require'
+test/unit/gift_test.rb:1
+Unable to load friend, underlying cause no such file to load -- friend 
+
+ /Library/Ruby/Site/1.8/rubygems/custom_require.rb:31:in `gem_original_require'
+/Library/Ruby/Site/1.8/rubygems/custom_require.rb:31:in `require'
+/Users/john/.gem/ruby/1.8/gems/activesupport-2.3.8/lib/active_support/dependencies.rb:158:in `require'
+/Users/john/.gem/ruby/1.8/gems/activesupport-2.3.8/lib/active_support/dependencies.rb:265:in `require_or_load'
+/Users/john/.gem/ruby/1.8/gems/activesupport-2.3.8/lib/active_support/dependencies.rb:224:in `depend_on'
+/Users/john/.gem/ruby/1.8/gems/activesupport-2.3.8/lib/active_support/dependencies.rb:136:in `require_dependency'
+/Users/john/.gem/ruby/1.8/gems/activerecord-2.3.8/lib/active_record/fixtures.rb:853:in `try_to_load_dependency'
+/Users/john/.gem/ruby/1.8/gems/activerecord-2.3.8/lib/active_record/fixtures.rb:868:in `require_fixture_classes'
+/Users/john/.gem/ruby/1.8/gems/activerecord-2.3.8/lib/active_record/fixtures.rb:865:in `each'
+/Users/john/.gem/ruby/1.8/gems/activerecord-2.3.8/lib/active_record/fixtures.rb:865:in `require_fixture_classes'
+/Users/john/.gem/ruby/1.8/gems/activerecord-2.3.8/lib/active_record/fixtures.rb:848:in `fixtures'
+./test/test_helper.rb:35
+test/unit/gift_test.rb:1:in `require'
+test/unit/gift_test.rb:1
+Unable to load viewer, underlying cause no such file to load -- viewer 
+
+ /Library/Ruby/Site/1.8/rubygems/custom_require.rb:31:in `gem_original_require'
+/Library/Ruby/Site/1.8/rubygems/custom_require.rb:31:in `require'
+/Users/john/.gem/ruby/1.8/gems/activesupport-2.3.8/lib/active_support/dependencies.rb:158:in `require'
+/Users/john/.gem/ruby/1.8/gems/activesupport-2.3.8/lib/active_support/dependencies.rb:265:in `require_or_load'
+/Users/john/.gem/ruby/1.8/gems/activesupport-2.3.8/lib/active_support/dependencies.rb:224:in `depend_on'
+/Users/john/.gem/ruby/1.8/gems/activesupport-2.3.8/lib/active_support/dependencies.rb:136:in `require_dependency'
+/Users/john/.gem/ruby/1.8/gems/activerecord-2.3.8/lib/active_record/fixtures.rb:853:in `try_to_load_dependency'
+/Users/john/.gem/ruby/1.8/gems/activerecord-2.3.8/lib/active_record/fixtures.rb:868:in `require_fixture_classes'
+/Users/john/.gem/ruby/1.8/gems/activerecord-2.3.8/lib/active_record/fixtures.rb:865:in `each'
+/Users/john/.gem/ruby/1.8/gems/activerecord-2.3.8/lib/active_record/fixtures.rb:865:in `require_fixture_classes'
+/Users/john/.gem/ruby/1.8/gems/activerecord-2.3.8/lib/active_record/fixtures.rb:848:in `fixtures'
+./test/test_helper.rb:35
+test/unit/gift_test.rb:1:in `require'
+test/unit/gift_test.rb:1
