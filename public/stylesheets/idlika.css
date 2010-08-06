@@ -159,7 +159,6 @@ a.ta_start {
 
 #loginarea a.name { color:#333; text-decoration:none; }
 #loginarea a.name:hover, #loginarea a.name:active { color:#333; text-decoration:underline; }
-
 #loginarea a { color:#666; text-decoration:none; }
 
 #nav {
@@ -306,8 +305,10 @@ h1.login {
 }
 
 div.item {
-	width:239px; height:219px; float:left; margin:0px 0px 20px 0px;
-	background:url(../images/item_bg.gif) no-repeat; overflow:hidden;
+/*original	width:239px; height:219px; float:left; margin:0px 0px 20px 0px;
+	background:url(../images/item_bg.gif) no-repeat; overflow:hidden; 
+*/
+	width:239px;   float:center; margin:0px 0px 20px 0px;
 }
 
 div.item2 {
@@ -316,7 +317,7 @@ div.item2 {
 }
 
 div.item_inner {
-	width:239px; height:219px; margin:0px; padding:0px; overflow:hidden;
+	width:239px; height:120px; margin:0px; padding:0px; overflow:hidden;
 }
 
 div.actions {
