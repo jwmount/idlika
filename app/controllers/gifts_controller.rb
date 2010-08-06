@@ -14,6 +14,7 @@ class GiftsController < ApplicationController
     else
       @gifts = @user.can_see? current_user
     end
+    session[:registry] = "Recently Added"
     logger.info "*-*-*-*-* gifts_controller.index current_user #{current_user[:id]}, id: #{@user.id}."
   end
 
@@ -21,11 +22,8 @@ class GiftsController < ApplicationController
   def index_for_registry
     logger.info "*-*-*-*-* gifts_controller.index_for_registry :registry_id => #{params[:registry_id]}."
     @gifts = Registry.find(params[:registry_id]).gifts
-    
-    respond_to do |format|
-      format.html { render :action=>'index'}# index.html.erb
-      format.xml  { render :xml => @gifts }
-    end
+    session[:registry] = (Registry.find params[:registry_id]).name
+    render :action => 'index'
   end
     
   # Update current_user ONLY!!!  NEVER the friend!!!

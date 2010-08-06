@@ -30,12 +30,14 @@ ActionController::Routing::Routes.draw do |map|
   map.contact        "contact", :controller => "home", :action => "contact"
 
   map.resources :donors
-  map.resources :gifts, :has_many => :registries, :has_many => :donors, :has_many => :sources
-  map.resources :registries
+  map.resources :gifts, :has_many => :donors, :has_many => :sources
+  map.resources :registries, :has_many => :gifts
   map.resources :roles, :has_many => :users
   map.resources :sources
   map.resources :user_sessions
   map.resources :users, :has_many => [:registries, :roles, :gifts, :friends]
+
+  map.resources :clubs, :has_many => :events
 
   map.root :controller => "home"
   map.connect ':controller/:action/:id'
