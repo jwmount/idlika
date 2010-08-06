@@ -4,16 +4,15 @@
   <%= render :partial => 'shared/sidebar' %>
   
   <div id="li_content">
-
-    <h1><%= session[:registry] %> Items for <%= @user.username %>.</h1>
-
+    <h1><%= session[:registry] %> Items of <%= @user.username %>'s.</h1>
+    <h4>Click images to see details.</h4>
+   
     <% if !@gifts.nil? and allowed_to_view? current_user[:username] %>
       <%= render :partial => 'registry_container', :collection => @gifts %>
     <% else %>
 	  <h3>There's nothing in here!  Why not add something so your friends can see it?.</h3>
 	  <h3>If you are visiting a friend's registry they have not allowed you to see anything--yet.</h3>
     <% end %>
-  
   </div><!-- li_content -->
 
 <div class="clearer"></div>
