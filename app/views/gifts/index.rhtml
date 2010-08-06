@@ -5,8 +5,7 @@
   
   <div id="li_content">
 
-  <%= @registry_name %>
-    <h1><%= @registry_name %> Items </h1>
+    <h1><%= '@registry_name' %> Items </h1>
 
     <% if !@gifts.nil? and allowed_to_view? current_user[:username] %>
       <%= render :partial => 'registry_container', :collection => @gifts %>
