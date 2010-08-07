@@ -26,7 +26,7 @@ class UsersController < ApplicationController
     end
     if @user.save
         flash[:notice] = 'Registration successful.'
-        redirect_to root_url
+        redirect_to orient_path
       else
         render :action => 'new'
     end

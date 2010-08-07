@@ -10,8 +10,7 @@ class UserSessionsController < ApplicationController
   def create
     @user_session = UserSession.new(params[:user_session])
     if @user_session.save
-#      flash[:notice] = "Successfully logged in."
-#      redirect_to registries_path
+      flash[:notice] = "You've completed your Idlika registration."
       redirect_to gifts_path   #this would appear to go directly, but it goes to logon again?  
     else
       render :action => 'new'
@@ -24,4 +23,9 @@ class UserSessionsController < ApplicationController
  #   flash[:notice] = "Successfully logged out."
     redirect_to root_url
   end
+  
+  def orient
+  end
+  
+  
 end

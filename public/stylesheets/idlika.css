@@ -256,12 +256,12 @@ a.invitefriend_set { width:172px; height:19px; display:block; background:url(../
 #li_content h1 b { display:none; }
 
 h1.recently_added {
-	width:243px; height:23px; margin:20px 0px; padding:0px;
+	width:243px; height:26px; margin:20px 0px; padding:0px;
 	background:url(../images/hdr_recentlyadded.gif);
 }
 
 h1.add_a_gift {
-	width:153px; height:23px; margin:20px 0px; padding:0px;
+	width:153px; height:26px; margin:20px 0px; padding:0px;
 	background:url(../images/hdr_addagift.gif);
 }
 h1.invite_a_friend {
@@ -273,28 +273,32 @@ h1.edit_gift {
 	background:url(../images/hdr_editgift.gif);
 }
 h1.about_this_gift {
-	width:228px; height:23px; margin:20px 0px; padding:0px;
+	width:228px; height:26px; margin:20px 0px; padding:0px;
 	background:url(../images/hdr_aboutthisgift.gif);
 }
 h1.recently_added {
-	width:237px; height:23px; margin:20px 0px; padding:0px;
+	width:237px; height:26px; margin:20px 0px; padding:0px;
 	background:url(../images/hdr_recentlyadded.gif);
 }
 h1.add_a_friend {
-	width:184px; height:23px; margin:20px 0px; padding:0px;
+	width:184px; height:26px; margin:20px 0px; padding:0px;
 	background:url(../images/hdr_addafriend.gif);
 }
 h1.my_account {
-	width:200px; height:25px; margin:20px 0px; padding:0px;
+	width:200px; height:26px; margin:20px 0px; padding:0px;
 	background:url(../images/hdr_myaccount.gif);
 }
 h1.new_registry {
-	width:200px; height:25px; margin:20px 0px; padding:0px;
+	width:200px; height:26px; margin:20px 0px; padding:0px;
 	background:url(../images/hdr_newregistry.gif);
 }
 h1.join_idlika {
-	width:152px; height:23px; margin:20px 0px; padding:0px;
+	width:152px; height:26px; margin:20px 0px; padding:0px;
 	background:url(../images/hdr_joinidlika.gif);
+}
+h1.welcome_to_idlika {
+	width:274px; height:26px; margin:20px; 0px; padding:0px;
+	background:url(../images/hdr_welcometo.gif);
 }
 h1.login {
 	width:92px; height:23px; margin:20px 0px; padding:0px;

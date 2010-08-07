@@ -2,11 +2,11 @@ class User < ActiveRecord::Base
   acts_as_authentic 
   attr_accessible :username, :email, :password, :password_confirmation
   
-  has_many :donors
-  has_many :gifts, :dependent => :destroy
+  has_many :donors 
+  has_many :gifts,      :dependent => :destroy
   has_many :registries, :dependent => :destroy
-  has_many :roles, :through => :registries, :source => :user
-  has_many :sources, :dependent => :destroy
+  has_many :roles,      :through => :registries, :source => :user
+  has_many :sources,    :dependent => :destroy
   
   serialize :friends
   

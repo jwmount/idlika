@@ -7,25 +7,28 @@
   <% form_for :gift, @gift, :url => user_gifts_path(@user), :html => { :multipart => true } do |f| %>
     <%= f.error_messages %>
     <div id="addgift_form">
+	
+    <div class="aglabel">Gift Image:</div>
+    <%= f.file_field :photo %>
+    <br/><br/>
+
     <div class="clearer"></div>
     <div class="aglabel">Gift Name:</div>
     <div class="agfield"><%= text_field :gift, :name, :class=>"agtext" %></div>
     <div class="clearer"></div>
-    <div class="aglabel">Best place to look for gift:</div>
+
+    <div class="aglabel">Gift Location, Store or Where You Saw It:</div>
     <div class="agfield"><%= text_field :gift, :source, :class=>"agtext" %></div>
     <div class="clearer"></div>
-    <div class="aglabel">Description:</div>
+
+    <div class="aglabel">Gift URL:</div>
+	<div class="agfield"><%= text_field :gift, :URL, :class=>"agtext" %></div>
+    <div class="clearer"></div>
+
+    <div class="aglabel">Gift Description:</div>
     <div class="agfield"><%= text_area :gift, :description, :class=>"agtext", :size => '34x3' %></div>
     <div class="clearer"></div>
 
-    <div class="aglabel">Image:</div>
-    <%= f.file_field :photo %>
-
-    <div class="clearer"></div>
-    <div class="aglabel">URL:</div>
-	<div class="agfield"><%= text_field :gift, :URL, :class=>"agtext" %></div>
-    <div class="clearer"></div>
-    <br/><br/>
     <div class="aglabel"></div> 
     <div class="agfield" stylesheet="margin:20px">
 	  <%= image_submit_tag("/images/btn_addthisgift_on.gif") %></li></div>

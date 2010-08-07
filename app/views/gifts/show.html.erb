@@ -8,17 +8,17 @@
   <%= link_to (image_tag @gift.photo.url(:large)), @gift.URL, :target=>'blank' %>
 </p>
 <p>
-  <b>Name:</b>
+  <b>Gift Name:</b>
   <%=h @gift.name %>
 </p>
 <% unless @gift.registry.nil? %>
 <p>
-	<b>Registry:</b>
+	<b>Gift Registry:</b>
 	<%= @gift.registry.name %>
 </p>
 <% end %>
 <p>
-  <b>Description:</b>
+  <b>Gift Description:</b>
   <%=h @gift.description %>
 </p>
 
@@ -32,7 +32,7 @@
       <!-- link_to (image_tag("btn_delete.png"), gift_path(@gift), -->
       <%= link_to 'Delete', gift_path(@gift),
            :confirm => "Are you sure you want to delete #{@gift.name} from #{@gift.registry.name}?", 
-           :method => :delete %> |
+           :method => :delete %> 
     <% end %>
   <% end %>
 
