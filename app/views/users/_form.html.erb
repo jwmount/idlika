@@ -1,25 +1,30 @@
 
 <% form_for @user do |f| %>
   <%= f.error_messages %>
-  <p>
-    <%= f.label :username %><br />
-    <%= f.text_field :username %>
-  </p>
-  <p>
-    <%= f.label :email %><br />
-    <%= f.text_field :email %>
-  </p>
-  <p>
-    <%= f.label :password %><br />
-    <%= f.password_field :password %>
-  </p>
-  <p>
-    <%= f.label :password_confirmation %><br />
-    <%= f.password_field :password_confirmation %>
-  <p>
-	<DIV class="idlikablue">
-	<%= f.check_box( :terms_accepted_cb) %>I have read and accepted idlika's <%= link_to 'Terms and Conditions.', terms_path, :target=> 'blank' %>
-	</DIV>
+  <div class="aglabelform"><%= f.label :username %>:
+  <span class="required">*</span></div>
+  <div class="agtext"><%= f.text_field :username %></div>
+  <div class="clearer"></div><br/>
+  
+  <div class="aglabelform"><%= f.label :email %>:
+  <span class="required">*</span></div>
+  <div class="agtext"><%= f.text_field :email %></div>
+  <div class="clearer"></div><br/>
+  
+  <div class="aglabelform"><%= f.label :password %>:
+  <span class="required">*</span></div>
+  <div class="agtext"><%= f.password_field :password %></div>
+  <div class="clearer"></div><br/>
+  
+  <div class="aglabelform">Password Again:
+  <span class="required">*</span></div>
+  <div class="agtest"><%= f.password_field :password_confirmation %></div>
+  <div class="clearer"></div><br/>
+ 
+  <div class="idlikablue">
+    <%= f.check_box( :terms_and_conditions) %>I have read and accepted idlika's 
+    <%= link_to 'Terms and Conditions.', terms_path, :target=> 'blank' %>
+  </div>
   </p>
 <!-- ROLES selection check boxes - probably put these in the admin app
   <p>

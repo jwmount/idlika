@@ -12,6 +12,7 @@ class User < ActiveRecord::Base
   
   validates_presence_of :username
   validates_presence_of :email
+  validates_acceptance_of :terms_and_conditions
   
   # Possibly none, some, or all of @gifts may visible to current_user
   # watch your personna here!  @user is the Givee, person who we're visiting to she what she wants...
