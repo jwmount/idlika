@@ -17,7 +17,6 @@
   <% if show_links? %>
   <ul>
 	<li><%= link_to_unless_current '', root_url, {:class => 'home'} %></li>
-  	<li><%= link_to_unless_current '', login_path, :class=>'gifts'%></li>
     <li><%= link_to_unless_current '', edit_user_path(:current_user), {:class=>'myaccnt'}  %>
 	<li><table cellspacing=0>
       <form>

@@ -1,5 +1,6 @@
 <div id="footer">
 <p>&copy;2010 idlika partners LLC (<%= ENV['IDLIKA_VERSION']%>)&nbsp; | &nbsp;
+	<%= link_to_unless_current 'Home', root_url %>&nbsp; | &nbsp;
 	<%= link_to_unless_current 'Terms of Use', terms_path %>&nbsp; | &nbsp;
 	<%= link_to_unless_current 'Privacy Policy', privacy_path %>&nbsp; | &nbsp;
     <%= link_to_unless_current 'What is idlika?', what_path %> &nbsp; | &nbsp;

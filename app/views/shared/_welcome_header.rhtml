@@ -9,16 +9,16 @@
 	  <h2><b>Remember things you want ... Show your friends!</b></h2></a>
 	<% end %>
 
-<%= render( :partial => '/shared/logon_header')%>
+<%= render( :partial => '/shared/logon_header') %>
 
 <div class="clearer"></div>
 
 <div id="nav">
-  <% if false %>
+  <% if true %>
   <ul>
 	<li><%= link_to_unless_current '', root_url, {:class => 'home'} %></li>
-  	<li><%= link_to_unless_current '', login_path, :class=>'gifts'%></li>
-    <li><%= link_to_unless_current '', new_user_path, :class=>"myaccnt"  %>	
+  	<li><!-- link_to_unless_current '', login_path, :class=>'gifts' --></li>
+    <li><!-- link_to_unless_current '', new_user_path, :class=>"myaccnt"  -->	
     </li>
 </ul>
 <% end %>
