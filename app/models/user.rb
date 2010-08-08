@@ -1,6 +1,6 @@
 class User < ActiveRecord::Base
   acts_as_authentic 
-  attr_accessible :username, :email, :password, :password_confirmation
+  attr_accessible :username, :email, :password, :password_confirmation, :terms_accepted_cb
   
   has_many :donors 
   has_many :gifts,      :dependent => :destroy
@@ -12,7 +12,7 @@ class User < ActiveRecord::Base
   
   validates_presence_of :username
   validates_presence_of :email
-  validates_acceptance_of :terms_and_conditions
+#  validates_acceptance_of :terms_accepted_cb
   
   # Possibly none, some, or all of @gifts may visible to current_user
   # watch your personna here!  @user is the Givee, person who we're visiting to she what she wants...

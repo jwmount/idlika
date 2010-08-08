@@ -1,11 +1,10 @@
-Dear <%=h @friend[:username] %>
+Hi <%=h @friend[:username] %>,
 
-  I'd like to have you join me on idlika.  
+  I found this great site that remembers things I want and lets me share them with my friends.  
 
-  Click here:  www.idlika.com look around.  If you register with this email address you'll be able to see my gift registries.
-  If you invite me to, I can see yours.    
+  Go to this site: www.idlika.com and look around.  You can login using '<%=h @friend[:username]%>' as your username and password (ond you can change them later).  You'll be able to see my gifts lists.  You can create your own, and share them by inviting your friends to see them.
+
   
-
 Best,
  
   <%= @friend[:email] %>
