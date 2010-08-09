@@ -60,10 +60,6 @@ class UsersController < ApplicationController
   
   def invite
     @user = current_user
-    @body = "Hey, this is cool.\n\n" +
-            "I've arranged to get you access to the Beta version.  \n\n" +
-            "and Login with the User name and Access Code below (you can change these afterwards).  \n\n" +
-            "Click on http://www.idlika.com"
   end
 
   # Design Notes
@@ -72,24 +68,28 @@ class UsersController < ApplicationController
   def invitation
     flash[:notice] = ''
     flash[:waring] = ''
-    @friend = User.new(params[:user])
 
     @user = User.find current_user[:id]
-    @invited_friend = { @friend.email, @friend.username }
-    
-    unless (@invited_friend == {nil,nil}) or (@invited_friend == " \n")
-      @user.friends = @user.friends.nil? ? @invited_friend : @user.friends.update(@invited_friend)
-    
-      if @user.save
-        MemberMailer.deliver_invitation(params[:user], @user.email)
-        logger.info "*-*-*-* Invitation emailed to #{@friend.username} with email #{@friend.email}."
-        flash[:notice] = "Your invitation to #{@friend.username} has been sent to #{@friend.email}."
-      else
-        logger.info "*-*-*-* Invitation to #{@friend.username} using #{@friend.email} could not be saved."
-        flash[:warning] = "Your invitation to #{@friend.username} with email #{@friend.email} could not be created.  " +
-                         "  This can happen if #{@friend.username} is already a member."
-      end
+
+    @friend = User.new(params[:user])
+    @friend.password = 'guest'
+    @friend.password_confirmation = 'guest'
+    @friend.friends = @user.friends
+    logger.info "*-*-*-*-* #{@user.username} invited #{@friend.username} @ #{@friend.email} to join Idlika"
+
+    new_friend = {@friend.email => @friend.username}
+    @user.friends = new_friend
+            
+    if @user.save and @friend.save!
+      MemberMailer.deliver_invitation(params[:user], @user.email)
+      logger.info "*-*-*-* Invitation emailed to #{@friend.username} with email #{@friend.email}."
+      flash[:notice] = "Your invitation to #{@friend.username} has been sent to #{@friend.email}."
+    else
+      logger.info "*-*-*-* Invitation to #{@friend.username} using #{@friend.email} FAILED."
+      flash[:warning] = "Your invitation to #{@friend.username} with email #{@friend.email} could not be created.  " +
+                       "Usually this means #{@friend.username} is already a member and #{@friend.email} is already taken."
     end
+    
     redirect_to :action => 'invite' 
   end
 # = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =
