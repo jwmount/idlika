@@ -59,7 +59,8 @@ class UsersController < ApplicationController
   end
   
   def invite
-    @user = current_user
+#    @user = current_user
+    @friend = User.new
   end
 
   # Design Notes
@@ -69,16 +70,24 @@ class UsersController < ApplicationController
     flash[:notice] = ''
     flash[:waring] = ''
 
-    @user = User.find current_user[:id]
-
+    # Person doing the invitation
+    @user = current_user
+    
+    # Person being invited
     @friend = User.new(params[:user])
     @friend.password = 'guest'
     @friend.password_confirmation = 'guest'
-    @friend.friends = @user.friends
     logger.info "*-*-*-*-* #{@user.username} invited #{@friend.username} @ #{@friend.email} to join Idlika"
 
-    new_friend = {@friend.email => @friend.username}
-    @user.friends = new_friend
+    #Add email and name to host's list of friends (or create it if this is first one!)
+    if @user.friends.nil?
+      @user.friends = {@friend.email, @friend.username}
+    else
+      @user.friends[@friend.email] = @friend.username
+    end
+    
+    #Seed friend's list?  MAYBE NOT
+#    @friend.friends = @user.friends
             
     if @user.save and @friend.save!
       MemberMailer.deliver_invitation(params[:user], @user.email)
