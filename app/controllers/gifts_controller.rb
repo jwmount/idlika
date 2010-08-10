@@ -12,7 +12,12 @@ class GiftsController < ApplicationController
     if @user.id == (User.find current_user).id
       @gifts = Gift.find_all_by_user_id( @user.id, :order => "created_at DESC" )
     else
-      @gifts = @user.can_see? current_user
+      begin
+        @gifts = @user.can_see?
+      rescue
+        flash[:info] = "ooops"
+        @gifts = @user.gifts
+      end
     end
     session[:registry] = "Recently Added"
     logger.info "*-*-*-*-* gifts_controller.index current_user #{current_user[:id]}, id: #{@user.id}."
