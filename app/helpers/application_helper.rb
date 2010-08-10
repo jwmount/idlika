@@ -3,18 +3,18 @@ module ApplicationHelper
 
   # use friends hash as basis for looking at friends' registries.
   def friend_registry_links
-    if @user.friends.nil?
+    if @user.friends.empty?
       return {"info@idlika.com", "no friends yet"}
     end
-    select :key, :value, @user.friends.each {|k,v| [k,v] }, {:include_blank => true }   unless @user.nil?
+    select :key, :value, @user.friends.each {|k,v| [k,v] }   unless @user.nil?
   end
 
   def observe_friend_select
      observe_field( :friend,
-                    :url => {:controller=>'gifts', :action=>'select_friend', :id=>@user.id}, 
+                    :url => {:controller=>'gifts', :action=>'select_friend' }, 
                     #gets set in .rjs       :update => :li_sidebar,
                     :with => :friend, 
-                    :on => :onchange
+                    :on => :onselect
                   )
    end
 

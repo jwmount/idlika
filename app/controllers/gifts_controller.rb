@@ -28,19 +28,20 @@ class GiftsController < ApplicationController
     
   # Update current_user ONLY!!!  NEVER the friend!!!
   def select_friend
-    logger.info("*-*-*-* gifts_controller.select_friend: switch to #{params[:friend]}.")
-    friend = User.find_by_username params[:friend] 
-    owner = User.find current_user
-    # is it owner?  If so, clear friend_id, otherwise set friend_id to friend.id
-    if owner.update_attribute(:friend_id, friend.id == current_user[:id] ? nil : friend.id)
+    logger.info("*-*-*-* gifts_controller.select_friend: switch to #{params[:friend_name]}.")
+    @friend = User.find_by_username params[:friend] 
+    @owner = current_user
+    
+    # @friend is @owner?  If so, clear friend_id, otherwise set friend_id to friend.id
+    if @owner.update_attribute(:friend_id, @friend.id == @owner.id ? nil : @friend.id)
       logger.info("*-*-*-* gifts_controller.select_friend: id: #{@user.id}, set friend_id: #{@user.friend_id}.")
       respond_to do |format|
-         format.html {redirect_to :action => 'index', :id => @user.friend_id}
-#        format.js # for_friend.rjs
+         format.html {redirect_to :action => 'index', :id => friend.id}
+        format.js # for_friend.rjs
        end
-     else
-      render :text => "Unable to update user with current_friend"
-     end
+    else
+      render :text => "Unable to view #{@friend.username} registries for #{@user.username}."
+    end
   end
  
   # @gift identifies its user via friend_id; this user is a friend if different from @user.id

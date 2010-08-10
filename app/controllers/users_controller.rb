@@ -80,19 +80,20 @@ class UsersController < ApplicationController
     logger.info "*-*-*-*-* #{@user.username} invited #{@friend.username} @ #{@friend.email} to join Idlika"
 
     #Add email and name to host's list of friends (or create it if this is first one!)
-    if @user.friends.nil?
-      @user.friends = {@friend.email, @friend.username}
-    else
+    begin
       @user.friends[@friend.email] = @friend.username
+    rescue
+      @user.friends = {@friend.email, @friend.username}
+    
     end
     
-    #Seed friend's list?  MAYBE NOT
+    #We COULD Seed friend's list?  MAYBE A PRIVACY PROBLEM
 #    @friend.friends = @user.friends
             
     if @user.save and @friend.save!
       MemberMailer.deliver_invitation(params[:user], @user.email)
       logger.info "*-*-*-* Invitation emailed to #{@friend.username} with email #{@friend.email}."
-      flash[:notice] = "Your invitation to #{@friend.username} has been sent to #{@friend.email}."
+      flash[:notice] = "Your invitation to #{@friend.username} has been sent to #{@friend.email}.\nYou can invite someone else now."
     else
       logger.info "*-*-*-* Invitation to #{@friend.username} using #{@friend.email} FAILED."
       flash[:warning] = "Your invitation to #{@friend.username} with email #{@friend.email} could not be created.  " +

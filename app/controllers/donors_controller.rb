@@ -92,9 +92,9 @@ class DonorsController < ApplicationController
 
     # who's logged on.  If friend is 'self' set :friend_id to nil (no friend is active).
     def find_user
-      @user = current_user
+      @user = @current_user
       @user = User.find @user.friend_id unless @user.friend_id.nil?
-      @user.friend_id = nil if (@user.friend_id == current_user[:id])
+      @user.friend_id = nil if (@user.friend_id == @current_user[:id])
       @user.save
     end
 
