@@ -6,9 +6,10 @@ DO NOT YIELD ANYTHING if @user.friends is {nil,nil}.
 DO NOT YIELD ANYTHING if @user.friends is " \n".
 FIGURE OUT WHAT SETS THESE VALUES!!!!
 -->
-<% unless (@user.friends == {nil,nil}) or (@user.friends == " \n") %>
+
+<% unless @user.friends.empty? %>
   <% @user.friends.each_value do |name| %>
-    <% if allowed_to_view? name %>
+    <% unless name.nil? or !allowed_to_view? name %>
       <div class="agfield"><%= check_box_tag name.tr(' ','_'), :checked, name  %><%= name %></div>
     <% else %>
       <div class="agfield"><%= check_box_tag name.tr(' ','_'),           name  %><%= name %></div>

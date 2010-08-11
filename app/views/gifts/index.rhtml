@@ -5,16 +5,23 @@
   
   <div id="li_content">
     <h1><%= session[:registry] %> Items of <%= @user.username %>'s.</h1>
-    <h4>To Edit, Change Which Friends Can See It or Assign to A Registry Click on the Image</h4>
    
-    <% if !@gifts.nil? and allowed_to_view? current_user[:username] %>
-      <%= render :partial => 'registry_container', :collection => @gifts %>
-    <% else %>
-	  <h3>There's nothing in here!  Why not add something so your friends can see it?.</h3>
-	  <h3>If you are visiting a friend's registry they have not allowed you to see anything--yet.</h3>
-    <% end %>
-  </div><!-- li_content -->
+    <% if !@gifts.empty? and allowed_to_view? current_user[:username] %>
 
+      <h4>To Edit, Change Which Friends Can See It or Assign to A Registry Click on the Image</h4>
+      <%= render :partial => 'registry_container', :collection => @gifts %>
+      <!-- link_to 'Edit Registry', edit_registry_path(@registry) --  this path does not compose, for one thing what is @registry?>
+
+    <% else %>
+
+	  <h3>There's nothing in here!  Why not add something so your friends can see it?.</h3>
+	  <h3>Since it's empty, do you want to delete this registry?
+        <%= link_to 'Yes, Delete It', :controller=>'registries', :action => 'destroy', :id => @registry, :prompt=>"Really?" %>
+      </h3>
+
+    <% end %>
+
+  </div><!-- li_content -->
 <div class="clearer"></div>
 </div><!-- li_body -->
 

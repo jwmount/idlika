@@ -6,18 +6,15 @@ class GiftsController < ApplicationController
   layout 'application'
  
   # determine which user and related gifts and registries to display.
-  # All operations are on @user.  Determine if @user is self as necessary.
+  # All operations are on @user.  
   # Also, determine if @user has granted viewing rights and if not, do not display gift.
   def index
-    if @user.id == (User.find current_user).id
-      @gifts = Gift.find_all_by_user_id( @user.id, :order => "created_at DESC" )
-    else
-      begin
-        @gifts = @user.can_see?
-      rescue
-        flash[:info] = "ooops"
-        @gifts = @user.gifts
-      end
+    @gifts = Gift.find_all_by_user_id( @user.id, :order => "created_at DESC" )
+    begin
+      @gifts = @user.can_see?
+    rescue
+      flash[:info] = "ooops"
+      @gifts = @user.gifts
     end
     session[:registry] = "Recently Added"
     logger.info "*-*-*-*-* gifts_controller.index current_user #{current_user[:id]}, id: #{@user.id}."
@@ -26,8 +23,9 @@ class GiftsController < ApplicationController
   # gifts for @registry passed in
   def index_for_registry
     logger.info "*-*-*-*-* gifts_controller.index_for_registry :registry_id => #{params[:registry_id]}."
-    @gifts = Registry.find(params[:registry_id]).gifts
-    session[:registry] = (Registry.find params[:registry_id]).name
+    @registry = Registry.find params[:registry_id]
+    @gifts = @registry.gifts
+    session[:registry] = @registry.name
     render :action => 'index'
   end
     
@@ -41,7 +39,7 @@ class GiftsController < ApplicationController
     if @owner.update_attribute(:friend_id, @friend.id == @owner.id ? nil : @friend.id)
       logger.info("*-*-*-* gifts_controller.select_friend: id: #{@user.id}, set friend_id: #{@user.friend_id}.")
       respond_to do |format|
-         format.html {redirect_to :action => 'index', :id => friend.id}
+        format.html {redirect_to :action => 'index', :id => friend.id}
         format.js # for_friend.rjs
        end
     else
@@ -76,7 +74,6 @@ class GiftsController < ApplicationController
   end
   
   def test_URL
-    debugger
       @url = "https://graph.facebook.com/19292868552"
       begin
         result = Net::HTTP.get(URI.parse(@url))

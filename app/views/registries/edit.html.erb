@@ -1,23 +1,17 @@
 <div id="li_body">
-<%= render :partial => 'shared/sidebar' %>
-<div id="li_content">
-<h1>Edit your registry</h1>
+  <%= render :partial => 'shared/sidebar' %>
+  <div id="li_content">
+  <h1>Edit your registry</h1>
 
-<% form_for :registry, @registry, :url=>user_registry_url, :html=>{:method=>'put'} do |f| %>
-  <%= f.error_messages %>
-  <%= render :partial => 'form', :locals => { :f => f } %>
-  <div class="aglabel"></div>
-  <div class="agfield" stylesheet="margin:20px">
-	  <%= image_submit_tag("/images/btn_addthisgift_on.gif") %>UPDATE THIS REGISTRY</div>
-	</div> <!-- addgift_form -->
+	<% form_for(@registry) do |f| %>
+	  <%= f.error_messages %>
+	  <div id="addgift_form">
+
+        <%= render :partial => 'form', :locals => { :f => f } %>
+	    <%= image_submit_tag("/images/btn_addthisgift_on.gif") %>(UPDATE THIS REGISTRY)</div>
 	
-<% end %> <!-- form -->
+    <% end %> <!-- form -->
 
-</div><!-- li_content -->
-
-<div class="aglabel"></div>
-<%= link_to 'Show', user_registry_path(@user, @registry) %>
-<!-- link_to 'Back', user_registries_path(@user) -->
-</div>
-<div class="clearer"></div>
+  </div> <!-- addgift_form -->
+  </div><!-- li_content -->
 </div><!-- li_body -->

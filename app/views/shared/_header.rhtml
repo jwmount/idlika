@@ -18,30 +18,20 @@
   <ul>
 	<li><%= link_to_unless_current '', root_url, {:class => 'home'} %></li>
     <li><%= link_to_unless_current '', edit_user_path(:current_user), {:class=>'myaccnt'}  %>
-	<li><table cellspacing=0>
-      <form>
-        <tr>
-	
-	    <!--  WE ARE NOT USING SEARCH SO FAR
-	       	<td><img src="../images/search.gif" alt="Search:" style="margin:16px 8px 0px 0px;" /></td>
-        	<td><input type="text" class="navsearch" name="searchterm" /></td>
-        -->
-        <% if !@user.friends.empty? %>
-            <td valign="bottom">
-                <% form_tag( user_registries_path(@user), :method => :post, :class => 'registries' ) do %>
-                  <label>Visit Friends:</label>
-                  <%= select_tag( :friend, friend_registry_links ) %>
-                  <%= observe_friend_select %>  
-           </td>
-        <% end %>
-            <td><!-- link_to image_tag("/images/btn_go.gif"), :controller => 'gifts', :action => 'select_friend', :friend => 'friend' --></li>
+    <li><%= link_to_unless_current '', gifts_path, {:class=>'myaccnt'}  %>
 
-			
-	<% end %>
-        </form>
-        </table>
-    </li>
-</ul>
-<% end %>
+	<% if !@user.friends.empty? %>
+    
+      <li valign="bottom">Visit Friends:
+        <%= select_tag( :friend, friend_registry_links ) %>
+        <%= observe_friend_select %>  
+      </li>
+
+    <% end %>
+            <td><!-- link_to image_tag("/images/btn_go.gif"), :controller => 'gifts', :action => 'select_friend', :friend => 'friend' --></li>
+	
+  </ul>
+  <% end %>
+
 </div><!-- nav -->
 </div><!-- masthead -->
