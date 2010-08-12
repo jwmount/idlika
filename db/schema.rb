@@ -9,23 +9,42 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20100625190304) do
+ActiveRecord::Schema.define(:version => 20100625190306) do
+
+  create_table "Xgivers", :force => true do |t|
+    t.integer  "gift_id"
+    t.string   "name"
+    t.string   "status"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "descriptions", :force => true do |t|
+    t.integer  "gift_id"
+    t.text     "description"
+    t.text     "image_url"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "donors", :force => true do |t|
+    t.integer  "gift_id"
+    t.integer  "allow_id"
+    t.boolean  "marker_cb"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
   create_table "gifts", :force => true do |t|
-    t.integer  "user_id",            :default => 0,     :null => false
-    t.integer  "registry_id",        :default => 1,     :null => false
+    t.integer  "user_id"
+    t.integer  "registry_id"
     t.string   "name"
     t.string   "source"
     t.string   "description"
     t.string   "URL"
-    t.boolean  "i_can_see",          :default => true,  :null => false
-    t.boolean  "friends_can_see",    :default => false, :null => false
-    t.text     "who_can_see",                           :null => false
+    t.boolean  "i_can_see"
+    t.boolean  "friends_can_see"
+    t.text     "who_can_see"
     t.string   "photo_file_name"
     t.string   "photo_content_type"
     t.integer  "photo_file_size"
@@ -34,12 +53,19 @@ ActiveRecord::Schema.define(:version => 20100625190304) do
     t.datetime "updated_at"
   end
 
+  create_table "items", :force => true do |t|
+    t.integer  "gift_id"
+    t.integer  "registry_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
   create_table "registries", :force => true do |t|
     t.integer  "user_id"
     t.string   "name"
+    t.string   "description"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.string   "description"
   end
 
   create_table "roles", :force => true do |t|
@@ -52,7 +78,7 @@ ActiveRecord::Schema.define(:version => 20100625190304) do
   create_table "sources", :force => true do |t|
     t.integer  "gift_id"
     t.integer  "user_id"
-    t.integer  "claim_cb"
+    t.boolean  "claim_cb"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -63,12 +89,18 @@ ActiveRecord::Schema.define(:version => 20100625190304) do
     t.string   "role_id"
     t.string   "username"
     t.string   "email"
-    t.string   "crypted_password"
+    t.string   "cyrpted_password"
     t.string   "password_salt"
     t.string   "persistence_token"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.boolean  "terms_accepted_cb", :default => false, :null => false
+  end
+
+  create_table "viewers", :force => true do |t|
+    t.integer  "user_id"
+    t.integer  "gift_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
 end
