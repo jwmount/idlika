@@ -23,6 +23,7 @@ class CreateUsers < ActiveRecord::Migration
       t.string  :role_id
       t.string :username
       t.string :email
+      t.boolean :terms_accepted_cb
       t.string :cyrpted_password
       t.string :password_salt
       t.string :persistence_token
