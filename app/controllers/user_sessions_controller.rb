@@ -22,7 +22,6 @@ class UserSessionsController < ApplicationController
     @user_session = UserSession.find
     logger.info "@user_session #{@user_session} terminated."
     @user_session.destroy
- #   flash[:notice] = "Successfully logged out."
     redirect_to root_url
   end
   

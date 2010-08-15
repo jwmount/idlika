@@ -32,13 +32,6 @@ class UsersController < ApplicationController
     end
   end
 
-  def remove_friend
-    @user = current_user
-    @user.friend_id = nil
-    @user.save
-    redirect_to logout_path
-  end
-  
   def update
     @user = current_user
     if @user.update_attributes(params[:user])
@@ -48,7 +41,6 @@ class UsersController < ApplicationController
         render :action => 'edit'
     end
   end
-  
   
   def destroy
     User.destroy params[:id]

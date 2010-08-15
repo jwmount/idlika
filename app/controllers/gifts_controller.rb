@@ -9,15 +9,8 @@ class GiftsController < ApplicationController
   # All operations are on @user.  
   # Also, determine if @user has granted viewing rights and if not, do not display gift.
   def index
-    @gifts = Gift.find_all_by_user_id( @user.id, :order => "created_at DESC" )
-    begin
-      @gifts = @user.can_see?
-    rescue
-      flash[:info] = "ooops"
-      @gifts = @user.gifts
-    end
-    session[:registry] = "Recently Added"
-    logger.info "*-*-*-*-* gifts_controller.index current_user #{current_user[:id]}, id: #{@user.id}."
+    @user_session.setRegistry= "Recently Added"
+    @gifts = @user.can_see?
   end
 
   # gifts for @registry passed in
@@ -29,24 +22,24 @@ class GiftsController < ApplicationController
     render :action => 'index'
   end
     
-  # Update current_user ONLY!!!  NEVER the friend!!!
-  def select_friend
-    logger.info("*-*-*-* gifts_controller.select_friend: switch to #{params[:friend_name]}.")
-    @friend = User.find_by_username params[:friend] 
-    @owner = current_user
-    
-    # @friend is @owner?  If so, clear friend_id, otherwise set friend_id to friend.id
-    if @owner.update_attribute(:friend_id, @friend.id == @owner.id ? nil : @friend.id)
-      logger.info("*-*-*-* gifts_controller.select_friend: id: #{@user.id}, set friend_id: #{@user.friend_id}.")
-      respond_to do |format|
-        format.html {redirect_to :action => 'index', :id => friend.id}
-        format.js # for_friend.rjs
-       end
-    else
-      render :text => "Unable to view #{@friend.username} registries for #{@user.username}."
+    # Set id of friend, if any
+    def select_friend
+      logger.info("*-*-*-* gifts_controller.select_friend: switch to #{params[:friend_name]}.")
+      @user.friend params[:friend_name]
+  #friend    @owner = current_user
+
+      # @friend is @owner?  If so, clear friend_id, otherwise set friend_id to friend.id
+  #friend    if @owner.update_attribute(:friend_id, @friend.id == @owner.id ? nil : @friend.id)
+        logger.info("*-*-*-* gifts_controller.select_friend: id: #{@user.id}, set friend_id: #{session[:friend]}" )
+        respond_to do |format|
+          format.html {redirect_to :action => 'index', :id => friend.id}
+          format.js # for_friend.rjs
+         end
+  #friend    else
+  #friend      render :text => "Unable to view #{@friend.username} registries for #{@user.username}."
+  #friend    end
     end
-  end
- 
+     
   # @gift identifies its user via friend_id; this user is a friend if different from @user.id
   def show
     logger.info("*-*-*-* gifts_controller.show: user: #{@user.id}, friend:  #{@user.friend_id}")
@@ -89,7 +82,7 @@ class GiftsController < ApplicationController
     @gift = @user.gifts.new(params[:gift])
     respond_to do |format|
       if @gift.save
-        flash[:notice] = 'Gift was been added to your collection.'
+        flash[:notice] = 'Gift is now part of your collection.'
         format.html { redirect_to( edit_gift_path(@gift) ) }
         format.xml  { render :xml => @gift, :status => :created, :location => @gift }
       else
@@ -207,14 +200,23 @@ class GiftsController < ApplicationController
   end
 # = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =
 
-  # who's logged on.  If friend is 'self' turn it off.
+  # current_user is person logged on.
   def find_user
 #    test_URL
-    @user = current_user
-    @user = User.find @user.friend_id unless @user.friend_id.nil?
-    @user.friend_id = nil if (@user.friend_id == current_user[:id])
-    @user.save
-  end
+#    @user = current_user
+#    @user = User.find @user.friend_id unless @user.friend_id.nil?
+#    @user.friend_id = nil if (@user.friend_id == current_user[:id])
+#    @user.save
+    
+    begin
+      @user = User.find session[:friend]
+    rescue
+      @user = current_user
+    end
+#friend    logger.info "*-*-*-* gifts_controller.find_user current_user: #{current_user[:id]}, @user_id: #{@user.id}, friend: #{session[:friend] }."
+  @user_session = UserSession.find
+    
+  end #find_user
       
 end
  
