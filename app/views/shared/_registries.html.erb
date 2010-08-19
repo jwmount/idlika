@@ -2,6 +2,8 @@
 <li><%= link_to 'Recently Added', user_gifts_path(@user) %></li>
 <br/>
 <% @user.registries.all.each do |@r|%>
-  <li><%= link_to @r.name, :controller=>'gifts', :action=>'index_for_registry', :registry_id => @r.id %></li>
+  <% if !@r.name.nil? %>
+    <li><%= link_to @r.name, :controller=>'gifts', :action=>'index_for_registry', :registry_id => @r.id %></li>
+  <% end %>
 <% end %>
 

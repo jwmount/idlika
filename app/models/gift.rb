@@ -24,9 +24,23 @@ class Gift < ActiveRecord::Base
    :bucket => ENV["S3_BUCKET"]
    
  # Paperclip Validations
- validates_associated :user
  validates_attachment_presence :photo
  validates_attachment_size :photo, :less_than => 5.megabytes
  validates_attachment_content_type :photo, :content_type => ['image/jpeg', 'image/jpg', 'image/png', 'image/gif', 'image/tiff']
- 
+
+ # Instance Validations
+ validates_associated :user
+ validates_associated :registry
+  
+  # Possibly none, some, or all of @gifts may visible.
+  # @user is may be current_user or the person being visited.
+  # so what gifts is current_user allowed to see?  Answer is in Donor.  Result may be nil.
+  def can_see?
+    return gifts if id.nil?
+    donors = Donor.find( :all, :conditions => [ "allow_id = ?", id ] )
+    gifts_allowed = donors.collect {|x| x.gift_id } 
+    gifts.find( gifts_allowed, :order => "created_at DESC" )
+  end
+
+  
 end

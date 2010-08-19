@@ -4,7 +4,7 @@ class RegistriesController < ApplicationController
 
   # returns a collection of registries for a user or friend    
   def index
-    if @user.friend_id.nil?
+    if session[:friend].nil?
       @registries = @user.registries.find( :all )
     else
       @registries = (User.find @user.friend_id ).registries.find(:all)
@@ -17,7 +17,7 @@ class RegistriesController < ApplicationController
 
   # details about a registry
   def show
-    @action = @user.friend_id.nil? ? 'index' : 'select_friend'
+    @action = session[:friend].nil? ? 'index' : 'select_friend'
     respond_to do |format|
       # work out named path at some point
       format.html { redirect_to :controller => 'gifts', :action => "#{@action}",  :registry_id => params[:id] }
@@ -78,7 +78,8 @@ class RegistriesController < ApplicationController
   # DELETE /registries/1
   # DELETE /registries/1.xml
   def destroy
-    @registry = @user.registries.find(params[:id])
+    
+    @registry = Registry.find(params[:id])
     @registry.destroy
 
     respond_to do |format|

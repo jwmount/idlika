@@ -4,7 +4,7 @@ require 'net/http'
 # Specifies gem version of Rails to use when vendor/rails is not present
 
 RAILS_GEM_VERSION = '2.3.8' unless defined? RAILS_GEM_VERSION
-ENV['IDLIKA_VERSION'] = '0.1.48'
+ENV['IDLIKA_VERSION'] = '0.1.49'
 
 ENV['S3_BUCKET'] = "idlika.com"
 ENV['S3_KEY'] = 'AKIAJG2MA6FIXEPKVC6Q'
@@ -16,6 +16,9 @@ ENV['IDLIKA_DOMAIN'] = 'idlika.com'
 
 ENV['SENDGRID_PASSWORD'] = '6c849eca761a22707a'
 ENV['SENDGRID_USERNAME'] = 'app156298@heroku.com'
+
+ENV['INVITATION_USERNAME'] = 'guest'
+ENV['INVITATION_PASSWORD'] = 'guest'
 
 # Facebook Registration 
 # App Name:	idlika
@@ -35,6 +38,14 @@ Rails::Initializer.run do |config|
   # Add additional load paths for your own custom dirs
   # config.load_paths += %W( #{RAILS_ROOT}/extras )
 
+  # Use the database for sessions instead of the file system
+  # (create the session table with 'rake db:sessions:create')
+  config.action_controller.session_store = :active_record_store
+  # generate the secret string using $ rake secret
+  config.action_controller.session = {
+    :secret => 'cc335a614b9a48a8e247b13e96eb139caff06fca938edc8548a5ff017f01b0c8ca7de5ae863f43098ba738e6ab72720df4050d744cc55c4eca1ddf7eb1f0ab97'
+  }
+  config.action_controller.allow_forgery_protection = false
   # Specify gems that this application depends on and have them installed with rake gems:install
   # config.gem "bj"
   # config.gem "hpricot", :version => '0.6', :source => "http://code.whytheluckystiff.net"

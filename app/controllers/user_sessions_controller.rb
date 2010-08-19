@@ -9,8 +9,8 @@ class UserSessionsController < ApplicationController
   
   def create
     @user_session = UserSession.new(params[:user_session])
+    session.clear
     logger.info "@user_session #{@user_session} created."
-    
     if @user_session.save
       redirect_to gifts_path   #this would appear to go directly, but it goes to logon again?  
     else

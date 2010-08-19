@@ -20,4 +20,6 @@ module GiftsHelper
     @current_user = current_user
     name == @current_user.username
   end
+
+  
 end

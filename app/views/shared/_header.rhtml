@@ -17,17 +17,21 @@
   <% if show_links? %>
   <ul>
 	<li><%= link_to_unless_current '', root_url, {:class => 'home'} %></li>
-    <li><%= link_to_unless_current '', edit_user_path(:current_user), {:class=>'myaccnt'}  %>
-    <li><%= link_to_unless_current '', gifts_path, {:class=>'myaccnt'}  %>
+    <li><%= link_to_unless_current '', edit_user_path(:current_user), {:class=>'myaccnt'}  %></li>
+    <li><%= link_to_unless_current 'me', {:controller => 'gifts', :action => 'set_to_self', :id => @user}, {:class=>'myaccnt'}  %></li>
 
-	<% if !@user.friends.empty? %>
-    
-      <li valign="bottom">Visit Friends:
-        <%= select_tag( :friend, friend_registry_links ) %>
-        <%= observe_friend_select %>  
-      </li>
+		<% if !@user.friends.empty? %>
 
-    <% end %>
+	      <li valign="bottom">Visit Friends:
+	        <%= select_tag( :friend, friend_registry_links ) %>
+            <%= observe_field( 'friend',
+		                    :url => {:controller=>'gifts', :action=>'select_friend' }, 
+		                    :with => :friend_name, 
+		                    :on => :onclick
+		                  ) %>
+	      </li>
+     
+	    <% end %>
             <td><!-- link_to image_tag("/images/btn_go.gif"), :controller => 'gifts', :action => 'select_friend', :friend => 'friend' --></li>
 	
   </ul>

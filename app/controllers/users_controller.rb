@@ -1,6 +1,7 @@
 class UsersController < ApplicationController
 #  filter_resource_access
-  layout 'welcome'
+#  layout 'welcome'
+  layout 'application'
   before_filter :mailer_set_url_options
      
   def index
@@ -51,7 +52,7 @@ class UsersController < ApplicationController
   end
   
   def invite
-#    @user = current_user
+    @user = current_user
     @friend = User.new
   end
 
@@ -59,40 +60,19 @@ class UsersController < ApplicationController
   # It can happen that a user has no friends established (registered on own initiative, for example).
   # For some reason the @invited_friend hash may be nil (actually {nil, nil}).  Skip the update in this case.
   def invitation
-    flash[:notice] = ''
-    flash[:waring] = ''
 
-    # Person doing the invitation
-    @user = current_user
-    
-    # Person being invited
-    @friend = User.new(params[:user])
-    @friend.password = 'guest'
-    @friend.password_confirmation = 'guest'
-    logger.info "*-*-*-*-* #{@user.username} invited #{@friend.username} @ #{@friend.email} to join Idlika"
-
-    #Add email and name to host's list of friends (or create it if this is first one!)
-    begin
-      @user.friends[@friend.email] = @friend.username
-    rescue
-      @user.friends = {@friend.email, @friend.username}
-    
-    end
-    
-    #We COULD Seed friend's list?  MAYBE A PRIVACY PROBLEM
-#    @friend.friends = @user.friends
-            
-    if @user.save and @friend.save!
-      MemberMailer.deliver_invitation(params[:user], @user.email)
-      logger.info "*-*-*-* Invitation emailed to #{@friend.username} with email #{@friend.email}."
-      flash[:notice] = "Your invitation to #{@friend.username} has been sent to #{@friend.email}.\nYou can invite someone else now."
+    # Person being invited, may be a member already, or not; based on email uniqueness
+    if User.exists?(:email => "#{params[:user][:email]}")
+      invite_member params
     else
-      logger.info "*-*-*-* Invitation to #{@friend.username} using #{@friend.email} FAILED."
-      flash[:warning] = "Your invitation to #{@friend.username} with email #{@friend.email} could not be created.  " +
-                       "Usually this means #{@friend.username} is already a member and #{@friend.email} is already taken."
+      invite_non_member params
     end
+    logger.info "*-*-*-* #{flash[:notice]}"  unless flash[:notice].nil?
+    logger.info "*-*-*-* #{flash[:warning]}" unless flash[:warning].nil?
     
-    redirect_to :action => 'invite' 
+    # do not redirect as flash will be lost; provide @user for use in _sidebar.
+    @user = current_user
+    render :action => :invite
   end
 # = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =
 private

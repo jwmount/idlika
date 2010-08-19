@@ -31,8 +31,13 @@
             <td valign="bottom">
                 <% form_tag( user_registries_path(@user), :method => :post, :class => 'registries' ) do %>
                   <label>Visit Friends:</label>
+
                   <%= select_tag( :friend, friend_registry_links ) %>
-                  <%= observe_friend_select %>  
+                  <%= observe_field( 'friend',
+			                    :url => {:controller=>'gifts', :action=>'select_friend' }, 
+			                    :with => :friend, 
+			                    :on => :onselect
+			                  ) %>
            </td>
 		   <tr>.</tr>
         <% end %>

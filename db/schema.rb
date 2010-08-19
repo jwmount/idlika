@@ -11,14 +11,6 @@
 
 ActiveRecord::Schema.define(:version => 20100814182947) do
 
-  create_table "Xgivers", :force => true do |t|
-    t.integer  "gift_id"
-    t.string   "name"
-    t.string   "status"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
   create_table "descriptions", :force => true do |t|
     t.integer  "gift_id"
     t.text     "description"
@@ -36,15 +28,15 @@ ActiveRecord::Schema.define(:version => 20100814182947) do
   end
 
   create_table "gifts", :force => true do |t|
-    t.integer  "user_id"
-    t.integer  "registry_id"
-    t.string   "name"
+    t.integer  "user_id",                               :null => false
+    t.integer  "registry_id",                           :null => false
+    t.string   "name",                                  :null => false
     t.string   "source"
-    t.string   "description"
-    t.string   "URL"
-    t.boolean  "i_can_see"
-    t.boolean  "friends_can_see"
-    t.text     "who_can_see"
+    t.string   "description",        :default => "",    :null => false
+    t.string   "URL",                :default => "",    :null => false
+    t.boolean  "i_can_see",          :default => true,  :null => false
+    t.boolean  "friends_can_see",    :default => false, :null => false
+    t.text     "who_can_see",                           :null => false
     t.string   "photo_file_name"
     t.string   "photo_content_type"
     t.integer  "photo_file_size"
@@ -61,9 +53,9 @@ ActiveRecord::Schema.define(:version => 20100814182947) do
   end
 
   create_table "registries", :force => true do |t|
-    t.integer  "user_id"
-    t.string   "name"
-    t.string   "description"
+    t.integer  "user_id",                                   :null => false
+    t.string   "name",        :default => "Recently Added", :null => false
+    t.string   "description", :default => "",               :null => false
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -94,15 +86,14 @@ ActiveRecord::Schema.define(:version => 20100814182947) do
   end
 
   create_table "users", :force => true do |t|
-    t.integer  "friend_id"
-    t.text     "friends"
+    t.text     "friends",                              :null => false
     t.string   "role_id"
-    t.string   "username"
-    t.string   "email"
-    t.boolean  "terms_accepted_cb"
-    t.string   "cyrpted_password"
-    t.string   "password_salt"
-    t.string   "persistence_token"
+    t.string   "username",          :default => "",    :null => false
+    t.string   "email",             :default => "",    :null => false
+    t.boolean  "terms_accepted_cb", :default => false, :null => false
+    t.string   "crypted_password",                     :null => false
+    t.string   "password_salt",                        :null => false
+    t.string   "persistence_token",                    :null => false
     t.datetime "created_at"
     t.datetime "updated_at"
   end

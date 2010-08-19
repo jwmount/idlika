@@ -22,15 +22,15 @@ class CreateGifts < ActiveRecord::Migration
 
   def self.up
     create_table :gifts do |t|
-      t.integer :user_id
-      t.integer :registry_id
-      t.string  :name
+      t.integer :user_id,           :null => false
+      t.integer :registry_id,       :null => false
+      t.string  :name,              :null => false
       t.string  :source
-      t.string  :description
-      t.string  :URL
-      t.boolean :i_can_see
-      t.boolean :friends_can_see
-      t.text    :who_can_see
+      t.string  :description,       :null => false, :default => ''
+      t.string  :URL,               :null => false, :default => ''
+      t.boolean :i_can_see,         :null => false, :default => true
+      t.boolean :friends_can_see,   :null => false, :default => false
+      t.text    :who_can_see,       :null => false, :default => ''
       t.string  :photo_file_name
       t.string  :photo_content_type
       t.integer :photo_file_size
