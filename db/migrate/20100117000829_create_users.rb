@@ -18,14 +18,14 @@ class CreateUsers < ActiveRecord::Migration
 
   def self.up
     create_table :users do |t|
-      t.text    :friends,           :null => false, :default => ''
+      t.text    :friends  
       t.string  :role_id
-      t.string :username,           :null => false, :default => ''
-      t.string :email,              :null => false, :default => ''
+      t.string  :username,           :null => false, :default => ''
+      t.string  :email,              :null => false, :default => ''
       t.boolean :terms_accepted_cb, :null => false, :default => false
-      t.string :crypted_password,   :null => false
-      t.string :password_salt,      :null => false
-      t.string :persistence_token,  :null => false
+      t.string  :crypted_password,   :null => false
+      t.string  :password_salt,      :null => false
+      t.string  :persistence_token,  :null => false
 
       t.timestamps
     end
