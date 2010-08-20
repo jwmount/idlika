@@ -20,7 +20,7 @@
     <li><%= link_to_unless_current '', edit_user_path(:current_user), {:class=>'myaccnt'}  %></li>
     <li><%= link_to_unless_current 'RETURN', {:controller => 'gifts', :action => 'index', :id => @user}, {:class=>'myaccnt'}  %></li>
 
-		<% if !@user.nil and !@user.friends.empty? %>
+		<% if !@user.nil? and !@user.friends.empty? %>
 
 	      <li>Friends:
 	        <!-- select_tag( :friend, friend_registry_links ) -->
