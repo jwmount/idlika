@@ -4,8 +4,11 @@
   <%= render :partial => 'shared/sidebar' %>
   
   <div id="li_content">
-    <h1><%= @registry.name %> Registry Items of <%= @user.username %>'s.</h1>
-
+	<% if !@friend.nil? %>
+	  <h1>FRIEND is <%=@friend.username%></h1>
+	<% else %>
+    <h1><%= @registry.name %> Registry Items of INDEX <%= @user.username %>'s.</h1>
+    <%end %>
     <% if !@gifts.nil? and allowed_to_view? current_user[:username] %>
 
       <h4>To Edit, Change Which Friends Can See It or Assign to A Registry Click on the Image</h4>

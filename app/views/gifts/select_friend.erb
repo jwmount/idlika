@@ -1,0 +1,26 @@
+REPLACED BY PARTIALS
+<br/>
+<div id="li_body">
+
+  <%= render :partial => 'shared/friend_sidebar' %>
+  
+  <div id="li_content">
+    <h1><%= @registry.name %> Registry SELECT FRIEND Items of <%= @friend.username %>'s.</h1>
+
+    <% if !@gifts.empty?  %>
+
+      <h4>Click on the Image</h4>
+      <%= render :partial => 'friend_registry_container', :collection => @gifts %>
+
+    <% else %>
+
+	  <h3><%= @friend.username %> doesn't want anything!.</h3>
+
+    <% end %>
+
+  </div><!-- li_content -->
+<div class="clearer"></div>
+</div><!-- li_body -->
+
+
+

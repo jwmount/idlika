@@ -2,7 +2,7 @@
 <div class="item">
 
 <% if !gift.name.nil? %>
-<%= link_to (image_tag gift.photo.url(:preview)), user_gift_path(@user,gift.id) %>
+<%= link_to (image_tag gift.photo.url(:preview)), user_gift_path(@friend,gift.id) %>
 
   <div class="item_inner" style="background-position:50%, 50%; background-repeat:no-repeat;">
 

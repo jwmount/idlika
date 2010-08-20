@@ -1,12 +1,16 @@
 
 	<div id="li_sidebar">
 	  <ul>
-	    <li><%= @user.username %>'s Registries</li>
+	    <li><%= @friend.username %>'s Registries</li>
 		<br/>
-          <li><%= link_to 'Recently Added', :controller=>'gifts', :action=>'index', :registry_id=>10 %></li>
+          <li><!-- link_to 'Recently xAdded', :controller=>'gifts', :action=>'select_friend', :friend_name => @friend.username --></li>
 
-		<% @user.registries.all.each do |@r|%>
-		  <li><%= link_to @r.name, :controller=>'gifts', :action=>'index_for_registry', :registry_id=>@r.id %></li>
-		<% end %>
+		  <% @friend.registries.all.each do |@r|%>
+		    <li><%= link_to @r.name, :controller=>'gifts', 
+		                             :action=>'select_friend_registry', 
+		                             :id => @friend.id,
+		                             :registry_id => @r.id %></li>
+		  <% end %>
 	  </ul>
 	</div><!-- li_sidebar -->
+

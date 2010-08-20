@@ -1,42 +1,56 @@
 class GiftsController < ApplicationController
 
-#  filter_resource_access
-
-  before_filter :find_user, :find_friend, :find_registry
+  #  filter_resource_access
   layout 'application'
+  before_filter :find_user
+  before_filter :find_friend, :except => :select_friend_registry
  
   # Display gifts user is permitted to see; owner can see all.
   def index
+    begin
       @gifts = @registry.gifts
+    rescue
+      @gifts = []
+    end
   end
 
-  # gifts for @registry passed in
+  def friend_index
+  end
+  
+  # set @registry passed in to current so gifts are collected in it
   def index_for_registry
-    
     begin
       session[:current_registry] = Registry.find params[:registry_id]
     rescue
       session[:current_registry] = Registry.find( :first, :conditions => ["user_id = ? AND name = 'Recently Added'", @user.id ] )
     end
-    
-    logger.info "*-*-*-*-* gifts_controller.index_for_registry :current_registry => #{session[:current_registry].name}."
+    logger.info "*-*-*-*-* gifts_controller.index_for_registry :current_registry => #{session[:current_registry][:name]}."
     redirect_to :action => 'index'
   end
     
   # Switch to selected friend.  At this point we only know the friend by name
   def select_friend
       session.clear
-      session[:current_friend] = User.find_by_username params[:friend_name]
-      logger.info("*-*-*-* gifts_controller.select_friend: id: #{@user.id}, owned by: #{session[:current_friend] }" )
-      redirect_to :action => 'index_for_registry'
-  end
-     
-  def set_to_self
-    session[:current_user] = current_user
-    redirect_to :action => 'index'
+      session[:current_friend] = User.find params[:friend_id]
+      @friend = session[:current_friend]
+      @gifts = @registry.gifts
+      logger.info("*-*-*-* gifts_controller.select_friend: id: #{@friend.id}, name: #{@friend.username}" )
+      render( :partial => 'shared/friend_sidebar',
+              :object => @friend,
+              :update => 'li_sidebar',
+              :locals => { :friend => session[:current_friend] })
   end
   
-  # @gift identifies its user via session[:friend].
+  # REMINDER:  before_filter :find_friend, :except => :select_friend_registry
+  def select_friend_registry
+    session[:current_registry] = Registry.find params[:registry_id]
+    @registry = Registry.find params[:registry_id]
+    @friend = User.find params[:id]
+    @gifts = @registry.gifts
+    render :action => 'friend_index'
+  end
+  
+  # @gift identifies its user via session[:current_friend].
   def show
     @gift = Gift.find params[:id]
     if @gift.user.id != @user.id
@@ -205,24 +219,24 @@ class GiftsController < ApplicationController
     begin
       @friend = User.find session[:current_friend]
     rescue
-      @friend = nil
+      session[:current_friend] = nil 
     end
+    @friend = session[:current_friend]
   end
   
   def find_registry
     begin
-      @registry = Registry.find session[:current_registry].id
-      session[:current_registry] = @registry
+      session[:current_registry] = Registry.find session[:current_registry].id
     rescue
       
       begin
-        @registry = Registry.find :first, :conditions => ["user_id = ? AND name = 'Recently Added'", @user.id ]
+        session[:current_registry] = Registry.find :first, :conditions => ["user_id = ? AND name = 'Recently Added'", @user.id ]
       rescue
-        @registry = nil
+        session[:current_registy] = nil
       end
       
     end
-    session[:current_registry] = @registry
+    @registry = session[:current_registry]
   end
   
   # current_user is person logged on.
@@ -230,10 +244,15 @@ class GiftsController < ApplicationController
     begin
       @user = Gift.find session[:current_user].id
     rescue
-      @user = current_user
+      begin
+        @user = current_user
+      rescue
+        render :text => "No user could be established.  Probably this is an active session but the database has been cleared.   
+        Close your browser and try again (this will clear the session)."
+        system.exit
+      end
     end
-    @user_session = UserSession.find
-      
+    find_registry
   end #find_user
       
 end

@@ -1,0 +1,4 @@
+# page.replace_html :id_of_element_to_replace_html, :partial => "name_of_partial"
+
+page.replace_html :li_body, :partial => "shared/friend_sidebar"
+

@@ -1,0 +1,17 @@
+<!-- registry container -->
+
+  <table>
+    <tr>
+	  <% while gift = @gifts.delete_at(0) %>
+	
+	    <td><%= render :partial => 'friend_registry_item', :locals => { :gift => gift } %></td>
+            <% i = (i ||= 0) + 1 %>
+            <% if i == 3 then i = 0 end%>
+            <% if i == 0 %></tr><% end %>
+
+	  <% end %>
+    </tr>
+  </table>
+
+<div class="clearer"></div>
+

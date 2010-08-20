@@ -1,23 +1,18 @@
 class RegistriesController < ApplicationController
   
   before_filter :find_user
-
-  # returns a collection of registries for a user or friend    
+  
   def index
-    if session[:friend].nil?
-      @registries = @user.registries.find( :all )
+    if session[:current_friend].nil?
+      redirect_to user_gifts_path(@user)
     else
-      @registries = (User.find @user.friend_id ).registries.find(:all)
-    end
-
-    respond_to do |format|
-      format.html { redirect_to user_gifts_path(@user) }
+      redirect_to :controller => 'gifts', :action => 'select_friend', :friend_id => session[:current_friend].id
     end
   end
 
   # details about a registry
   def show
-    @action = session[:friend].nil? ? 'index' : 'select_friend'
+    @action = session[:current_friend].nil? ? 'index' : 'select_friend'
     respond_to do |format|
       # work out named path at some point
       format.html { redirect_to :controller => 'gifts', :action => "#{@action}",  :registry_id => params[:id] }

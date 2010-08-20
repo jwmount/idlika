@@ -18,24 +18,28 @@
   <ul>
 	<li><%= link_to_unless_current '', root_url, {:class => 'home'} %></li>
     <li><%= link_to_unless_current '', edit_user_path(:current_user), {:class=>'myaccnt'}  %></li>
-    <li><%= link_to_unless_current 'me', {:controller => 'gifts', :action => 'set_to_self', :id => @user}, {:class=>'myaccnt'}  %></li>
+    <li><%= link_to_unless_current 'RETURN', {:controller => 'gifts', :action => 'index', :id => @user}, {:class=>'myaccnt'}  %></li>
 
 		<% if !@user.friends.empty? %>
 
-	      <li valign="bottom">Visit Friends:
-	        <%= select_tag( :friend, friend_registry_links ) %>
-            <%= observe_field( 'friend',
+	      <li>Friends:
+	        <!-- select_tag( :friend, friend_registry_links ) -->
+	        <%= select( "friend", "username", User.all.collect {|f| [f.username, f.id] } ) %>
+            <%= observe_field( 'friend_username',
 		                    :url => {:controller=>'gifts', :action=>'select_friend' }, 
-		                    :with => :friend_name, 
-		                    :on => :onclick
+		                    :with => :friend_id, 
+		                    :on => :onclick,
+		                    :update => 'li_sidebar'
 		                  ) %>
 	      </li>
      
 	    <% end %>
             <td><!-- link_to image_tag("/images/btn_go.gif"), :controller => 'gifts', :action => 'select_friend', :friend => 'friend' --></li>
+	<li>&nbsp;&nbsp;&nbsp;&nbsp;</li>
+	<li>Visiting: <%= @friend.username.upcase unless @friend.nil? %></li>
 	
   </ul>
   <% end %>
-
+  
 </div><!-- nav -->
 </div><!-- masthead -->

@@ -1,6 +1,10 @@
 <div id="li_body">
-  <%= render :partial => 'shared/sidebar' %>
 
+  <% if @friend.nil? %>
+    <%= render :partial => 'shared/sidebar' %>
+  <% else %>
+    <%= render :partial => 'shared/friend_sidebar' %>
+  <% end %>
 <div id="li_content">
   <h1 class="about_this_gift"></h1>
 
@@ -22,7 +26,7 @@
   <%=h @gift.description %>
 </p>
 
-<% if !session[:friend].nil? %>
+<% if !session[:current_friend].nil? %>
   <%= link_to 'I want one too!', edit_user_gift_path( @user, @gift) %> | 
 <% end %>
 
@@ -40,7 +44,6 @@
 <%= link_to( "I'll Get This Gift for #{@user.username}", root_url) unless @user.id == current_user[:id] %>
 
 <br />
-<!-- link_to 'Back', gifts_path -->
 
 </div><!-- li_content -->
 

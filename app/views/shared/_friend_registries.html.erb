@@ -1,7 +1,8 @@
-<li><%= link_to 'Recently Added', index_of_friend_path(@user) %></li>
-<br/>
-<% @user.registries.all.each do |@r|%>
-  <li><%= link_to @r.name, :controller=>'gifts', :action=>'index_for_registry', :registry_id=>@r.id %></li>
+<li><%= link_to 'Recently Added y', user_gifts_path(@friend) %></li><br/>
+
+<% @friend.registries.all.each do |@r|%>
+  <li><%= link_to @r.name, :controller=>'gifts', :action=>'index_for_registry', 
+                           :registry_id=>@r.id unless @r.name = "Recently Added"%></li>
 <% end %>
 
 

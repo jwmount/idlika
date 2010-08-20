@@ -5,11 +5,7 @@
 	  <% while gift = @gifts.delete_at(0) %>
 	
 	    <td>
-		  <% if @user == session[:friend] %>
-	        <%= render :partial => 'registry_item', :locals => { :gift => gift } %></td>
-          <% else %>
-            <%= render :partial => 'friend_registry_item', :locals => { :gift => gift } %></td>
-          <% end %>
+         <%= render :partial => 'registry_item', :locals => { :gift => gift } %></td>
             <% i = (i ||= 0) + 1 %>
             <% if i == 3 then i = 0 end%>
             <% if i == 0 %></tr><% end %>
