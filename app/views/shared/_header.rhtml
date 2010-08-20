@@ -21,7 +21,7 @@
     <li><%= link_to_unless_current 'RETURN', {:controller => 'gifts', :action => 'index', :id => @user}, {:class=>'myaccnt'}  %></li>
 
 		<% if !@user.nil? %>
-		  <%if !@user.friends.empty? %>
+		  <!--remove if !@user.friends.empty? -->
 
 	      <li>Friends:
 	        <!-- select_tag( :friend, friend_registry_links ) -->
@@ -33,7 +33,7 @@
 		                    :update => 'li_sidebar'
 		                  ) %>
 	      </li>
-          <% end %>
+          <!-- end -->
 	    <% end %>
             <td><!-- link_to image_tag("/images/btn_go.gif"), :controller => 'gifts', :action => 'select_friend', :friend => 'friend' --></li>
 	<li>&nbsp;&nbsp;&nbsp;&nbsp;</li>
