@@ -1,7 +1,7 @@
-(in /Users/john/Devo/idlika)
-         graph_authorization_rules GET    /authorization_rules/graph(.:format)              {:controller=>"authorization_rules", :action=>"graph"}
+(in /Users/john/Devo/idlika-dev)
 suggest_change_authorization_rules GET    /authorization_rules/suggest_change(.:format)     {:controller=>"authorization_rules", :action=>"suggest_change"}
         change_authorization_rules GET    /authorization_rules/change(.:format)             {:controller=>"authorization_rules", :action=>"change"}
+         graph_authorization_rules GET    /authorization_rules/graph(.:format)              {:controller=>"authorization_rules", :action=>"graph"}
                authorization_rules GET    /authorization_rules(.:format)                    {:controller=>"authorization_rules", :action=>"index"}
               authorization_usages GET    /authorization_usages(.:format)                   {:controller=>"authorization_usages", :action=>"index"}
                              login        /login                                            {:controller=>"user_sessions", :action=>"new"}
@@ -10,7 +10,7 @@ suggest_change_authorization_rules GET    /authorization_rules/suggest_change(.:
                             orient        /orient                                           {:controller=>"user_sessions", :action=>"orient"}
                             invite        /invite                                           {:controller=>"users", :action=>"invite"}
                         invitation        /invitation                                       {:controller=>"users", :action=>"invitation"}
-                     remove_friend        /remove_friend                                    {:controller=>"users", :action=>"remove_friend"}
+                     accept_invite        /accept_invite                                    {:controller=>"users", :action=>"accept_invite"}
                             friend        /friend                                           {:controller=>"gifts", :action=>"friend"}
                      select_friend        /select_friend                                    {:controller=>"gifts", :action=>"select_friend"}
                    index_of_friend        /index_of_friend                                  {:controller=>"gifts", :action=>"index_of_friend"}
@@ -138,6 +138,6 @@ suggest_change_authorization_rules GET    /authorization_rules/suggest_change(.:
                               club GET    /clubs/:id(.:format)                              {:controller=>"clubs", :action=>"show"}
                                    PUT    /clubs/:id(.:format)                              {:controller=>"clubs", :action=>"update"}
                                    DELETE /clubs/:id(.:format)                              {:controller=>"clubs", :action=>"destroy"}
-                              root        /                                                 {:controller=>"home", :action=>"index"}
+                              root        /                                                 {:action=>"index", :controller=>"home"}
                                           /:controller/:action/:id                          
                                           /:controller/:action/:id(.:format)                

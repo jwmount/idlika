@@ -18,7 +18,7 @@ class CreateUsers < ActiveRecord::Migration
 
   def self.up
     create_table :users do |t|
-      t.text    :friends  
+      t.text    :friends,            :null => true  
       t.string  :role_id
       t.string  :username,           :null => false, :default => ''
       t.string  :email,              :null => false, :default => ''

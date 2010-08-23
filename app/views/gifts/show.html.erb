@@ -1,5 +1,5 @@
 <div id="li_body">
-
+<%= flash[:notice] %>
   <% if @friend.nil? %>
     <%= render :partial => 'shared/sidebar' %>
   <% else %>
@@ -27,7 +27,7 @@
 </p>
 
 <% if !session[:current_friend].nil? %>
-  <%= link_to 'I want one too!', edit_user_gift_path( @user, @gift) %> | 
+  <%= link_to 'I want one too!',  @gift_copy_gift_path %> | 
 <% end %>
 
 <% if @user == current_user %>
@@ -37,11 +37,8 @@
          :method => :delete %> 
 <% end %>
 
-<% flash["idlik12"] = @gift.id %>
-<!-- button_to "I'd like one too", idlik12_path -->
-
 <!-- I'LL GET THIS appears only when visiting someone else's list -->
-<%= link_to( "I'll Get This Gift for #{@user.username}", root_url) unless @user.id == current_user[:id] %>
+<%= link_to( "I'll Get This Gift for #{@user.username}", @gift_give_gift_path ) unless @user.id == current_user[:id] %>
 
 <br />
 
