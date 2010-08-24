@@ -47,4 +47,5 @@ production:
   username: john
   password: 180lbs
 #  socket: /tmp/mysql.sock 
+# deploy with:
   socket: /var/run/mysqld/mysqld.sock

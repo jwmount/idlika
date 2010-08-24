@@ -52,7 +52,6 @@ class GiftsController < ApplicationController
   
   # @gift identifies its user via session[:current_friend].
   def show
-    debugger
     @gift = Gift.find params[:id]
     if @gift.user.id != @user.id
       @user = User.find @gift.user.id
@@ -232,15 +231,12 @@ class GiftsController < ApplicationController
   # current_user is person logged on.
   def find_user
     begin
-      @user = Gift.find session[:current_user].id
+      @user = current_user
+      session[:current_friend] = nil
     rescue
-      begin
-        @user = current_user
-      rescue
-        render :text => "No user could be established.  Probably this is an active session but the database has been cleared.   
-        Close your browser and try again (this will clear the session)."
-        system.exit
-      end
+      render :text => "No user could be established.  Probably this is an active session but the database has been cleared.   
+      Close your browser and try again (this will clear the session)."
+      system.exit
     end
     find_registry
   end #find_user
