@@ -46,4 +46,5 @@ production:
   pool: 5
   username: john
   password: 180lbs
-  socket: /tmp/mysql.sock
+#  socket: /tmp/mysql.sock 
+  socket: /var/run/mysqld/mysqld.sock
