@@ -21,7 +21,7 @@ class RegistriesController < ApplicationController
   end
 
   # GET /registries/new
-  # GET /registries/new.xml
+  # GET /registries/new.xml 
   def new
     @registry = @user.registries.new
 
@@ -76,9 +76,10 @@ class RegistriesController < ApplicationController
     
     @registry = Registry.find(params[:id])
     @registry.destroy
+    logger.info "*-*-*-*-* #{@registry.name} deleted by #{@user.username}."
 
     respond_to do |format|
-      format.html { redirect_to( user_registries_url(@user)) }
+      format.html { redirect_to( user_gifts_url(@user)) }
       format.xml  { head :ok }
     end
   end

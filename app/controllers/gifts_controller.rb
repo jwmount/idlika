@@ -22,7 +22,8 @@ class GiftsController < ApplicationController
     begin
       session[:current_registry] = Registry.find params[:registry_id]
     rescue
-      session[:current_registry] = Registry.find( :first, :conditions => ["user_id = ? AND name = 'Recently Added'", @user.id ] )
+      session[:current_registry] = Registry.find( :first, :conditions => ["user_id = ? AND name = #{ENV['DEFAULT_REGISTRY_NAME']}", @user.id ] )
+      "#{ENV['DEFAULT_REGISTRY_NAME']}"
     end
     logger.info "*-*-*-*-* gifts_controller.index_for_registry :current_registry => #{session[:current_registry][:name]}."
     redirect_to :action => 'index'
@@ -87,12 +88,12 @@ class GiftsController < ApplicationController
       render :show
     end
   
-  # Default registry for new gifts is 'Recently Added'
+  # Default registry for new gifts is '#{ENV['DEFAULT_REGISTRY_NAME']}'
   def create
     @gift = @user.gifts.new(params[:gift])
     @registries = @user.registries
     @registries.each do |registry|
-      @gift.registry_id = registry.id if registry.name == "Recently Added"
+      @gift.registry_id = registry.id if registry.name == "#{ENV['DEFAULT_REGISTRY_NAME']}"
     end
 
     respond_to do |format|
@@ -219,7 +220,7 @@ class GiftsController < ApplicationController
     rescue
       
       begin
-        session[:current_registry] = Registry.find :first, :conditions => ["user_id = ? AND name = 'Recently Added'", @user.id ]
+        session[:current_registry] = Registry.find :first, :conditions => ["user_id = ? AND name = '#{ENV['DEFAULT_REGISTRY_NAME']}'", @user.id ]
       rescue
         session[:current_registy] = nil
       end

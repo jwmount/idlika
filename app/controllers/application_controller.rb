@@ -101,7 +101,7 @@ class ApplicationController < ActionController::Base
           
      if @host.save and @friend.save!
        #New invitation accounts need corresponding registries
-       @registry = Registry.new(:name=>"Recently Added", :description=>"Items added recently.", :user_id=>@friend.id)
+       @registry = Registry.new(:name=>"#{ENV['DEFAULT_REGISTRY_NAME']}", :description=>"Items added recently.", :user_id=>@friend.id)
        @registry.save!
        MemberMailer.deliver_invitation(params[:user], @host.email)
        flash[:notice] = "You've invied #{@friend.username} at #{@friend.email} to visit you on Idlika.  You can invite someone else now."

@@ -5,22 +5,21 @@
   
   <div id="li_content">
     <h1><%= @registry.name %> Items Selected by <%= @user.username %>.</h1>
+ 
+    <% if @gifts.empty? %>
 
-    <% if !@gifts.nil? and allowed_to_view? current_user[:username] %>
+	  <h3>This registry is empty, so you could delete it (unless it's your Recently Added gifts registry.)</h3>
+      <%= link_to 'Delete Registry', registry_path(@registry), :method => 'DELETE', :prompt => 'Sure?' %>
 
+    <% else %>
+
+      <!-- @gifts = allowed_to_view? current_user[:username] -->
       <h4>To Edit, Change Which Friends Can See It or Assign to A Registry Click on the Image</h4>
       <%= render :partial => 'registry_container', :collection => @gifts %>
 
       <% unless @registry.nil? %>
         <%= link_to 'Edit Registry', edit_registry_path(@registry) %>
       <% end %>
-
-    <% else %>
-
-	  <h3>There's nothing in here!  Now use 'Add Gift' or 'New Registry' to get started.</h3>
-	  <h3>Since it's empty, do you want to delete this registry?  ('Recently Added can't be deleted.)</h3>
-
-      </h3>
 
     <% end %>
 

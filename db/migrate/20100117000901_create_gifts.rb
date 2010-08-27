@@ -30,7 +30,7 @@ class CreateGifts < ActiveRecord::Migration
       t.string  :URL,               :null => false, :default => ''
       t.boolean :i_can_see,         :null => false, :default => true
       t.boolean :friends_can_see,   :null => false, :default => false
-      t.text    :who_can_see,       :null => false, :default => ''
+      t.text    :who_can_see
       t.string  :photo_file_name
       t.string  :photo_content_type
       t.integer :photo_file_size
