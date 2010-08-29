@@ -5,6 +5,9 @@ class ApplicationController < ActionController::Base
   include Authentication
   include AuthenticatedSystem 
 
+#really? where?
+
+
   helper :all
   protect_from_forgery
 # protect_from_forgery :secret => '9847618af6620f8564a5f7ef12f48a5a'
