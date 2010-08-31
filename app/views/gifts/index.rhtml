@@ -12,7 +12,7 @@
       <%= link_to 'Delete Registry', registry_path(@registry), :method => 'DELETE', :prompt => 'Sure?' %>
 
     <% else %>
-
+ 
       <!-- @gifts = allowed_to_view? current_user[:username] -->
       <h4>To Edit, Change Which Friends Can See It or Assign to A Registry Click on the Image</h4>
       <%= render :partial => 'registry_container', :collection => @gifts %>
