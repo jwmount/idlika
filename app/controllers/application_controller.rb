@@ -5,9 +5,6 @@ class ApplicationController < ActionController::Base
   include Authentication
   include AuthenticatedSystem 
 
-#really? where?
-
-
   helper :all
   protect_from_forgery
 # protect_from_forgery :secret => '9847618af6620f8564a5f7ef12f48a5a'
@@ -52,6 +49,7 @@ class ApplicationController < ActionController::Base
      return @current_user if defined?(@current_user)
      @current_user = current_user_session && current_user_session.record
    end
+
 
    def invite_member params
      @host = current_user

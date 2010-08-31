@@ -43,9 +43,9 @@ Rails::Initializer.run do |config|
   # (create the session table with 'rake db:sessions:create')
   config.action_controller.session_store = :active_record_store
   # generate the secret string using $ rake secret
-  config.action_controller.session = {
-    :secret => 'cc335a614b9a48a8e247b13e96eb139caff06fca938edc8548a5ff017f01b0c8ca7de5ae863f43098ba738e6ab72720df4050d744cc55c4eca1ddf7eb1f0ab97'
-  }
+  #config.action_controller.session = {
+  #  :secret => 'cc335a614b9a48a8e247b13e96eb139caff06fca938edc8548a5ff017f01b0c8ca7de5ae863f43098ba738e6ab72720df4050d744cc55c4eca1ddf7eb1f0ab97'
+  #}
   config.action_controller.allow_forgery_protection = false
   # Specify gems that this application depends on and have them installed with rake gems:install
   # config.gem "bj"
