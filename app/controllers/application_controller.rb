@@ -36,7 +36,7 @@ class ApplicationController < ActionController::Base
 #   private
 
    def show_links?
-     true
+     ['yes', 'Yes', 'YES'].include? ENV['SHOW_LINKS']
    end
    
    def current_user_session
