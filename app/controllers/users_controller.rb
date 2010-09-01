@@ -25,6 +25,9 @@ class UsersController < ApplicationController
     Role.all.each do |r|
       @user.role_id = r.id if r.name == "guest"
     end
+    @user.friends = @user.friends ||= {}
+    @user.username = @user.username ||= ""
+    @user.email = @user.email ||= ""
     if @user.save
         flash[:notice] = 'Registration successful.'
         redirect_to orient_path
