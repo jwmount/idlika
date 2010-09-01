@@ -97,7 +97,7 @@ class GiftsController < ApplicationController
     end
 
     @gift.null_gates
-    logger.info "*_*_*_*_* GiftsController.create with who_can_see: '#{@gift.who_can_see}'"
+    logger.info "*_*_*_*_* GiftsController.create with who_can_see: -#{@gift.who_can_see}-"
     respond_to do |format|
       if @gift.save
         flash[:notice] = 'Gift is now part of your collection.'

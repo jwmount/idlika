@@ -43,9 +43,9 @@ class Gift < ActiveRecord::Base
   end
 
   def null_gates
-    who_can_see = who_can_see ||= {}
     name = name ||= ''
     description = description ||= ''
+    self.who_can_see = self.who_can_see ||= {}
   end
   
 end
