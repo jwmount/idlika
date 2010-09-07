@@ -4,8 +4,9 @@ require 'net/http'
 # Specifies gem version of Rails to use when vendor/rails is not present
 
 RAILS_GEM_VERSION = '2.3.8' unless defined? RAILS_GEM_VERSION
-ENV['IDLIKA_VERSION'] = '0.1.50'
+ENV['IDLIKA_VERSION'] = '0.1.55'
 ENV['DEFAULT_REGISTRY_NAME'] = 'Recently Added'
+ENV['SHOW_LINKS'] = 'yes'
 
 ENV['S3_BUCKET'] = "idlika.com"
 ENV['S3_KEY'] = 'AKIAJG2MA6FIXEPKVC6Q'
@@ -42,7 +43,7 @@ Rails::Initializer.run do |config|
   # Use the database for sessions instead of the file system
   # (create the session table with 'rake db:sessions:create')
   config.action_controller.session_store = :active_record_store
-  # generate the secret string using $ rake secret
+ #  generate the secret string using $ rake secret
   config.action_controller.session = {
     :secret => 'cc335a614b9a48a8e247b13e96eb139caff06fca938edc8548a5ff017f01b0c8ca7de5ae863f43098ba738e6ab72720df4050d744cc55c4eca1ddf7eb1f0ab97'
   }

@@ -36,7 +36,7 @@ class ApplicationController < ActionController::Base
 #   private
 
    def show_links?
-     true
+     ['yes', 'Yes', 'YES'].include? ENV['SHOW_LINKS']
    end
    
    def current_user_session
@@ -49,6 +49,7 @@ class ApplicationController < ActionController::Base
      return @current_user if defined?(@current_user)
      @current_user = current_user_session && current_user_session.record
    end
+
 
    def invite_member params
      @host = current_user

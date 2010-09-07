@@ -5,6 +5,10 @@ class Registry < ActiveRecord::Base
   
   validates_associated :user
   
+  def null_gates
+    self.name = self.name ||= ""
+    self.description = self.description ||= ""
+  end
   
   def null_gates
     self.name = self.name ||= ""

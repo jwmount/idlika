@@ -47,6 +47,9 @@ class Gift < ActiveRecord::Base
     self.description = self.description ||= ''
     self.who_can_see = self.who_can_see ||= {}
   end
+<<<<<<< HEAD
   
+=======
+>>>>>>> ee416a9cbcca61b6718aa7b57e5e52a3d1063fe5
   
 end

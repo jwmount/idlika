@@ -1,7 +1,6 @@
 class UsersController < ApplicationController
 #  filter_resource_access
-#  layout 'welcome'
-  layout 'application'
+  layout 'welcome'
   before_filter :mailer_set_url_options
      
   def index

@@ -95,7 +95,13 @@ class GiftsController < ApplicationController
     @registries.each do |registry|
       @gift.registry_id = registry.id if registry.name == "#{ENV['DEFAULT_REGISTRY_NAME']}"
     end
+<<<<<<< HEAD
     @gift.null_gates
+=======
+
+    @gift.null_gates
+    logger.info "*_*_*_*_* GiftsController.create with who_can_see: -#{@gift.who_can_see}-"
+>>>>>>> ee416a9cbcca61b6718aa7b57e5e52a3d1063fe5
     respond_to do |format|
       if @gift.save
         flash[:notice] = 'Gift is now part of your collection.'
@@ -173,6 +179,7 @@ class GiftsController < ApplicationController
     @gift.who_can_see = {}
     @gift.who_can_see.merge! @permit
     
+    @gift.null_gates
     if @gift.save
         logger.info( "\n*-*-*-*-* gifts_controller.gift_toggle -- gift_id #{@gift.id}, user_id #{friend.id}, @gift.who_can_see: #{@gift.who_can_see}.\n")
       else
@@ -185,6 +192,7 @@ class GiftsController < ApplicationController
     @gift = Gift.find params[:gift_id]
     @registry = Registry.find_by_name params[:field].tr('_', ' ')
     @gift.registry_id = @registry.id
+    @gift.null_gates
     if @gift.save
       logger.info "\n*-*-*-*-* gifts_controller.registry_toggle #{@gift.name} into #{@registry.name}.\n"
     else
