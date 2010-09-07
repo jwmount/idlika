@@ -42,5 +42,11 @@ class Gift < ActiveRecord::Base
     gifts.find( gifts_allowed, :order => "created_at DESC" )
   end
 
+  def null_gates
+    self.name = self.name ||= ''
+    self.description = self.description ||= ''
+    self.who_can_see = self.who_can_see ||= {}
+  end
+  
   
 end

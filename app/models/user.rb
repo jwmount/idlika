@@ -21,6 +21,13 @@ class User < ActiveRecord::Base
     end
   end
   
+  #becomes a filter at some point
+  def null_gates
+    self.friends = self.friends ||= {}
+    self.username = self.username ||= ""
+    self.email = self.email ||= ""
+  end
+  
 
   
   

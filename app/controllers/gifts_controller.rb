@@ -95,7 +95,7 @@ class GiftsController < ApplicationController
     @registries.each do |registry|
       @gift.registry_id = registry.id if registry.name == "#{ENV['DEFAULT_REGISTRY_NAME']}"
     end
-
+    @gift.null_gates
     respond_to do |format|
       if @gift.save
         flash[:notice] = 'Gift is now part of your collection.'

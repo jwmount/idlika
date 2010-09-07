@@ -41,6 +41,7 @@ class RegistriesController < ApplicationController
   def create
     @registry = @user.registries.new(params[:registry])
 
+    @registry.null_gates
     respond_to do |format|
       if @registry.save
         flash[:notice] = 'Registry was successfully created.'
