@@ -8,11 +8,9 @@ class GiftsController < ApplicationController
   # Display gifts user is permitted to see; owner can see all.
   def index
     debugger
-    begin
+    if !@gifts.nil?
       @gifts = @registry.gifts
       render :action => 'index_for_registry'
-    rescue
-      @gifts = []
     end
   end
 
