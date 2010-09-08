@@ -7,8 +7,10 @@ class GiftsController < ApplicationController
  
   # Display gifts user is permitted to see; owner can see all.
   def index
+    debugger
     begin
       @gifts = @registry.gifts
+      render :action => 'index_for_registry'
     rescue
       @gifts = []
     end
@@ -95,13 +97,8 @@ class GiftsController < ApplicationController
     @registries.each do |registry|
       @gift.registry_id = registry.id if registry.name == "#{ENV['DEFAULT_REGISTRY_NAME']}"
     end
-<<<<<<< HEAD
-    @gift.null_gates
-=======
 
     @gift.null_gates
-    logger.info "*_*_*_*_* GiftsController.create with who_can_see: -#{@gift.who_can_see}-"
->>>>>>> ee416a9cbcca61b6718aa7b57e5e52a3d1063fe5
     respond_to do |format|
       if @gift.save
         flash[:notice] = 'Gift is now part of your collection.'
@@ -226,13 +223,7 @@ class GiftsController < ApplicationController
     begin
       session[:current_registry] = Registry.find session[:current_registry].id
     rescue
-      
-      begin
-        session[:current_registry] = Registry.find :first, :conditions => ["user_id = ? AND name = '#{ENV['DEFAULT_REGISTRY_NAME']}'", @user.id ]
-      rescue
-        session[:current_registy] = nil
-      end
-      
+      session[:current_registy] = nil
     end
     @registry = session[:current_registry]
   end

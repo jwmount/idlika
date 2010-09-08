@@ -4,12 +4,8 @@ class Registry < ActiveRecord::Base
   has_many :gifts, :dependent => :destroy
   
   validates_associated :user
-  
-  def null_gates
-    self.name = self.name ||= ""
-    self.description = self.description ||= ""
-  end
-  
+  validates_exclusion_of :name, :in => %w( "Recently Added" ), :message => "'Recently Added' is reserved. Please choose another name."
+    
   def null_gates
     self.name = self.name ||= ""
     self.description = self.description ||= ""

@@ -14,7 +14,7 @@ class CreateRegistries < ActiveRecord::Migration
     create_table :registries do |t|
 
       t.integer :user_id,     :null => false      # Member who 'owns' this registry
-      t.string  :name,        :null => false, :default => 'Recently Added'
+      t.string  :name,        :null => false, :default => 'New Registry'
       t.string  :description,                 :default => ''
 
       t.timestamps

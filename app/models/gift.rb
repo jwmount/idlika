@@ -43,13 +43,10 @@ class Gift < ActiveRecord::Base
   end
 
   def null_gates
-    self.name = self.name ||= ''
-    self.description = self.description ||= ''
+    self.name = self.name ||= ""
+    self.description = self.description ||= ""
     self.who_can_see = self.who_can_see ||= {}
   end
-<<<<<<< HEAD
-  
-=======
->>>>>>> ee416a9cbcca61b6718aa7b57e5e52a3d1063fe5
+
   
 end

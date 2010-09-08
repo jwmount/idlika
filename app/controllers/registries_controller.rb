@@ -40,10 +40,7 @@ class RegistriesController < ApplicationController
   # POST /registries.xml
   def create
     @registry = @user.registries.new(params[:registry])
-<<<<<<< HEAD
 
-=======
->>>>>>> ee416a9cbcca61b6718aa7b57e5e52a3d1063fe5
     @registry.null_gates
     respond_to do |format|
       if @registry.save

@@ -4,8 +4,8 @@ require 'net/http'
 # Specifies gem version of Rails to use when vendor/rails is not present
 
 RAILS_GEM_VERSION = '2.3.8' unless defined? RAILS_GEM_VERSION
-ENV['IDLIKA_VERSION'] = '0.1.55'
-ENV['DEFAULT_REGISTRY_NAME'] = 'Recently Added'
+ENV['IDLIKA_VERSION'] = '0.1.56'
+ENV['DEFAULT_REGISTRY_NAME'] = 'New Registry'
 ENV['SHOW_LINKS'] = 'yes'
 
 ENV['S3_BUCKET'] = "idlika.com"

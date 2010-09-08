@@ -27,12 +27,7 @@ class User < ActiveRecord::Base
     self.username = self.username ||= ""
     self.email = self.email ||= ""
   end
-<<<<<<< HEAD
-  
 
-=======
->>>>>>> ee416a9cbcca61b6718aa7b57e5e52a3d1063fe5
-  
   
 end
 
