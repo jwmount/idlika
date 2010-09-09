@@ -28,7 +28,7 @@ ENV['INVITATION_PASSWORD'] = 'guest'
 # App ID:	143400042352343
 # App Secret:	1482ae818ff5f6adae68679612f17a79
 ENV['FACEBOOK_APP_ID'] = '143400042352343'
-
+ENV['RAILS_ENV'] = 'development' 
 # Bootstrap the Rails environment, frameworks, and default configuration
 require File.join(File.dirname(__FILE__), 'boot')
 

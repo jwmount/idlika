@@ -19,6 +19,7 @@ class GiftsController < ApplicationController
   
   # set @registry passed in to current so gifts are collected in it
   def index_for_registry
+debugger
     begin
       session[:current_registry] = Registry.find params[:registry_id]
     rescue
