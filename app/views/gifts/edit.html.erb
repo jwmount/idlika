@@ -24,24 +24,7 @@
   <div class="aglabel">URL:</div>
   <div class="agfield"> <%= f.text_field :URL, :size=>'60' %></div>
 
-  <div class="clearer"></div>
-  <%= render :partial => 'which_registries_show_in' %>
-
-  <div class="aglabel">Who Can See This Gift?:</div>
-
-
-  <!-- fixed choices -->
-  <div class="agfield"><%= check_box_tag 'gift', 'gift.i_can_see', true, :disabled=>true %>Me</div>
-  <!-- div class="agfield">< f.check_box :i_can_see >Me</div -->
-  <div class="agfield"><%= f.check_box :friends_can_see %>All My Friends</div>
-  <!-- end fixed choices -->
-
-  <!-- selected friends  -->
-  <% unless @gift.user.friends.nil? %>
-    <div class="clearer"></div>
-    <%= render :partial => 'who_can_see' %>
-  <% end %>
-  <!-- end selected friends -->
+<%= render :partial => 'placement', :locals => { :f => f } %>
 
   <div class="clearer"></div>
   <div class="aglabel"></div>

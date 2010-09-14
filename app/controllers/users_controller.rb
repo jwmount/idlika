@@ -21,7 +21,7 @@ class UsersController < ApplicationController
 
   def create
     @user = User.new(params[:user])
-    Role.all.each do |r|
+     Role.all.each do |r|
       @user.role_id = r.id if r.name == "guest"
     end
     @user.null_gates

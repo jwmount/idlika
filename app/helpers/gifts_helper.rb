@@ -21,5 +21,9 @@ module GiftsHelper
     name == @current_user.username
   end
 
+  def gift_is_in? rid
+    return 'unassigned' if rid.nil?
+    return (Registry.find rid, :select => :name).name
+  end
   
 end

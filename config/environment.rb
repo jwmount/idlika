@@ -5,7 +5,7 @@ require 'net/http'
 
 RAILS_GEM_VERSION = '2.3.8' unless defined? RAILS_GEM_VERSION
 ENV['IDLIKA_VERSION'] = '0.1.56'
-ENV['DEFAULT_REGISTRY_NAME'] = 'New Registry'
+ENV['DEFAULT_REGISTRY_NAME'] = 'Recent Additions'
 ENV['SHOW_LINKS'] = 'yes'
 
 ENV['S3_BUCKET'] = "idlika.com"

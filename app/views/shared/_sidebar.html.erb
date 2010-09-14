@@ -12,6 +12,27 @@
 		  </li>
 	      <li><%= link_to_unless_current '', new_gift_path, :class => "addgift" %></li>
 	      <li><%= link_to_unless_current '', invite_path, :class => "invitefriend" %></li>
+	      <li><%= link_to_unless_current 'Visit Friends Registries', gifts_path %>
 	    <% end %>
-	  </ul>
-	</div><!-- li_sidebar -->
+
+	<% if !@user.nil? %>
+	<li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</li>
+      <li>Friends:
+        <%= select( "friend", "username", User.all.collect {|f| [f.username, f.id] } ) %>
+        <%= observe_field( 'friend_username',
+		                    :url => {:controller=>'gifts', :action=>'select_friend' }, 
+		                    :with => :friend_id, 
+		                    :on => :onclick,
+		                    :update => 'li_sidebar'
+		                  ) %>
+      </li>
+    <% end %>
+            <td><!-- link_to image_tag("/images/btn_go.gif"), :controller => 'gifts', :action => 'select_friend', :friend => 'friend' --></li>
+	<li>&nbsp;&nbsp;&nbsp;&nbsp;</li>
+	<% unless @friend.nil? %>
+  	  <li>Visiting: <%= @friend.username.upcase %></li>
+    <% end %>
+
+</ul>
+
+</div><!-- li_sidebar -->

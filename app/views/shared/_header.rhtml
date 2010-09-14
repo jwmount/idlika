@@ -22,25 +22,7 @@
        <li> link_to_unless_current "#{@user.username}", {:controller => 'gifts', :action => 'index', :id => @user}, {:class=>'myaccnt'}
        -->
 
-	<% if !@user.nil? %>
-	<li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</li>
-      <li>Friends:
-        <%= select( "friend", "username", User.all.collect {|f| [f.username, f.id] } ) %>
-        <%= observe_field( 'friend_username',
-		                    :url => {:controller=>'gifts', :action=>'select_friend' }, 
-		                    :with => :friend_id, 
-		                    :on => :onclick,
-		                    :update => 'li_sidebar'
-		                  ) %>
-      </li>
-    <% end %>
-            <td><!-- link_to image_tag("/images/btn_go.gif"), :controller => 'gifts', :action => 'select_friend', :friend => 'friend' --></li>
-	<li>&nbsp;&nbsp;&nbsp;&nbsp;</li>
-	<% unless @friend.nil? %>
-  	  <li>Visiting: <%= @friend.username.upcase %></li>
-    <% end %>
-	<li>&nbsp;&nbsp;&nbsp;&nbsp;</li>
-    <li><%= link_to_unless_current "Back to #{@user.username}", :controller => 'gifts', :action => 'index', :id => @user %></li>
+
 	
   </ul>
   <% end %>
