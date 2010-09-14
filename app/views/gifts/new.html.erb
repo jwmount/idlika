@@ -28,6 +28,8 @@
     <div class="agfield"><%= text_area :gift, :description, :class=>"agtext", :size => '34x3' %></div>
     <div class="clearer"></div>
 
+	<%= render :partial => 'placement', :locals => { :f => f } %>
+
     <div class="aglabel"></div> 
     <div class="agfield" stylesheet="margin:20px">
 	  <%= image_submit_tag("/images/btn_addthisgift_on.gif") %></li></div>

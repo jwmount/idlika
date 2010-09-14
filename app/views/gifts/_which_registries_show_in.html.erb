@@ -1,18 +1,20 @@
 
 <br/>
 	<!-- registry included container -->
-    <div class="aglabel">Registries Where This Gift Will Appear:</div>
-    <div class="agfield"><%= check_box_tag 'registry', 'registry.name', true, :disabled=>true %><%="#{ENV['DEFAULT_REGISTRY_NAME']}"%></div>
+    <div class="aglabel">Choose A Registry For This Gift:
+    <span class="required">*</span></div>
+
+    <!-- div class="agfield"><= check_box_tag 'registry', 'registry.name', true, :disabled=>true ><="#{ENV['DEFAULT_REGISTRY_NAME']}"></div -->
 
 	<% @user.registries.each do |registry| %>
       <% unless registry.name == "#{ENV['DEFAULT_REGISTRY_NAME']}" %>		
         <div class="agfield"><%= check_box_tag registry.name.tr(' ','_'), registry  %><%= registry.name %></div>
 		<%= observe_field registry.name.tr(' ','_'),
 		  { :on => 'change',  :url => { :controller=>'gifts', 
-			                            :action => 'registry_toggle', 
+			                            :action => 'update', #'registry_toggle', 
 			                            :user_id => @user, 
 			                            :gift_id => @gift.id, 
-			                            :field => "#{registry.name.tr(' ','_')}" },
+			                            :registry_id => registry.id },
 			:with => registry.name.tr(' ','_') } %>
 	    <div class="aglabel"></div>
       <% end %>

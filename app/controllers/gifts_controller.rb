@@ -7,11 +7,12 @@ class GiftsController < ApplicationController
  
   # Display gifts user is permitted to see; owner can see all.
   def index
-    debugger
-    if !@gifts.nil?
+    if @gifts.nil?
+      @gifts = Gift.all :conditions => ["registry_id = ?", nil]
+    else
       @gifts = @registry.gifts
-      render :action => 'index_for_registry'
     end
+#    render :action => 'index_for_registry'
   end
 
   def friend_index
@@ -19,14 +20,15 @@ class GiftsController < ApplicationController
   
   # set @registry passed in to current so gifts are collected in it
   def index_for_registry
-debugger
     begin
       session[:current_registry] = Registry.find params[:registry_id]
     rescue
-      session[:current_registry] = Registry.find( :first, :conditions => ["user_id = ? AND name = #{ENV['DEFAULT_REGISTRY_NAME']}", @user.id ] )
-      "#{ENV['DEFAULT_REGISTRY_NAME']}"
+#      session[:current_registry] = Registry.find( :first, :conditions => ["user_id = ? AND name = #{ENV['DEFAULT_REGISTRY_NAME']}", @user.id ] )
+#      "#{ENV['DEFAULT_REGISTRY_NAME']}"
+      session[:current_registry] = Registry.new
+      flash.info[:NO_CURRENT_REGISTRY]
     end
-    logger.info "*-*-*-*-* gifts_controller.index_for_registry :current_registry => #{session[:current_registry][:name]}."
+    logger.info "*-*-*-*-* gifts_controller.index_for_registry session[:current_registry] => #{session[:current_registry][:name]}."
     redirect_to :action => 'index'
   end
     
@@ -89,14 +91,9 @@ debugger
       render :show
     end
   
-  # Default registry for new gifts is '#{ENV['DEFAULT_REGISTRY_NAME']}'
+  # New gifts must go into a registry.  If none exists, one has to be created.
   def create
     @gift = @user.gifts.new(params[:gift])
-    @registries = @user.registries
-    @registries.each do |registry|
-      @gift.registry_id = registry.id if registry.name == "#{ENV['DEFAULT_REGISTRY_NAME']}"
-    end
-
     @gift.null_gates
     respond_to do |format|
       if @gift.save
@@ -112,8 +109,14 @@ debugger
 
   def update
     
-    @gift = Gift.find params[:id]
-  
+    begin
+      @gift = Gift.find params[:id]
+    rescue
+      @gift = Gift.new params[:id]
+    end
+    @gift.registry_id = params[:registry_id]
+    @gift.null_gates
+    @gift.save
     respond_to do |format|
       if @gift.update_attributes(params[:gift])
         flash[:notice] = 'Gift was successfully updated.'
@@ -185,11 +188,12 @@ debugger
   end
   
   def registry_toggle
+    debugger
     @gift = Gift.find params[:gift_id]
-    @registry = Registry.find_by_name params[:field].tr('_', ' ')
-    @gift.registry_id = @registry.id
+#    @registry = Registry.find_by_name params[:field].tr('_', ' ')
+    @gift.registry_id = params[:registry_id]
     @gift.null_gates
-    if @gift.save
+    if @gift.save_or_create
       logger.info "\n*-*-*-*-* gifts_controller.registry_toggle #{@gift.name} into #{@registry.name}.\n"
     else
       format.xml  { render :xml => @gift.errors, :status => :unprocessable_entity }

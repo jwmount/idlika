@@ -3,6 +3,7 @@ class RegistriesController < ApplicationController
   before_filter :find_user
   
   def index
+    debugger
     if session[:current_friend].nil?
       redirect_to user_gifts_path(@user)
     else

@@ -7,6 +7,10 @@ class Gift < ActiveRecord::Base
   
  serialize :who_can_see
 
+ Gift::NO_CURRENT_REGISTRY = "No registry found, there is no default registry yet."
+ 
+ 
+
  has_attached_file :photo,
   :styles => {
      :tiny => "50x50#",
