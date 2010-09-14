@@ -29,7 +29,7 @@ ActiveRecord::Schema.define(:version => 20100814182947) do
 
   create_table "gifts", :force => true do |t|
     t.integer  "user_id",                               :null => false
-    t.integer  "registry_id",                           :null => false
+    t.integer  "registry_id"
     t.string   "name",                                  :null => false
     t.string   "source"
     t.string   "description",        :default => "",    :null => false
@@ -54,7 +54,7 @@ ActiveRecord::Schema.define(:version => 20100814182947) do
 
   create_table "registries", :force => true do |t|
     t.integer  "user_id",                                   :null => false
-    t.string   "name",        :default => "Recently Added", :null => false
+    t.string   "name",        :default => "",               :null => false
     t.string   "description", :default => "",               :null => false
     t.datetime "created_at"
     t.datetime "updated_at"

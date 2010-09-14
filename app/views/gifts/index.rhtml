@@ -4,10 +4,25 @@
   <%= render :partial => 'shared/sidebar' %>
   
   <div id="li_content">
-    <h1> <%= @user.username %> Doesn't Want Anything!</h1>
  
+    <h2><%= @registry.name unless @registry.nil? %></h2>
+    <% if @gifts.empty? %>
 
-  </div><!-- li_content -->
+	  <h3>This registry is empty, so you could delete it.</h3>
+      <%= link_to 'Delete Registry', registry_path(@registry), :method => 'DELETE', :prompt => 'Sure?' %>
+
+    <% else %>
+
+      <!-- @gifts = allowed_to_view? current_user[:username] -->
+      <h5>To Edit, Change Which Friends Can See It or Assign to A Registry Click on the Image</h5>
+      <%= render :partial => 'registry_container', :collection => @gifts %>
+
+      <% unless @registry.nil? %>
+        <%= link_to 'Edit Registry', edit_registry_path(@registry) %>
+      <% end %>
+
+    <% end %>
+ 
 <div class="clearer"></div>
 </div><!-- li_body -->
 

@@ -7,12 +7,7 @@ class GiftsController < ApplicationController
  
   # Display gifts user is permitted to see; owner can see all.
   def index
-    if @gifts.nil?
-      @gifts = Gift.all :conditions => ["registry_id = ?", nil]
-    else
-      @gifts = @registry.gifts
-    end
-#    render :action => 'index_for_registry'
+      @gifts = @user.gifts
   end
 
   def friend_index
@@ -20,16 +15,9 @@ class GiftsController < ApplicationController
   
   # set @registry passed in to current so gifts are collected in it
   def index_for_registry
-    begin
-      session[:current_registry] = Registry.find params[:registry_id]
-    rescue
-#      session[:current_registry] = Registry.find( :first, :conditions => ["user_id = ? AND name = #{ENV['DEFAULT_REGISTRY_NAME']}", @user.id ] )
-#      "#{ENV['DEFAULT_REGISTRY_NAME']}"
-      session[:current_registry] = Registry.new
-      flash.info[:NO_CURRENT_REGISTRY]
-    end
-    logger.info "*-*-*-*-* gifts_controller.index_for_registry session[:current_registry] => #{session[:current_registry][:name]}."
-    redirect_to :action => 'index'
+    @registry = Registry.find params[:registry_id]
+    @gifts = Gift.find :all, :conditions => ["registry_id = ?", params[:registry_id]]
+    render :action => 'index'
   end
     
   # Switch to selected friend.  At this point we only know the friend by name
@@ -94,6 +82,7 @@ class GiftsController < ApplicationController
   # New gifts must go into a registry.  If none exists, one has to be created.
   def create
     @gift = @user.gifts.new(params[:gift])
+
     @gift.null_gates
     respond_to do |format|
       if @gift.save
@@ -114,7 +103,6 @@ class GiftsController < ApplicationController
     rescue
       @gift = Gift.new params[:id]
     end
-    @gift.registry_id = params[:registry_id]
     @gift.null_gates
     @gift.save
     respond_to do |format|
@@ -188,17 +176,11 @@ class GiftsController < ApplicationController
   end
   
   def registry_toggle
-    debugger
     @gift = Gift.find params[:gift_id]
-#    @registry = Registry.find_by_name params[:field].tr('_', ' ')
     @gift.registry_id = params[:registry_id]
     @gift.null_gates
-    if @gift.save_or_create
-      logger.info "\n*-*-*-*-* gifts_controller.registry_toggle #{@gift.name} into #{@registry.name}.\n"
-    else
-      format.xml  { render :xml => @gift.errors, :status => :unprocessable_entity }
-    end
-    redirect_to edit_user_gift_path(@user, @gift)
+    @gift.save
+    redirect_to :action => 'edit', :id => @gift
   end
  
   def copy_gift

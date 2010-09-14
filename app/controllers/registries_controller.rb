@@ -3,7 +3,6 @@ class RegistriesController < ApplicationController
   before_filter :find_user
   
   def index
-    debugger
     if session[:current_friend].nil?
       redirect_to user_gifts_path(@user)
     else
@@ -46,7 +45,7 @@ class RegistriesController < ApplicationController
     respond_to do |format|
       if @registry.save
         flash[:notice] = 'Registry was successfully created.'
-        format.html { redirect_to gifts_path }
+        format.html { redirect_to new_registry_path }
         format.xml  { render :xml => @registry, :status => :created, :location => [ @user, @registry] }
       else
         format.html { render :action => "new" }
