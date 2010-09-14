@@ -6,14 +6,17 @@
   <div id="li_content">
  
     <h2><%= @registry.name unless @registry.nil? %></h2>
+        <% if @registry.nil? %>
+    <h2>Things I like</h2>
+        <% end %>
+
     <% if @gifts.empty? %>
 
-	  <h3>This registry is empty, so you could delete it.</h3>
+	  <h5>This registry is empty, so you could delete it.</h5>
       <%= link_to 'Delete Registry', registry_path(@registry), :method => 'DELETE', :prompt => 'Sure?' %>
 
     <% else %>
 
-      <!-- @gifts = allowed_to_view? current_user[:username] -->
       <h5>To Edit, Change Which Friends Can See It or Assign to A Registry Click on the Image</h5>
       <%= render :partial => 'registry_container', :collection => @gifts %>
 

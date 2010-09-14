@@ -5,7 +5,7 @@
 
     <div class="item_inner" style="background-position:50%, 50%; background-repeat:no-repeat;" >
       
-      <h3><%=h gift.name %> </h3>
+      <h3><%=h gift.name %> (<%=h gift_is_in?(gift.registry_id) %>) </h3>
       <p><%=h gift.description %></p>
       <a href="share.html"><img src="images/btn_share.png" alt="Share Item" /></a>
       <%= link_to (image_tag("btn_details.png")), user_gift_path(@user,gift) %>

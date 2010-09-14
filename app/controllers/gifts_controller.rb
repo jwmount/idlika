@@ -97,7 +97,6 @@ class GiftsController < ApplicationController
   end
 
   def update
-    
     begin
       @gift = Gift.find params[:id]
     rescue
