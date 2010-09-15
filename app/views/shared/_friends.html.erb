@@ -1,0 +1,10 @@
+  <!-- select( "friend", "username", User.all.collect {|f| [f.username, f.id] } ) >
+        < observe_field( 'friend_username',
+		                    :url => {:controller=>'gifts', :action=>'select_friend' }, 
+		                    :with => :friend_id, 
+		                    :on => :onclick,
+		                    :update => 'li_sidebar'
+		                  ) -->
+		
+		
+  <%= link_to "#{@friends.name}", gifts_path(@user) %>
