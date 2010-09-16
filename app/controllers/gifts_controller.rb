@@ -10,7 +10,9 @@ class GiftsController < ApplicationController
       @gifts = @user.gifts
   end
 
-  def friend_index
+  def index_for_friend
+    @gifts = @user.gifts
+    render :action => 'index'
   end
   
   # set @registry passed in to current so gifts are collected in it

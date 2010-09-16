@@ -28,6 +28,5 @@ class User < ActiveRecord::Base
     self.email = self.email ||= ""
   end
 
-  
 end
 

@@ -13,7 +13,7 @@ ActionController::Routing::Routes.draw do |map|
   
   map.friend             "friend",             :controller => "gifts", :action => "friend"
   map.select_friend      "select_friend",      :controller => "gifts", :action => "select_friend"
-  map.index_of_friend    "index_of_friend",    :controller => "gifts", :action => "index_of_friend"
+  map.index_for_friend   "index_for_friend",   :controller => "gifts", :action => "index_for_friend"
   map.index_for_registry "index_for_registry", :controller => "gifts", :action => "index_for_registry"
   map.gift_restore_owner "gift_restore_owner", :controller => "gifts", :action => "restore_owner"
   map.give_gift          "give_gift",          :controller => "gifts", :action => "give_gift"
