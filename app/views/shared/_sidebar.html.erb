@@ -13,10 +13,10 @@
 	      <li><%= link_to_unless_current '', new_gift_path, :class => "addgift" %></li>
 	      <li><%= link_to_unless_current '', invite_path, :class => "invitefriend" %></li>
 	    <% end %>
-<% debugger %>
+
 	  <% if !friends.nil? %>
         <br/>
-        <li>Friends' Gift Registries</li>
+        <li>Friends' Registries</li>
         <%= render :partial => "shared/friends", :collection => friends %>
       <% end %>
 

@@ -18,6 +18,7 @@ ActionController::Routing::Routes.draw do |map|
   map.gift_restore_owner "gift_restore_owner", :controller => "gifts", :action => "restore_owner"
   map.give_gift          "give_gift",          :controller => "gifts", :action => "give_gift"
   map.copy_gift          "copy_gift",          :controller => "gifts", :action => "copy_gift"
+
     
   map.how            "how",       :controller => "home", :action => "how"
   map.what           "what",      :controller => "home", :action => "what"  

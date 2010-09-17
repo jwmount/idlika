@@ -10,7 +10,7 @@ class GiftsController < ApplicationController
       @gifts = @user.gifts
   end
 
-  def index_for_friend
+  def X_index_for_friend
     @gifts = @user.gifts
     render :action => 'index'
   end
@@ -21,9 +21,18 @@ class GiftsController < ApplicationController
     @gifts = Gift.find :all, :conditions => ["registry_id = ?", params[:registry_id]]
     render :action => 'index'
   end
+
+  # Display gifts of selected friend.  At this point we only know the friend by id
+  def index_for_friend
+      session.clear
+      session[:current_friend] = User.find params[:friend_id]
+      @friend = session[:current_friend]
+      @gifts = @friend.gifts
+      logger.info("*-*-*-* gifts_controller.select_friend: id: #{@friend.id}, name: #{@friend.username}" )
+  end
     
   # Switch to selected friend.  At this point we only know the friend by name
-  def select_friend
+  def X_select_friend
       session.clear
       session[:current_friend] = User.find params[:friend_id]
       @friend = session[:current_friend]
@@ -186,7 +195,6 @@ class GiftsController < ApplicationController
  
   def copy_gift
     flash[:notice] = "Feature under development."
-    debugger
     redirect_to :action => 'show', :id => @gift.id
   end
    
