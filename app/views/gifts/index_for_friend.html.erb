@@ -1,0 +1,26 @@
+<br/>
+<div id="li_body">
+	
+  <%= render :partial => 'shared/sidebar' %>
+  
+  <div id="li_content">
+ 
+    <h2>Things <%=h @friend.username%> Likes</h2>
+
+    <% if @gifts.empty? %>
+
+	  <h5>Apparently she doesn't like anything.  You should suggest something.</h5>
+
+    <% else %>
+
+      <h5>To Edit, Change Which Friends Can See It or Assign to A Registry Click on the Image</h5>
+        <%= render :partial => 'friend_container', :collection => @gifts %>
+
+    <% end %>
+
+</div><!-- li_content -->
+<div class="clearer"></div>
+</div><!-- li_body -->
+
+
+
