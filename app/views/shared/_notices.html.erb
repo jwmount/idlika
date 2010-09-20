@@ -1,3 +1,33 @@
-<p style="color: green"><%= flash[:notice] %></p>
-<p style="color: yellow"><%= flash[:yellow] %></p>
-<p style="color: red"><%= flash[:error] %></p>
+
+<% if !flash[:notice].nil? %>
+  <p style="border: 2px solid blue;
+            border: 2px solid #ffcc00; 
+            padding: 1em;
+            margin-bottom: 2em;
+            background-color: light_green;
+            font: font-weight: normal/bold; smaller sans-serif;">
+  <%= flash[:notice] %>
+  </p>
+<% end %>
+
+<% if !flash[:warning].nil? %>
+  <p style="border: 2px solid blue;
+            border: 2px solid #ffcc00; 
+            padding: 1em;
+            margin-bottom: 2em;
+            background-color: #f0f0f0;
+            font: font-weight: normal/bold; smaller sans-serif;">
+  <%= flash[:warning] %>
+  </p>
+<% end %>
+
+<% if !flash[:error].nil? %>
+  <p style="border: 2px solid blue;
+            border: 2px solid #ffcc00; 
+            padding: 1em;
+            margin-bottom: 2em;
+            background-color: #red;
+            font: font-weight: normal/bold; smaller sans-serif;">
+  <%= flash[:error] %>
+  </p>
+<% end %>

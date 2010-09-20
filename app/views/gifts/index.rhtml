@@ -4,11 +4,11 @@
   <%= render :partial => 'shared/sidebar' %>
   
   <div id="li_content">
- 
-    <h2><%= @registry.name unless @registry.nil? %></h2>
-        <% if @registry.nil? %>
-    <h2>Things I like</h2>
-        <% end %>
+
+  <% if @registry.nil? %>
+    <h2>Choose A Registry Of Your Own Or A Friend</h2>
+  <% else %> 
+    <h2><%= @registry.name %></h2>
 
     <% if @gifts.empty? %>
 
@@ -25,7 +25,7 @@
       <% end %>
 
     <% end %>
-
+  <% end %>
 </div><!-- li_content -->
 <div class="clearer"></div>
 </div><!-- li_body -->

@@ -2,11 +2,11 @@ class UserSessionsController < ApplicationController
  Authlogic::Session::Base.controller = Authlogic::ControllerAdapters::RailsAdapter.new(self) 
  layout 'welcome'
 
-  # creates user's logon session    
   def new
     @user_session = UserSession.new
   end
-  
+
+  # creates user's logon session    
   def create
     @user_session = UserSession.new(params[:user_session])
     session.clear

@@ -14,6 +14,9 @@ class User < ActiveRecord::Base
   validates_presence_of :email
 #  validates_acceptance_of :terms_accepted_cb
 
+  DID_NOT_ACCEPT_TANDC = "Oh, you didn't accept our Terms and Conditions.  Try again."
+  REGISTRATION_SUCCESSFUL = 'Registration successful.'
+  MODIFIED_PROFILE_OK = "Successfully modified profile."
   
   def role_symbols
     roles.map do |role|

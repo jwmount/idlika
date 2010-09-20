@@ -20,23 +20,28 @@ class UsersController < ApplicationController
   end
 
   def create
-    @user = User.new(params[:user])
-     Role.all.each do |r|
-      @user.role_id = r.id if r.name == "guest"
-    end
-    @user.null_gates
-    if @user.save
-        flash[:notice] = 'Registration successful.'
+    unless params[:user][:terms_accepted_cb] == "1"
+      flash[:warning] = User::DID_NOT_ACCEPT_TANDC 
+      redirect_to :action => 'new'
+    else
+      @user = User.new(params[:user])
+      Role.all.each do |r|
+        @user.role_id = r.id if r.name == "guest"
+      end
+      @user.null_gates
+      if @user.save
+        flash[:notice] = User::REGISTRATION_SUCCESSFUL 
         redirect_to orient_path
       else
-        render :action => 'new'
+         render :action => 'new'
+       end
     end
   end
 
   def update
     @user = current_user
     if @user.update_attributes(params[:user])
-      flash[:notice] = 'Successfully modified profile.'
+      flash[:notice] = User::MODIFIED_PROFILE_OK
       redirect_to root_url
     else
         render :action => 'edit'
