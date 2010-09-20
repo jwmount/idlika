@@ -1,10 +1,10 @@
 module UsersHelper
   
-  # [[username, id]]
+  # {email, usernane}
   def friends
-    everyone = User.all.collect { |f| [f.username, f.id] }
-    friends = everyone.delete_if {|e| e[0] == current_user.username }
+     friends = @user.friends.values
   end
+  
   
 end
 

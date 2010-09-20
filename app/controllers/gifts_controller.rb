@@ -10,11 +10,6 @@ class GiftsController < ApplicationController
       @gifts = @user.gifts
   end
 
-  def X_index_for_friend
-    @gifts = @user.gifts
-    render :action => 'index'
-  end
-  
   # set @registry passed in to current so gifts are collected in it
   def index_for_registry
     @registry = Registry.find params[:registry_id]
@@ -25,25 +20,13 @@ class GiftsController < ApplicationController
   # Display gifts of selected friend.  At this point we only know the friend by id
   def index_for_friend
       session.clear
-      session[:current_friend] = User.find params[:friend_id]
+      @friend = User.find_by_username params[:friend_username]
+      session[:current_friend] = @friend
       @friend = session[:current_friend]
       @gifts = @friend.gifts
       logger.info("*-*-*-* gifts_controller.select_friend: id: #{@friend.id}, name: #{@friend.username}" )
   end
-    
-  # Switch to selected friend.  At this point we only know the friend by name
-  def X_select_friend
-      session.clear
-      session[:current_friend] = User.find params[:friend_id]
-      @friend = session[:current_friend]
-      @gifts = @registry.gifts
-      logger.info("*-*-*-* gifts_controller.select_friend: id: #{@friend.id}, name: #{@friend.username}" )
-      render( :partial => 'shared/friend_sidebar',
-              :object => @friend,
-              :update => 'li_sidebar',
-              :locals => { :friend => session[:current_friend] })
-  end
-  
+      
   # REMINDER:  before_filter :find_friend, :except => :select_friend_registry
   def select_friend_registry
     session[:current_registry] = Registry.find params[:registry_id]

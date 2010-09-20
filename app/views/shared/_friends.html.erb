@@ -1,5 +1,5 @@
 
   <li>
-     <%= link_to_unless_current "#{friends[0]}", :action => 'index_for_friend', :friend_id => friends[1]  %>
+     <%= link_to_unless_current "#{friends[1]}", :controller => 'gifts', :action => 'index_for_friend', :friend_username => "#{friends[1]}"  %>
   </li>		
 		

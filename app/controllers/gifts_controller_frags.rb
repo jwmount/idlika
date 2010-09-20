@@ -13,6 +13,18 @@ def XXXXindex_of_friend
   end
 end
 
+# Switch to selected friend.  At this point we only know the friend by name
+def X_select_friend
+    session.clear
+    session[:current_friend] = User.find params[:friend_id]
+    @friend = session[:current_friend]
+    @gifts = @registry.gifts
+    logger.info("*-*-*-* gifts_controller.select_friend: id: #{@friend.id}, name: #{@friend.username}" )
+    render( :partial => 'shared/friend_sidebar',
+            :object => @friend,
+            :update => 'li_sidebar',
+            :locals => { :friend => session[:current_friend] })
+end
 
 # gifts for @registry passed in
  def index_for_friend_registry

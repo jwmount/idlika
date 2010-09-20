@@ -17,7 +17,7 @@
 	  <% if !friends.nil? %>
         <br/>
         <li>Friends' Registries</li>
-        <%= render :partial => "shared/friends", :collection => friends %>
+        <%= render :partial => "shared/friends", :collection => @user.friends %>
       <% end %>
 
       </ul>
