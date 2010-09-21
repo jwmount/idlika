@@ -100,7 +100,7 @@ class GiftsController < ApplicationController
     @gift.save
     respond_to do |format|
       if @gift.update_attributes(params[:gift])
-        flash[:notice] = 'Gift was successfully updated.'
+        flash[:notice] = Gift::GIFT_UPDATE_OK
         format.html { redirect_to(@gift) }
         format.xml  { head :ok }
       else

@@ -36,6 +36,8 @@ class Gift < ActiveRecord::Base
  validates_associated :user
  validates_associated :registry
   
+  GIFT_UPDATE_OK = 'Gift was successfully updated.'
+  
   # Possibly none, some, or all of @gifts may visible.
   # @user is may be current_user or the person being visited.
   # so what gifts is current_user allowed to see?  Answer is in Donor.  Result may be nil.
