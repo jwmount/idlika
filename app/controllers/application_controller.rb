@@ -14,6 +14,7 @@ class ApplicationController < ActionController::Base
   helper_method :show_links?
   filter_parameter_logging :password
 
+  
   def FB_init
     update_page do |page|
       page.insert_html :bottom, 'list', "<li>#{@item.name}</li>"
@@ -105,7 +106,7 @@ class ApplicationController < ActionController::Base
        @registry = Registry.new(:name=>"#{ENV['DEFAULT_REGISTRY_NAME']}", :description=>"Items added recently.", :user_id=>@friend.id)
        @registry.save!
        MemberMailer.deliver_invitation(params[:user], @host.email)
-       flash[:notice] = "You've invied #{@friend.username} at #{@friend.email} to visit you on Idlika.  You can invite someone else now."
+       flash[:notice] = "You've invited #{@friend.username} at #{@friend.email} to visit you on Idlika.  You can invite someone else now."
      else
        flash[:warning] = "Your invitation to #{@friend.username} with email #{@friend.email} could not be created.  " +
                         "Usually this means #{@friend.username} is already a member and #{@friend.email} is already taken."
