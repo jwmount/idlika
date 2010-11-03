@@ -72,7 +72,7 @@ class ApplicationController < ActionController::Base
 
      if @host.save and @friend.save
        MemberMailer.deliver_invitation(params[:user], @host.email)
-       flash[:notice] = "You've invited Idlika member #{@friend.username} to seee your registries.  You can invite someone else now."
+       flash[:notice] = "You've invited Idlika member #{@friend.username}.  You can invite someone else now."
      else
        flash[:notice] = "Your invitation to Idlika member #{@friend.username} using #{@friend.email} could not be created.  " 
      end
