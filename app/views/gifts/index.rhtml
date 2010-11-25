@@ -1,3 +1,4 @@
+<% title 'Gift index' %>
 <br/>
 <div id="li_body">
 	
@@ -17,7 +18,7 @@
 
     <% else %>
 
-      <h5>To Edit, Change Which Friends Can See It or Assign to A Registry Click on the Image</h5>
+    <h3>To Change Friends or Registry Click on Image</h3>
       <%= render :partial => 'registry_container', :collection => @gifts %>
 
       <% unless @registry.nil? %>

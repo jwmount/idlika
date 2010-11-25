@@ -1,3 +1,4 @@
+<% title 'Gift Details' %>
 <div id="li_body">
 
   <% if @friend.nil? %>
@@ -19,6 +20,10 @@
 <p>
 	<b>Gift Registry:</b>
 	<%= @gift.registry.name %>
+</p>
+<p>
+	<b>Gift URL:</b>
+	<%= link_to @gift.URL, "http://#{@gift.URL}/", :popup=>true %>
 </p>
 <% end %>
 <p>

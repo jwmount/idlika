@@ -21,7 +21,7 @@ class UsersController < ApplicationController
 
   def create
     unless params[:user][:terms_accepted_cb] == "1"
-      flash[:warning] = User::DID_NOT_ACCEPT_TANDC 
+      flash[:notice] = User::DID_NOT_ACCEPT_TANDC 
       redirect_to :action => 'new'
     else
       @user = User.new(params[:user])

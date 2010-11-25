@@ -8,5 +8,6 @@
     <!-- link_to_unless_current 'Tell A Friend', tell_path > &nbsp; | &nbsp; -->
     <!-- link_to_unless_current 'Advertise / Sponsor', advertise_path > &nbsp; | &nbsp; -->
     <%= link_to_unless_current 'FAQ', faq_path %> &nbsp; | &nbsp;
-    <%= link_to_unless_current 'Contact Us', contact_path %>
+    <%= mail_to 'info@idlika.com', 'Contact Us' %>
+
 </div><!-- footer -->

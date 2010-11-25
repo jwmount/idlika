@@ -1,3 +1,4 @@
+<% title 'Friend index'%>
 <br/>
 <div id="li_body">
 
@@ -8,7 +9,7 @@
 
     <% if !@gifts.nil? and allowed_to_view? current_user[:username] %>
 
-      <h4>To Edit, Change Which Friends Can See It or Assign to A Registry Click on the Image</h4>
+    <h3>To Change Friends or Registry Click on Image</h3>
       <%= render :partial => 'registry_container', :collection => @gifts %>
 
       <% unless @registry.nil? %>
