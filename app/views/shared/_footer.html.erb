@@ -1,5 +1,10 @@
 <div id="footer">
-<p>&copy;2010 idlika partners LLC (<%= ENV['IDLIKA_VERSION']%>)&nbsp; | &nbsp;
+	
+	<div style="text-align:left;px"<%= link_to(image_tag("/images/Icon-Facebook.png", 
+	                     {:alt => 'Idlika Facebook fan page.'}), 
+	                     "http://www.facebook.com/pages/Idlika/173613415989023", :popup=>true
+						 ) %></div>
+	&copy;2010 idlika partners LLC (<%= ENV['IDLIKA_VERSION']%>)&nbsp; | &nbsp;
 	<%= link_to_unless_current 'Home', root_url %>&nbsp; | &nbsp;
 	<%= link_to_unless_current 'Terms of Use', terms_path %>&nbsp; | &nbsp;
 	<%= link_to_unless_current 'Privacy Policy', privacy_path %>&nbsp; | &nbsp;
@@ -9,5 +14,4 @@
     <!-- link_to_unless_current 'Advertise / Sponsor', advertise_path > &nbsp; | &nbsp; -->
     <%= link_to_unless_current 'FAQ', faq_path %> &nbsp; | &nbsp;
     <%= mail_to 'info@idlika.com', 'Contact Us' %>
-
 </div><!-- footer -->
