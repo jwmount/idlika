@@ -1,7 +1,7 @@
 class User < ActiveRecord::Base
   acts_as_authentic 
   attr_accessible :username, :email, :password, :password_confirmation, :terms_accepted_cb
-  
+    
   has_many :donors 
   has_many :gifts,      :dependent => :destroy
   has_many :registries, :dependent => :destroy
@@ -17,7 +17,11 @@ class User < ActiveRecord::Base
   DID_NOT_ACCEPT_TANDC = "Oh, you didn't accept our Terms and Conditions.  Please try again."
   REGISTRATION_SUCCESSFUL = 'Registration successful.'
   MODIFIED_PROFILE_OK = "Successfully modified profile."
-  
+
+  def message
+    "Original message"
+  end
+      
   def role_symbols
     roles.map do |role|
       role.username.underscore.to_sym
@@ -30,6 +34,8 @@ class User < ActiveRecord::Base
     self.username = self.username ||= ""
     self.email = self.email ||= ""
   end
+  
+    
 
 end
 

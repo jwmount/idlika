@@ -22,6 +22,10 @@
 	<%= @gift.registry.name %>
 </p>
 <p>
+	<b>Where I found it:</b>
+	<%= @gift.source %>
+</p>
+<p>
 	<b>Gift URL:</b>
 	<%= link_to @gift.URL, "http://#{@gift.URL}/", :popup=>true %>
 </p>

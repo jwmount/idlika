@@ -79,6 +79,7 @@ class ApplicationController < ActionController::Base
    end
    
    def invite_non_member params
+     debugger
      @host = current_user
      @friend = User.new
      
