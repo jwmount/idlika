@@ -1,6 +1,6 @@
 class MemberMailer < ActionMailer::Base
 
-  def invitation(friend, from)
+  def invitation(friend, from, message)
     subject     'Invitation'
     recipients  friend[:email]
     from        from

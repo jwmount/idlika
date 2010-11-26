@@ -19,7 +19,7 @@ class User < ActiveRecord::Base
   MODIFIED_PROFILE_OK = "Successfully modified profile."
 
   def message
-    "Original message"
+    message ||= "message"
   end
       
   def role_symbols

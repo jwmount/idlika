@@ -1,16 +1,12 @@
 Hi <%=h @friend[:username] %>,
 
-  I found this great site that remembers things I want and lets me share them with my friends.  
+  Go to <%= "http://www.idlika.com" %>, it remembers things I want and lets me share them with my friends.  
 
-  Go to this site: <%= "http://www.idlika.com" %> and look around.  You do need to login to see my lists.  
-
-  Your login is simply:
+  Your guest login is:
 
          Username:  <%=h @friend[:email] %>
          Password:  guest
 
-  If you register to create your own account on Idlika you can change your username and password to whatever you want.  Once you do that you can create your own lists and share them with your friends.
+<%= @friend[:message] %>
 
-  Visit Idlika.  Register and use it yourself.  See what happens.
-
---Check it out!
+<%= @friend[:username] %>
