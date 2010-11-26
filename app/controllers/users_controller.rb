@@ -76,6 +76,7 @@ class UsersController < ApplicationController
     logger.info "*-*-*-* #{flash[:warning]}" unless flash[:warning].nil?
     
     # do not redirect as flash will be lost; provide @user for use in _sidebar.
+    # this needs some work as it looks like a partial instead of a render would work.
     @user = current_user
     render :action => :invite
   end
