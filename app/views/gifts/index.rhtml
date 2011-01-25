@@ -7,11 +7,11 @@
   <div id="li_content">
 
   <% if @registry.nil? %>
-    <h2>Choose A Registry Of Your Own Or A Friend</h2>
+    <h2>Choose A Registry</h2>
   <% else %> 
     <h2><%= @registry.name %></h2>
 
-    <% if @gifts.empty? %>
+    <% if @gifts.count == 0 %>
 
 	  <h5>This registry is empty, so you could delete it.</h5>
       <%= link_to 'Delete Registry', registry_path(@registry), :method => 'DELETE', :prompt => 'Sure?' %>

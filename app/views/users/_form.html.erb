@@ -16,7 +16,7 @@
   <div class="agtext"><%= f.password_field :password %></div>
   <div class="clearer"></div><br/>
   
-  <div class="aglabelform">Password Again:
+  <div class="aglabelform"><%= f.label :password %>:
   <span class="required">*</span></div>
   <div class="agtest"><%= f.password_field :password_confirmation %></div>
   <div class="clearer"></div><br/>
@@ -35,5 +35,6 @@
     <% end %>
   </p>
 -->	
-  <p><%= f.submit "Submit" %></p>
+  <p><%= image_submit_tag("/images/btn_submit_on.gif") %></div>
+
 <% end %>
