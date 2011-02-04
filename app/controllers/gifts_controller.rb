@@ -7,16 +7,21 @@ class GiftsController < ApplicationController
  
   # Display gifts user is permitted to see; owner can see all.
   def index
-    @registry = Registry.find 1
-#    @gifts = @user.gifts
-     rand_id = rand(Gift.count)
-     @gifts = Gift.find(:all, :conditions => [ "id > ?", rand_id], :limit=>9)
+    if @user.registries.empty?
+      #do something useful
+      @registry = nil
+    else
+      @registry = @user.registries
+      session[:current_registry] = @registry[0].id
+      @gifts = Gift.all( :conditions=>["registry_id = ?", @registry[0].id ], :limit=>9 ) 
+    end
+    @gifts
   end
 
   # set @registry passed in to current so gifts are collected in it
   def index_for_registry
     @registry = Registry.find params[:registry_id]
-    @gifts = Gift.find :all, :conditions => ["registry_id = ?", params[:registry_id]]
+    @gifts = Gift.find :all, :conditions => ["registry_id = ?", @registry.id]
     render :action => 'index'
   end
 

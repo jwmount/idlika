@@ -37,7 +37,6 @@ ActionController::Routing::Routes.draw do |map|
   map.resources :user_sessions
   map.resources :users, :has_many => [:registries, :roles, :gifts, :friends]
 
-  map.resources :clubs, :has_many => :events
 
   map.root :controller => "home"
   map.connect ':controller/:action/:id'

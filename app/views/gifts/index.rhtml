@@ -6,29 +6,20 @@
   
   <div id="li_content">
 
-  <% if @registry.nil? %>
-    <h2>Choose A Registry</h2>
-  <% else %> 
-    <h2><%= @registry.name %></h2>
-
-    <% if @gifts.count == 0 %>
-
-	  <h5>This registry is empty, so you could delete it.</h5>
-      <%= link_to 'Delete Registry', registry_path(@registry), :method => 'DELETE', :prompt => 'Sure?' %>
-
+    <% if @registry.nil? %>
+      <%= render :partial => 'home/how' %>
     <% else %>
+    <h2><%=h @registry.name %></h2>
 
-    <% unless @registry.nil? %>
-      <%= link_to 'Edit Registry', edit_registry_path(@registry) %>
-    <% end %>
+      <% if @gifts.count == 0 %>
 
+	    <h5>This registry is empty, so you could delete it.</h5>
+        <%= link_to 'Delete Registry', registry_path(@registry), :method => 'DELETE', :prompt => 'Sure?' %>
+
+      <% else %>
 
     <h3>To Change Friends or Registry Click on Image</h3>
       <%= render :partial => 'registry_container', :collection => @gifts %>
-
-      <% unless @registry.nil? %>
-        <%= link_to 'Edit Registry', edit_registry_path(@registry) %>
-      <% end %>
 
     <% end %>
   <% end %>
