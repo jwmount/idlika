@@ -46,9 +46,13 @@ class GiftsController < ApplicationController
   
   # @gift identifies its user via session[:current_friend].
   def show
-    @gift = Gift.find params[:id]
-    if @gift.user.id != @user.id
-      @user = User.find @gift.user.id
+    if @user.registries.empty?
+      render gifts_path
+    else
+      @gift = Gift.find params[:id]
+      if @gift.user.id != @user.id
+        @user = User.find @gift.user.id
+      end
     end
     respond_to do |format|
       format.html # show.html.erb
@@ -58,7 +62,11 @@ class GiftsController < ApplicationController
 
 
   def new
-    @gift = @user.gifts.new
+    if @user.registries.empty?
+      redirect_to gifts_path
+    else
+      @gift = @user.gifts.new
+    end
   end
 
 
