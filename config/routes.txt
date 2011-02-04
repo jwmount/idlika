@@ -1,4 +1,4 @@
-(in /Users/john/Devo/idlika-dev)
+(in /Users/john/Devo/idlika)
          graph_authorization_rules GET    /authorization_rules/graph(.:format)              {:controller=>"authorization_rules", :action=>"graph"}
 suggest_change_authorization_rules GET    /authorization_rules/suggest_change(.:format)     {:controller=>"authorization_rules", :action=>"suggest_change"}
         change_authorization_rules GET    /authorization_rules/change(.:format)             {:controller=>"authorization_rules", :action=>"change"}
@@ -124,20 +124,6 @@ suggest_change_authorization_rules GET    /authorization_rules/suggest_change(.:
                               user GET    /users/:id(.:format)                              {:controller=>"users", :action=>"show"}
                                    PUT    /users/:id(.:format)                              {:controller=>"users", :action=>"update"}
                                    DELETE /users/:id(.:format)                              {:controller=>"users", :action=>"destroy"}
-                       club_events GET    /clubs/:club_id/events(.:format)                  {:controller=>"events", :action=>"index"}
-                                   POST   /clubs/:club_id/events(.:format)                  {:controller=>"events", :action=>"create"}
-                    new_club_event GET    /clubs/:club_id/events/new(.:format)              {:controller=>"events", :action=>"new"}
-                   edit_club_event GET    /clubs/:club_id/events/:id/edit(.:format)         {:controller=>"events", :action=>"edit"}
-                        club_event GET    /clubs/:club_id/events/:id(.:format)              {:controller=>"events", :action=>"show"}
-                                   PUT    /clubs/:club_id/events/:id(.:format)              {:controller=>"events", :action=>"update"}
-                                   DELETE /clubs/:club_id/events/:id(.:format)              {:controller=>"events", :action=>"destroy"}
-                             clubs GET    /clubs(.:format)                                  {:controller=>"clubs", :action=>"index"}
-                                   POST   /clubs(.:format)                                  {:controller=>"clubs", :action=>"create"}
-                          new_club GET    /clubs/new(.:format)                              {:controller=>"clubs", :action=>"new"}
-                         edit_club GET    /clubs/:id/edit(.:format)                         {:controller=>"clubs", :action=>"edit"}
-                              club GET    /clubs/:id(.:format)                              {:controller=>"clubs", :action=>"show"}
-                                   PUT    /clubs/:id(.:format)                              {:controller=>"clubs", :action=>"update"}
-                                   DELETE /clubs/:id(.:format)                              {:controller=>"clubs", :action=>"destroy"}
                               root        /                                                 {:action=>"index", :controller=>"home"}
                                           /:controller/:action/:id                          
                                           /:controller/:action/:id(.:format)                
