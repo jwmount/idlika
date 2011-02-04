@@ -18,6 +18,11 @@
 
     <% else %>
 
+    <% unless @registry.nil? %>
+      <%= link_to 'Edit Registry', edit_registry_path(@registry) %>
+    <% end %>
+
+
     <h3>To Change Friends or Registry Click on Image</h3>
       <%= render :partial => 'registry_container', :collection => @gifts %>
 

@@ -1,4 +1,5 @@
 class RegistriesController < ApplicationController
+  layout 'application'
   
   before_filter :find_user
   

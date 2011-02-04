@@ -1,17 +1,25 @@
 <div id="footer">
 	
-	<div style="text-align:left;px"<%= link_to(image_tag("/images/Icon-Facebook.png", 
+	<!--div style="text-align:left;px"<= link_to(image_tag("/images/Icon-Facebook.png", 
 	                     {:alt => 'Idlika Facebook fan page.'}), 
 	                     "http://www.facebook.com/pages/Idlika/173613415989023", :popup=>true
-						 ) %></div>
-	&copy;2010,2011 idlika partners LLC (<%= ENV['IDLIKA_VERSION']%>)&nbsp; | &nbsp;
+						 ) ></div -->
+<a href=" http://www.facebook.com/pages/Idlika/173613415989023" alt="idlika on Facebook" target="blank"><img src="/images/Icon-Facebook.png" height="30" align="left" alt="idlika on Facebook" STYLE="margin:0px 10px 10px 0px; border:0px;"></a>
+
+  
 	<%= link_to_unless_current 'Home', root_url %>&nbsp; | &nbsp;
-	<%= link_to_unless_current 'Terms of Use', terms_path %>&nbsp; | &nbsp;
-	<%= link_to_unless_current 'Privacy Policy', privacy_path %>&nbsp; | &nbsp;
     <%= link_to_unless_current 'What is idlika?', what_path %> &nbsp; | &nbsp;
     <%= link_to_unless_current 'How It Works', how_path %> &nbsp; | &nbsp;
+    <%= link_to_unless_current 'FAQ', faq_path %> &nbsp; | &nbsp;
     <!-- link_to_unless_current 'Tell A Friend', tell_path > &nbsp; | &nbsp; -->
     <!-- link_to_unless_current 'Advertise / Sponsor', advertise_path > &nbsp; | &nbsp; -->
-    <%= link_to_unless_current 'FAQ', faq_path %> &nbsp; | &nbsp;
-    <%= mail_to 'info@idlika.com', 'Contact Us' %>
+    <%= mail_to 'info@idlika.com', 'Contact Us' %>&nbsp; | &nbsp;
+	<%= link_to_unless_current 'Privacy Policy', privacy_path %>&nbsp; | &nbsp;
+	<%= link_to_unless_current 'Terms of Use', terms_path %>
+	<%= render( :partial => '/shared/facebook')%>
+	<%= render( :partial => '/shared/facebook')%>
+	
+<br/><br/>
+<p>	&copy;2010, 2011 idlika partners LLC v<%= ENV['IDLIKA_VERSION']%>
+
 </div><!-- footer -->
