@@ -42,7 +42,7 @@ class UsersController < ApplicationController
     @user = current_user
     if @user.update_attributes(params[:user])
       flash[:notice] = User::MODIFIED_PROFILE_OK
-      redirect_to root_url
+      redirect_to user_gifts_url(@user)
     else
         render :action => 'edit'
     end

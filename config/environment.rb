@@ -6,7 +6,7 @@ require 'net/http'
 
 RAILS_GEM_VERSION = '2.3.8' unless defined? RAILS_GEM_VERSION
 
-ENV['IDLIKA_VERSION'] = '0.71 hdrs'
+ENV['IDLIKA_VERSION'] = '0.72 nav'
 ENV['DEFAULT_REGISTRY_NAME'] = 'home index'
 ENV['SHOW_LINKS'] = 'yes'
 
