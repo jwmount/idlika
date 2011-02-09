@@ -1,4 +1,5 @@
 class GiftsController < ApplicationController
+  before_filter :require_user 
 
   #  filter_resource_access
   layout 'application'

@@ -1,5 +1,6 @@
 class DonorsController < ApplicationController
 
+  before_filter :require_user 
   before_filter :find_user 
   layout 'application'
 

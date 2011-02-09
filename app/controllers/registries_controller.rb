@@ -1,6 +1,6 @@
 class RegistriesController < ApplicationController
-  layout 'application'
-  
+  before_filter :require_user 
+  layout 'application'  
   before_filter :find_user
   
   def index

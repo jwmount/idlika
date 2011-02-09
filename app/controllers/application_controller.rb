@@ -32,25 +32,10 @@ class ApplicationController < ActionController::Base
     redirect_to root_url
   end
 
-  # = = = = = = = = = = = = = = = == =  
-
-#   private
 
    def show_links?
      ['yes', 'Yes', 'YES'].include? ENV['SHOW_LINKS']
    end
-   
-   def current_user_session
-     return @current_user_session if defined?(@current_user_session)
-     @current_user_session = UserSession.find
-   end
-
-   # current_user can only be altered by login/logout
-   def current_user
-     return @current_user if defined?(@current_user)
-     @current_user = current_user_session && current_user_session.record
-   end
-
 
    def invite_member params
      @host = current_user
@@ -115,6 +100,28 @@ class ApplicationController < ActionController::Base
      end
  end
    
+ # = = = = = = = = = = = = = = = == =  
+# private
+
+  def require_user
+    unless current_user
+      flash[:notice] = "You must be logged in to access more pages -- register with us!"
+      redirect_to root_url
+      return false
+    end
+  end
+
+  def current_user_session
+    return @current_user_session if defined?(@current_user_session)
+    @current_user_session = UserSession.find
+  end
+
+  # current_user can only be altered by login/logout
+  def current_user
+    return @current_user if defined?(@current_user)
+    @current_user = current_user_session && current_user_session.record
+  end
+
    
 end
 

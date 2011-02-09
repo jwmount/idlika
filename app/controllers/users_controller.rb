@@ -1,7 +1,7 @@
 class UsersController < ApplicationController
-#  filter_resource_access
-  layout 'welcome'
+  before_filter :require_user 
   before_filter :mailer_set_url_options
+  layout 'welcome'
      
   def index
     @users = User.all :order => :username
