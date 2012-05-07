@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-  before_filter :require_user 
+  before_filter :require_user, :except => :new
   before_filter :mailer_set_url_options
   layout 'welcome'
      
